@@ -1,6 +1,10 @@
 import React from 'react'
 import { makeStyles, Theme, Grid, Typography, Button } from '@material-ui/core'
-import { getArticleURL, getLinkUrl, getCollectionURL } from '../../../../lib/getURLs'
+import {
+    getArticleURL,
+    getLinkUrl,
+    getCollectionURL,
+} from '../../../../lib/getURLs'
 import { getCommunityContent_getCommunityContent } from '../../../../queries/__generated__/getCommunityContent'
 import { ResourceIdentifierInput } from '../../../../__generated__/globalTypes'
 import { Article } from '../../../../queries/Fragments/__generated__/Article'
@@ -16,7 +20,7 @@ interface IProps {
     data: {
         getCommunityContent: getCommunityContent_getCommunityContent
     }
-    approveResourceAction: typeof approveResourceAction,
+    approveResourceAction: typeof approveResourceAction
     removeResourceAction: typeof removeResourceAction
 }
 
@@ -51,287 +55,318 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export const ManageResources = ({ communityId, data, approveResourceAction, removeResourceAction }: IProps) => {
+export const ManageResources = ({
+    communityId,
+    data,
+    approveResourceAction,
+    removeResourceAction,
+}: IProps) => {
     const classes = useStyles()
 
     return (
         <div className={classes.container}>
-        <div className={classes.root}>
-            <Grid container={true} spacing={2}>
-                {data.getCommunityContent.content &&
-                data.getCommunityContent.totalElements > 0 ? (
-                    data.getCommunityContent.content.map(
-                        (result: any, _index: number) => {
-                            const resourceId: ResourceIdentifierInput = {
-                                id: result.id,
-                                type: result.type,
+            <div className={classes.root}>
+                <Grid container={true} spacing={2}>
+                    {data.getCommunityContent.content &&
+                    data.getCommunityContent.totalElements > 0 ? (
+                        data.getCommunityContent.content.map(
+                            (result: any, _index: number) => {
+                                const resourceId: ResourceIdentifierInput = {
+                                    id: result.id,
+                                    type: result.type,
+                                }
+
+                                switch (resourceId.type) {
+                                    case 'ARTICLE': {
+                                        var article = result.resource as Article
+                                        var author = article.contributors[0]
+                                            ? article.contributors[0]
+                                            : article.author
+
+                                        return (
+                                            <div className={classes.card}>
+                                                <div className={classes.left}>
+                                                    <Typography
+                                                        variant="subtitle1"
+                                                        className={
+                                                            classes.cardTitle
+                                                        }
+                                                    >
+                                                        {article.title}
+                                                    </Typography>
+                                                    <CardDetails
+                                                        user={{
+                                                            id: author.id,
+                                                            username:
+                                                                author.username ||
+                                                                '',
+                                                            name:
+                                                                author.name ||
+                                                                '',
+                                                            avatar:
+                                                                author.avatar ||
+                                                                '',
+                                                        }}
+                                                        date={
+                                                            article.datePublished
+                                                        }
+                                                    />
+                                                </div>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    {' '}
+                                                    <Link
+                                                        as={
+                                                            getArticleURL({
+                                                                ...article,
+                                                            }).as
+                                                        }
+                                                        href={
+                                                            getArticleURL({
+                                                                ...article,
+                                                            }).href
+                                                        }
+                                                    >
+                                                        <a target="_blank">
+                                                            View article
+                                                        </a>
+                                                    </Link>
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        removeResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Reject
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        approveResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Approve
+                                                </Button>
+                                            </div>
+                                        )
+                                    }
+
+                                    case 'LINK': {
+                                        var link = result.resource as ExternalLink
+
+                                        return (
+                                            <div className={classes.card}>
+                                                <div className={classes.left}>
+                                                    <Typography
+                                                        variant="subtitle1"
+                                                        className={
+                                                            classes.cardTitle
+                                                        }
+                                                    >
+                                                        {link.linkTitle.value}
+                                                    </Typography>
+                                                    <CardDetails
+                                                        user={{
+                                                            id:
+                                                                link.submitter
+                                                                    .id,
+                                                            username:
+                                                                link.submitter
+                                                                    .username ||
+                                                                '',
+                                                            name:
+                                                                link.submitter
+                                                                    .name || '',
+                                                            avatar:
+                                                                link.submitter
+                                                                    .avatar ||
+                                                                '',
+                                                        }}
+                                                        date={link.dateCreated}
+                                                    />
+                                                </div>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    <Link
+                                                        as={
+                                                            getLinkUrl({
+                                                                ...link,
+                                                            }).as
+                                                        }
+                                                        href={
+                                                            getLinkUrl({
+                                                                ...link,
+                                                            }).href
+                                                        }
+                                                    >
+                                                        <a target="_blank">
+                                                            View link
+                                                        </a>
+                                                    </Link>
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        removeResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Reject
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        approveResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Approve
+                                                </Button>
+                                            </div>
+                                        )
+                                    }
+
+                                    case 'COLLECTION': {
+                                        var collection = result.resource as Collection
+                                        var owner = collection.owner as UserOwner
+
+                                        return (
+                                            <div className={classes.card}>
+                                                <div className={classes.left}>
+                                                    <Typography
+                                                        variant="subtitle1"
+                                                        className={
+                                                            classes.cardTitle
+                                                        }
+                                                    >
+                                                        {collection.name}
+                                                    </Typography>
+                                                    <CardDetails
+                                                        user={{
+                                                            id: owner.id,
+                                                            username:
+                                                                owner.username ||
+                                                                '',
+                                                            name:
+                                                                owner.publicUserName ||
+                                                                '',
+                                                            avatar:
+                                                                owner.avatar ||
+                                                                '',
+                                                        }}
+                                                        date={
+                                                            collection.dateCreated
+                                                        }
+                                                    />
+                                                </div>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    <Link
+                                                        as={
+                                                            getCollectionURL({
+                                                                ...collection,
+                                                            }).as
+                                                        }
+                                                        href={
+                                                            getCollectionURL({
+                                                                ...collection,
+                                                            }).href
+                                                        }
+                                                    >
+                                                        <a target="_blank">
+                                                            View Collection
+                                                        </a>
+                                                    </Link>
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        removeResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Reject
+                                                </Button>
+                                                <Button
+                                                    color="primary"
+                                                    variant="text"
+                                                    onClick={() =>
+                                                        approveResourceAction({
+                                                            id: communityId,
+                                                            resource: resourceId,
+                                                        })
+                                                    }
+                                                    className={
+                                                        classes.cardButton
+                                                    }
+                                                >
+                                                    Approve
+                                                </Button>
+                                            </div>
+                                        )
+                                    }
+                                    default: {
+                                        return null
+                                    }
+                                }
                             }
-
-                            switch (resourceId.type) {
-                                case 'ARTICLE': {
-                                    var article = result.resource as Article
-                                    var author = article.contributors[0] ? article.contributors[0] : article.author
-
-                                    return (
-                                        <div
-                                            className={classes.card}
-                                        >
-                                            <div className={classes.left}>
-                                                <Typography
-                                                    variant="subtitle1"
-                                                    className={
-                                                        classes.cardTitle
-                                                    }
-                                                >
-                                                    {article.title}
-                                                </Typography>
-                                                <CardDetails
-                                                    user={{
-                                                        id: author.id,
-                                                        username:author.username || '',
-                                                        name: author.name || '',
-                                                        avatar: author.avatar || '',
-                                                    }}
-                                                    date={
-                                                        article.datePublished
-                                                    }
-                                                />
-                                            </div>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                className={classes.cardButton}
-                                            >
-                                                {' '}
-                                                <Link
-                                                    as={
-                                                        getArticleURL({
-                                                            ...article,
-                                                        }).as
-                                                    }
-                                                    href={
-                                                        getArticleURL({
-                                                            ...article,
-                                                        }).href
-                                                    }
-                                                >
-                                                    <a target="_blank">
-                                                        View article
-                                                    </a>
-                                                </Link>
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    removeResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Reject
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    approveResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Approve
-                                            </Button>
-                                        </div>
-                                    )
-                                }
-
-                                case 'LINK': {
-                                    var link = result.resource as ExternalLink
-
-                                    return (
-                                        <div className={classes.card}>
-                                            <div className={classes.left}>
-                                                <Typography
-                                                    variant="subtitle1"
-                                                    className={
-                                                        classes.cardTitle
-                                                    }
-                                                >
-                                                    {link.linkTitle.value}
-                                                </Typography>
-                                                <CardDetails
-                                                    user={{
-                                                        id: link.submitter.id,
-                                                        username:
-                                                            link.submitter
-                                                                .username ||
-                                                            '',
-                                                        name:
-                                                            link.submitter
-                                                                .name || '',
-                                                        avatar:
-                                                            link.submitter
-                                                                .avatar || '',
-                                                    }}
-                                                    date={link.dateCreated}
-                                                />
-                                            </div>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                className={classes.cardButton}
-                                            >
-                                                <Link
-                                                    as={
-                                                        getLinkUrl({
-                                                            ...link,
-                                                        }).as
-                                                    }
-                                                    href={
-                                                        getLinkUrl({
-                                                            ...link,
-                                                        }).href
-                                                    }
-                                                >
-                                                    <a target="_blank">
-                                                        View link
-                                                    </a>
-                                                </Link>
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    removeResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Reject
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    approveResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Approve
-                                            </Button>
-                                        </div>
-                                    )
-                                }
-
-                                case 'COLLECTION': {
-                                    var collection = result.resource as Collection
-                                    var owner = collection.owner as UserOwner
-
-                                    return (
-                                        <div
-                                            className={classes.card}>
-                                            <div className={classes.left}>
-                                                <Typography
-                                                    variant="subtitle1"
-                                                    className={
-                                                        classes.cardTitle
-                                                    }
-                                                >
-                                                    {collection.name}
-                                                </Typography>
-                                                <CardDetails
-                                                    user={{
-                                                        id: owner.id,
-                                                        username:
-                                                            owner.username ||
-                                                            '',
-                                                        name:
-                                                            owner.publicUserName ||
-                                                            '',
-                                                        avatar:
-                                                            owner.avatar ||
-                                                            '',
-                                                    }}
-                                                    date={
-                                                        collection.dateCreated
-                                                    }
-                                                />
-                                            </div>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                className={classes.cardButton}
-                                            >
-                                                <Link
-                                                    as={
-                                                        getCollectionURL({
-                                                            ...collection,
-                                                        }).as
-                                                    }
-                                                    href={
-                                                        getCollectionURL({
-                                                            ...collection,
-                                                        }).href
-                                                    }
-                                                >
-                                                    <a target="_blank">
-                                                        View Collection
-                                                    </a>
-                                                </Link>
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    removeResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Reject
-                                            </Button>
-                                            <Button
-                                                color="primary"
-                                                variant="text"
-                                                onClick={() =>
-                                                    approveResourceAction({
-                                                        id: communityId, 
-                                                        resource: resourceId
-                                                    })
-                                                }
-                                                className={classes.cardButton}
-                                            >
-                                                Approve
-                                            </Button>
-                                        </div>
-                                    )
-                                }
-                                default: {
-                                    return null
-                                }
-                            }
-                        }
-                    )
-                ) : (
-                    <div style={{ width: '100%' }}>
-                        <p>No Pending resources</p>
-                    </div>
-                )}
-            </Grid>
+                        )
+                    ) : (
+                        <div style={{ width: '100%' }}>
+                            <p>No Pending resources</p>
+                        </div>
+                    )}
+                </Grid>
+            </div>
         </div>
-    </div>        
     )
 }
 

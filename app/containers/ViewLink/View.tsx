@@ -96,6 +96,10 @@ const ViewLink = ({
                                 isLoggedIn={!!userId}
                                 type={ResourceTypeInput.LINK}
                                 isAuthor={false}
+                                isOwner={
+                                    getExternalLink.ownerId &&
+                                    getExternalLink.ownerId.id === userId
+                                }
                                 version={0}
                             />
                         </Hidden>

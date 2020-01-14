@@ -124,6 +124,18 @@ export interface Article_contributors {
   communities: (Article_contributors_communities | null)[];
 }
 
+export interface Article_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface Article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -328,6 +340,10 @@ export interface Article {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: Article_ownerId;
   /**
    * Date created
    */

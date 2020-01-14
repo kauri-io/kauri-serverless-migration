@@ -30,8 +30,8 @@ export default compose(
                 size: 20,
                 id: communityId,
                 filter: {
-                    statusEquals: "PENDING"
-                }
+                    statusEquals: 'PENDING',
+                },
             },
         }),
     }),

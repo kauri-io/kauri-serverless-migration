@@ -303,12 +303,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                     handleConfirm={(selected: ResourceIdentifierInput[]) => {
                         closeAddCommunityArticleModal()
                         if (selected.length > 0) {
-                            curateCommunityResourcesAction(
-                                {
-                                    id: id,
-                                    resources: selected,
-                                }
-                            )
+                            curateCommunityResourcesAction({
+                                id: id,
+                                resources: selected,
+                            })
                         }
                     }}
                     // disable={(resource: any) =>
@@ -488,7 +486,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                         openAddCommunityArticleModal()
                                     }
                                 >
-                                    {isCommunityAdmin || isCommunityModerator ? 'Add Content' : 'Suggest Content' }
+                                    {isCommunityAdmin || isCommunityModerator
+                                        ? 'Add Content'
+                                        : 'Suggest Content'}
                                 </Button>
                             </ActionsRow>
                         )}

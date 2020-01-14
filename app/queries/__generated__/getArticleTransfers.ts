@@ -124,6 +124,18 @@ export interface getArticleTransfers_getArticleTransfers_content_article_contrib
   communities: (getArticleTransfers_getArticleTransfers_content_article_contributors_communities | null)[];
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -328,6 +340,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getArticleTransfers_getArticleTransfers_content_article_ownerId;
   /**
    * Date created
    */

@@ -29,7 +29,7 @@ const Manage: React.FunctionComponent<any> = props => {
         ['ownProfile', 'getMyProfile', 'communities'],
         props
     )
-    
+
     if (categories.indexOf('pending transfers') === -1) {
         categories.push('pending transfers')
     }
@@ -81,15 +81,16 @@ const Manage: React.FunctionComponent<any> = props => {
                         communities={
                             Array.isArray(communities) &&
                             communities
-                                .filter(({ role }) => role === "ADMIN" || role === "CURATOR")
+                                .filter(
+                                    ({ role }) =>
+                                        role === 'ADMIN' || role === 'CURATOR'
+                                )
                                 .map(({ community: { id } }) => id)
                         }
                     />
                 )}
                 {state.currentCategory === 'submitted updates' && (
-                    <Pending
-                        {...props}
-                    />
+                    <Pending {...props} />
                 )}
                 {state.currentCategory === 'pending transfers' && (
                     <Transfers {...props} />

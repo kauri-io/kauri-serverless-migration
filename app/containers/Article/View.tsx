@@ -37,6 +37,7 @@ import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { transferArticleToCommunityAction } from '../Community/Module'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -111,6 +112,7 @@ interface IProps {
     hostName: string
     addCommentAction: (e: string) => void
     client?: ApolloClient<{}>
+    transferArticleToCommunityAction: typeof transferArticleToCommunityAction
 }
 
 const ArticleComp = ({
@@ -119,6 +121,7 @@ const ArticleComp = ({
     voteAction,
     routeChangeAction,
     addCommentAction,
+    transferArticleToCommunityAction,
     userId,
     user,
     RelatedArticles: { searchMoreLikeThis },
@@ -141,6 +144,7 @@ const ArticleComp = ({
             version,
             contentHash,
             checkpoint,
+            ownerId,
         },
     },
 }: IProps) => {
@@ -244,6 +248,9 @@ const ArticleComp = ({
                             <Toolbar
                                 id={id}
                                 openModalAction={openModalAction}
+                                transferArticleToCommunityAction={
+                                    transferArticleToCommunityAction
+                                }
                                 comments={comments.totalElements}
                                 classes={classes}
                                 routeChangeAction={routeChangeAction}
@@ -251,7 +258,9 @@ const ArticleComp = ({
                                 isLoggedIn={!!userId}
                                 type={ResourceTypeInput.ARTICLE}
                                 isAuthor={author && userId === author.id}
+                                isOwner={ownerId && ownerId.id === userId} //TODO should check if community admin/curator too
                                 version={version}
+                                userId={userId}
                             />
                         </Hidden>
                         <Grid

@@ -59,7 +59,10 @@ const Manage: React.FunctionComponent<IProps> = ({
 }) => {
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
 
-    if (!searchArticles.searchArticles || !getCommunityContent.getCommunityContent) {
+    if (
+        !searchArticles.searchArticles ||
+        !getCommunityContent.getCommunityContent
+    ) {
         return <Loading />
     }
 
@@ -78,7 +81,10 @@ const Manage: React.FunctionComponent<IProps> = ({
                     <ResourceCategory
                         active={tabIndex === 1}
                         category="Resources for approval"
-                        amount={getCommunityContent.getCommunityContent.totalElements}
+                        amount={
+                            getCommunityContent.getCommunityContent
+                                .totalElements
+                        }
                         onClick={() => setTabIndex(1)}
                     />
                 )}
@@ -108,7 +114,7 @@ const Manage: React.FunctionComponent<IProps> = ({
                     />
                 )}
                 {tabIndex === 2 && pageType !== 'CreateCommunityForm' && (
-                    <ManageUpdate 
+                    <ManageUpdate
                         communityId={communityId}
                         data={searchArticles}
                     />

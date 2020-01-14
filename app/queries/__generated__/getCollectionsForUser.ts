@@ -208,6 +208,18 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
   communities: (getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -413,6 +425,10 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO_ownerId;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -476,6 +492,18 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    * Resource ID
    */
   id: string;
+}
+
+export interface getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -725,6 +753,10 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_ownerId;
   /**
    * load the external link owner (user or community resource type)
    */

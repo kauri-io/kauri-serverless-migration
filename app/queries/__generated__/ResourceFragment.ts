@@ -212,6 +212,18 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_co
   communities: (ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -417,6 +429,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO {
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -480,6 +496,18 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    * Resource ID
    */
   id: string;
+}
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -730,6 +758,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    */
   isBookmarked: boolean;
   /**
+   * The link owner
+   */
+  ownerId: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -872,6 +904,18 @@ export interface ResourceFragment_ExternalLinkDTO_resourceIdentifier {
    * Resource ID
    */
   id: string;
+}
+
+export interface ResourceFragment_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface ResourceFragment_ExternalLinkDTO_owner_ArticleDTO {
@@ -1121,6 +1165,10 @@ export interface ResourceFragment_ExternalLinkDTO {
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: ResourceFragment_ExternalLinkDTO_ownerId;
   /**
    * load the external link owner (user or community resource type)
    */

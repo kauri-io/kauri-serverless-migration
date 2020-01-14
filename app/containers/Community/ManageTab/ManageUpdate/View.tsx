@@ -33,47 +33,47 @@ export const ManageUpdate = ({ data }: IProps) => {
 
     return (
         <div className={classes.container}>
-        <div className={classes.root}>
-            <Grid container={true} spacing={2}>
-                {data.searchArticles.content &&
-                data.searchArticles.totalElements > 0 ? (
-                    data.searchArticles.content.map(
-                        (resource: any, key) => {
-                            switch (resource.__typename) {
-                                case 'ArticleDTO': {
-                                    return (
-                                        <Grid
-                                            key={key}
-                                            item
-                                            xs={12}
-                                            sm={12}
-                                            lg={12}
-                                        >
-                                            <ArticleCard
-                                                {...resource}
-                                                href={getArticleURL(
-                                                    resource,
-                                                    'review'
-                                                )}
-                                            />
-                                        </Grid>
-                                    )
-                                }
+            <div className={classes.root}>
+                <Grid container={true} spacing={2}>
+                    {data.searchArticles.content &&
+                    data.searchArticles.totalElements > 0 ? (
+                        data.searchArticles.content.map(
+                            (resource: any, key) => {
+                                switch (resource.__typename) {
+                                    case 'ArticleDTO': {
+                                        return (
+                                            <Grid
+                                                key={key}
+                                                item
+                                                xs={12}
+                                                sm={12}
+                                                lg={12}
+                                            >
+                                                <ArticleCard
+                                                    {...resource}
+                                                    href={getArticleURL(
+                                                        resource,
+                                                        'review'
+                                                    )}
+                                                />
+                                            </Grid>
+                                        )
+                                    }
 
-                                default: {
-                                    return null
+                                    default: {
+                                        return null
+                                    }
                                 }
                             }
-                        }
-                    )
-                ) : (
-                    <div style={{ width: '100%' }}>
-                        <p>No Pending articles</p>
-                    </div>
-                )}
-            </Grid>
+                        )
+                    ) : (
+                        <div style={{ width: '100%' }}>
+                            <p>No Pending articles</p>
+                        </div>
+                    )}
+                </Grid>
+            </div>
         </div>
-    </div>        
     )
 }
 

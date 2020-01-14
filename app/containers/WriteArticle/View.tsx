@@ -458,10 +458,15 @@ const ArticleEditor = props => {
                         userId={userId}
                         type="Articles"
                         closeModalAction={closeModalAction}
-                        communities={communities.filter(({role}) => role === "ADMIN" || role === "CURATOR").map(({ community }) => ({
-                            ...community,
-                            type: 'COMMUNITY',
-                        }))}
+                        communities={communities
+                            .filter(
+                                ({ role }) =>
+                                    role === 'ADMIN' || role === 'CURATOR'
+                            )
+                            .map(({ community }) => ({
+                                ...community,
+                                type: 'COMMUNITY',
+                            }))}
                         handleSubmit={(destination, e) =>
                             handleSubmit(
                                 'submit/update',

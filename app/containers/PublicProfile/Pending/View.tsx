@@ -78,11 +78,7 @@ const Articles = ({ data }: IArticlesProps) => {
 
 export default compose(
     graphql(searchPending, {
-        options: ({
-            userId,
-        }: {
-            userId: string
-        }) => ({
+        options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
                 page: 0,

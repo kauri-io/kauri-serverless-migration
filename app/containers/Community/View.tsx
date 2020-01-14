@@ -338,7 +338,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     openAddMemberModal={openAddMemberModal}
                     userId={currentUser}
                     joinCommunityAction={joinCommunityAction}
-                    curateCommunityResourcesAction={curateCommunityResourcesAction}
+                    curateCommunityResourcesAction={
+                        curateCommunityResourcesAction
+                    }
                 />
                 <Tabs
                     TabIndicatorProps={{ style: { height: 3 } }}

@@ -11,6 +11,7 @@ import {
     closeModalAction,
     openModalAction,
 } from '../../components/Modal/Module'
+import { transferArticleToCommunityAction } from '../Community/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,
@@ -29,6 +30,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             voteAction,
+            transferArticleToCommunityAction,
         }
     ),
     graphql(getArticleQuery, {
