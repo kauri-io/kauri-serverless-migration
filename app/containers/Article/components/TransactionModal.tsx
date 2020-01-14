@@ -14,6 +14,7 @@ import {
     CircularProgress,
 } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
+import { useEffect } from 'react'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -37,13 +38,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const getStepContent = stepIndex => {
-    switch (stepIndex) {
-        case 0:
+const getStepContent = state => {
+    switch (state) {
+        case State.START:
             return 'The tipping transaction is ready to be sent.  If using metamask, press the Confirm Button to initiate.'
-        case 1:
+        case State.PENDING:
             return "The tip transaction has been broadcast, and we're now waiting for it to be mined."
-        case 3:
+        case State.MINED:
             return 'Your tip has been processed, and has been received by the author.  Thanks for your generosity!'
         default:
             return 'Unknown stepIndex'
@@ -58,18 +59,41 @@ const getSteps = () => {
     ]
 }
 
-const isCompleted = stepIndex => stepIndex === 3
+const getCurrentStep = state => {
+    switch (state) {
+        case State.START:
+            return 0
+        case State.PENDING:
+            return 1
+        case State.MINED:
+            return 3
+    }
+}
+
+const isCompleted = state => state === State.MINED
+
+export enum State {
+    START,
+    PENDING,
+    MINED,
+    ERROR,
+}
 
 interface IProps {
     open: boolean
     handleClose: () => void
-    state: number
+    state: State
 }
 
 const TransactionModal = ({ open, handleClose, state }: IProps) => {
     const classes = useStyles()
     const steps = getSteps()
 
+    useEffect(() => {
+        if (state === State.ERROR) {
+            handleClose()
+        }
+    }, [state])
     return (
         <Dialog
             open={open}
@@ -89,8 +113,11 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
             <DialogContent dividers={true}>
                 <Grid container justify="center">
                     <Typography>{getStepContent(state)}</Typography>
-                    {state == 1 && <CircularProgress />}
-                    <Stepper activeStep={state} alternativeLabel>
+                    {getCurrentStep(state) == 1 && <CircularProgress />}
+                    <Stepper
+                        activeStep={getCurrentStep(state)}
+                        alternativeLabel
+                    >
                         {steps.map(label => (
                             <Step key={label}>
                                 <StepLabel>{label}</StepLabel>

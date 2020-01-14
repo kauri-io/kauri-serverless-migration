@@ -8,10 +8,11 @@ import {
     Button,
     Grid,
     TextField,
+    DialogActions,
 } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
 import { useState } from 'react'
-import TransactionModal from './TransactionModal'
+import TransactionModal, { State } from './TransactionModal'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -53,7 +54,7 @@ const TipModal = ({
     const classes = useStyles()
     const [amount, setAmount] = useState()
     const [openTxModal, setOpenTxModal] = useState(false)
-    const [transactionState, setTransactionState] = useState(0)
+    const [transactionState, setTransactionState] = useState(State.START)
 
     return (
         <>
@@ -104,34 +105,33 @@ const TipModal = ({
                             />
                             {/* </div> */}
                         </Grid>
-                        <Grid
-                            container
-                            justify="center"
-                            className={classes.root}
-                        >
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={() => {
-                                    handleClose()
-                                    setOpenTxModal(true)
-                                    return tipAction(
-                                        { resourceId, resourceType, amount },
-                                        setTransactionState
-                                    )
-                                }}
-                            >
-                                TIP AUTHOR
-                            </Button>
-                        </Grid>
                     </Grid>
                 </DialogContent>
+                <DialogActions>
+                    <Grid container justify="center" className={classes.root}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => {
+                                handleClose()
+                                setOpenTxModal(true)
+                                return tipAction(
+                                    { resourceId, resourceType, amount },
+                                    setTransactionState
+                                )
+                            }}
+                        >
+                            TIP AUTHOR
+                        </Button>
+                    </Grid>
+                </DialogActions>
             </Dialog>
             <TransactionModal
                 open={openTxModal}
                 handleClose={() => {
                     handleClose()
                     setOpenTxModal(false)
+                    setTransactionState(State.START)
                 }}
                 state={transactionState}
             />

@@ -5,7 +5,14 @@ import { Epic, ofType } from 'redux-observable'
 import { vote as voteMutation, addCommentMutation } from '../../queries/Article'
 import { voteVariables, vote } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
-import { switchMap, mergeMap, tap, catchError, mapTo } from 'rxjs/operators'
+import {
+    switchMap,
+    mergeMap,
+    tap,
+    catchError,
+    mapTo,
+    ignoreElements,
+} from 'rxjs/operators'
 import { path } from 'ramda'
 import {
     addCommentVariables,
@@ -17,6 +24,7 @@ import {
     stageTip,
     stageTipVariables,
 } from '../../queries/__generated__/stageTip'
+import { State } from './components/TransactionModal'
 
 export interface IVoteAction {
     type: string
@@ -163,21 +171,21 @@ interface IGetTipAddressResult {
     }
 }
 
-const TIP = 'TIP'
+export const TIP: string = 'TIP'
 
 export const tipAction = (
     payload: { resourceId: string; resourceType: string; amount: string },
     setTransactionState
 ): ITipAction => ({
+    type: TIP,
     payload,
     setTransactionState,
-    type: TIP,
 })
 
 export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
     action$,
     _,
-    { apolloClient, apolloSubscriber }
+    { apolloClient, apolloSubscriber, web3GetNetwork }
 ) =>
     action$.pipe(
         ofType(TIP),
@@ -186,88 +194,165 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                 payload: { resourceId, resourceType, amount },
                 setTransactionState,
             }) =>
-                from(
-                    apolloClient.query<IGetTipAddressResult>({
-                        fetchPolicy: 'network-only',
-                        query: getTipAddress,
-                        variables: {
-                            resource: { id: resourceId, type: resourceType },
-                        },
-                    })
-                ).pipe(
-                    switchMap(({ data: { getTipAddress: { address } } }) =>
-                        from(global.window.ethereum.enable()).pipe(
-                            switchMap((accounts: any) => {
-                                const provider = new ethers.providers.Web3Provider(
-                                    global.window.web3.currentProvider
-                                )
-
-                                const params = [
-                                    {
-                                        from: accounts[0],
-                                        to: address,
-                                        value: ethers.utils
-                                            .parseUnits(amount, 'ether')
-                                            .toHexString(),
+                web3GetNetwork().pipe(
+                    mergeMap(() =>
+                        from(
+                            apolloClient.query<IGetTipAddressResult>({
+                                fetchPolicy: 'network-only',
+                                query: getTipAddress,
+                                variables: {
+                                    resource: {
+                                        id: resourceId,
+                                        type: resourceType,
                                     },
-                                ]
+                                },
+                            })
+                        ).pipe(
+                            switchMap(
+                                ({
+                                    data: {
+                                        getTipAddress: { address },
+                                    },
+                                }) =>
+                                    from(global.window.ethereum.enable()).pipe(
+                                        switchMap((accounts: any) => {
+                                            const provider = new ethers.providers.Web3Provider(
+                                                global.window.web3.currentProvider
+                                            )
 
-                                return provider.send(
-                                    'eth_sendTransaction',
-                                    params
-                                )
-                            }),
-                            tap(_ => setTransactionState(1)),
-                            tap(transactionHash => {
-                                console.log('TX HASH: ' + transactionHash)
-                            }),
-                            mergeMap(transactionHash =>
-                                from(
-                                    apolloClient.mutate<
-                                        stageTip,
-                                        stageTipVariables
-                                    >({
-                                        mutation: stageTipMutation,
-                                        variables: {
-                                            transactionHash,
-                                            recipientResourceId: {
-                                                id: resourceId,
-                                                type: resourceType,
-                                            },
-                                        },
-                                    })
-                                ).pipe(
-                                    tap(({ data }) =>
-                                        console.log(JSON.stringify(data))
-                                    ),
-                                    mergeMap(({ data }) =>
-                                        apolloSubscriber(
-                                            path<string>(['stageTip', 'hash'])(
-                                                data
-                                            ) || ''
+                                            const params = [
+                                                {
+                                                    from: accounts[0],
+                                                    to: address,
+                                                    value: ethers.utils
+                                                        .parseUnits(
+                                                            amount,
+                                                            'ether'
+                                                        )
+                                                        .toHexString(),
+                                                },
+                                            ]
+
+                                            return provider.send(
+                                                'eth_sendTransaction',
+                                                params
+                                            )
+                                        }),
+                                        tap(_ =>
+                                            setTransactionState(State.PENDING)
+                                        ),
+                                        tap(transactionHash => {
+                                            console.log(
+                                                'TX HASH: ' + transactionHash
+                                            )
+                                        }),
+                                        mergeMap(transactionHash =>
+                                            from(
+                                                apolloClient.mutate<
+                                                    stageTip,
+                                                    stageTipVariables
+                                                >({
+                                                    mutation: stageTipMutation,
+                                                    variables: {
+                                                        transactionHash,
+                                                        recipientResourceId: {
+                                                            id: resourceId,
+                                                            type: resourceType,
+                                                        },
+                                                    },
+                                                })
+                                            ).pipe(
+                                                tap(({ data }) =>
+                                                    console.log(
+                                                        JSON.stringify(data)
+                                                    )
+                                                ),
+                                                mergeMap(({ data }) =>
+                                                    apolloSubscriber(
+                                                        path<string>([
+                                                            'stageTip',
+                                                            'hash',
+                                                        ])(data) || ''
+                                                    )
+                                                ),
+                                                tap(() =>
+                                                    console.log(
+                                                        'Waiting for tx'
+                                                    )
+                                                ),
+                                                mergeMap(() =>
+                                                    apolloSubscriber(
+                                                        transactionHash
+                                                    )
+                                                ),
+                                                tap(() =>
+                                                    setTransactionState(
+                                                        State.MINED
+                                                    )
+                                                ),
+                                                tap(() =>
+                                                    console.log('Got tx')
+                                                ),
+                                                tap(() =>
+                                                    apolloClient.resetStore()
+                                                ),
+                                                ignoreElements()
+                                            )
                                         )
-                                    ),
-                                    tap(() => console.log('Waiting for tx')),
-                                    mergeMap(() =>
-                                        apolloSubscriber(transactionHash)
-                                    ),
-                                    tap(() => setTransactionState(3)),
-                                    tap(() => console.log('Got tx')),
-                                    tap(() => apolloClient.resetStore())
-                                )
-                            )
-                        )
-                    ),
-
-                    catchError(err => {
-                        console.error(err)
-                        return of(
-                            showNotificationAction({
-                                description: 'Please try again!',
-                                message: 'Tipping error',
-                                notificationType: 'error',
+                                    )
+                            ),
+                            catchError(err => {
+                                console.error(err)
+                                setTransactionState(State.ERROR)
+                                if (
+                                    err.message &&
+                                    err.code &&
+                                    err.code === 4001
+                                ) {
+                                    return of(
+                                        showNotificationAction({
+                                            description:
+                                                'Tipping transaction rejected.',
+                                            message: 'Failure',
+                                            notificationType: 'error',
+                                        })
+                                    )
+                                } else {
+                                    return of(
+                                        showNotificationAction({
+                                            description: 'Please try again!',
+                                            message: 'Tipping error',
+                                            notificationType: 'error',
+                                        })
+                                    )
+                                }
                             })
                         )
+                    ),
+                    catchError(err => {
+                        console.error(err)
+                        setTransactionState(State.ERROR)
+                        if (
+                            err.message &&
+                            err.message.includes('Wrong network')
+                        ) {
+                            return of(
+                                showNotificationAction({
+                                    description:
+                                        'Please switch to the Rinkeby network to tip an article author!',
+                                    message: 'Wrong network',
+                                    notificationType: 'error',
+                                })
+                            )
+                        } else {
+                            return of(
+                                showNotificationAction({
+                                    description: 'Please try again!',
+                                    message: 'Tipping error',
+                                    notificationType: 'error',
+                                })
+                            )
+                        }
                     })
                 )
         )
