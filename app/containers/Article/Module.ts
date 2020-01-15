@@ -19,12 +19,12 @@ import {
     addComment,
 } from '../../queries/__generated__/addComment'
 import { stageTip as stageTipMutation, getTipAddress } from '../../queries/Tip'
-import { ethers } from 'ethers'
 import {
     stageTip,
     stageTipVariables,
 } from '../../queries/__generated__/stageTip'
 import { State } from './components/TransactionModal'
+import { sendTransaction } from '../../lib/web3-send-transaction'
 
 export interface IVoteAction {
     type: string
@@ -215,29 +215,13 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                                     },
                                 }) =>
                                     from(global.window.ethereum.enable()).pipe(
-                                        switchMap((accounts: any) => {
-                                            const provider = new ethers.providers.Web3Provider(
-                                                global.window.web3.currentProvider
+                                        switchMap((accounts: any) =>
+                                            sendTransaction(
+                                                accounts[0],
+                                                address,
+                                                amount
                                             )
-
-                                            const params = [
-                                                {
-                                                    from: accounts[0],
-                                                    to: address,
-                                                    value: ethers.utils
-                                                        .parseUnits(
-                                                            amount,
-                                                            'ether'
-                                                        )
-                                                        .toHexString(),
-                                                },
-                                            ]
-
-                                            return provider.send(
-                                                'eth_sendTransaction',
-                                                params
-                                            )
-                                        }),
+                                        ),
                                         tap(_ =>
                                             setTransactionState(State.PENDING)
                                         ),

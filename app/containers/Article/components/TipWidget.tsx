@@ -21,13 +21,13 @@ interface IProps {
     isLoggedIn: boolean
 }
 
-const TipWidget = ({ 
-    resourceId, 
-    resourceType, 
-    tips, 
+const TipWidget = ({
+    resourceId,
+    resourceType,
+    tips,
     tipAction,
     loginFirstToTip,
-    isLoggedIn
+    isLoggedIn,
 }: IProps) => {
     const classes = useStyles()
     const [open, setOpen] = useState(false)
@@ -51,9 +51,9 @@ const TipWidget = ({
                     variant="outlined"
                     onClick={() => {
                         if (!isLoggedIn) {
-                            return loginFirstToTip();
+                            return loginFirstToTip()
                         }
-                        
+
                         setOpen(true)
                     }}
                 >
