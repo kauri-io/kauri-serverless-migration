@@ -193,6 +193,13 @@ const ArticleComp = ({
 
     const url = getArticleURL({ title, id })
 
+    const doLogin = () => 
+        routeChangeAction(
+        `/login?r=/${slugify(String(title), {
+            lower: true,
+        })}/${id}/a`
+    )
+
     return (
         <>
             <Schema
@@ -227,19 +234,15 @@ const ArticleComp = ({
                                 resourceType="ARTICLE"
                                 voteAction={voteAction}
                                 voteResult={voteResult}
-                                loginFirstToVote={() =>
-                                    routeChangeAction(
-                                        `/login?r=/${slugify(String(title), {
-                                            lower: true,
-                                        })}/${id}/a`
-                                    )
-                                }
+                                loginFirstToVote={() => doLogin()}
                             />
                             <TipWidget
+                                isLoggedIn={!!userId}
                                 resourceId={String(id)}
                                 resourceType="ARTICLE"
                                 tipAction={tipAction}
                                 tips={tips}
+                                loginFirstToTip={() => doLogin()}
                             />
                             <ShareWidget href={url.as} name={title} />
                         </div>
