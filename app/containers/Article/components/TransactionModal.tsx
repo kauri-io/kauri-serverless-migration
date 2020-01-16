@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
     },
+    successImage: {
+        marginBottom: theme.spacing(2)
+    }
 }))
 
 const getStepContent = state => {
@@ -70,13 +73,27 @@ const getCurrentStep = state => {
     }
 }
 
+const getTitle = state => {
+    if (isCompleted(state)) {
+        return 'Tip Successful'
+    }
+
+    if (isStagingError(state)) {
+        return 'Error Tracking Transaction'
+    }
+
+    return 'Pending Transaction'
+}
+
 const isCompleted = state => state === State.MINED
+const isStagingError = state => state === State.STAGING_ERROR
 
 export enum State {
     START,
     PENDING,
     MINED,
-    ERROR,
+    STAGING_ERROR,
+    GENERIC_ERROR,
 }
 
 interface IProps {
@@ -90,7 +107,7 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
     const steps = getSteps()
 
     useEffect(() => {
-        if (state === State.ERROR) {
+        if (state === State.GENERIC_ERROR) {
             handleClose()
         }
     }, [state])
@@ -103,7 +120,7 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
         >
             <DialogTitle disableTypography className={classes.container}>
                 <Typography variant="h6" className={classes.title}>
-                    Pending Transaction
+                    {getTitle(state)}
                 </Typography>
                 <IconButton aria-label="close" onClick={handleClose}>
                     <CloseIcon onClick={handleClose} />
@@ -112,21 +129,38 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
 
             <DialogContent dividers={true}>
                 <Grid container justify="center">
-                    <Typography>{getStepContent(state)}</Typography>
-                    {getCurrentStep(state) == 1 && <CircularProgress />}
-                    <Stepper
-                        activeStep={getCurrentStep(state)}
-                        alternativeLabel
-                    >
-                        {steps.map(label => (
-                            <Step key={label}>
-                                <StepLabel>{label}</StepLabel>
-                            </Step>
-                        ))}
-                    </Stepper>
+                    {!isStagingError(state) && (
+                        <>
+                            {isCompleted(state) && (
+                                <img src="/static/images/tip-success.jpeg" className={classes.successImage} />
+                            )}
+                            <Typography>{getStepContent(state)}</Typography>
+                            {getCurrentStep(state) == 1 && <CircularProgress />}
+                            <Stepper
+                                activeStep={getCurrentStep(state)}
+                                alternativeLabel
+                            >
+                                {steps.map(label => (
+                                    <Step key={label}>
+                                        <StepLabel>{label}</StepLabel>
+                                    </Step>
+                                ))}
+                            </Stepper>
+                        </>
+                    )}
+                    {isStagingError(state) && (
+                        <>
+                            <Typography paragraph>
+                                We're having some troubles tracking your transaction in our system.
+                            </Typography>
+                            <Typography variant="h6" align="center">
+                                However, your tip transaction has been broadcast to the network and will be received by the author, it may just take some time to be tracked in Kauri.
+                            </Typography>
+                        </>
+                    )}
                 </Grid>
             </DialogContent>
-            {isCompleted(state) && (
+            {(isCompleted(state) || isStagingError(state)) && (
                 <DialogActions className={classes.container}>
                     <Button
                         color="primary"
