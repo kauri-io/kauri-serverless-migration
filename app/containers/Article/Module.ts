@@ -11,7 +11,6 @@ import {
     tap,
     catchError,
     mapTo,
-    ignoreElements,
     map,
 } from 'rxjs/operators'
 import { path } from 'ramda'
@@ -26,7 +25,7 @@ import {
 } from '../../queries/__generated__/stageTip'
 import { State } from './components/TransactionModal'
 import { sendTransaction } from '../../lib/web3-send-transaction'
-import ApolloClient from 'apollo-client';
+import ApolloClient from 'apollo-client'
 
 export interface IVoteAction {
     type: string
@@ -202,27 +201,25 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                         resourceId,
                         resourceType
                     ),
-                    sendTipTransactionOperator(
-                        amount,
-                        setTransactionState
-                    ),
+                    sendTipTransactionOperator(amount, setTransactionState),
                     stageTipOperator(
                         apolloClient,
                         apolloSubscriber,
                         amount,
                         resourceId,
-                        resourceType,
+                        resourceType
                     ),
-                    waitForTipTxOperator(
-                        apolloSubscriber,
-                        setTransactionState
-                    ),
-                    tap(() =>
-                        apolloClient.resetStore()
-                    ),
-                    ignoreElements(),
+                    waitForTipTxOperator(apolloSubscriber, setTransactionState),
+                    tap(() => apolloClient.resetStore()),
+                    // mapTo(
+                    //     showNotificationAction({
+                    //         notificationType: 'success',
+                    //         message: 'Tip Successful',
+                    //         description: `Your tip has been sent to the author, thanks!`,
+                    //     })
+                    // ),
                     catchError(err => {
-                        return handleTippingError(err, setTransactionState);
+                        return handleTippingError(err, setTransactionState)
                     })
                 )
         )
@@ -230,7 +227,7 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
 
 const getTipAddressOperator = (
     apolloClient: ApolloClient<{}>,
-    resourceId: any, 
+    resourceId: any,
     resourceType: any
 ): OperatorFunction<any, any> => {
     return mergeMap(() =>
@@ -253,72 +250,56 @@ const sendTipTransactionOperator = (
     amount: string,
     setTransactionState: (string) => void
 ): OperatorFunction<any, any> => {
-    return switchMap(
-        ({
-            data: {
-                getTipAddress: { address },
-            },
-        }) =>
-            from(global.window.ethereum.enable()).pipe(
-                switchMap((accounts: any) =>
-                    sendTransaction(
-                        accounts[0],
-                        address,
-                        amount
-                    )
-                ),
-                tap(_ =>
-                    setTransactionState(State.PENDING)
-                )
-            )
-    );
+    return switchMap(({ data: { getTipAddress: { address } } }) =>
+        from(global.window.ethereum.enable()).pipe(
+            switchMap((accounts: any) =>
+                sendTransaction(accounts[0], address, amount)
+            ),
+            tap(_ => setTransactionState(State.PENDING))
+        )
+    )
 }
 
 const stageTipOperator = (
-    apolloClient: ApolloClient<{}>, 
+    apolloClient: ApolloClient<{}>,
     apolloSubscriber: any,
     amount: any,
-    resourceId: any, 
-    resourceType: any): OperatorFunction<any, any> => {
-        
+    resourceId: any,
+    resourceType: any
+): OperatorFunction<any, any> => {
     return mergeMap(transactionHash =>
         from(
-            apolloClient.mutate<
-                stageTip,
-                stageTipVariables
-            >({
+            apolloClient.mutate<stageTip, stageTipVariables>({
                 mutation: stageTipMutation,
                 variables: {
                     transactionHash,
                     recipientResourceId: {
-                        id: amount === "0.0123" ? resourceId + "1" : resourceId,
+                        id: amount === '0.0123' ? resourceId + '1' : resourceId,
                         type: resourceType,
                     },
                 },
             })
         ).pipe(
-            tap(({ data }) =>
-                console.log(
-                    JSON.stringify(data)
-                )
-            ),
+            tap(({ data }) => console.log(JSON.stringify(data))),
             mergeMap(({ data }) => {
                 return apolloSubscriber(
-                    path<string>([
-                        'stageTip',
-                        'hash',
-                    ])(data) || ''
+                    path<string>(['stageTip', 'hash'])(data) || ''
                 )
             }),
-            map((wsResult) => {
-                const status = wsResult && path<string>(['data','getEvent','status'])(wsResult) || ''
-                console.log(JSON.stringify(wsResult));
-                console.log(status);
+            map(wsResult => {
+                const status =
+                    (wsResult &&
+                        path<string>(['data', 'getEvent', 'status'])(
+                            wsResult
+                        )) ||
+                    ''
+                console.log(JSON.stringify(wsResult))
+                console.log(status)
                 if (status === 'ERROR') {
                     throw new Error('Staging Error')
                 }
 
-                return transactionHash;
+                return transactionHash
             })
         )
     )
@@ -327,19 +308,10 @@ const stageTipOperator = (
 const waitForTipTxOperator = (
     apolloSubscriber: any,
     setTransactionState: (string) => void
-) : OperatorFunction<any, any> => {
-    
+): OperatorFunction<any, any> => {
     return pipe(
-        mergeMap((transactionHash) => 
-            apolloSubscriber(
-                transactionHash
-            )
-        ),
-        tap(() =>
-            setTransactionState(
-                State.MINED
-            )
-        )
+        mergeMap(transactionHash => apolloSubscriber(transactionHash)),
+        tap(() => setTransactionState(State.MINED))
     )
 }
 
@@ -348,26 +320,19 @@ const handleTippingError = (err, setTransactionState) => {
 
     if (err.message === 'Staging Error') {
         setTransactionState(State.STAGING_ERROR)
-        return of({type:'NOOP'});
+        return of({ type: 'NOOP' })
     }
 
     setTransactionState(State.GENERIC_ERROR)
-    if (
-        err.code &&
-        err.code === 4001
-    ) {
+    if (err.code && err.code === 4001) {
         return of(
             showNotificationAction({
-                description:
-                    'Tipping transaction rejected.',
+                description: 'Tipping transaction rejected.',
                 message: 'Failure',
                 notificationType: 'error',
             })
         )
-    } else if (
-        err.message &&
-        err.message.includes('Wrong network')
-    ) {
+    } else if (err.message && err.message.includes('Wrong network')) {
         return of(
             showNotificationAction({
                 description:

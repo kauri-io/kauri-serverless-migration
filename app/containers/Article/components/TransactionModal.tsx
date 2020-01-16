@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: theme.spacing(1),
     },
     successImage: {
-        marginBottom: theme.spacing(2)
-    }
+        marginBottom: theme.spacing(2),
+    },
 }))
 
 const getStepContent = state => {
@@ -123,7 +123,7 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
                     {getTitle(state)}
                 </Typography>
                 <IconButton aria-label="close" onClick={handleClose}>
-                    <CloseIcon onClick={handleClose} />
+                    <CloseIcon />
                 </IconButton>
             </DialogTitle>
 
@@ -132,7 +132,10 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
                     {!isStagingError(state) && (
                         <>
                             {isCompleted(state) && (
-                                <img src="/static/images/tip-success.jpeg" className={classes.successImage} />
+                                <img
+                                    src="/static/images/tip-success.jpeg"
+                                    className={classes.successImage}
+                                />
                             )}
                             <Typography>{getStepContent(state)}</Typography>
                             {getCurrentStep(state) == 1 && <CircularProgress />}
@@ -151,10 +154,14 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
                     {isStagingError(state) && (
                         <>
                             <Typography paragraph>
-                                We're having some troubles tracking your transaction in our system.
+                                We're having some troubles tracking your
+                                transaction in our system.
                             </Typography>
                             <Typography variant="h6" align="center">
-                                However, your tip transaction has been broadcast to the network and will be received by the author, it may just take some time to be tracked in Kauri.
+                                However, your tip transaction has been broadcast
+                                to the network and will be received by the
+                                author, it may just take some time to be tracked
+                                in Kauri.
                             </Typography>
                         </>
                     )}

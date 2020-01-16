@@ -11,7 +11,7 @@ import {
     DialogActions,
 } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TransactionModal, { State } from './TransactionModal'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '100%',
     },
     ethAmount: {
-        marginTop: theme.spacing(1),
+        margin: theme.spacing(2),
     },
 }))
 
@@ -53,9 +53,42 @@ const TipModal = ({
 }: IProps) => {
     const classes = useStyles()
     const [amount, setAmount] = useState()
+    const [amountInDollars, setAmountInDollars] = useState(0.0)
     const [openTxModal, setOpenTxModal] = useState(false)
     const [transactionState, setTransactionState] = useState(State.START)
+    const [ethToUSD, setEthToUSD] = useState(0)
+    const [rateError, setRateError] = useState(false)
 
+    useEffect(() => {
+        //Only obtain rate once when opening tipping modal
+        if (open && ethToUSD === 0) {
+            fetch('https://api.coinmarketcap.com/v1/ticker/ethereum/') // Call the fetch function passing the url of the API as a parameter
+                .then(response => response.json())
+                .then((result: any) => {
+                    console.log('RESULT: ' + JSON.stringify(result[0]))
+                    if (result && result.length > 0 && result[0].price_usd) {
+                        let priceUSD = result[0].price_usd
+                        console.log(priceUSD)
+                        setEthToUSD(priceUSD)
+                        setRateError(false)
+
+                        if (amount) {
+                            setAmountInDollars(Number(amount * priceUSD))
+                        }
+                    }
+                })
+                .catch(err => {
+                    console.error(err)
+                    setRateError(true)
+                })
+        }
+    }, [open])
+
+    const handleOnTipChange = newValue => {
+        console.log(ethToUSD)
+        setAmount(newValue)
+        setAmountInDollars(Number(newValue) * ethToUSD)
+    }
     return (
         <>
             <Dialog
@@ -99,10 +132,27 @@ const TipModal = ({
                                 label="Enter ETH Amount"
                                 variant="outlined"
                                 onChange={e => {
-                                    setAmount(e.target.value)
+                                    handleOnTipChange(e.target.value)
                                 }}
                                 value={amount ? amount : ''}
                             />
+                            {!rateError && (
+                                <Typography
+                                    align="center"
+                                    className={classes.text}
+                                >
+                                    {`\$${amountInDollars.toFixed(2)}`}
+                                </Typography>
+                            )}
+                            {rateError && (
+                                <Typography
+                                    align="center"
+                                    color="error"
+                                    className={classes.text}
+                                >
+                                    Error obtaining exchange rate
+                                </Typography>
+                            )}
                             {/* </div> */}
                         </Grid>
                     </Grid>
