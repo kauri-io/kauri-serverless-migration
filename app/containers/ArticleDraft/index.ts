@@ -11,12 +11,14 @@ import {
     openModalAction,
 } from '../../components/Modal/Module'
 import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
+import { curateCommunityResourcesAction } from '../Community/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,
     personalUsername: state.app && state.app.user && state.app.user.username,
     userId: state.app && state.app.user && state.app.user.id,
     user: state.app && state.app.user,
+    communities: state.app.user && state.app.user.communities,
 })
 
 export default compose(
@@ -28,6 +30,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             deleteDraftArticleAction,
+            curateCommunityResourcesAction,
         }
     ),
     graphql(getArticleQuery, {

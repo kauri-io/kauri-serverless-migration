@@ -580,6 +580,11 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     },
                     "username": "test-author-username-1",
                   },
+                  "ownerId": Object {
+                    "__typename": "PublicUserDTO",
+                    "id": "6781",
+                    "type": "USER",
+                  },
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "1231",
@@ -673,6 +678,11 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                       "type": "ResourceIdentifier",
                     },
                     "username": "test-author-username-2",
+                  },
+                  "ownerId": Object {
+                    "__typename": "PublicUserDTO",
+                    "id": "6782",
+                    "type": "USER",
                   },
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
