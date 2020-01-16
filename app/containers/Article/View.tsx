@@ -22,10 +22,14 @@ import {
     recordViewVariables,
 } from '../../queries/__generated__/recordView'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { openModalAction } from '../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
+import { initiateArticleTransferAction } from './Module'
 import Schema from '../../lib/with-schema'
 import ProfileCard from '../../components/Card/PublicProfileCard'
-// import CardActions from '../../components/Card/CardComponents/CardActions'
+import { curateCommunityResourcesAction } from '../Community/Module'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
 import Toolbar from '../ViewLink/components/Toolbar'
@@ -105,20 +109,27 @@ interface IProps {
     router: any
     voteAction: any
     routeChangeAction: typeof routeChangeAction
+    closeModalAction: typeof closeModalAction
     openModalAction: typeof openModalAction
     userId: string
     user: any
     hostName: string
     addCommentAction: (e: string) => void
     client?: ApolloClient<{}>
+    initiateArticleTransferAction: typeof initiateArticleTransferAction
+    curateCommunityResourcesAction: typeof curateCommunityResourcesAction
+    communities: any
 }
 
 const ArticleComp = ({
     hostName,
     openModalAction,
+    closeModalAction,
     voteAction,
     routeChangeAction,
     addCommentAction,
+    initiateArticleTransferAction,
+    curateCommunityResourcesAction,
     userId,
     user,
     RelatedArticles: { searchMoreLikeThis },
@@ -141,8 +152,10 @@ const ArticleComp = ({
             version,
             contentHash,
             checkpoint,
+            ownerId,
         },
     },
+    communities,
 }: IProps) => {
     attributes = attributes !== null ? attributes : {}
 
@@ -244,6 +257,9 @@ const ArticleComp = ({
                             <Toolbar
                                 id={id}
                                 openModalAction={openModalAction}
+                                initiateArticleTransferAction={
+                                    initiateArticleTransferAction
+                                }
                                 comments={comments.totalElements}
                                 classes={classes}
                                 routeChangeAction={routeChangeAction}
@@ -251,7 +267,14 @@ const ArticleComp = ({
                                 isLoggedIn={!!userId}
                                 type={ResourceTypeInput.ARTICLE}
                                 isAuthor={author && userId === author.id}
+                                isOwner={ownerId && ownerId.id === userId} //TODO should check if community admin/curator too
                                 version={version}
+                                userId={userId}
+                                communities={communities}
+                                closeModalAction={closeModalAction}
+                                curateCommunityResourcesAction={
+                                    curateCommunityResourcesAction
+                                }
                             />
                         </Hidden>
                         <Grid

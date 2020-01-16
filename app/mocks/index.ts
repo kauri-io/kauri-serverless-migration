@@ -79,6 +79,11 @@ export const generateArticle = (mod: number) => ({
         name: `test author name ${mod}`,
         avatar: `test avatar ${mod}`,
     },
+    ownerId: {
+        type: ResourceTypeInput.USER,
+        id: `678${mod}`,
+        __typename: 'PublicUserDTO' as Article_owner_PublicUserDTO_resourceIdentifier['__typename'],
+    },
     owner: {
         __typename: 'PublicUserDTO' as Article_owner_PublicUserDTO['__typename'],
         id: `678${mod}`,

@@ -1,9 +1,23 @@
-import Table from './Table'
-import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
+import {
+    Grid,
+    TableRow,
+    TableCell,
+    Typography,
+    TableHead,
+    TableBody,
+    makeStyles,
+    Theme,
+    Table,
+} from '@material-ui/core'
 import { getArticleTransfers } from '../../../../queries/__generated__/getArticleTransfers'
-import withPagination from '../../../../lib/with-pagination'
 import Loading from '../../../../components/Loading'
 import PublicProfileEmptyState from '../../../../components/PublicProfileEmptyState'
+import {
+    rejectArticleTransferAction,
+    acceptArticleTransferAction,
+} from '../TransferModule'
+import Link from '../../../../components/Link'
+import { getProfileURL, getArticleURL } from '../../../../lib/getURLs'
 
 interface IPendingTransfersQuery extends getArticleTransfers {
     loading: boolean
@@ -11,8 +25,8 @@ interface IPendingTransfersQuery extends getArticleTransfers {
 
 interface IProps {
     PendingTransfersQuery: IPendingTransfersQuery
-    rejectArticleTransferAction: ({ id }: { id: string }) => void
-    acceptArticleTransferAction: ({ id }: { id: string }) => void
+    rejectArticleTransferAction: typeof rejectArticleTransferAction
+    acceptArticleTransferAction: typeof acceptArticleTransferAction
 }
 
 const Transfers: React.FC<IProps> = props => {
@@ -41,15 +55,85 @@ const Transfers: React.FC<IProps> = props => {
                     will gain full control over the content of the transferred
                     article. Rejecting will remove it from the queue.
                 </Typography>
-                <Table
-                    acceptArticleTransferAction={
-                        props.acceptArticleTransferAction
-                    }
-                    rejectArticleTransferAction={
-                        props.rejectArticleTransferAction
-                    }
-                    data={transfers}
-                />
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>
+                                <Typography>Status</Typography>
+                            </TableCell>
+                            <TableCell>
+                                <Typography>Sent By</Typography>
+                            </TableCell>
+                            <TableCell>
+                                <Typography>Article Name</Typography>
+                            </TableCell>
+                            <TableCell />
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {transfers &&
+                            transfers.map((i: any) => {
+                                if (i === null) return
+
+                                const articleUrl = getArticleURL(i.article)
+                                const ownerUrl = getProfileURL(i.article.owner)
+                                return (
+                                    <TableRow key={i.id}>
+                                        <TableCell>
+                                            <Typography>Pending</Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Link
+                                                href={ownerUrl.href}
+                                                as={ownerUrl.href}
+                                            >
+                                                <Typography>
+                                                    {i.article.owner.name ||
+                                                        i.article.owner
+                                                            .username ||
+                                                        i.article.owner.id}
+                                                </Typography>
+                                            </Link>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Link
+                                                href={articleUrl.href}
+                                                as={articleUrl.as}
+                                            >
+                                                <Typography>
+                                                    {i.article.title}
+                                                </Typography>
+                                            </Link>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography
+                                                onClick={() =>
+                                                    props.acceptArticleTransferAction(
+                                                        {
+                                                            id: i.id,
+                                                        }
+                                                    )
+                                                }
+                                            >
+                                                Accept
+                                            </Typography>
+                                            <Typography
+                                                onClick={() =>
+                                                    props.rejectArticleTransferAction(
+                                                        {
+                                                            id: i.id,
+                                                        }
+                                                    )
+                                                }
+                                            >
+                                                Reject
+                                            </Typography>
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })}
+                    </TableBody>
+                </Table>
             </Grid>
         ) : (
             <Grid>
@@ -73,4 +157,4 @@ const Transfers: React.FC<IProps> = props => {
     return null
 }
 
-export default withPagination(Transfers, 'getArticleTransfers')
+export default Transfers

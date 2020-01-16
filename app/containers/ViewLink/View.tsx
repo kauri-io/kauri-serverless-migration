@@ -13,12 +13,15 @@ import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 const ViewLink = ({
     openModalAction,
+    closeModalAction,
     routeChangeAction,
     addCommentAction,
+    curateCommunityResourcesAction,
     voteAction,
     user,
     data: { getExternalLink },
     userId,
+    communities,
 }) => {
     const classes = useStyles({})
 
@@ -96,7 +99,17 @@ const ViewLink = ({
                                 isLoggedIn={!!userId}
                                 type={ResourceTypeInput.LINK}
                                 isAuthor={false}
+                                isOwner={
+                                    getExternalLink.ownerId &&
+                                    getExternalLink.ownerId.id === userId
+                                }
                                 version={0}
+                                communities={communities}
+                                userId={userId}
+                                closeModalAction={closeModalAction}
+                                curateCommunityResourcesAction={
+                                    curateCommunityResourcesAction
+                                }
                             />
                         </Hidden>
                         <LinkContent

@@ -76,6 +76,10 @@ export const Article = gql`
         content
         description
         authorId
+        ownerId {
+            id
+            type
+        }
         dateCreated
         datePublished
         status
@@ -137,6 +141,10 @@ export const Link = gql`
         dateUpdated
         submitterId
         isBookmarked
+        ownerId {
+            id
+            type
+        }
         owner {
             ...UserOwner
             ...CommunityOwner

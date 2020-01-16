@@ -128,6 +128,18 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contribut
   communities: (getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -332,6 +344,10 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getBookmarks_getBookmarks_content_resource_ArticleDTO_ownerId;
   /**
    * Date created
    */
@@ -586,6 +602,18 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
   communities: (getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -791,6 +819,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -854,6 +886,18 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Resource ID
    */
   id: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -1104,6 +1148,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   isBookmarked: boolean;
   /**
+   * The link owner
+   */
+  ownerId: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1246,6 +1294,18 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_reso
    * Resource ID
    */
   id: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_ArticleDTO {
@@ -1495,6 +1555,10 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_ownerId;
   /**
    * load the external link owner (user or community resource type)
    */

@@ -27,7 +27,10 @@ import {
     resendEmailVerificationEpic,
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
-import { voteEpic } from '../containers/Article/Module'
+import {
+    voteEpic,
+    initiateArticleTransferEpic,
+} from '../containers/Article/Module'
 import {
     createCommunityEpic,
     communityCreatedEpic,
@@ -135,6 +138,7 @@ const epics = [
     removeMemberEpic,
     banMemberEpic,
     unbanMemberEpic,
+    initiateArticleTransferEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

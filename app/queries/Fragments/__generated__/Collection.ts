@@ -208,6 +208,18 @@ export interface Collection_sections_resources_ArticleDTO_contributors {
   communities: (Collection_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface Collection_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface Collection_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -413,6 +425,10 @@ export interface Collection_sections_resources_ArticleDTO {
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: Collection_sections_resources_ArticleDTO_ownerId;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -476,6 +492,18 @@ export interface Collection_sections_resources_ExternalLinkDTO_resourceIdentifie
    * Resource ID
    */
   id: string;
+}
+
+export interface Collection_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface Collection_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -725,6 +753,10 @@ export interface Collection_sections_resources_ExternalLinkDTO {
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: Collection_sections_resources_ExternalLinkDTO_ownerId;
   /**
    * load the external link owner (user or community resource type)
    */

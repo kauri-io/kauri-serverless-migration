@@ -117,16 +117,20 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             },
         },
         toolbar: {
-            padding: theme.spacing(2, 0),
-            justifyContent: 'space-around',
+            justifyContent: 'space-between',
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
-            flexDirection: 'row',
-            position: 'fixed',
             background: theme.palette.common.white,
             zIndex: 1,
             width: '100%',
             maxWidth: 808,
+            padding: theme.spacing(2, 0),
+            position: 'fixed',
+        },
+        toolbarIcons: {
+            justifyContent: 'space-around',
+            display: 'flex',
+            width: '100%',
         },
         iconContainer: {
             '& span': {

@@ -19,13 +19,21 @@ import {
 } from '../../__generated__/globalTypes'
 import CardDetails from '../../components/Card/CardComponents/CardDetails'
 import Loading from '../../components/Loading'
-import { getArticleURL, getLinkUrl, getCollectionURL } from '../../lib/getURLs'
+import {
+    getArticleURL,
+    getLinkUrl,
+    getCollectionURL,
+    getCommunityURL,
+    getProfileURL,
+} from '../../lib/getURLs'
 import withPagination, { PaginationDataQuery } from '../../lib/with-pagination'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Link as ExternalLink } from '../../queries/Fragments/__generated__/Link'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { path } from 'ramda'
+import { Community } from '../../queries/Fragments/__generated__/Community'
+import { searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO as User } from '../../queries/__generated__/searchResultsAutocomplete'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -175,6 +183,10 @@ const ChooseResourceModalContentView = props => {
                                           ...pathToResource,
                                       ])(result) as Article
 
+                                      var author = article.contributors[0]
+                                          ? article.contributors[0]
+                                          : article.author
+
                                       return (
                                           <div
                                               className={
@@ -194,17 +206,15 @@ const ChooseResourceModalContentView = props => {
                                                   </Typography>
                                                   <CardDetails
                                                       user={{
-                                                          id: article.author.id,
+                                                          id: author.id,
                                                           username:
-                                                              article.author
-                                                                  .username ||
+                                                              author.username ||
                                                               '',
                                                           name:
-                                                              article.author
-                                                                  .name || '',
+                                                              author.name || '',
                                                           avatar:
-                                                              article.author
-                                                                  .avatar || '',
+                                                              author.avatar ||
+                                                              '',
                                                       }}
                                                       date={
                                                           article.datePublished
@@ -341,9 +351,7 @@ const ChooseResourceModalContentView = props => {
                                       var collection = path<Collection>([
                                           ...pathToResource,
                                       ])(result) as Collection
-                                      console.log('collection', collection)
                                       var owner = collection.owner as UserOwner
-                                      console.log('owner', owner)
 
                                       return (
                                           <div
@@ -422,6 +430,139 @@ const ChooseResourceModalContentView = props => {
                                           </div>
                                       )
                                   }
+
+                                  case 'COMMUNITY': {
+                                      var community = path<Community>([
+                                          ...pathToResource,
+                                      ])(result) as Community
+
+                                      return (
+                                          <div
+                                              className={
+                                                  indexOf(resourceId) > -1
+                                                      ? classes.cardSelected
+                                                      : classes.card
+                                              }
+                                          >
+                                              <div className={classes.left}>
+                                                  <Typography
+                                                      variant="subtitle1"
+                                                      className={
+                                                          classes.cardTitle
+                                                      }
+                                                  >
+                                                      {community.name}
+                                                  </Typography>
+                                              </div>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
+                                                          getCommunityURL({
+                                                              ...community,
+                                                          }).as
+                                                      }
+                                                      href={
+                                                          getCommunityURL({
+                                                              ...community,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View Community
+                                                      </a>
+                                                  </Link>
+                                              </Button>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  disabled={isDisabled(
+                                                      resourceId,
+                                                      community
+                                                  )}
+                                                  onClick={() =>
+                                                      selectResource(resourceId)
+                                                  }
+                                                  className={classes.cardButton}
+                                              >
+                                                  {' '}
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
+                                              </Button>
+                                          </div>
+                                      )
+                                  }
+
+                                  case 'USER': {
+                                      var user = path<User>([
+                                          ...pathToResource,
+                                      ])(result) as User
+
+                                      return (
+                                          <div
+                                              className={
+                                                  indexOf(resourceId) > -1
+                                                      ? classes.cardSelected
+                                                      : classes.card
+                                              }
+                                          >
+                                              <div className={classes.left}>
+                                                  <Typography
+                                                      variant="subtitle1"
+                                                      className={
+                                                          classes.cardTitle
+                                                      }
+                                                  >
+                                                      {user.publicUserName ||
+                                                          user.username}
+                                                  </Typography>
+                                              </div>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
+                                                          getProfileURL({
+                                                              ...user,
+                                                          }).as
+                                                      }
+                                                      href={
+                                                          getProfileURL({
+                                                              ...user,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View User
+                                                      </a>
+                                                  </Link>
+                                              </Button>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  disabled={isDisabled(
+                                                      resourceId,
+                                                      user
+                                                  )}
+                                                  onClick={() =>
+                                                      selectResource(resourceId)
+                                                  }
+                                                  className={classes.cardButton}
+                                              >
+                                                  {' '}
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
+                                              </Button>
+                                          </div>
+                                      )
+                                  }
                                   default: {
                                       return null
                                   }
@@ -446,7 +587,7 @@ export interface IProps {
     title: string
     preSelected: ResourceIdentifierInput[]
     disabled?: ResourceIdentifierInput[]
-    disable?: (resource: any) => boolean
+    disable?: (resource: any, resourceId: ResourceIdentifierInput) => boolean
     Query: any
     queryKey: PaginationDataQuery
     maxSelection?: number
@@ -530,7 +671,7 @@ export const ChooseResourceModal = ({
             }
         }
         if (disable && resource) {
-            return disable(resource)
+            return disable(resource, resourceId)
         }
 
         return false
