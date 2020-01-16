@@ -131,7 +131,7 @@ const Toolbar = ({
             return 'Edit Update'
         }
 
-        return isAuthor ? 'Edit Article' : 'Suggest Edit'
+        return isOwner ? 'Edit Article' : 'Suggest Edit'
     }
 
     return (
