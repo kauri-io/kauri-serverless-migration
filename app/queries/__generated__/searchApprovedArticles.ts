@@ -343,7 +343,7 @@ export interface searchApprovedArticles_searchArticles_content {
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: searchApprovedArticles_searchArticles_content_ownerId;
+  ownerId: searchApprovedArticles_searchArticles_content_ownerId | null;
   /**
    * Date created
    */

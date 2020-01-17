@@ -282,7 +282,7 @@ export interface Link {
   /**
    * The link owner
    */
-  ownerId: Link_ownerId;
+  ownerId: Link_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

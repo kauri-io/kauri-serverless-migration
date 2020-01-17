@@ -427,7 +427,7 @@ export interface Collection_sections_resources_ArticleDTO {
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: Collection_sections_resources_ArticleDTO_ownerId;
+  ownerId: Collection_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -756,7 +756,7 @@ export interface Collection_sections_resources_ExternalLinkDTO {
   /**
    * The link owner
    */
-  ownerId: Collection_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: Collection_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

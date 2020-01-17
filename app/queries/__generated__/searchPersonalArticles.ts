@@ -343,7 +343,7 @@ export interface searchPersonalArticles_searchArticles_content {
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: searchPersonalArticles_searchArticles_content_ownerId;
+  ownerId: searchPersonalArticles_searchArticles_content_ownerId | null;
   /**
    * Date created
    */
