@@ -10,6 +10,7 @@ import ShareWidget from '../Article/components/ShareWidget'
 import { getLinkUrl } from '../../lib/getURLs'
 import slugify from 'slugify'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import TipWidget from '../Article/components/TipWidget'
 
 const ViewLink = ({
     openModalAction,
@@ -67,6 +68,15 @@ const ViewLink = ({
                                         )}/${getExternalLink.id}/l`
                                     )
                                 }
+                            />
+                            <TipWidget
+                                isLoggedIn={!!userId}
+                                resourceId={String(getExternalLink.id)}
+                                resourceType="LINK"
+                                tipAction={{}}
+                                tips={{}}
+                                loginFirstToTip={() => {}}
+                                isDisabled={true}
                             />
                             <ShareWidget
                                 href={url.as}

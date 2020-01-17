@@ -211,13 +211,14 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                     ),
                     waitForTipTxOperator(apolloSubscriber, setTransactionState),
                     tap(() => apolloClient.resetStore()),
-                    // mapTo(
-                    //     showNotificationAction({
+                    // map(() => {
+                    //     console.log("In show notification")
+                    //     return showNotificationAction({
                     //         notificationType: 'success',
                     //         message: 'Tip Successful',
                     //         description: `Your tip has been sent to the author, thanks!`,
                     //     })
-                    // ),
+                    // }),
                     catchError(err => {
                         return handleTippingError(err, setTransactionState)
                     })

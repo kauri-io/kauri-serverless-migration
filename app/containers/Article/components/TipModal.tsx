@@ -85,16 +85,20 @@ const TipModal = ({
     }, [open])
 
     const handleOnTipChange = newValue => {
-        console.log(ethToUSD)
         setAmount(newValue)
         setAmountInDollars(Number(newValue) * ethToUSD)
+    }
+
+    const closeTipModal = () => {
+        handleOnTipChange(0)
+        handleClose()
     }
     return (
         <>
             <Dialog
                 open={open}
                 fullWidth={true}
-                onClose={() => handleClose()}
+                onClose={closeTipModal}
                 aria-labelledby="scroll-dialog-title"
             >
                 <DialogTitle disableTypography className={classes.container}>
@@ -102,7 +106,7 @@ const TipModal = ({
                         Tip Author
                     </Typography>
                     <IconButton aria-label="close" onClick={handleClose}>
-                        <CloseIcon onClick={handleClose} />
+                        <CloseIcon />
                     </IconButton>
                 </DialogTitle>
 
@@ -163,7 +167,7 @@ const TipModal = ({
                             variant="contained"
                             color="primary"
                             onClick={() => {
-                                handleClose()
+                                closeTipModal()
                                 setOpenTxModal(true)
                                 return tipAction(
                                     { resourceId, resourceType, amount },
