@@ -333,7 +333,7 @@ export const initiateArticleTransferEpic: Epic<
                                 showNotificationAction({
                                     description:
                                         'You request for transfer has been initiated, the recipient can now accept or reject your request.',
-                                    message: 'Ownership Transfer',
+                                    message: 'Transfer Ownership',
                                     notificationType: 'success',
                                 })
                             )

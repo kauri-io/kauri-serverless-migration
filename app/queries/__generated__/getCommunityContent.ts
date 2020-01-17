@@ -347,7 +347,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_ownerId;
+  ownerId: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -821,7 +821,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -1150,7 +1150,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
   /**
    * The link owner
    */
-  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -1558,7 +1558,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Extern
   /**
    * The link owner
    */
-  ownerId: getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

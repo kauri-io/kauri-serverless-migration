@@ -298,7 +298,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
   /**
    * The link owner
    */
-  ownerId: searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

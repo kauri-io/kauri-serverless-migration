@@ -451,7 +451,7 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -780,7 +780,7 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -1188,7 +1188,7 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2128,7 +2128,7 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -2457,7 +2457,7 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2865,7 +2865,7 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -3752,7 +3752,7 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -4081,7 +4081,7 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -4489,7 +4489,7 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
   /**
    * The link owner
    */
-  ownerId: HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_ownerId;
+  ownerId: HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

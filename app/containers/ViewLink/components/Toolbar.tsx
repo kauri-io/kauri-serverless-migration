@@ -28,6 +28,18 @@ import { searchResultsAutocomplete } from '../../../queries/Search'
 import { initiateArticleTransferAction } from '../../Article/Module'
 import PublishingSelector from '../../PublishingSelector'
 import { curateCommunityResourcesAction } from '../../Community/Module'
+import AlertViewComponent from '../../../components/Modal/AlertView'
+import styled from 'styled-components'
+
+const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    min-height: 130px;
+    align-items: center;
+    > :first-child {
+        margin-right: 3px;
+    }
+`
 
 interface IProps {
     classes: any
@@ -288,39 +300,88 @@ const Toolbar = ({
 
                             <MenuItem
                                 onClick={() =>
-                                    executeOrLoginRedirect(() =>
-                                        openModalAction({
-                                            children: (
-                                                <PublishingSelector
-                                                    userId={userId}
-                                                    action="Share"
-                                                    closeModalAction={
-                                                        closeModalAction
-                                                    }
-                                                    communities={communities.map(
-                                                        ({ community }) => ({
-                                                            ...community,
-                                                            type: 'COMMUNITY',
-                                                        })
-                                                    )}
-                                                    handleSubmit={destination =>
-                                                        curateCommunityResourcesAction(
-                                                            {
-                                                                id:
-                                                                    destination.id,
-                                                                resources: [
-                                                                    {
-                                                                        type,
-                                                                        id,
-                                                                    },
-                                                                ],
-                                                            }
-                                                        )
-                                                    }
-                                                />
-                                            ),
-                                        })
-                                    )
+                                    executeOrLoginRedirect(() => {
+                                        if (
+                                            communities &&
+                                            communities.length > 0
+                                        ) {
+                                            return openModalAction({
+                                                children: (
+                                                    <PublishingSelector
+                                                        userId={userId}
+                                                        action="Share"
+                                                        closeModalAction={
+                                                            closeModalAction
+                                                        }
+                                                        communities={communities.map(
+                                                            ({
+                                                                community,
+                                                            }) => ({
+                                                                ...community,
+                                                                type:
+                                                                    'COMMUNITY',
+                                                            })
+                                                        )}
+                                                        handleSubmit={destination =>
+                                                            curateCommunityResourcesAction(
+                                                                {
+                                                                    id:
+                                                                        destination.id,
+                                                                    resources: [
+                                                                        {
+                                                                            type,
+                                                                            id,
+                                                                        },
+                                                                    ],
+                                                                    routeChangeAction: routeChangeAction,
+                                                                    closeModalAction: closeModalAction,
+                                                                    communityId:
+                                                                        destination.id,
+                                                                    communityName:
+                                                                        destination.name,
+                                                                }
+                                                            )
+                                                        }
+                                                    />
+                                                ),
+                                            })
+                                        } else {
+                                            return openModalAction({
+                                                children: (
+                                                    <AlertViewComponent
+                                                        title="Share to Community"
+                                                        content={
+                                                            <BodyCard>
+                                                                <Row>
+                                                                    You not part
+                                                                    of any
+                                                                    community.
+                                                                    Join a
+                                                                    Community
+                                                                    first.
+                                                                </Row>
+                                                            </BodyCard>
+                                                        }
+                                                        closeModalAction={() =>
+                                                            closeModalAction()
+                                                        }
+                                                        confirmButtonText={
+                                                            'Discover Communities'
+                                                        }
+                                                        closeButtonText={
+                                                            'Close'
+                                                        }
+                                                        confirmButtonAction={() => {
+                                                            closeModalAction()
+                                                            routeChangeAction(
+                                                                '/communities'
+                                                            )
+                                                        }}
+                                                    />
+                                                ),
+                                            })
+                                        }
+                                    })
                                 }
                             >
                                 Share to community
@@ -332,7 +393,7 @@ const Toolbar = ({
 
             {openedTransferOwnershipModal && (
                 <ChooseResourceModal
-                    key={`add-resource-modal`}
+                    key={`transfer-ownership-modal`}
                     open={openedTransferOwnershipModal}
                     handleClose={closeTransferOwnershipModal}
                     maxSelection={1}
@@ -353,7 +414,7 @@ const Toolbar = ({
                         resourceId: ResourceIdentifierInput
                     ) => resourceId.id === userId}
                     preSelected={[]}
-                    title={'Select a new owner (User or Community)'}
+                    title={'Transfer Ownership'}
                     showSearch={true}
                     searchQuery={transferOwnershipModalQueryVar.query}
                     setSearchQuery={(query: string) =>
@@ -367,6 +428,8 @@ const Toolbar = ({
                     pathToResourceId={['resourceIdentifier']}
                     pathToResource={['resource']}
                     queryVariables={transferOwnershipModalQueryVar}
+                    requireSearch={true}
+                    requireSearchMessage="Search users or a community to transfer your articles to"
                 />
             )}
         </Grid>

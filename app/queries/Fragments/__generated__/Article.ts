@@ -343,7 +343,7 @@ export interface Article {
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: Article_ownerId;
+  ownerId: Article_ownerId | null;
   /**
    * Date created
    */

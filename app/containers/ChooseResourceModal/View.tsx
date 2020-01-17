@@ -34,12 +34,14 @@ import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { path } from 'ramda'
 import { Community } from '../../queries/Fragments/__generated__/Community'
 import { searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO as User } from '../../queries/__generated__/searchResultsAutocomplete'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
         margin: 0,
         padding: theme.spacing(2),
         display: 'flex',
+        justifyContent: 'center',
     },
     title: {
         padding: theme.spacing(1),
@@ -72,6 +74,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         justifyContent: 'center',
         cursor: 'pointer',
         marginRight: theme.spacing(2),
+    },
+    message: {
+        color: theme.palette.common.black,
+        fontWeight: 500,
+        fontSize: '20px',
     },
     body: {
         width: '100%',
@@ -591,6 +598,9 @@ export interface IProps {
     Query: any
     queryKey: PaginationDataQuery
     maxSelection?: number
+    requireSearch?: boolean
+    requireSearchMessage?: string
+    showNotificationAction: typeof showNotificationAction
 }
 
 const ChooseResourceModalContent = withPagination(
@@ -617,6 +627,9 @@ export const ChooseResourceModal = ({
     searchQuery,
     setSearchQuery,
     maxSelection = 100,
+    requireSearch,
+    requireSearchMessage,
+    showNotificationAction,
 }: IProps) => {
     const classes = useStyles()
     const [selected, setSelected] = React.useState(preSelected)
@@ -649,12 +662,21 @@ export const ChooseResourceModal = ({
 
             // resource not found: select
         } else {
-            setSelected([...selected, resourceId])
-        }
+            // If the user has selected the maximum resources allowed, we close the popup
+            if (selected.length >= maxSelection) {
+                showNotificationAction({
+                    description:
+                        'You can select max ' +
+                        maxSelection +
+                        'element' +
+                        (maxSelection > 1 ? 's' : ''),
+                    message: 'Error',
+                    notificationType: 'error',
+                })
+                return
+            }
 
-        // If the user has selected the maximum resources allowed, we close the popup
-        if (selected.length + 1 >= maxSelection) {
-            handleConfirm([...selected, resourceId])
+            setSelected([...selected, resourceId])
         }
     }
 
@@ -724,16 +746,24 @@ export const ChooseResourceModal = ({
                 </IconButton>
             </DialogTitle>
 
-            <ChooseResourceModalContent
-                indexOf={indexOf}
-                selectResource={selectResource}
-                isDisabled={isDisabled}
-                Query={Query}
-                queryKey={queryKey}
-                pathToResource={pathToResource}
-                pathToResourceId={pathToResourceId}
-                loading={Query.loading}
-            />
+            {requireSearch && searchQuery === '' ? (
+                <DialogContent dividers className={classes.container}>
+                    <DialogContentText className={classes.message}>
+                        {requireSearchMessage}
+                    </DialogContentText>
+                </DialogContent>
+            ) : (
+                <ChooseResourceModalContent
+                    indexOf={indexOf}
+                    selectResource={selectResource}
+                    isDisabled={isDisabled}
+                    Query={Query}
+                    queryKey={queryKey}
+                    pathToResource={pathToResource}
+                    pathToResourceId={pathToResourceId}
+                    loading={Query.loading}
+                />
+            )}
 
             <DialogActions className={classes.container}>
                 <Typography

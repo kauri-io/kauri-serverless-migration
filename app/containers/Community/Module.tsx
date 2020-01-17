@@ -74,7 +74,10 @@ import {
 } from '../../queries/__generated__/initiateArticleTransfer'
 
 import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
-import { closeModalAction } from '../../components/Modal/Module'
+import {
+    closeModalAction,
+    openModalAction,
+} from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
@@ -120,15 +123,35 @@ import {
     unbanMemberVariables,
     unbanMember,
 } from '../../queries/__generated__/unbanMember'
+import AlertViewComponent from '../../components/Modal/AlertView'
+import { BodyCard, H4 } from '../../components/Typography'
+import styled from 'styled-components'
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    min-height: 130px;
+    align-items: center;
+    > :first-child {
+        margin-right: 3px;
+    }
+`
 
 interface IWaitForInvitationReconciliationPayload {
     id: string
     transactionHash: string
 }
 
+export type ICurateCommunityResourcesPayload = curateCommunityResourcesVariables & {
+    routeChangeAction: any
+    closeModalAction: any
+    communityId: string
+    communityName: string
+}
+
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
-    payload: curateCommunityResourcesVariables
+    payload: ICurateCommunityResourcesPayload
 }
 
 export interface IRemoveGrantedMemberAction {
@@ -297,7 +320,7 @@ export const removeGrantedMemberAction = (
 })
 
 export const curateCommunityResourcesAction = (
-    payload: curateCommunityResourcesVariables
+    payload: ICurateCommunityResourcesPayload
 ): ICurateCommunityResourcesAction => ({
     payload,
     type: CURATE_COMMUNITY_RESOURCES,
@@ -515,15 +538,36 @@ export const curateCommunityResourcesEpic: Epic<
                               })
                           )
                         : of(
-                              showNotificationAction({
-                                  description: `They have been proposed to the community!`,
-                                  message: `${payload.resources &&
-                                      capitalize(
-                                          (payload.resources[0] as {
-                                              type: string
-                                          }).type.toLowerCase()
-                                      )}s curated!`,
-                                  notificationType: 'success',
+                              openModalAction({
+                                  children: (
+                                      <AlertViewComponent
+                                          title="Share to Community"
+                                          content={
+                                              <Row>
+                                                  <BodyCard>
+                                                      Article successfully
+                                                      shared to
+                                                  </BodyCard>
+                                                  <H4>{` ${payload.communityName} Community`}</H4>
+                                              </Row>
+                                          }
+                                          closeModalAction={() =>
+                                              payload.closeModalAction()
+                                          }
+                                          confirmButtonText={'View Community'}
+                                          closeButtonText={'Close'}
+                                          confirmButtonAction={() => {
+                                              payload.closeModalAction()
+                                              payload.routeChangeAction(
+                                                  getCommunityURL({
+                                                      name:
+                                                          payload.communityName,
+                                                      id: payload.communityId,
+                                                  }).href
+                                              )
+                                          }}
+                                      />
+                                  ),
                               })
                           )
                 ),

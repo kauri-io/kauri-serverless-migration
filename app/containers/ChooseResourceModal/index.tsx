@@ -3,6 +3,7 @@ import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import withApolloError from '../../lib/with-apollo-error'
 import React from 'react'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
 interface IState {
     app: {
@@ -48,7 +49,9 @@ export default compose(
     withApollo,
     connect(
         mapStateToProps,
-        {}
+        {
+            showNotificationAction,
+        }
     ),
     graphqlDynamic(query),
     withApolloError()
