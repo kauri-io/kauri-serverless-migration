@@ -84,7 +84,7 @@ const TipWidget = ({
                                 isDisabled ? classes.textDisabled : classes.text
                             }
                         >
-                            Author Rewarded
+                            Tips Received
                         </Typography>
                     </div>
                     <div>

@@ -7,12 +7,12 @@ import {
     IconButton,
     Button,
     Grid,
-    TextField,
     DialogActions,
 } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
 import { useState, useEffect } from 'react'
 import TransactionModal, { State } from './TransactionModal'
+import ValidatedTextField from '../../../components/ValidatedTextField'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -58,6 +58,7 @@ const TipModal = ({
     const [transactionState, setTransactionState] = useState(State.START)
     const [ethToUSD, setEthToUSD] = useState(0)
     const [rateError, setRateError] = useState(false)
+    const [buttonDisabled, setButtonDisabled] = useState(false)
 
     useEffect(() => {
         //Only obtain rate once when opening tipping modal
@@ -85,14 +86,55 @@ const TipModal = ({
     }, [open])
 
     const handleOnTipChange = newValue => {
+        //Disable button if value entered is zero or less
+        //Not doing this in validation because the text field would flash as
+        //invalid when typing the 0 in 0.x
+        if (newValue && newValue.length > 0 && Number(newValue) <= 0) {
+            setButtonDisabled(true)
+        }
+
         setAmount(newValue)
-        setAmountInDollars(Number(newValue) * ethToUSD)
+        setAmountInDollars(
+            newValue === '' || isValidNumber(newValue)
+                ? Number(newValue) * ethToUSD
+                : amountInDollars
+        )
     }
 
     const closeTipModal = () => {
         handleOnTipChange(0)
         handleClose()
     }
+
+    const isValidNumber = amount => {
+        const decimalRegexp = /^\d+(\.\d{1,18})?$/
+
+        return decimalRegexp.test(amount)
+    }
+
+    const validateAmount = amount => {
+        return amount === '' || isValidNumber(trimTrailingZero(amount))
+            ? ''
+            : 'Invalid number'
+    }
+
+    const onValidation = (_, err) => {
+        if (err) {
+            setButtonDisabled(true)
+            return
+        }
+
+        setButtonDisabled(false)
+    }
+
+    const trimTrailingZero = value => {
+        if (value.endsWith('.')) {
+            return value.substring(0, value.length - 1)
+        }
+
+        return value
+    }
+
     return (
         <>
             <Dialog
@@ -130,15 +172,18 @@ const TipModal = ({
                                 The author will receive 100% of the
                                 contribution.
                             </Typography>
-                            <TextField
+                            <ValidatedTextField
+                                id="tipAmount"
                                 className={classes.ethAmount}
-                                id="outlined-helperText"
                                 label="Enter ETH Amount"
-                                variant="outlined"
-                                onChange={e => {
+                                handleChange={e => {
                                     handleOnTipChange(e.target.value)
                                 }}
+                                validate={validateAmount}
+                                onValidation={onValidation}
+                                required={true}
                                 value={amount ? amount : ''}
+                                variant="outlined"
                             />
                             {!rateError && (
                                 <Typography
@@ -174,6 +219,7 @@ const TipModal = ({
                                     setTransactionState
                                 )
                             }}
+                            disabled={buttonDisabled}
                         >
                             TIP AUTHOR
                         </Button>
