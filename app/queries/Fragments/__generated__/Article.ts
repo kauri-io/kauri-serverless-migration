@@ -386,4 +386,5 @@ export interface Article {
    */
   isBookmarked: boolean;
   tips: Article_tips | null;
+  hasTipped: boolean;
 }

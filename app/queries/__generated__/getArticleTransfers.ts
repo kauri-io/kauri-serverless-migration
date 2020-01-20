@@ -288,6 +288,11 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
   isLast: boolean;
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article {
   __typename: "ArticleDTO";
   /**
@@ -380,6 +385,8 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: getArticleTransfers_getArticleTransfers_content_article_tips | null;
+  hasTipped: boolean;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_transferrer {

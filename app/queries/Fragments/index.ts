@@ -124,6 +124,7 @@ export const Article = gql`
         tips {
             totals
         }
+        hasTipped
     }
 
     ${UserOwner}

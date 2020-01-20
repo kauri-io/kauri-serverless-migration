@@ -146,6 +146,7 @@ const ArticleComp = ({
             contentHash,
             checkpoint,
             tips,
+            hasTipped,
         },
     },
 }: IProps) => {
@@ -243,6 +244,7 @@ const ArticleComp = ({
                                 tipAction={tipAction}
                                 tips={tips}
                                 loginFirstToTip={() => doLogin()}
+                                hasTipped={hasTipped}
                             />
                             <ShareWidget href={url.as} name={title} />
                         </div>

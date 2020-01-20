@@ -36,6 +36,7 @@ interface IProps {
     loginFirstToTip: () => void
     isLoggedIn: boolean
     isDisabled?: boolean
+    hasTipped?: boolean
 }
 
 const TipWidget = ({
@@ -46,6 +47,7 @@ const TipWidget = ({
     loginFirstToTip,
     isLoggedIn,
     isDisabled,
+    hasTipped,
 }: IProps) => {
     const classes = useStyles()
     const [open, setOpen] = useState(false)
@@ -101,7 +103,7 @@ const TipWidget = ({
                             }}
                             disabled={isDisabled}
                         >
-                            TIP AUTHOR
+                            {hasTipped ? 'TIP AGAIN' : 'TIP AUTHOR'}
                         </Button>
                     </div>
                 </div>

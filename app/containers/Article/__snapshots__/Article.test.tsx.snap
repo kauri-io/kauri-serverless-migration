@@ -572,6 +572,7 @@ exports[`containers/Article should match snapshot 1`] = `
                         "dateCreated": "2019-01-01",
                         "datePublished": "2019-01-02",
                         "description": "test description 2",
+                        "hasTipped": false,
                         "id": "1232",
                         "isBookmarked": true,
                         "isRead": true,
@@ -674,6 +675,7 @@ exports[`containers/Article should match snapshot 1`] = `
                         "dateCreated": "2019-01-01",
                         "datePublished": "2019-01-02",
                         "description": "test description 3",
+                        "hasTipped": false,
                         "id": "1233",
                         "isBookmarked": true,
                         "isRead": true,
@@ -786,6 +788,7 @@ exports[`containers/Article should match snapshot 1`] = `
                   "dateCreated": "2019-01-01",
                   "datePublished": "2019-01-02",
                   "description": "test description 1",
+                  "hasTipped": false,
                   "id": "1231",
                   "isBookmarked": true,
                   "isRead": true,
@@ -5600,6 +5603,7 @@ exports[`containers/Article should match snapshot 1`] = `
                             dateCreated="2019-01-01"
                             datePublished="2019-01-02"
                             description="test description 2"
+                            hasTipped={false}
                             href={
                               Object {
                                 "as": "/test-title-2/1232/a",
@@ -5718,6 +5722,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               dateCreated="2019-01-01"
                               datePublished="2019-01-02"
                               description="test description 2"
+                              hasTipped={false}
                               href={
                                 Object {
                                   "as": "/test-title-2/1232/a",
@@ -9054,6 +9059,7 @@ exports[`containers/Article should match snapshot 1`] = `
                             dateCreated="2019-01-01"
                             datePublished="2019-01-02"
                             description="test description 3"
+                            hasTipped={false}
                             href={
                               Object {
                                 "as": "/test-title-3/1233/a",
@@ -9172,6 +9178,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               dateCreated="2019-01-01"
                               datePublished="2019-01-02"
                               description="test description 3"
+                              hasTipped={false}
                               href={
                                 Object {
                                   "as": "/test-title-3/1233/a",

@@ -106,6 +106,7 @@ export const generateArticle = (mod: number) => ({
         __typename: 'TipTotalsDTO' as Article_tips['__typename'],
         totals: {},
     },
+    hasTipped: false,
 })
 
 export const Community = {

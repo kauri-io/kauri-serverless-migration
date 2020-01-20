@@ -396,6 +396,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -488,6 +493,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -2025,6 +2032,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -2117,6 +2129,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -3601,6 +3615,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -3693,6 +3712,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -5203,6 +5224,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -5295,6 +5321,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -6832,6 +6860,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -6924,6 +6957,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -8408,6 +8443,11 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   isLast: boolean;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -8500,6 +8540,8 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {

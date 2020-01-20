@@ -209,6 +209,7 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                         resourceId,
                         resourceType
                     ),
+                    tap(() => apolloClient.resetStore()),
                     waitForTipTxOperator(apolloSubscriber, setTransactionState),
                     tap(() => apolloClient.resetStore()),
                     // map(() => {

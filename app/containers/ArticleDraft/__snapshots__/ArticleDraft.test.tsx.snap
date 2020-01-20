@@ -570,6 +570,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "dateCreated": "2019-01-01",
                   "datePublished": "2019-01-02",
                   "description": "test description 1",
+                  "hasTipped": false,
                   "id": "1231",
                   "isBookmarked": true,
                   "isRead": true,
