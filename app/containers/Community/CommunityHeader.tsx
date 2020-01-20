@@ -228,7 +228,7 @@ const getURL = (value: string, type: string) => {
 interface IProps {
     id: string
     avatar: string | null
-    name: string | null
+    name: string
     website: string | null
     description: string | null
     tags: Array<string | null> | null
@@ -268,6 +268,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     collectionCount,
     members,
     routeChangeAction,
+    closeModalAction,
     isMember,
     isCommunityAdmin,
     isCommunityModerator,
@@ -306,6 +307,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                             curateCommunityResourcesAction({
                                 id: id,
                                 resources: selected,
+                                routeChangeAction: routeChangeAction,
+                                closeModalAction: closeModalAction,
+                                communityId: id,
+                                communityName: name,
                             })
                         }
                     }}

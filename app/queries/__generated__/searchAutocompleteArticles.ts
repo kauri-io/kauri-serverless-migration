@@ -359,7 +359,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_ownerId;
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -688,7 +688,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * The link owner
    */
-  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -1158,7 +1158,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -1487,7 +1487,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * The link owner
    */
-  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

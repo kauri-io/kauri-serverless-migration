@@ -343,7 +343,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: getArticleTransfers_getArticleTransfers_content_article_ownerId;
+  ownerId: getArticleTransfers_getArticleTransfers_content_article_ownerId | null;
   /**
    * Date created
    */

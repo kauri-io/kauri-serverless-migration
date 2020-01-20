@@ -282,7 +282,7 @@ export interface searchExternalLinks_searchExternalLinks_content {
   /**
    * The link owner
    */
-  ownerId: searchExternalLinks_searchExternalLinks_content_ownerId;
+  ownerId: searchExternalLinks_searchExternalLinks_content_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

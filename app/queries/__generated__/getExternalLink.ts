@@ -282,7 +282,7 @@ export interface getExternalLink_getExternalLink {
   /**
    * The link owner
    */
-  ownerId: getExternalLink_getExternalLink_ownerId;
+  ownerId: getExternalLink_getExternalLink_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

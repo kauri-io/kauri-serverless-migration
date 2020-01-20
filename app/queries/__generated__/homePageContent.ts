@@ -451,7 +451,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -780,7 +780,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -1188,7 +1188,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2128,7 +2128,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -2457,7 +2457,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2865,7 +2865,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -3752,7 +3752,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -4081,7 +4081,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -4489,7 +4489,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -5402,7 +5402,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -5731,7 +5731,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -6139,7 +6139,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -7079,7 +7079,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -7408,7 +7408,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -7816,7 +7816,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -8703,7 +8703,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * Owner of the article (can be a USER or COMMUNITY)
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -9032,7 +9032,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -9440,7 +9440,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * The link owner
    */
-  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_ownerId;
+  ownerId: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */
