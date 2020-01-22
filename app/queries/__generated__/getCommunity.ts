@@ -1743,6 +1743,14 @@ export interface getCommunity_getCommunity_pendingId {
   type: ResourceTypeInput;
 }
 
+export interface getCommunity_getCommunity_discussions {
+  __typename: "ResponsePage_DiscussionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface getCommunity_getCommunity {
   __typename: "CommunityDTO";
   /**
@@ -1814,6 +1822,10 @@ export interface getCommunity_getCommunity {
    * List of pending curated content
    */
   pendingId: (getCommunity_getCommunity_pendingId | null)[] | null;
+  /**
+   * Get a paginated list of discussions for a community
+   */
+  discussions: getCommunity_getCommunity_discussions;
 }
 
 export interface getCommunity {

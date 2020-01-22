@@ -1,4 +1,5 @@
 import React from 'react'
+import { compose } from 'react-apollo'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
 import { getCommunityAndPendingArticles_searchArticles } from '../../queries/__generated__/getCommunityAndPendingArticles'
 import CommunityHeader from './CommunityHeader'
@@ -39,7 +40,10 @@ import Loading from '../../components/Loading'
 import ResourceTab from './ResourceTab'
 import ManageTab from './ManageTab'
 import MembersTab from './MembersTab'
-import DiscussionTab from './DiscussionTab/View'
+import DiscussionList from './DiscussionTab/DiscussionList'
+import { withRouter, Router } from 'next/router'
+import DiscussionView from './DiscussionTab/DiscussionView'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -64,6 +68,7 @@ const styles = (theme: Theme) => ({
 })
 
 interface IProps {
+    tab?: number
     classes: any
     client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
@@ -87,6 +92,8 @@ interface IProps {
     showNotificationAction: typeof showNotification
     joinCommunityAction: typeof joinCommunityAction
     leaveCommunityAction: typeof leaveCommunityAction
+    router: Router
+    discussionId?: string
 }
 
 interface IState {
@@ -94,12 +101,14 @@ interface IState {
 }
 
 class CommunityConnection extends React.Component<IProps, IState> {
-    constructor(props) {
+    constructor(props: IProps) {
         super(props)
         this.state = {
-            tab: 0,
+            tab: Number(props.tab) || 0,
         }
+        this.changeTab = this.changeTab.bind(this)
     }
+
     componentDidMount() {
         this.props.client &&
             this.props.client.mutate({
@@ -149,6 +158,17 @@ class CommunityConnection extends React.Component<IProps, IState> {
         }
     }
 
+    changeTab(_event, tab: number) {
+        const href = `${
+            getCommunityURL({ ...this.props.data.getCommunity, tab }).href
+        }`
+        const as = `${
+            getCommunityURL({ ...this.props.data.getCommunity, tab }).as
+        }`
+        this.setState({ tab })
+        this.props.router.push(href, as, { shallow: true })
+    }
+
     render() {
         if (!this.props.data || !this.props.data.getCommunity) {
             return null
@@ -166,6 +186,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCommunityAdmin,
             isCommunityModerator,
             joinCommunityAction,
+            discussionId,
         } = this.props
 
         const articlesCount =
@@ -348,13 +369,15 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     centered={true}
                     value={this.state.tab}
                     className={classes.tabs}
-                    onChange={(_e, tab) => this.setState({ tab })}
+                    onChange={this.changeTab}
                 >
                     {canDisplayHomepage && <Tab label="Home" />}
                     <Tab
                         label={`Content (${articlesCount + collectionsCount})`}
                     />
-                    <Tab label={`Discussions (${0})`} />
+                    <Tab
+                        label={`Discussions (${getCommunity.discussions.totalElements})`}
+                    />
                     <Tab
                         label={`Members (${getCommunity.members.totalElements})`}
                     />
@@ -382,7 +405,21 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && <DiscussionTab />}
+                {this.state.tab === getActualTabId(2) && discussionId && (
+                    <DiscussionView
+                        parentId={getCommunity.id}
+                        parentName={getCommunity.name}
+                        parentType={ResourceTypeInput.COMMUNITY}
+                        discussionId={discussionId}
+                    />
+                )}
+                {this.state.tab === getActualTabId(2) && !discussionId && (
+                    <DiscussionList
+                        parentId={getCommunity.id}
+                        parentName={getCommunity.name}
+                        parentType={ResourceTypeInput.COMMUNITY}
+                    />
+                )}
                 {this.state.tab === getActualTabId(3) && (
                     <MembersTab id={getCommunity.id} />
                 )}
@@ -400,4 +437,4 @@ class CommunityConnection extends React.Component<IProps, IState> {
     }
 }
 
-export default withStyles(styles)(CommunityConnection)
+export default compose(withRouter)(withStyles(styles)(CommunityConnection))

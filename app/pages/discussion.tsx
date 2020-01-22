@@ -2,17 +2,16 @@ import React from 'react'
 import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
 import App from '../layouts'
-import Community from '../containers/Community'
+import Discussion from '../containers/Discussion'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunityPage = withTransaction('community', 'page')(({ router }) => {
+const CommunityPage = withTransaction('discussion', 'page')(({ router }) => {
     return (
         <App>
-            <Community
+            <Discussion
                 secret={router.query.secret}
-                communityId={router.query['community_id']}
-                tab={router.query['tab']}
+                discussionId={router.query['discussion_id']}
             />
         </App>
     )

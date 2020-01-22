@@ -47,6 +47,12 @@ export enum DirectionInput {
   DESC = "DESC",
 }
 
+export enum DiscussionStatusInput {
+  CLOSED = "CLOSED",
+  DELETED = "DELETED",
+  OPENED = "OPENED",
+}
+
 export enum EventStatusInput {
   ERROR = "ERROR",
   NOTHINGTODO = "NOTHINGTODO",
@@ -139,6 +145,20 @@ export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
   resourceTypeIn?: (ResourceTypeInput | null)[] | null;
   statusEquals?: CommunityResourceStatusInput | null;
+}
+
+export interface DiscussionFilterInput {
+  authorIdEquals?: string | null;
+  dateCreatedGreaterThan?: any | null;
+  dateCreatedLessThan?: any | null;
+  dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
+  fullText?: string | null;
+  messageContains?: string | null;
+  parentResourceIdIn?: (string | null)[] | null;
+  parentResourceTypeIn?: (ResourceTypeInput | null)[] | null;
+  statusIn?: (DiscussionStatusInput | null)[] | null;
+  titleContains?: string | null;
 }
 
 export interface ExternalLinkFilterInput {

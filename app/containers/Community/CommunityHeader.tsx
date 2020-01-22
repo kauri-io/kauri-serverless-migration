@@ -448,6 +448,11 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                                                 }
                                                                 color="secondary"
                                                                 withName={false}
+                                                                tooltip={
+                                                                    i.user
+                                                                        .username ||
+                                                                    ''
+                                                                }
                                                             />
                                                         ) : null
                                                     )}

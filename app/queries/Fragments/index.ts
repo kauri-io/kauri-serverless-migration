@@ -311,6 +311,9 @@ export const Community = gql`
             id
             type
         }
+        discussions {
+            totalElements
+        }
     }
     ${Article}
     ${Collection}

@@ -58,6 +58,12 @@ exports[`containers/CommunityCreated/View should match the snapshot 1`] = `
     dateCreated="2019-12-17T00:22:29.703Z"
     dateUpdated="2019-12-17T00:28:33.775Z"
     description="fdsfdsfds"
+    discussions={
+      Object {
+        "__typename": "ResponsePage_DiscussionDTO",
+        "totalElements": 4,
+      }
+    }
     homepage={
       Array [
         Object {

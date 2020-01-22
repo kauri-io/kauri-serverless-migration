@@ -24,14 +24,17 @@ export const DiscussionCardFragment = gql`
             }
         }
         tags
-        contributors(size: 5) {
+        contributors(size: 3) {
             totalElements
             content {
-                ... on PublicUserDTO {
-                    ...UserOwner
+                resource {
+                    ... on PublicUserDTO {
+                        ...UserOwner
+                    }
                 }
             }
         }
+        lastActivity
         comments {
             totalElements
         }
@@ -64,6 +67,16 @@ export const DiscussionViewFragment = gql`
             }
         }
         tags
+        contributors(size: 10) {
+            totalElements
+            content {
+                resource {
+                    ... on PublicUserDTO {
+                        ...UserOwner
+                    }
+                }
+            }
+        }
         comments {
             content {
                 posted
@@ -80,30 +93,43 @@ export const DiscussionViewFragment = gql`
         }
         voteResult {
             sum
+            hasVoted
         }
         lastActivity
     }
     ${UserOwner}
 `
 
-export const searchDiscussionsQuery = gql`
-    query searchDiscussionsQuery($page: Int = 0, $size: Int = 10, $sort: String = 'dateCreated', $dir: DirectionInput = DESC, $filter: DiscussionFilterInput) { 
-        searchDiscussions(page: $page, size: $size, sort: $sort, dir: $dir, filter: $filter) { 
-            totalPages 
-            totalElements, 
-            isLast, 
-            content { 
-                {
-                    ...on DiscussionDTO { ...DiscussionCardFragment }
+export const searchDiscussions = gql`
+    query searchDiscussions(
+        $page: Int = 0
+        $size: Int = 10
+        $sort: String = "dateCreated"
+        $dir: DirectionInput = DESC
+        $filter: DiscussionFilterInput
+    ) {
+        searchDiscussions(
+            page: $page
+            size: $size
+            sort: $sort
+            dir: $dir
+            filter: $filter
+        ) {
+            totalPages
+            totalElements
+            isLast
+            content {
+                ... on DiscussionDTO {
+                    ...DiscussionCardFragment
                 }
-            } 
-        } 
+            }
+        }
     }
     ${DiscussionCardFragment}
 `
 
-export const getDiscussionQuery = gql`
-    query getDiscussionQuery($id: String!) {
+export const getDiscussion = gql`
+    query getDiscussion($id: String!) {
         getDiscussion(id: $id) {
             ... on DiscussionDTO {
                 ...DiscussionViewFragment
@@ -113,8 +139,8 @@ export const getDiscussionQuery = gql`
     ${DiscussionViewFragment}
 `
 
-export const createDiscussionMutation = gql`
-    mutation createDiscussionMutation(
+export const createDiscussion = gql`
+    mutation createDiscussion(
         $parent: ResourceIdentifierInput!
         $title: String!
         $message: String!
@@ -130,8 +156,8 @@ export const createDiscussionMutation = gql`
         }
     }
 `
-export const editDiscussionMutation = gql`
-    mutation editDiscussionMutation(
+export const editDiscussion = gql`
+    mutation editDiscussion(
         $id: String!
         $title: String!
         $message: String!
@@ -142,22 +168,22 @@ export const editDiscussionMutation = gql`
         }
     }
 `
-export const closeDiscussionMutation = gql`
-    mutation closeDiscussionMutation($id: String!) {
+export const closeDiscussion = gql`
+    mutation closeDiscussion($id: String!) {
         closeDiscussion(id: $id) {
             hash
         }
     }
 `
-export const reopenDiscussionMutation = gql`
-    mutation reopenDiscussionMutation($id: String!) {
+export const reopenDiscussion = gql`
+    mutation reopenDiscussion($id: String!) {
         reopenDiscussion(id: $id) {
             hash
         }
     }
 `
-export const deleteDiscussionMutation = gql`
-    mutation deleteDiscussionMutation($id: String!) {
+export const deleteDiscussion = gql`
+    mutation deleteDiscussion($id: String!) {
         deleteDiscussion(id: $id) {
             hash
         }

@@ -1,6 +1,6 @@
 // import blockies from 'ethereum-blockies'
 import Typography from '@material-ui/core/Typography'
-import { Theme } from '@material-ui/core'
+import { Theme, Tooltip } from '@material-ui/core'
 import useridTrim from '../../lib/userid-trim'
 import { makeStyles } from '@material-ui/styles'
 import makeBlockie from 'ethereum-blockies-base64'
@@ -20,6 +20,7 @@ interface IProps {
     type?: string
     ignoreLink?: boolean
     newTab?: boolean
+    tooltip?: string
 }
 
 const AvatarComp = ({
@@ -34,6 +35,7 @@ const AvatarComp = ({
     type,
     ignoreLink,
     newTab,
+    tooltip,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -70,7 +72,7 @@ const AvatarComp = ({
                   username,
               })
 
-    const AvatarContent = (
+    let AvatarContent = (
         <div className={className || classes.container}>
             {avatar ? (
                 <Image
@@ -98,7 +100,19 @@ const AvatarComp = ({
             )}
         </div>
     )
-    if (ignoreLink) return AvatarContent
+
+    if (tooltip) {
+        AvatarContent = (
+            <Tooltip title={tooltip} placement="bottom-end">
+                {AvatarContent}
+            </Tooltip>
+        )
+    }
+
+    if (ignoreLink) {
+        return AvatarContent
+    }
+
     return (
         <Link as={url.as} href={url.href}>
             <a target={newTab ? '_blank' : '_self'}>{AvatarContent}</a>
