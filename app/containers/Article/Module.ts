@@ -12,6 +12,7 @@ import {
     catchError,
     mapTo,
     map,
+    ignoreElements,
 } from 'rxjs/operators'
 import { path } from 'ramda'
 import {
@@ -163,7 +164,8 @@ export const addCommentEpic: Epic<
 export interface ITipAction {
     type: string
     payload: any
-    setTransactionState: (number) => void
+    setTransactionState: (state: State) => void
+    setTransactionHash: (txHash: string) => void
 }
 
 interface IGetTipAddressResult {
@@ -176,11 +178,13 @@ export const TIP: string = 'TIP'
 
 export const tipAction = (
     payload: { resourceId: string; resourceType: string; amount: string },
-    setTransactionState
+    setTransactionState,
+    setTransactionHash
 ): ITipAction => ({
     type: TIP,
     payload,
     setTransactionState,
+    setTransactionHash,
 })
 
 export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
@@ -194,6 +198,7 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
             ({
                 payload: { resourceId, resourceType, amount },
                 setTransactionState,
+                setTransactionHash,
             }) =>
                 web3GetNetwork().pipe(
                     getTipAddressOperator(
@@ -201,7 +206,11 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                         resourceId,
                         resourceType
                     ),
-                    sendTipTransactionOperator(amount, setTransactionState),
+                    sendTipTransactionOperator(
+                        amount,
+                        setTransactionState,
+                        setTransactionHash
+                    ),
                     stageTipOperator(
                         apolloClient,
                         apolloSubscriber,
@@ -220,6 +229,7 @@ export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
                     //         description: `Your tip has been sent to the author, thanks!`,
                     //     })
                     // }),
+                    ignoreElements(),
                     catchError(err => {
                         return handleTippingError(err, setTransactionState)
                     })
@@ -250,13 +260,15 @@ const getTipAddressOperator = (
 
 const sendTipTransactionOperator = (
     amount: string,
-    setTransactionState: (string) => void
+    setTransactionState: (state: State) => void,
+    setTransactionHash: (txHash: string) => void
 ): OperatorFunction<any, any> => {
     return switchMap(({ data: { getTipAddress: { address } } }) =>
         from(global.window.ethereum.enable()).pipe(
             switchMap((accounts: any) =>
                 sendTransaction(accounts[0], address, amount)
             ),
+            tap(txHash => setTransactionHash(txHash)),
             tap(_ => setTransactionState(State.PENDING))
         )
     )

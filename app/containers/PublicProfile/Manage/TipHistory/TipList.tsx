@@ -3,7 +3,9 @@ import PublicProfileEmptyState from '../../../../components/PublicProfileEmptySt
 import TipCard from './TipCard'
 
 const useStyles = makeStyles((theme: Theme) => ({
-    container: {},
+    container: {
+        marginBottom: theme.spacing(2),
+    },
     emptyState: {
         marginTop: theme.spacing(4),
     },

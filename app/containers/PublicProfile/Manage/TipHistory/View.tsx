@@ -8,11 +8,11 @@ import {
     Theme,
 } from '@material-ui/core'
 import withPagination from '../../../../lib/with-pagination'
-import Loading from '../../../../components/Loading'
 //import { getTips } from '../../../../queries/__generated__/getTips';
 import { useState } from 'react'
 import TipList from './TipList'
 import { getTips } from '../../../../queries/__generated__/getTips'
+import LoadingComponent from '../../../../components/Loading'
 
 interface IGetTipsQuery extends getTips {
     loading: boolean
@@ -53,7 +53,7 @@ const TipHistory = (props: IProps) => {
     const [selectedTips, setSelectedTips] = useState('received')
 
     if (props.sentTipsQuery.loading) {
-        return <Loading />
+        return <LoadingComponent />
     }
 
     const sentTips =

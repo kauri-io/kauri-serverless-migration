@@ -65,6 +65,7 @@ describe('containers/Article', () => {
                 type: 'TIP',
                 payload: {},
                 setTransactionState: jest.fn(),
+                setTransactionHash: jest.fn(),
             },
         }
 

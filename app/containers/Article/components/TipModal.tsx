@@ -56,6 +56,7 @@ const TipModal = ({
     const [amountInDollars, setAmountInDollars] = useState(0.0)
     const [openTxModal, setOpenTxModal] = useState(false)
     const [transactionState, setTransactionState] = useState(State.START)
+    const [transactionHash, setTransactionHash] = useState('')
     const [ethToUSD, setEthToUSD] = useState(0)
     const [rateError, setRateError] = useState(false)
     const [buttonDisabled, setButtonDisabled] = useState(false)
@@ -216,7 +217,8 @@ const TipModal = ({
                                 setOpenTxModal(true)
                                 return tipAction(
                                     { resourceId, resourceType, amount },
-                                    setTransactionState
+                                    setTransactionState,
+                                    setTransactionHash
                                 )
                             }}
                             disabled={buttonDisabled}
@@ -234,6 +236,7 @@ const TipModal = ({
                     setTransactionState(State.START)
                 }}
                 state={transactionState}
+                txHash={transactionHash}
             />
         </>
     )

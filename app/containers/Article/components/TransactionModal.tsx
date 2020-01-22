@@ -11,10 +11,11 @@ import {
     StepLabel,
     DialogActions,
     Button,
-    CircularProgress,
 } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
 import { useEffect } from 'react'
+import LoadingComponent from '../../../components/Loading'
+import EtherScanLink from '../../../components/Transaction/EtherScanLink'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -36,23 +37,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
     },
-    successImage: {
+    image: {
         marginBottom: theme.spacing(2),
     },
 }))
-
-const getStepContent = state => {
-    switch (state) {
-        case State.START:
-            return 'The tipping transaction is ready to be sent.  If using metamask, press the Confirm Button to initiate.'
-        case State.PENDING:
-            return "The tip transaction has been broadcast, and we're now waiting for it to be mined."
-        case State.MINED:
-            return 'Your tip has been processed, and has been received by the author.  Thanks for your generosity!'
-        default:
-            return 'Unknown stepIndex'
-    }
-}
 
 const getSteps = () => {
     return [
@@ -100,9 +88,10 @@ interface IProps {
     open: boolean
     handleClose: () => void
     state: State
+    txHash: string
 }
 
-const TransactionModal = ({ open, handleClose, state }: IProps) => {
+const TransactionModal = ({ open, handleClose, state, txHash }: IProps) => {
     const classes = useStyles()
     const steps = getSteps()
 
@@ -110,7 +99,61 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
         if (state === State.GENERIC_ERROR) {
             handleClose()
         }
-    }, [state])
+        console.log('TX HASH: ' + txHash)
+    }, [state, txHash])
+
+    const getStepContent = state => {
+        switch (state) {
+            case State.START:
+                return (
+                    <>
+                        <img
+                            src="/static/images/confirm-tx.gif"
+                            className={classes.image}
+                        />
+                        <Typography>
+                            The tipping transaction is ready to be sent. If
+                            using metamask, press the Confirm Button to
+                            initiate.
+                        </Typography>
+                    </>
+                )
+            case State.PENDING:
+                return (
+                    <>
+                        <Typography gutterBottom>
+                            The tip transaction has been broadcast, and we're
+                            now waiting for it to be mined.
+                        </Typography>
+                        <Typography variant="subtitle2">
+                            You can close this window if you like, as this may
+                            take some time. You'll get an email when the tip has
+                            been received by the author.
+                        </Typography>
+                    </>
+                )
+            case State.MINED:
+                return (
+                    <>
+                        <img
+                            src="/static/images/tip-success.jpeg"
+                            className={classes.image}
+                        />
+                        <Typography gutterBottom>
+                            Your tip has been processed, and has been received
+                            by the author. Thanks for your generosity!.
+                        </Typography>
+                        <EtherScanLink
+                            txHash={txHash}
+                            linkText="View Transaction On Etherscan"
+                        />
+                    </>
+                )
+            default:
+                return null
+        }
+    }
+
     return (
         <Dialog
             open={open}
@@ -131,14 +174,7 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
                 <Grid container justify="center">
                     {!isStagingError(state) && (
                         <>
-                            {isCompleted(state) && (
-                                <img
-                                    src="/static/images/tip-success.jpeg"
-                                    className={classes.successImage}
-                                />
-                            )}
-                            <Typography>{getStepContent(state)}</Typography>
-                            {getCurrentStep(state) == 1 && <CircularProgress />}
+                            {getStepContent(state)}
                             <Stepper
                                 activeStep={getCurrentStep(state)}
                                 alternativeLabel
@@ -167,6 +203,7 @@ const TransactionModal = ({ open, handleClose, state }: IProps) => {
                     )}
                 </Grid>
             </DialogContent>
+            {getCurrentStep(state) == 1 && <LoadingComponent />}
             {(isCompleted(state) || isStagingError(state)) && (
                 <DialogActions className={classes.container}>
                     <Button

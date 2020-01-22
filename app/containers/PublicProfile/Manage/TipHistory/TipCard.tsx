@@ -9,6 +9,7 @@ import {
 import CardDetails from '../../../../components/Card/CardComponents/CardDetails'
 import { getArticleURL } from '../../../../lib/getURLs'
 import ButtonComp from '../../../../components/Button'
+import EtherScanLink from '../../../../components/Transaction/EtherScanLink'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
@@ -89,16 +90,10 @@ const TipCard = ({ tip, type }: IProps) => {
                         container={true}
                         justify="center"
                     >
-                        <Link
-                            href={`https://rinkeby.etherscan.io/tx/${tip.transactionHash}`}
-                            target="_blank"
-                        >
-                            <a>
-                                <ButtonComp color="primary">
-                                    {tip.status}
-                                </ButtonComp>
-                            </a>
-                        </Link>
+                        <EtherScanLink
+                            txHash={tip.transactionHash}
+                            linkText={tip.status}
+                        />
                     </Grid>
                 </Grid>
             </Grid>
