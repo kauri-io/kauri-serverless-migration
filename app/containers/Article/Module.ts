@@ -279,6 +279,8 @@ const stageTipOperator = (
                         id: amount === '0.0123' ? resourceId + '1' : resourceId,
                         type: resourceType,
                     },
+                    tipValue: amount,
+                    tokenType: 'ETH',
                 },
             })
         ).pipe(

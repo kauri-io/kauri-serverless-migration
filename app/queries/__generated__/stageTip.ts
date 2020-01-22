@@ -23,4 +23,6 @@ export interface stageTip {
 export interface stageTipVariables {
   transactionHash?: string | null;
   recipientResourceId?: ResourceIdentifierInput | null;
+  tipValue?: any | null;
+  tokenType?: string | null;
 }

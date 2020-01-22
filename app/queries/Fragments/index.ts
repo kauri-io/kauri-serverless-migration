@@ -312,3 +312,36 @@ export const Community = gql`
     ${Collection}
     ${Link}
 `
+
+export const TipDetails = gql`
+    fragment TipDetails on TipDetailsDTO {
+        transactionHash
+        tipper {
+            id
+            username
+            name
+            avatar
+        }
+        recipient {
+            id
+            username
+            name
+            avatar
+        }
+        resource {
+            ... on ArticleDTO {
+                id
+                title
+            }
+        }
+        fromAddress
+        toAddress
+        tokenType
+        value
+        blockHash
+        contractAddress
+        dateStaged
+        dateMined
+        status
+    }
+`
