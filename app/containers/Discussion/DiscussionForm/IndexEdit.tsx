@@ -1,20 +1,16 @@
+
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
-import withLoading from '../../../../lib/with-loading'
-import withApolloError from '../../../../lib/with-apollo-error'
+import withLoading from '../../../lib/with-loading'
+import withApolloError from '../../../lib/with-apollo-error'
+import { getDiscussion } from '../../../queries/Discussion'
 import {
     openModalAction,
     closeModalAction,
-} from '../../../../components/Modal/Module'
-import { routeChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
-import {
-    closeDiscussionAction,
-    reopenDiscussionAction,
-    deleteDiscussionAction,
-} from '../Module'
-import { voteAction } from '../../../Article/Module'
-import { getDiscussion } from '../../../../queries/Discussion'
+} from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { createDiscussionAction, editDiscussionAction } from '../Module'
 
 const mapStateToProps = state => {
     return {
@@ -33,10 +29,8 @@ export default compose(
             openModalAction,
             closeModalAction,
             routeChangeAction,
-            closeDiscussionAction,
-            reopenDiscussionAction,
-            deleteDiscussionAction,
-            voteAction,
+            createDiscussionAction,
+            editDiscussionAction,
         }
     ),
     graphql(getDiscussion, {

@@ -6,12 +6,12 @@ import Discussion from '../containers/Discussion'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunityPage = withTransaction('discussion', 'page')(({ router }) => {
+const DiscussionPage = withTransaction('discussion', 'page')(({ router }) => {
     return (
         <App>
             <Discussion
-                secret={router.query.secret}
                 discussionId={router.query['discussion_id']}
+                discussionAction={router.query['discussion_id'] ? "view" : "list"}
             />
         </App>
     )
@@ -21,4 +21,4 @@ export default compose(
     withData,
     withApollo,
     withRouter
-)(CommunityPage)
+)(DiscussionPage)

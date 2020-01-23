@@ -5,29 +5,39 @@ import Community from '../Community'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 interface IProps {
-    discussionId: string
-    data: {
+    discussionAction: "list"|"view"|"form"
+    discussionId?: string
+    parentId?: string
+    parentType?: ResourceTypeInput
+    data?: {
         loading: boolean
         getDiscussion: getDiscussion_getDiscussion
     }
 }
 
-export const DiscussionView = ({ discussionId, data }: IProps) => {
-    if (data.loading) {
+export const DiscussionEntryPoint = ({ discussionId, discussionAction, parentId, parentType, data }: IProps) => {
+
+    if (data && data.loading) {
         return <Loading />
     }
 
-    if (data.getDiscussion.parentId.type === ResourceTypeInput.COMMUNITY) {
+    parentId = parentId || (data && data.getDiscussion.parentId.id) 
+    parentType = parentType || (data && data.getDiscussion.parentId.type)
+
+    // This entry point is used to embed the discussion componetns in whatever parent it is associated to.
+    if (parentType === ResourceTypeInput.COMMUNITY) {
         return (
             <Community
-                communityId={data.getDiscussion.parentId.id}
+                communityId={parentId}
                 tab={2}
                 discussionId={discussionId}
+                discussionAction={discussionAction}
             />
         )
+
     } else {
         return
     }
 }
 
-export default DiscussionView
+export default DiscussionEntryPoint

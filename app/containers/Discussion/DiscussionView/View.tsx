@@ -9,26 +9,26 @@ import {
     ICloseModalAction,
     IOpenModalPayload,
     IOpenModalAction,
-} from '../../../../components/Modal/Module'
-import Loading from '../../../../components/Loading'
-import { IRouteChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
-import { closeDiscussionVariables } from '../../../../queries/__generated__/closeDiscussion'
-import { reopenDiscussionVariables } from '../../../../queries/__generated__/reopenDiscussion'
-import { deleteDiscussionVariables } from '../../../../queries/__generated__/deleteDiscussion'
-import { getDiscussion_getDiscussion } from '../../../../queries/__generated__/getDiscussion'
-import { ResourceTypeInput } from '../../../../__generated__/globalTypes'
-import { getCommunityURL, getDiscussionURL } from '../../../../lib/getURLs'
+} from '../../../components/Modal/Module'
+import Loading from '../../../components/Loading'
+import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { closeDiscussionVariables } from '../../../queries/__generated__/closeDiscussion'
+import { reopenDiscussionVariables } from '../../../queries/__generated__/reopenDiscussion'
+import { deleteDiscussionVariables } from '../../../queries/__generated__/deleteDiscussion'
+import { getDiscussion_getDiscussion } from '../../../queries/__generated__/getDiscussion'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
+import { getCommunityURL, getDiscussionURL } from '../../../lib/getURLs'
 import Link from 'next/link'
-import VoteWidget from '../../../Article/components/VoteWidget'
-import { IVoteAction } from '../../../Article/Module'
-import { voteVariables } from '../../../../queries/__generated__/vote'
+import VoteWidget from '../../Article/components/VoteWidget'
+import { IVoteAction } from '../../Article/Module'
+import { voteVariables } from '../../../queries/__generated__/vote'
 import EditIcon from '@material-ui/icons/Edit'
-import TagList from '../../../../components/Tags/TagList'
-import Avatar from '../../../../components/Avatar'
+import TagList from '../../../components/Tags/TagList'
+import Avatar from '../../../components/Avatar'
+import AvatarList from '../../../components/AvatarList'
 import moment from 'moment-mini'
-import ShareWidget from '../../../Article/components/ShareWidget'
-import MDRenderer from '../../../../components/Markdown/Renderer'
-import { UserOwner } from '../../../../queries/Fragments/__generated__/UserOwner'
+import ShareWidget from '../../Article/components/ShareWidget'
+import MDRenderer from '../../../components/Markdown/Renderer'
 
 interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
@@ -107,6 +107,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'row',
     },
+    button: {
+        width: '200px',
+        color: theme.palette.common.black,
+    },
 }))
 
 export const DiscussionView = ({
@@ -126,6 +130,10 @@ export const DiscussionView = ({
 
     const back = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
     const self = getDiscussionURL({ ...data.getDiscussion })
+    const edit = {
+        as: `/discussions/${data.getDiscussion.id}/edit`,
+        href: `/create-discussion?discussion_id=${data.getDiscussion.id}`,
+    }
     const login = () => routeChangeAction(`/login?r=${self.as}`)
 
     return (
@@ -151,9 +159,19 @@ export const DiscussionView = ({
                         />
                     </Grid>
 
-                    <Grid className={classes.leftItemRow}>
-                        <EditIcon />
-                        <Typography variant="subtitle2">Action</Typography>
+                    <Grid className={classes.leftItemRow} onClick={() => routeChangeAction(edit.as)}>
+
+                        <Link href={edit.href} as={edit.as}>
+                            <Button
+                                //color="primary"
+                                variant="text"
+                                //className={classes.button}
+                                size="small"
+                                startIcon={<EditIcon />}
+                            >
+                                Edit discussion
+                            </Button>
+                        </Link>
                     </Grid>
                 </Grid>
                 <Grid container spacing={2} className={classes.right}>
@@ -209,31 +227,11 @@ export const DiscussionView = ({
                     <Grid className={[classes.row, classes.border].join(' ')}>
                         <Typography variant="subtitle2">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
                         <Grid className={classes.contributors}>
-                            {data.getDiscussion.contributors.content
-                                .slice(0, 10)
-                                .map(contributor => {
-                                    if (contributor === null) return
-
-                                    var user = contributor.resource as UserOwner
-                                    return (
-                                        <Avatar
-                                            id={user.id}
-                                            name={user.publicUserName}
-                                            username={user.username}
-                                            avatar={user.avatar}
-                                            withName={false}
-                                            tooltip={user.username || ''}
-                                        />
-                                    )
-                                })}
-                            {data.getDiscussion.contributors.totalElements >
-                                10 && (
-                                <div>
-                                    +{' '}
-                                    {data.getDiscussion.contributors
-                                        .totalElements - 10}
-                                </div>
-                            )}
+                            <AvatarList 
+                                list={data.getDiscussion.contributors.content}
+                                total={data.getDiscussion.contributors.totalElements}
+                                limit={10}
+                            />
                         </Grid>
                     </Grid>
                 </Grid>

@@ -1,10 +1,11 @@
+
 import View from './View'
 import { connect } from 'react-redux'
 import {
     openModalAction,
     closeModalAction,
-} from '../../../../components/Modal/Module'
-import { routeChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
+} from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { createDiscussionAction, editDiscussionAction } from '../Module'
 
 const mapStateToProps = state => {

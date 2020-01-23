@@ -1,6 +1,6 @@
-import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
-import analytics from '../../../lib/analytics'
-import { IDependencies, IReduxState } from '../../../lib/Module'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import analytics from '../../lib/analytics'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { ofType, Epic } from 'redux-observable'
 import { from, of } from 'rxjs'
 import { path } from 'ramda'
@@ -11,27 +11,27 @@ import {
     closeDiscussion as closeDiscussionMutation,
     reopenDiscussion as reopenDiscussionMutation,
     deleteDiscussion as deleteDiscussionMutation,
-} from '../../../queries/Discussion'
+} from '../../queries/Discussion'
 import {
     createDiscussion,
     createDiscussionVariables,
-} from '../../../queries/__generated__/createDiscussion'
+} from '../../queries/__generated__/createDiscussion'
 import {
     editDiscussionVariables,
     editDiscussion,
-} from '../../../queries/__generated__/editDiscussion'
+} from '../../queries/__generated__/editDiscussion'
 import {
     closeDiscussion,
     closeDiscussionVariables,
-} from '../../../queries/__generated__/closeDiscussion'
+} from '../../queries/__generated__/closeDiscussion'
 import {
     reopenDiscussionVariables,
     reopenDiscussion,
-} from '../../../queries/__generated__/reopenDiscussion'
+} from '../../queries/__generated__/reopenDiscussion'
 import {
     deleteDiscussionVariables,
     deleteDiscussion,
-} from '../../../queries/__generated__/deleteDiscussion'
+} from '../../queries/__generated__/deleteDiscussion'
 
 /////////////////////////////////////////////////////////////
 // CREATE DISCUSSION

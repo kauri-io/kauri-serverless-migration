@@ -40,10 +40,12 @@ import Loading from '../../components/Loading'
 import ResourceTab from './ResourceTab'
 import ManageTab from './ManageTab'
 import MembersTab from './MembersTab'
-import DiscussionList from './DiscussionTab/DiscussionList'
+import DiscussionList from '../Discussion/DiscussionList'
 import { withRouter, Router } from 'next/router'
-import DiscussionView from './DiscussionTab/DiscussionView'
+import DiscussionView from '../Discussion/DiscussionView'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import DiscussionCreateForm from '../Discussion/DiscussionForm/IndexCreate'
+import DiscussionEditForm from '../Discussion/DiscussionForm/IndexEdit'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -94,6 +96,7 @@ interface IProps {
     leaveCommunityAction: typeof leaveCommunityAction
     router: Router
     discussionId?: string
+    discussionAction?: "list" | "view" | "form"
 }
 
 interface IState {
@@ -187,6 +190,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCommunityModerator,
             joinCommunityAction,
             discussionId,
+            discussionAction = "list",
         } = this.props
 
         const articlesCount =
@@ -405,7 +409,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && discussionId && (
+                {this.state.tab === getActualTabId(2) && discussionAction === "view" && discussionId && (
                     <DiscussionView
                         parentId={getCommunity.id}
                         parentName={getCommunity.name}
@@ -413,7 +417,22 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         discussionId={discussionId}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && !discussionId && (
+                {this.state.tab === getActualTabId(2) && discussionAction === "form" && !discussionId && (
+                    <DiscussionCreateForm
+                        parentId={getCommunity.id}
+                        parentName={getCommunity.name}
+                        parentType={ResourceTypeInput.COMMUNITY}
+                    />
+                )}
+                {this.state.tab === getActualTabId(2) && discussionAction === "form" && discussionId && (
+                    <DiscussionEditForm
+                        parentId={getCommunity.id}
+                        parentName={getCommunity.name}
+                        parentType={ResourceTypeInput.COMMUNITY}
+                        discussionId={discussionId}
+                    />
+                )}
+                {this.state.tab === getActualTabId(2) && discussionAction === "list" && (
                     <DiscussionList
                         parentId={getCommunity.id}
                         parentName={getCommunity.name}

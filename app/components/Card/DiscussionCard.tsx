@@ -3,9 +3,8 @@ import { makeStyles } from '@material-ui/styles'
 import TruncateMarkup from 'react-truncate-markup'
 import Link from 'next/link'
 import TagList from '../Tags/TagList'
-import Avatar from '../Avatar'
+import AvatarList from '../AvatarList'
 import { searchDiscussions_searchDiscussions_content_contributors_content } from '../../queries/__generated__/searchDiscussions'
-import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { DiscussionStatusInput } from '../../__generated__/globalTypes'
 import moment from 'moment-mini'
 import { getDiscussionURL } from '../../lib/getURLs'
@@ -43,7 +42,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         margin: theme.spacing(1),
         padding: theme.spacing(1),
-        border: '1px solid #CBCBCB',
         borderRadius: theme.shape.borderRadius,
         width: '100%',
     },
@@ -114,28 +112,11 @@ const DiscussionCard = ({
                                 className={classes.column}
                                 style={{ width: 160 }}
                             >
-                                {contributors.content
-                                    .slice(0, 3)
-                                    .map(contributor => {
-                                        if (contributor === null) return
-
-                                        var user = contributor.resource as UserOwner
-                                        return (
-                                            <Avatar
-                                                id={user.id}
-                                                name={user.publicUserName}
-                                                username={user.username}
-                                                avatar={user.avatar}
-                                                withName={false}
-                                                tooltip={user.username || ''}
-                                            />
-                                        )
-                                    })}
-                                {contributors.totalElements > 3 && (
-                                    <div>
-                                        + {contributors.totalElements - 3}
-                                    </div>
-                                )}
+                                <AvatarList 
+                                    list={contributors.content}
+                                    total={contributors.totalElements}
+                                    limit={3}
+                                />
                             </Grid>
                             <Grid className={classes.column}>
                                 <Typography variant="subtitle2">
@@ -189,28 +170,11 @@ const DiscussionCard = ({
                                 className={classes.column}
                                 style={{ width: 160 }}
                             >
-                                {contributors.content
-                                    .slice(0, 3)
-                                    .map(contributor => {
-                                        if (contributor === null) return
-
-                                        var user = contributor.resource as UserOwner
-                                        return (
-                                            <Avatar
-                                                id={user.id}
-                                                name={user.publicUserName}
-                                                username={user.username}
-                                                avatar={user.avatar}
-                                                withName={false}
-                                                tooltip={user.username || ''}
-                                            />
-                                        )
-                                    })}
-                                {contributors.totalElements > 3 && (
-                                    <div>
-                                        + {contributors.totalElements - 3}
-                                    </div>
-                                )}
+                                <AvatarList 
+                                    list={contributors.content}
+                                    total={contributors.totalElements}
+                                    limit={3}
+                                />
                             </Grid>
 
                             <Grid className={classes.column}>

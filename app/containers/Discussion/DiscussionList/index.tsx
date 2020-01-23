@@ -1,14 +1,14 @@
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
-import withLoading from '../../../../lib/with-loading'
-import withApolloError from '../../../../lib/with-apollo-error'
-import withPagination from '../../../../lib/with-pagination'
+import withLoading from '../../../lib/with-loading'
+import withApolloError from '../../../lib/with-apollo-error'
+import withPagination from '../../../lib/with-pagination'
 import {
     openModalAction,
     closeModalAction,
-} from '../../../../components/Modal/Module'
-import { routeChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
+} from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import {
     createDiscussionAction,
     editDiscussionAction,
@@ -16,8 +16,8 @@ import {
     reopenDiscussionAction,
     deleteDiscussionAction,
 } from '../Module'
-import { searchDiscussions } from '../../../../queries/Discussion'
-import { ResourceTypeInput } from '../../../../__generated__/globalTypes'
+import { searchDiscussions } from '../../../queries/Discussion'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 
 const mapStateToProps = state => {
     return {

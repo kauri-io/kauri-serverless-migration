@@ -97,6 +97,14 @@
       "dest": "/app/discussion?discussion_id=$2&slug=$1"
     },
     {
+      "src": "/discussions/create",
+      "dest": "/app/create-discussion"
+    },
+    {
+      "src": "/discussions/(.*)/edit",
+      "dest": "/app/create-discussion?discussion_id=$1"
+    },
+    {
       "src": "/(.*)/(.*)/c",
       "dest": "/app/collection?collection_id=$2&slug=$1"
     },

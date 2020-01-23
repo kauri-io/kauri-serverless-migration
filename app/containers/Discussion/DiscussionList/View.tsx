@@ -7,16 +7,17 @@ import {
     Button,
     Paper,
 } from '@material-ui/core'
-import { IRouteChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
+import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import {
     IOpenModalAction,
     IOpenModalPayload,
     ICloseModalAction,
-} from '../../../../components/Modal/Module'
-import { searchDiscussions_searchDiscussions } from '../../../../queries/__generated__/searchDiscussions'
-import Loading from '../../../../components/Loading'
-import DiscussionCard from '../../../../components/Card/DiscussionCard'
-import { ResourceTypeInput } from '../../../../__generated__/globalTypes'
+} from '../../../components/Modal/Module'
+import { searchDiscussions_searchDiscussions } from '../../../queries/__generated__/searchDiscussions'
+import Loading from '../../../components/Loading'
+import DiscussionCard from '../../../components/Card/DiscussionCard'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
+import Link from 'next/link'
 
 interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
@@ -77,11 +78,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export const DiscussionList = ({ data, parentName }: IProps) => {
+export const DiscussionList = ({ data, parentId, parentType, parentName }: IProps) => {
     const classes = useStyles()
 
     if (data.loading) {
         return <Loading />
+    }
+
+    const create = {
+        as: `/discussions/create?parent_id=${parentId}&parent_type=${parentType}`,
+        href: `/create-discussion?parent_id=${parentId}&parent_type=${parentType}`,
     }
 
     return (
@@ -102,14 +108,15 @@ export const DiscussionList = ({ data, parentName }: IProps) => {
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            className={classes.button}
-                            onClick={() => console.log('create-discussion')}
-                        >
-                            New Topic
-                        </Button>
+                        <Link href={create.href} as={create.as}>
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                className={classes.button}
+                            >
+                                New Topic
+                            </Button>
+                        </Link>
                     </Grid>
                 </Grid>
 
