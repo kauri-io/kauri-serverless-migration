@@ -46,8 +46,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: theme.spacing(2),
     },
     topContainer: {
-        display: 'flex',
-        justifyContent: 'space-between',
         borderBottom: '1px solid #cbcbcb',
         marginBottom: theme.spacing(4),
     },
@@ -60,25 +58,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     headerLeft: {
         width: 660,
-        display: 'flex',
-        flexDirection: 'column',
     },
     headerRight: {
         width: 90,
-        display: 'flex',
-        justifyContent: 'center',
     },
     empty: {
         width: '100%',
         height: 48,
         marginTop: theme.spacing(2),
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 }))
 
-export const DiscussionList = ({ data, parentId, parentType, parentName }: IProps) => {
+export const DiscussionList = ({
+    data,
+    parentId,
+    parentType,
+    parentName,
+}: IProps) => {
     const classes = useStyles()
 
     if (data.loading) {
@@ -93,7 +89,12 @@ export const DiscussionList = ({ data, parentId, parentType, parentName }: IProp
     return (
         <div className={classes.container}>
             <div className={classes.root}>
-                <Grid container spacing={2} className={classes.topContainer}>
+                <Grid
+                    container
+                    spacing={2}
+                    justify="space-between"
+                    className={classes.topContainer}
+                >
                     <Grid item>
                         <Typography variant="h5">
                             {data.searchDiscussions.totalElements} Open
@@ -124,16 +125,32 @@ export const DiscussionList = ({ data, parentId, parentType, parentName }: IProp
                     <Grid className={classes.headerLeft}>
                         <Typography variant="subtitle2">TOPIC</Typography>
                     </Grid>
-                    <Grid className={classes.headerRight}>
+                    <Grid
+                        justify="center"
+                        alignItems="center"
+                        className={classes.headerRight}
+                    >
                         <Typography variant="subtitle2">VOTES</Typography>
                     </Grid>
-                    <Grid className={classes.headerRight}>
+                    <Grid
+                        justify="center"
+                        alignItems="center"
+                        className={classes.headerRight}
+                    >
                         <Typography variant="subtitle2">STATUS</Typography>
                     </Grid>
-                    <Grid className={classes.headerRight}>
+                    <Grid
+                        justify="center"
+                        alignItems="center"
+                        className={classes.headerRight}
+                    >
                         <Typography variant="subtitle2">REPLIES</Typography>
                     </Grid>
-                    <Grid className={classes.headerRight}>
+                    <Grid
+                        justify="center"
+                        alignItems="center"
+                        className={classes.headerRight}
+                    >
                         <Typography variant="subtitle2">ACTIVITY</Typography>
                     </Grid>
                 </Grid>

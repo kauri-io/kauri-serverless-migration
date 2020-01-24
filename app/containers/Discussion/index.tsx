@@ -4,7 +4,6 @@ import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
 import { getDiscussion } from '../../queries/Discussion'
 
-
 export default compose(
     withApollo,
     graphql(getDiscussion, {

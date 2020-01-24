@@ -96,7 +96,7 @@ interface IProps {
     leaveCommunityAction: typeof leaveCommunityAction
     router: Router
     discussionId?: string
-    discussionAction?: "list" | "view" | "form"
+    discussionAction?: 'list' | 'view' | 'form'
 }
 
 interface IState {
@@ -190,7 +190,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCommunityModerator,
             joinCommunityAction,
             discussionId,
-            discussionAction = "list",
+            discussionAction = 'list',
         } = this.props
 
         const articlesCount =
@@ -409,36 +409,43 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && discussionAction === "view" && discussionId && (
-                    <DiscussionView
-                        parentId={getCommunity.id}
-                        parentName={getCommunity.name}
-                        parentType={ResourceTypeInput.COMMUNITY}
-                        discussionId={discussionId}
-                    />
-                )}
-                {this.state.tab === getActualTabId(2) && discussionAction === "form" && !discussionId && (
-                    <DiscussionCreateForm
-                        parentId={getCommunity.id}
-                        parentName={getCommunity.name}
-                        parentType={ResourceTypeInput.COMMUNITY}
-                    />
-                )}
-                {this.state.tab === getActualTabId(2) && discussionAction === "form" && discussionId && (
-                    <DiscussionEditForm
-                        parentId={getCommunity.id}
-                        parentName={getCommunity.name}
-                        parentType={ResourceTypeInput.COMMUNITY}
-                        discussionId={discussionId}
-                    />
-                )}
-                {this.state.tab === getActualTabId(2) && discussionAction === "list" && (
-                    <DiscussionList
-                        parentId={getCommunity.id}
-                        parentName={getCommunity.name}
-                        parentType={ResourceTypeInput.COMMUNITY}
-                    />
-                )}
+                {this.state.tab === getActualTabId(2) &&
+                    discussionAction === 'view' &&
+                    discussionId && (
+                        <DiscussionView
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                            discussionId={discussionId}
+                        />
+                    )}
+                {this.state.tab === getActualTabId(2) &&
+                    discussionAction === 'form' &&
+                    !discussionId && (
+                        <DiscussionCreateForm
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                        />
+                    )}
+                {this.state.tab === getActualTabId(2) &&
+                    discussionAction === 'form' &&
+                    discussionId && (
+                        <DiscussionEditForm
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                            discussionId={discussionId}
+                        />
+                    )}
+                {this.state.tab === getActualTabId(2) &&
+                    discussionAction === 'list' && (
+                        <DiscussionList
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                        />
+                    )}
                 {this.state.tab === getActualTabId(3) && (
                     <MembersTab id={getCommunity.id} />
                 )}

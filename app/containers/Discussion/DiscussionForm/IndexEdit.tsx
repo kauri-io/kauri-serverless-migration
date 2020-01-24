@@ -1,4 +1,3 @@
-
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'

@@ -1,4 +1,3 @@
-
 import View from './View'
 import { connect } from 'react-redux'
 import {
@@ -7,6 +6,7 @@ import {
 } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { createDiscussionAction, editDiscussionAction } from '../Module'
+import { withApollo, compose } from 'react-apollo'
 
 const mapStateToProps = state => {
     return {
@@ -17,13 +17,16 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        openModalAction,
-        closeModalAction,
-        routeChangeAction,
-        createDiscussionAction,
-        editDiscussionAction,
-    }
+export default compose(
+    withApollo,
+    connect(
+        mapStateToProps,
+        {
+            openModalAction,
+            closeModalAction,
+            routeChangeAction,
+            createDiscussionAction,
+            editDiscussionAction,
+        }
+    )
 )(View)

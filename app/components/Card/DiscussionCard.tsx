@@ -112,7 +112,7 @@ const DiscussionCard = ({
                                 className={classes.column}
                                 style={{ width: 160 }}
                             >
-                                <AvatarList 
+                                <AvatarList
                                     list={contributors.content}
                                     total={contributors.totalElements}
                                     limit={3}
@@ -170,7 +170,7 @@ const DiscussionCard = ({
                                 className={classes.column}
                                 style={{ width: 160 }}
                             >
-                                <AvatarList 
+                                <AvatarList
                                     list={contributors.content}
                                     total={contributors.totalElements}
                                     limit={3}

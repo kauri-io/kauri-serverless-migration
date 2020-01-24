@@ -2,7 +2,7 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import analytics from '../../lib/analytics'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { ofType, Epic } from 'redux-observable'
-import { from, of } from 'rxjs'
+import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 import {
@@ -32,6 +32,8 @@ import {
     deleteDiscussionVariables,
     deleteDiscussion,
 } from '../../queries/__generated__/deleteDiscussion'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getDiscussionURL } from '../../lib/getURLs'
 
 /////////////////////////////////////////////////////////////
 // CREATE DISCUSSION
@@ -39,6 +41,11 @@ import {
 export interface ICreateDiscussionAction {
     type: string
     payload: createDiscussionVariables
+}
+
+interface ICreateDiscussionActionCommandOutput {
+    id: string
+    error: string | undefined
 }
 
 const CREATE_DISCUSSION: string = 'CREATE_DISCUSSION'
@@ -69,7 +76,7 @@ export const createDiscussionEpic: Epic<
                 })
             ).pipe(
                 mergeMap(({ data }) =>
-                    apolloSubscriber(
+                    apolloSubscriber<ICreateDiscussionActionCommandOutput>(
                         path<string>(['createDiscussion', 'hash'])(data) || ''
                     )
                 ),
@@ -79,14 +86,24 @@ export const createDiscussionEpic: Epic<
                     })
                 ),
                 tap(() => apolloClient.resetStore()),
-                mergeMap(() =>
-                    of(
-                        showNotificationAction({
-                            description:
-                                'Your discussion has been successfully published',
-                            message: `Discussion`,
-                            notificationType: 'success',
-                        })
+                mergeMap(({ data: { getEvent: { output: { id } } } }) =>
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'Your discussion has been successfully published',
+                                message: `Discussion`,
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                getDiscussionURL({
+                                    id,
+                                    title: payload.title,
+                                }).as
+                            )
+                        )
                     )
                 ),
                 catchError(err => {
@@ -127,7 +144,7 @@ export const editDiscussionEpic: Epic<
     IDependencies
 > = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
-        ofType(CREATE_DISCUSSION),
+        ofType(EDIT_DISCUSSION),
         switchMap(({ payload }) => {
             return from(
                 apolloClient.mutate<editDiscussion, editDiscussionVariables>({
@@ -194,7 +211,7 @@ export const closeDiscussionEpic: Epic<
     IDependencies
 > = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
-        ofType(CREATE_DISCUSSION),
+        ofType(CLOSE_DISCUSSION),
         switchMap(({ payload }) => {
             return from(
                 apolloClient.mutate<closeDiscussion, closeDiscussionVariables>({

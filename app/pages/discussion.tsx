@@ -11,7 +11,9 @@ const DiscussionPage = withTransaction('discussion', 'page')(({ router }) => {
         <App>
             <Discussion
                 discussionId={router.query['discussion_id']}
-                discussionAction={router.query['discussion_id'] ? "view" : "list"}
+                discussionAction={
+                    router.query['discussion_id'] ? 'view' : 'list'
+                }
             />
         </App>
     )

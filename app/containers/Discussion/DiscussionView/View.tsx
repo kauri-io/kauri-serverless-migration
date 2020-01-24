@@ -71,45 +71,27 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
     },
     left: {
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
         width: 300,
     },
-    leftItem: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-    },
-    leftItemRow: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'row',
+    action: {
         marginTop: theme.spacing(2),
     },
     right: {
-        display: 'flex',
-        flexDirection: 'column',
         maxWidth: 808,
     },
     row: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         marginTop: theme.spacing(2),
     },
     border: {
         borderBottom: '1px solid #cbcbcb',
         paddingBottom: theme.spacing(2),
     },
-    contributors: {
-        display: 'flex',
-        flexDirection: 'row',
-    },
     button: {
         width: '200px',
         color: theme.palette.common.black,
+    },
+    flex: {
+        display: 'flex',
     },
 }))
 
@@ -139,8 +121,14 @@ export const DiscussionView = ({
     return (
         <div className={classes.container}>
             <div className={classes.root}>
-                <Grid container spacing={2} className={classes.left}>
-                    <Grid className={classes.leftItem}>
+                <Grid
+                    container
+                    spacing={2}
+                    direction="column"
+                    alignItems="center"
+                    className={classes.left}
+                >
+                    <Grid justify="center">
                         <Link href={back.href} as={back.as}>
                             <Button color="primary" variant="text">
                                 Back to Topics
@@ -148,7 +136,12 @@ export const DiscussionView = ({
                         </Link>
                     </Grid>
 
-                    <Grid className={classes.leftItem}>
+                    <Grid
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                        className={classes.flex}
+                    >
                         <VoteWidget
                             isLoggedIn={isLoggedIn}
                             id={discussionId}
@@ -159,13 +152,15 @@ export const DiscussionView = ({
                         />
                     </Grid>
 
-                    <Grid className={classes.leftItemRow} onClick={() => routeChangeAction(edit.as)}>
-
+                    <Grid
+                        justify="center"
+                        alignItems="center"
+                        className={classes.action}
+                        onClick={() => routeChangeAction(edit.as)}
+                    >
                         <Link href={edit.href} as={edit.as}>
                             <Button
-                                //color="primary"
                                 variant="text"
-                                //className={classes.button}
                                 size="small"
                                 startIcon={<EditIcon />}
                             >
@@ -174,7 +169,12 @@ export const DiscussionView = ({
                         </Link>
                     </Grid>
                 </Grid>
-                <Grid container spacing={2} className={classes.right}>
+                <Grid
+                    container
+                    spacing={2}
+                    direction="column"
+                    className={classes.right}
+                >
                     <Typography variant="h6" style={{ marginBottom: -8 }}>
                         {data.getDiscussion.title}
                     </Typography>
@@ -185,7 +185,15 @@ export const DiscussionView = ({
                         tags={data.getDiscussion.tags}
                     />
 
-                    <Grid className={[classes.row, classes.border].join(' ')}>
+                    <Grid
+                        direction="row"
+                        justify="space-between"
+                        className={[
+                            classes.row,
+                            classes.border,
+                            classes.flex,
+                        ].join(' ')}
+                    >
                         <Avatar
                             id={data.getDiscussion.author.id}
                             name={data.getDiscussion.author.publicUserName}
@@ -209,11 +217,23 @@ export const DiscussionView = ({
                         </Typography>
                     </Grid>
 
-                    <Grid className={classes.row}>
+                    <Grid
+                        direction="row"
+                        justify="space-between"
+                        className={[classes.row, classes.flex].join(' ')}
+                    >
                         <MDRenderer markdown={data.getDiscussion.message} />
                     </Grid>
 
-                    <Grid className={[classes.row, classes.border].join(' ')}>
+                    <Grid
+                        direction="row"
+                        justify="space-between"
+                        className={[
+                            classes.row,
+                            classes.border,
+                            classes.flex,
+                        ].join(' ')}
+                    >
                         <Button color="primary" variant="text">
                             Leave a Comment
                         </Button>
@@ -224,12 +244,23 @@ export const DiscussionView = ({
                         />
                     </Grid>
 
-                    <Grid className={[classes.row, classes.border].join(' ')}>
+                    <Grid
+                        direction="row"
+                        justify="space-between"
+                        className={[
+                            classes.row,
+                            classes.border,
+                            classes.flex,
+                        ].join(' ')}
+                    >
                         <Typography variant="subtitle2">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
-                        <Grid className={classes.contributors}>
-                            <AvatarList 
+                        <Grid direction="row" className={classes.flex}>
+                            <AvatarList
                                 list={data.getDiscussion.contributors.content}
-                                total={data.getDiscussion.contributors.totalElements}
+                                total={
+                                    data.getDiscussion.contributors
+                                        .totalElements
+                                }
                                 limit={10}
                             />
                         </Grid>

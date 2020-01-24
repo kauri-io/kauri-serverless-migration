@@ -13,14 +13,8 @@ const AvatarListComp = ({
     list,
     total,
     limit = 5,
-    pathToResource = "resource",
+    pathToResource = 'resource',
 }: IProps) => {
-
-    //const useStyles = makeStyles((_theme: Theme) => ({
-    //
-    //}))
-    //const classes = useStyles()
-
     return (
         <>
             {list.slice(0, limit).map(u => {
@@ -37,11 +31,7 @@ const AvatarListComp = ({
                     />
                 )
             })}
-            {total && total > limit && (
-                <div>
-                    + {total - limit}
-                </div>
-            )}
+            {total && total > limit && <div>+ {total - limit}</div>}
         </>
     )
 }

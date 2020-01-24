@@ -5,7 +5,7 @@ import Community from '../Community'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 interface IProps {
-    discussionAction: "list"|"view"|"form"
+    discussionAction: 'list' | 'view' | 'form'
     discussionId?: string
     parentId?: string
     parentType?: ResourceTypeInput
@@ -15,13 +15,18 @@ interface IProps {
     }
 }
 
-export const DiscussionEntryPoint = ({ discussionId, discussionAction, parentId, parentType, data }: IProps) => {
-
+export const DiscussionEntryPoint = ({
+    discussionId,
+    discussionAction,
+    parentId,
+    parentType,
+    data,
+}: IProps) => {
     if (data && data.loading) {
         return <Loading />
     }
 
-    parentId = parentId || (data && data.getDiscussion.parentId.id) 
+    parentId = parentId || (data && data.getDiscussion.parentId.id)
     parentType = parentType || (data && data.getDiscussion.parentId.type)
 
     // This entry point is used to embed the discussion componetns in whatever parent it is associated to.
@@ -34,7 +39,6 @@ export const DiscussionEntryPoint = ({ discussionId, discussionAction, parentId,
                 discussionAction={discussionAction}
             />
         )
-
     } else {
         return
     }
