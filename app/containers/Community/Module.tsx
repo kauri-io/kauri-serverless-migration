@@ -14,12 +14,17 @@ import {
     acceptInvitationMutation,
     prepareRevokeInvitationQuery,
     revokeInvitationMutation,
-    prepareRemoveMemberQuery,
-    removeMemberMutation,
-    changeMemberRoleMutation,
-    prepareChangeMemberRoleQuery,
+    prepareRemoveGrantedMemberQuery,
+    removeGrantedMemberMutation,
+    prepareChangeGrantedMemberRoleQuery,
     resendInvitationMutation,
     initiateArticleTransferMutation,
+    changeGrantedMemberRoleMutation,
+    joinCommunityMutation,
+    leaveCommunityMutation,
+    removeMemberMutation,
+    banMemberMutation,
+    unbanMemberMutation,
 } from '../../queries/Community'
 import {
     curateCommunityResourcesVariables,
@@ -60,22 +65,6 @@ import {
     revokeInvitationVariables,
 } from '../../queries/__generated__/revokeInvitation'
 import {
-    prepareRemoveMemberVariables,
-    prepareRemoveMember,
-} from '../../queries/__generated__/prepareRemoveMember'
-import {
-    removeMember,
-    removeMemberVariables,
-} from '../../queries/__generated__/removeMember'
-import {
-    prepareChangeMemberRole,
-    prepareChangeMemberRoleVariables,
-} from '../../queries/__generated__/prepareChangeMemberRole'
-import {
-    changeMemberRole,
-    changeMemberRoleVariables,
-} from '../../queries/__generated__/changeMemberRole'
-import {
     resendInvitation,
     resendInvitationVariables,
 } from '../../queries/__generated__/resendInvitation'
@@ -85,7 +74,10 @@ import {
 } from '../../queries/__generated__/initiateArticleTransfer'
 
 import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
-import { closeModalAction } from '../../components/Modal/Module'
+import {
+    closeModalAction,
+    openModalAction,
+} from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
@@ -95,20 +87,76 @@ import {
     finaliseArticleTransferVariables,
 } from '../../queries/__generated__/finaliseArticleTransfer'
 import { getCommunityURL } from '../../lib/getURLs'
+import {
+    removeGrantedMemberVariables,
+    removeGrantedMember,
+} from '../../queries/__generated__/removeGrantedMember'
+import {
+    prepareChangeGrantedMemberRoleVariables,
+    prepareChangeGrantedMemberRole,
+} from '../../queries/__generated__/prepareChangeGrantedMemberRole'
+import {
+    prepareRemoveGrantedMemberVariables,
+    prepareRemoveGrantedMember,
+} from '../../queries/__generated__/prepareRemoveGrantedMember'
+import {
+    changeGrantedMemberRoleVariables,
+    changeGrantedMemberRole,
+} from '../../queries/__generated__/changeGrantedMemberRole'
+import {
+    joinCommunityVariables,
+    joinCommunity,
+} from '../../queries/__generated__/joinCommunity'
+import {
+    leaveCommunityVariables,
+    leaveCommunity,
+} from '../../queries/__generated__/leaveCommunity'
+import {
+    removeMemberVariables,
+    removeMember,
+} from '../../queries/__generated__/removeMember'
+import {
+    banMemberVariables,
+    banMember,
+} from '../../queries/__generated__/banMember'
+import {
+    unbanMemberVariables,
+    unbanMember,
+} from '../../queries/__generated__/unbanMember'
+import AlertViewComponent from '../../components/Modal/AlertView'
+import { BodyCard, H4 } from '../../components/Typography'
+import styled from 'styled-components'
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    min-height: 130px;
+    align-items: center;
+    > :first-child {
+        margin-right: 3px;
+    }
+`
 
 interface IWaitForInvitationReconciliationPayload {
     id: string
     transactionHash: string
 }
 
-interface ICurateCommunityResourcesAction {
-    type: 'CURATE_COMMUNITY_RESOURCES'
-    payload: curateCommunityResourcesVariables
+export type ICurateCommunityResourcesPayload = curateCommunityResourcesVariables & {
+    routeChangeAction: any
+    closeModalAction: any
+    communityId: string
+    communityName: string
 }
 
-export interface IRemoveMemberAction {
-    type: 'REMOVE_MEMBER'
-    payload: prepareRemoveMemberVariables
+interface ICurateCommunityResourcesAction {
+    type: 'CURATE_COMMUNITY_RESOURCES'
+    payload: ICurateCommunityResourcesPayload
+}
+
+export interface IRemoveGrantedMemberAction {
+    type: 'REMOVE_GRANTED_MEMBER'
+    payload: prepareRemoveGrantedMemberVariables
 }
 
 interface ITransferArticleToCommunityAction {
@@ -149,8 +197,8 @@ interface IInvitationRevokedAction {
     type: 'INVITATION_REVOKED'
 }
 
-interface IMemberRemovedAction {
-    type: 'MEMBER_REMOVED'
+interface IGrantedMemberRemovedAction {
+    type: 'GRANTED_MEMBER_REMOVED'
 }
 
 interface IWaitForInvitationReconciliationAction {
@@ -167,13 +215,13 @@ interface IAcceptCommunityInvitationAction {
     payload: prepareAcceptInvitationVariables
 }
 
-interface IMemberRoleChangedAction {
-    type: 'MEMBER_ROLE_CHANGED'
+interface IGrantedMemberRoleChangedAction {
+    type: 'GRANTED_MEMBER_ROLE_CHANGED'
 }
 
-interface IChangeMemberRoleAction {
-    type: 'CHANGE_MEMBER_ROLE'
-    payload: prepareChangeMemberRoleVariables
+interface IChangeGrantedMemberRoleAction {
+    type: 'CHANGE_GRANTED_MEMBER_ROLE'
+    payload: prepareChangeGrantedMemberRoleVariables
 }
 
 interface IResendInvitationAction {
@@ -185,6 +233,31 @@ interface IInvitationResentAction {
     type: 'INVITATION_RESENT'
 }
 
+interface IJoinCommunityAction {
+    payload: joinCommunityVariables
+    type: 'JOIN_COMMUNITY'
+}
+
+interface ILeaveCommunityAction {
+    payload: leaveCommunityVariables
+    type: 'LEAVE_COMMUNITY'
+}
+
+interface IRemoveMemberAction {
+    payload: removeMemberVariables
+    type: 'REMOVE_MEMBER'
+}
+
+interface IBanMemberAction {
+    payload: banMemberVariables
+    type: 'BAN_MEMBER'
+}
+
+interface IUnbanMemberAction {
+    payload: unbanMemberVariables
+    type: 'UNBAN_MEMBER'
+}
+
 const CURATE_COMMUNITY_RESOURCES = 'CURATE_COMMUNITY_RESOURCES'
 const APPROVE_RESOURCE = 'APPROVE_RESOURCE'
 const REMOVE_RESOURCE = 'REMOVE_RESOURCE'
@@ -194,15 +267,20 @@ const ACCEPT_COMMUNITY_INVITATION = 'ACCEPT_COMMUNITY_INVITATION'
 const INVITATION_ACCEPTED = 'INVITATION_ACCEPTED'
 const REVOKE_INVITATION = 'REVOKE_INVITATION'
 const INVITATION_REVOKED = 'INVITATION_REVOKED'
-const REMOVE_MEMBER = 'REMOVE_MEMBER'
-const MEMBER_REMOVED = 'MEMBER_REMOVED'
-const CHANGE_MEMBER_ROLE = 'CHANGE_MEMBER_ROLE'
-const MEMBER_ROLE_CHANGED = 'MEMBER_ROLE_CHANGED'
+const REMOVE_GRANTED_MEMBER = 'REMOVE_GRANTED_MEMBER'
+const GRANTED_MEMBER_REMOVED = 'GRANTED_MEMBER_REMOVED'
+const CHANGE_GRANTED_MEMBER_ROLE = 'CHANGE_GRANTED_MEMBER_ROLE'
+const GRANTED_MEMBER_ROLE_CHANGED = 'GRANTED_MEMBER_ROLE_CHANGED'
 const RESEND_INVITATION = 'RESEND_INVITATION'
 const INVITATION_RESENT = 'INVITATION_RESENT'
 const TRANSFER_ARTICLE_TO_COMMUNITY = 'TRANSFER_ARTICLE_TO_COMMUNITY'
 const ARTICLE_TRANSFERRED_TO_COMMUNITY = 'ARTICLE_TRANSFERRED_TO_COMMUNITY'
 const WAIT_FOR_INVITATION_RECONCILIATION = 'WAIT_FOR_INVITATION_RECONCILIATION'
+const JOIN_COMMUNITY = 'JOIN_COMMUNITY'
+const LEAVE_COMMUNITY = 'LEAVE_COMMUNITY'
+const REMOVE_MEMBER = 'REMOVE_MEMBER'
+const BAN_MEMBER = 'BAN_MEMBER'
+const UNBAN_MEMBER = 'UNBAN_MEMBER'
 
 export const invitationRevokedAction = (): IInvitationRevokedAction => ({
     type: INVITATION_REVOKED,
@@ -215,12 +293,12 @@ export const removeResourceAction = (
     type: REMOVE_RESOURCE,
 })
 
-export const memberRemovedAction = (): IMemberRemovedAction => ({
-    type: MEMBER_REMOVED,
+export const grantedMemberRemovedAction = (): IGrantedMemberRemovedAction => ({
+    type: GRANTED_MEMBER_REMOVED,
 })
 
-export const memberRoleChangedAction = (): IMemberRoleChangedAction => ({
-    type: MEMBER_ROLE_CHANGED,
+export const grantedMemberRoleChangedAction = (): IGrantedMemberRoleChangedAction => ({
+    type: GRANTED_MEMBER_ROLE_CHANGED,
 })
 
 export const articleTransferredToCommunityAction = (): IArticleTransferredToCommunityAction => ({
@@ -234,15 +312,15 @@ export const resendInvitationAction = (
     type: RESEND_INVITATION,
 })
 
-export const removeMemberAction = (
-    payload: removeMemberVariables
-): IRemoveMemberAction => ({
+export const removeGrantedMemberAction = (
+    payload: prepareRemoveGrantedMemberVariables
+): IRemoveGrantedMemberAction => ({
     payload,
-    type: REMOVE_MEMBER,
+    type: REMOVE_GRANTED_MEMBER,
 })
 
 export const curateCommunityResourcesAction = (
-    payload: curateCommunityResourcesVariables
+    payload: ICurateCommunityResourcesPayload
 ): ICurateCommunityResourcesAction => ({
     payload,
     type: CURATE_COMMUNITY_RESOURCES,
@@ -304,11 +382,46 @@ export const revokeInvitationAction = (
     type: REVOKE_INVITATION,
 })
 
-export const changeMemberRoleAction = (
-    payload: prepareChangeMemberRoleVariables
-): IChangeMemberRoleAction => ({
+export const changeGrantedMemberRoleAction = (
+    payload: changeGrantedMemberRoleVariables
+): IChangeGrantedMemberRoleAction => ({
     payload,
-    type: CHANGE_MEMBER_ROLE,
+    type: CHANGE_GRANTED_MEMBER_ROLE,
+})
+
+export const joinCommunityAction = (
+    payload: joinCommunityVariables
+): IJoinCommunityAction => ({
+    payload,
+    type: JOIN_COMMUNITY,
+})
+
+export const leaveCommunityAction = (
+    payload: leaveCommunityVariables
+): ILeaveCommunityAction => ({
+    payload,
+    type: LEAVE_COMMUNITY,
+})
+
+export const removeMemberAction = (
+    payload: removeMemberVariables
+): IRemoveMemberAction => ({
+    payload,
+    type: REMOVE_MEMBER,
+})
+
+export const banMemberAction = (
+    payload: banMemberVariables
+): IBanMemberAction => ({
+    payload,
+    type: BAN_MEMBER,
+})
+
+export const unbanMemberAction = (
+    payload: unbanMemberVariables
+): IUnbanMemberAction => ({
+    payload,
+    type: UNBAN_MEMBER,
 })
 
 interface ICurateCommunityResourcesCommandOutput {
@@ -336,13 +449,38 @@ interface IRemoveResourceCommandOutput {
     error?: string
 }
 
+interface IRemoveGrantedMemberCommandOutput {
+    hash: string
+    error?: string
+}
+
+interface IChangeGrantedMemberRoleCommandOutput {
+    hash: string
+}
+
+interface IJoinCommunityCommandOutput {
+    hash: string
+    error?: string
+}
+
+interface ILeaveCommunityCommandOutput {
+    hash: string
+    error?: string
+}
+
 interface IRemoveMemberCommandOutput {
     hash: string
     error?: string
 }
 
-interface IChangeMemberRoleCommandOutput {
+interface IBanMemberCommandOutput {
     hash: string
+    error?: string
+}
+
+interface IUnbanMemberCommandOutput {
+    hash: string
+    error?: string
 }
 
 type IFinaliseArticleTransferCommandOutput = ICurateCommunityResourcesCommandOutput
@@ -400,15 +538,36 @@ export const curateCommunityResourcesEpic: Epic<
                               })
                           )
                         : of(
-                              showNotificationAction({
-                                  description: `They have been proposed to the community!`,
-                                  message: `${payload.resources &&
-                                      capitalize(
-                                          (payload.resources[0] as {
-                                              type: string
-                                          }).type.toLowerCase()
-                                      )}s curated!`,
-                                  notificationType: 'success',
+                              openModalAction({
+                                  children: (
+                                      <AlertViewComponent
+                                          title="Share to Community"
+                                          content={
+                                              <Row>
+                                                  <BodyCard>
+                                                      Article successfully
+                                                      shared to
+                                                  </BodyCard>
+                                                  <H4>{` ${payload.communityName} Community`}</H4>
+                                              </Row>
+                                          }
+                                          closeModalAction={() =>
+                                              payload.closeModalAction()
+                                          }
+                                          confirmButtonText={'View Community'}
+                                          closeButtonText={'Close'}
+                                          confirmButtonAction={() => {
+                                              payload.closeModalAction()
+                                              payload.routeChangeAction(
+                                                  getCommunityURL({
+                                                      name:
+                                                          payload.communityName,
+                                                      id: payload.communityId,
+                                                  }).href
+                                              )
+                                          }}
+                                      />
+                                  ),
                               })
                           )
                 ),
@@ -839,21 +998,21 @@ export const revokeInvitationEpic: Epic<
         )
     )
 
-export const removeMemberEpic: Epic<
-    IRemoveMemberAction,
+export const removeGrantedMemberEpic: Epic<
+    IRemoveGrantedMemberAction,
     any,
     IReduxState,
     IDependencies
 > = (action$, {}, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
-        ofType(REMOVE_MEMBER),
+        ofType(REMOVE_GRANTED_MEMBER),
         switchMap(({ payload }) =>
             from(
                 apolloClient.query<
-                    prepareRemoveMember,
-                    prepareRemoveMemberVariables
+                    prepareRemoveGrantedMember,
+                    prepareRemoveGrantedMemberVariables
                 >({
-                    query: prepareRemoveMemberQuery,
+                    query: prepareRemoveGrantedMemberQuery,
                     variables: payload,
                 })
             ).pipe(
@@ -861,15 +1020,18 @@ export const removeMemberEpic: Epic<
                     from(
                         personalSign(
                             path<string>([
-                                'prepareRemoveMember',
+                                'prepareRemoveGrantedMember',
                                 'messageHash',
                             ])(data) || ''
                         )
                     )
                 ),
                 mergeMap(signature =>
-                    apolloClient.mutate<removeMember, removeMemberVariables>({
-                        mutation: removeMemberMutation,
+                    apolloClient.mutate<
+                        removeGrantedMember,
+                        removeGrantedMemberVariables
+                    >({
+                        mutation: removeGrantedMemberMutation,
                         variables: {
                             account: (payload && payload.account) || '',
                             id: (payload && payload.id) || '',
@@ -878,8 +1040,9 @@ export const removeMemberEpic: Epic<
                     })
                 ),
                 mergeMap(({ data }) =>
-                    apolloSubscriber<IRemoveMemberCommandOutput>(
-                        path<string>(['removeMember', 'hash'])(data) || ''
+                    apolloSubscriber<IRemoveGrantedMemberCommandOutput>(
+                        path<string>(['removeGrantedMember', 'hash'])(data) ||
+                            ''
                     )
                 ),
                 tap(() => apolloClient.resetStore()),
@@ -919,7 +1082,7 @@ export const removeMemberEpic: Epic<
                                 notificationType: 'success',
                             })
                         ),
-                        of(memberRemovedAction())
+                        of(grantedMemberRemovedAction())
                     )
                 }),
                 catchError(err => {
@@ -936,21 +1099,21 @@ export const removeMemberEpic: Epic<
         )
     )
 
-export const changeMemberRoleEpic: Epic<
-    IChangeMemberRoleAction,
+export const changeGrantedMemberRoleEpic: Epic<
+    IChangeGrantedMemberRoleAction,
     any,
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
-        ofType(CHANGE_MEMBER_ROLE),
+        ofType(CHANGE_GRANTED_MEMBER_ROLE),
         switchMap(({ payload }) =>
             from(
                 apolloClient.query<
-                    prepareChangeMemberRole,
-                    prepareChangeMemberRoleVariables
+                    prepareChangeGrantedMemberRole,
+                    prepareChangeGrantedMemberRoleVariables
                 >({
-                    query: prepareChangeMemberRoleQuery,
+                    query: prepareChangeGrantedMemberRoleQuery,
                     variables: payload,
                 })
             ).pipe(
@@ -958,17 +1121,17 @@ export const changeMemberRoleEpic: Epic<
                     from(
                         personalSign(
                             path<string>([
-                                'prepareChangeMemberRole',
+                                'prepareChangeGrantedMemberRole',
                                 'messageHash',
                             ])(data) || ''
                         )
                     ).pipe(
                         mergeMap(signature =>
                             apolloClient.mutate<
-                                changeMemberRole,
-                                changeMemberRoleVariables
+                                changeGrantedMemberRole,
+                                changeGrantedMemberRoleVariables
                             >({
-                                mutation: changeMemberRoleMutation,
+                                mutation: changeGrantedMemberRoleMutation,
                                 variables: {
                                     account: (payload && payload.account) || '',
                                     id: (payload && payload.id) || '',
@@ -980,10 +1143,13 @@ export const changeMemberRoleEpic: Epic<
                             })
                         ),
                         mergeMap(({ data }) =>
-                            apolloSubscriber<IChangeMemberRoleCommandOutput>(
-                                path<string>(['changeMemberRole', 'hash'])(
-                                    data
-                                ) || ''
+                            apolloSubscriber<
+                                IChangeGrantedMemberRoleCommandOutput
+                            >(
+                                path<string>([
+                                    'changeGrantedMemberRole',
+                                    'hash',
+                                ])(data) || ''
                             )
                         ),
                         tap(() => {
@@ -1001,7 +1167,7 @@ export const changeMemberRoleEpic: Epic<
                                         notificationType: 'success',
                                     })
                                 ),
-                                of(memberRoleChangedAction())
+                                of(grantedMemberRoleChangedAction())
                             )
                         ),
                         catchError(err => {
@@ -1256,6 +1422,296 @@ export const transferArticleToCommunityEpic: Epic<
                         )
                     }
                 )
+            )
+        )
+    )
+
+export const joinCommunityEpic: Epic<
+    IJoinCommunityAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(JOIN_COMMUNITY),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<joinCommunity, joinCommunityVariables>({
+                    mutation: joinCommunityMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IJoinCommunityCommandOutput>(
+                        path<string>(['joinCommunity', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error joining the community, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `You successfully joined the community`,
+                                      message: 'Joined Community',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+export const leaveCommunityEpic: Epic<
+    ILeaveCommunityAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(LEAVE_COMMUNITY),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<leaveCommunity, leaveCommunityVariables>({
+                    mutation: leaveCommunityMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<ILeaveCommunityCommandOutput>(
+                        path<string>(['leaveCommunity', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error leaving the community, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `You successfully left the community`,
+                                      message: 'Left Community',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+export const removeMemberEpic: Epic<
+    IRemoveMemberAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(REMOVE_MEMBER),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<removeMember, removeMemberVariables>({
+                    mutation: removeMemberMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IRemoveMemberCommandOutput>(
+                        path<string>(['removeMember', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error removing the member from the community, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `User removed from the community`,
+                                      message: 'Success',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+export const banMemberEpic: Epic<
+    IBanMemberAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(BAN_MEMBER),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<banMember, banMemberVariables>({
+                    mutation: banMemberMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IBanMemberCommandOutput>(
+                        path<string>(['banMember', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error banning the member from the community, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `User banned from the community`,
+                                      message: 'Success',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+export const unbanMemberEpic: Epic<
+    IUnbanMemberAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(UNBAN_MEMBER),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<unbanMember, unbanMemberVariables>({
+                    mutation: unbanMemberMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IUnbanMemberCommandOutput>(
+                        path<string>(['unbanMember', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error unbanning the member from the community, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `User unbanned from the community`,
+                                      message: 'Success',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
             )
         )
     )

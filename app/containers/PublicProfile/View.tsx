@@ -23,6 +23,10 @@ import {
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { Tabs, Tab } from '@material-ui/core'
+import {
+    leaveCommunityAction,
+    removeGrantedMemberAction,
+} from '../Community/Module'
 
 interface IProps {
     router: any
@@ -46,7 +50,8 @@ interface IProps {
     openModalAction: typeof openModalAction
     isLoggedIn: boolean
     hostName: string
-    removeMemberAction: any
+    removeGrantedMemberAction: typeof removeGrantedMemberAction
+    leaveCommunityAction: typeof leaveCommunityAction
 }
 
 interface IState {
@@ -93,10 +98,11 @@ class PublicProfile extends Component<IProps, IState> {
             closeModalAction,
             openModalAction,
             hostName,
-            removeMemberAction,
+            removeGrantedMemberAction,
             saveUserDetailsAction,
             showNotificationAction,
             resendEmailVerificationAction,
+            leaveCommunityAction,
         } = this.props
 
         const isHeaderLoaded = typeof UserQuery.getUserByUsername === 'object'
@@ -215,7 +221,10 @@ class PublicProfile extends Component<IProps, IState> {
                                 userId={getUserField<string>('id', '')}
                                 ownProfile={OwnProfileQuery}
                                 type="manage"
-                                removeMemberAction={removeMemberAction}
+                                removeGrantedMemberAction={
+                                    removeGrantedMemberAction
+                                }
+                                leaveCommunityAction={leaveCommunityAction}
                                 routeChangeAction={routeChangeAction}
                                 deleteDraftArticleAction={
                                     deleteDraftArticleAction

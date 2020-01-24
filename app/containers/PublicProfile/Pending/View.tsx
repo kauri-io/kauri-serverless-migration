@@ -7,7 +7,6 @@ import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState
 import { searchPending } from '../../../queries/Article'
 import { graphql, compose } from 'react-apollo'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
-import { ICommunity } from '../../../lib/Module'
 import { getArticleURL } from '../../../lib/getURLs'
 import { Grid, Typography } from '@material-ui/core'
 import { openModalAction } from '../../../components/Modal/Module'
@@ -79,12 +78,7 @@ const Articles = ({ data }: IArticlesProps) => {
 
 export default compose(
     graphql(searchPending, {
-        options: ({
-            userId,
-        }: {
-            userId: string
-            communities: ICommunity[]
-        }) => ({
+        options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
                 page: 0,

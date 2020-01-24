@@ -526,6 +526,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                     value="Publish to My ARTICLE"
                   >
                     <Content
+                      action="Publish"
                       options={
                         Array [
                           Object {
@@ -675,6 +676,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                           hideOnClick={true}
                           html={
                             <Content
+                              action="Publish"
                               options={
                                 Array [
                                   Object {
@@ -697,7 +699,18 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                           onRequestClose={[Function]}
                           onShow={[Function]}
                           onShown={[Function]}
-                          popperOptions={Object {}}
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "flip": Object {
+                                  "enabled": false,
+                                },
+                                "offset": Object {
+                                  "offset": "-150px,-40px",
+                                },
+                              },
+                            }
+                          }
                           position="bottom"
                           size="regular"
                           sticky={false}

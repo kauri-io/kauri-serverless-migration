@@ -124,6 +124,18 @@ export interface searchPersonalArticles_searchArticles_content_contributors {
   communities: (searchPersonalArticles_searchArticles_content_contributors_communities | null)[];
 }
 
+export interface searchPersonalArticles_searchArticles_content_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface searchPersonalArticles_searchArticles_content_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -165,7 +177,7 @@ export interface searchPersonalArticles_searchArticles_content_author {
 }
 
 export interface searchPersonalArticles_searchArticles_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchPersonalArticles_searchArticles_content_owner_PublicUserDTO_resourceIdentifier {
@@ -282,6 +294,10 @@ export interface searchPersonalArticles_searchArticles_content_comments {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchPersonalArticles_searchArticles_content {
@@ -324,6 +340,10 @@ export interface searchPersonalArticles_searchArticles_content {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: searchPersonalArticles_searchArticles_content_ownerId | null;
   /**
    * Date created
    */

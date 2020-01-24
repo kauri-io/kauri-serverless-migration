@@ -25,6 +25,8 @@ export enum CommunityInvitationStatusInput {
 
 export enum CommunityPermissionInput {
   ADMIN = "ADMIN",
+  BANNED = "BANNED",
+  BASIC = "BASIC",
   CURATOR = "CURATOR",
 }
 
@@ -57,6 +59,7 @@ export enum ResourceTypeInput {
   COMMENT = "COMMENT",
   COMMUNITY = "COMMUNITY",
   CURATED_LIST = "CURATED_LIST",
+  DISCUSSION = "DISCUSSION",
   INVITATION = "INVITATION",
   LINK = "LINK",
   REQUEST = "REQUEST",
@@ -128,8 +131,13 @@ export interface CommunityInvitationFilterInput {
   statusIn?: (CommunityInvitationStatusInput | null)[] | null;
 }
 
+export interface CommunityMemberFilterInput {
+  roleIn?: (CommunityPermissionInput | null)[] | null;
+}
+
 export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
+  resourceTypeIn?: (ResourceTypeInput | null)[] | null;
   statusEquals?: CommunityResourceStatusInput | null;
 }
 

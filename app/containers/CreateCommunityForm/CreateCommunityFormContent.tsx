@@ -1,11 +1,7 @@
-import Manage from '../Community/Manage'
 import { IInvitation } from './ManageMembers/FormInviteMembersPanel'
 import { getCommunity } from '../../queries/__generated__/getCommunity'
-import HomeContentSectionEmptyState from './ContentSectionEmptyStates/HomeContentSectionEmptyState'
-import ArticlesContentSectionEmptyState from './ContentSectionEmptyStates/ArticlesContentSectionEmptyState'
-import CollectionsContentSectionEmptyState from './ContentSectionEmptyStates/CollectionsContentSectionEmptyState'
 import { IFormValues } from './index'
-import HomepageContentField from './HomepageTab/HomepageContentField'
+import HomepageContentField from './Homepage/HomepageContentField'
 import {
     openModalAction,
     closeModalAction,
@@ -15,6 +11,7 @@ import { useState } from 'react'
 
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import HomeContentSectionEmptyState from './ContentSectionEmptyStates/HomeContentSectionEmptyState'
 
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
@@ -64,26 +61,6 @@ const HomePanel = props =>
         <HomeContentSectionEmptyState key="home" />
     )
 
-const ManagePanel = props => (
-    <Manage
-        isCommunityAdmin={true}
-        pageType={'CreateCommunityForm'}
-        openAddMemberModal={props.openAddMemberModal}
-        members={
-            (props.data &&
-                props.data.getCommunity &&
-                props.data.getCommunity.members) ||
-            null
-        }
-        pending={null}
-        pendingUpdates={null}
-        communityId={props.id}
-        key="manage"
-        formInvitations={props.formInvitations}
-        cancelInvitation={props.cancelInvitation}
-    />
-)
-
 const Component: React.SFC<IProps> = props => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
@@ -103,11 +80,6 @@ const Component: React.SFC<IProps> = props => {
                 <Tab label="Manage Community" disabled={props.disabled} />
             </Tabs>
             {tab === 0 && <HomePanel {...props} />}
-            {tab === 1 && <ArticlesContentSectionEmptyState key="articles" />}
-            {tab === 2 && (
-                <CollectionsContentSectionEmptyState key="collections" />
-            )}
-            {tab === 3 && <ManagePanel {...props} />}
         </div>
     )
 }

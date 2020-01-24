@@ -27,7 +27,10 @@ import {
     resendEmailVerificationEpic,
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
-import { voteEpic } from '../containers/Article/Module'
+import {
+    voteEpic,
+    initiateArticleTransferEpic,
+} from '../containers/Article/Module'
 import {
     createCommunityEpic,
     communityCreatedEpic,
@@ -39,12 +42,17 @@ import {
     sendCommunityInvitationEpic,
     acceptCommunityInvitationEpic,
     waitForInvitationReconciliationEpic,
-    removeMemberEpic,
+    removeGrantedMemberEpic,
     removeResourceEpic,
-    changeMemberRoleEpic,
+    changeGrantedMemberRoleEpic,
     revokeInvitationEpic,
     resendInvitationEpic,
     transferArticleToCommunityEpic,
+    leaveCommunityEpic,
+    joinCommunityEpic,
+    removeMemberEpic,
+    banMemberEpic,
+    unbanMemberEpic,
 } from '../containers/Community/Module'
 import {
     rejectArticleTransferEpic,
@@ -101,11 +109,11 @@ const epics = [
     finaliseArticleTransferEpic,
     transferArticleToCommunityEpic,
     resendInvitationEpic,
-    changeMemberRoleEpic,
+    changeGrantedMemberRoleEpic,
     approveResourceEpic,
     removeResourceEpic,
     revokeInvitationEpic,
-    removeMemberEpic,
+    removeGrantedMemberEpic,
     acceptCommunityInvitationEpic,
     waitForInvitationReconciliationEpic,
     sendCommunityInvitationEpic,
@@ -125,6 +133,12 @@ const epics = [
     submitExternalLinkEpic,
     editExternalLinkEpic,
     changeOwnerExtenalLinkEpic,
+    joinCommunityEpic,
+    leaveCommunityEpic,
+    removeMemberEpic,
+    banMemberEpic,
+    unbanMemberEpic,
+    initiateArticleTransferEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

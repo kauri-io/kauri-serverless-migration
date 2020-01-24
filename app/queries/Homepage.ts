@@ -75,12 +75,11 @@ export const homePageContentQuery = gql`
             description
             website
             members {
-                id
-                name
-                username
-                avatar
-                role
-                status
+                totalElements
+                content {
+                    id
+                    role
+                }
             }
             avatar
             social
@@ -122,6 +121,7 @@ export const homePageContentQuery = gql`
                 description
                 image
                 link
+                linkhref
             }
         }
         ... on Featured {

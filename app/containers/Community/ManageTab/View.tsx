@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import ResourceCategory from '../../components/ResourceCategory'
-import ManageMembers from '../CreateCommunityForm/ManageMembers'
-import { DisplayManagedResources } from './DisplayResources'
-import {
-    getCommunity_getCommunity_pending,
-    getCommunity_getCommunity_members,
-} from '../../queries/__generated__/getCommunity'
-import { IInvitation } from '../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
+import ResourceCategory from '../../../components/ResourceCategory'
+import ManageMembers from '../../CreateCommunityForm/ManageMembers'
+import { IInvitation } from '../../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
+import { searchArticles_searchArticles } from '../../../queries/__generated__/searchArticles'
+import Loading from '../../../components/Loading'
+import { Community_members } from '../../../queries/Fragments/__generated__/Community'
+import { getCommunityContent_getCommunityContent } from '../../../queries/__generated__/getCommunityContent'
+import ManageUpdate from './ManageUpdate/View'
+import ManageResources from './ManageResources'
 
 const Container = styled.div`
     display: flex;
@@ -31,32 +32,39 @@ const Column = styled.div`
 
 interface IProps {
     cancelInvitation?: (payload: { index: number }) => void
-    communityId: string | null
+    communityId: string
     isCommunityAdmin: boolean
-    pendingUpdates: any
-    pending: Array<getCommunity_getCommunity_pending | null> | null
-    members: Array<getCommunity_getCommunity_members | null> | null
+    members: Community_members
     openAddMemberModal: () => void
     pageType?: string // CreateCommunityForm
     formInvitations?: IInvitation[] | null | undefined
+    getCommunityContent: {
+        getCommunityContent: getCommunityContent_getCommunityContent
+    }
+    searchArticles: {
+        searchArticles: searchArticles_searchArticles
+    }
 }
 
 const Manage: React.FunctionComponent<IProps> = ({
-    pending,
     members,
     isCommunityAdmin,
     communityId,
-    pendingUpdates,
     pageType,
     cancelInvitation,
     formInvitations,
     openAddMemberModal,
+    getCommunityContent,
+    searchArticles,
 }) => {
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
-    const pendingArticles =
-        pending && pending.filter(i => i && i.__typename === 'ArticleDTO')
-    const pendingCollections =
-        pending && pending.filter(i => i && i.__typename === 'CollectionDTO')
+
+    if (
+        !searchArticles.searchArticles ||
+        !getCommunityContent.getCommunityContent
+    ) {
+        return <Loading />
+    }
 
     return (
         <Container>
@@ -65,34 +73,27 @@ const Manage: React.FunctionComponent<IProps> = ({
                     <ResourceCategory
                         active={tabIndex === 0}
                         category="Manage Members"
-                        amount={members ? members.length : 0}
+                        amount={members ? members.totalElements : 0}
                         onClick={() => setTabIndex(0)}
                     />
                 )}
                 {pageType !== 'CreateCommunityForm' && (
                     <ResourceCategory
                         active={tabIndex === 1}
-                        category="Articles for approval"
-                        amount={pendingArticles ? pendingArticles.length : 0}
+                        category="Resources for approval"
+                        amount={
+                            getCommunityContent.getCommunityContent
+                                .totalElements
+                        }
                         onClick={() => setTabIndex(1)}
                     />
                 )}
                 {pageType !== 'CreateCommunityForm' && (
                     <ResourceCategory
                         active={tabIndex === 2}
-                        category="Collections for approval"
-                        amount={
-                            pendingCollections ? pendingCollections.length : 0
-                        }
-                        onClick={() => setTabIndex(2)}
-                    />
-                )}
-                {pageType !== 'CreateCommunityForm' && (
-                    <ResourceCategory
-                        active={tabIndex === 3}
                         category="Pending Updates"
-                        amount={(pendingUpdates && pendingUpdates.length) || 0}
-                        onClick={() => setTabIndex(3)}
+                        amount={searchArticles.searchArticles.totalElements}
+                        onClick={() => setTabIndex(2)}
                     />
                 )}
             </Column>
@@ -107,25 +108,15 @@ const Manage: React.FunctionComponent<IProps> = ({
                     />
                 )}
                 {tabIndex === 1 && pageType !== 'CreateCommunityForm' && (
-                    <DisplayManagedResources
-                        isMember={false}
+                    <ManageResources
                         communityId={communityId}
-                        resources={pendingArticles}
+                        data={getCommunityContent}
                     />
                 )}
                 {tabIndex === 2 && pageType !== 'CreateCommunityForm' && (
-                    <DisplayManagedResources
-                        isMember={false}
+                    <ManageUpdate
                         communityId={communityId}
-                        resources={pendingCollections}
-                    />
-                )}
-                {tabIndex === 3 && pageType !== 'CreateCommunityForm' && (
-                    <DisplayManagedResources
-                        isMember={false}
-                        communityId={communityId}
-                        review={true}
-                        resources={pendingUpdates}
+                        data={searchArticles}
                     />
                 )}
             </Column>

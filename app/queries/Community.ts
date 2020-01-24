@@ -1,12 +1,5 @@
 import gql from 'graphql-tag'
-import {
-    Community,
-    UserOwner,
-    CommunityOwner,
-    Article,
-    Collection,
-    Link,
-} from './Fragments'
+import { Community, Article, Collection, Link } from './Fragments'
 
 export const getCommunity = gql`
     query getCommunity($id: String!) {
@@ -16,76 +9,6 @@ export const getCommunity = gql`
     }
     ${Community}
 `
-
-export const getCommunityAndPendingArticles = gql`
-    query getCommunityAndPendingArticles(
-        $id: String!
-        $size: Int = 8
-        $page: Int = 0
-    ) {
-        getCommunity(id: $id) {
-            ...Community
-        }
-        searchArticles(
-            size: $size
-            page: $page
-            sort: "dateCreated"
-            dir: DESC
-            filter: { ownerIdEquals: $id, statusIn: [PENDING] }
-        ) {
-            totalElements
-            isLast
-            content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
-            }
-        }
-    }
-    ${Community}
-    ${UserOwner}
-    ${CommunityOwner}
-`
-
 export const getAllCommunities = gql`
     query searchCommunities(
         $size: Int = 12
@@ -106,10 +29,11 @@ export const getAllCommunities = gql`
                 dateCreated
                 dateUpdated
                 members {
-                    id
-                    avatar
-                    username
-                    name
+                    totalElements
+                    content {
+                        id
+                        role
+                    }
                 }
                 attributes
                 approvedId {
@@ -244,44 +168,6 @@ export const removeResourceMutation = gql`
         }
     }
 `
-
-export const getCommunityArticleContent = gql`
-    query getCommunityContent(
-        $id: String!
-        $page: Int = 0
-        $size: Int = 12
-        $filter: CommunityResourceFilterInput
-    ) {
-        getCommunityContent(
-            id: $id
-            page: $page
-            size: $size
-            filter: $filter
-        ) {
-            content {
-                id
-                type
-                resource {
-                    ... on ArticleDTO {
-                        ...Article
-                    }
-                    ... on CollectionDTO {
-                        ...Collection
-                    }
-                    ... on ExternalLinkDTO {
-                        ...Link
-                    }
-                }
-            }
-            totalPages
-            totalElements
-        }
-    }
-    ${Article}
-    ${Collection}
-    ${Link}
-`
-
 export const prepareSendInvitationQuery = gql`
     query prepareSendInvitation($id: String!, $invitation: InvitationInput!) {
         prepareSendInvitation(id: $id, invitation: $invitation) {
@@ -370,6 +256,7 @@ export const getCommunityInvitationsQuery = gql`
         ) {
             totalElements
             totalPages
+            isLast
             content {
                 invitationId
                 communityId
@@ -384,46 +271,50 @@ export const getCommunityInvitationsQuery = gql`
     }
 `
 
-export const prepareRemoveMemberQuery = gql`
-    query prepareRemoveMember($id: String!, $account: String!) {
-        prepareRemoveMember(id: $id, account: $account) {
+export const prepareRemoveGrantedMemberQuery = gql`
+    query prepareRemoveGrantedMember($id: String!, $account: String!) {
+        prepareRemoveGrantedMember(id: $id, account: $account) {
             messageHash
         }
     }
 `
 
-export const removeMemberMutation = gql`
-    mutation removeMember(
+export const removeGrantedMemberMutation = gql`
+    mutation removeGrantedMember(
         $signature: String!
         $id: String!
         $account: String!
     ) {
-        removeMember(signature: $signature, id: $id, account: $account) {
+        removeGrantedMember(signature: $signature, id: $id, account: $account) {
             hash
         }
     }
 `
 
-export const prepareChangeMemberRoleQuery = gql`
-    query prepareChangeMemberRole(
+export const prepareChangeGrantedMemberRoleQuery = gql`
+    query prepareChangeGrantedMemberRole(
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        prepareChangeMemberRole(id: $id, account: $account, role: $role) {
+        prepareChangeGrantedMemberRole(
+            id: $id
+            account: $account
+            role: $role
+        ) {
             messageHash
         }
     }
 `
 
-export const changeMemberRoleMutation = gql`
-    mutation changeMemberRole(
+export const changeGrantedMemberRoleMutation = gql`
+    mutation changeGrantedMemberRole(
         $signature: String!
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        changeMemberRole(
+        changeGrantedMemberRole(
             signature: $signature
             id: $id
             account: $account
@@ -457,7 +348,7 @@ export const initiateArticleTransferMutation = gql`
     }
 `
 
-export const getCommunityContentQuery = gql`
+export const getCommunityContent = gql`
     query getCommunityContent(
         $id: String!
         $page: Int = 0
@@ -480,13 +371,113 @@ export const getCommunityContentQuery = gql`
                     ... on CollectionDTO {
                         ...Collection
                     }
+                    ... on ExternalLinkDTO {
+                        ...Link
+                    }
                 }
             }
             totalPages
             totalElements
+            isLast
         }
     }
 
     ${Article}
     ${Collection}
+    ${Link}
+`
+
+export const getCommunityMembers = gql`
+    query getCommunityMembers(
+        $id: String!
+        $page: Int = 0
+        $size: Int
+        $sort: String
+        $dir: DirectionInput
+        $filter: CommunityMemberFilterInput
+    ) {
+        getCommunityMembers(
+            id: $id
+            page: $page
+            size: $size
+            sort: $sort
+            dir: $dir
+            filter: $filter
+        ) {
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    publicUserName: name
+                    avatar
+                    social
+                    userTitle: title
+                    articles(
+                        page: 0
+                        size: 1
+                        filter: { latestVersion: true }
+                    ) {
+                        totalElements
+                    }
+                    collections(page: 0, size: 1) {
+                        totalElements
+                    }
+                    links(page: 0, size: 1) {
+                        totalElements
+                    }
+                    communities {
+                        community {
+                            id
+                            name
+                        }
+                    }
+                }
+            }
+            totalPages
+            totalElements
+            isLast
+        }
+    }
+`
+
+export const joinCommunityMutation = gql`
+    mutation joinCommunity($id: String!) {
+        joinCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const leaveCommunityMutation = gql`
+    mutation leaveCommunity($id: String!) {
+        leaveCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const removeMemberMutation = gql`
+    mutation removeMember($id: String!, $userId: String!) {
+        removeMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const banMemberMutation = gql`
+    mutation banMember($id: String!, $userId: String!) {
+        banMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const unbanMemberMutation = gql`
+    mutation unbanMember($id: String!, $userId: String!) {
+        unbanMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
 `

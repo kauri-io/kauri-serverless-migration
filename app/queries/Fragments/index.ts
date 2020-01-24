@@ -76,6 +76,10 @@ export const Article = gql`
         content
         description
         authorId
+        ownerId {
+            id
+            type
+        }
         dateCreated
         datePublished
         status
@@ -112,6 +116,7 @@ export const Article = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         resourceIdentifier {
             id
@@ -136,6 +141,10 @@ export const Link = gql`
         dateUpdated
         submitterId
         isBookmarked
+        ownerId {
+            id
+            type
+        }
         owner {
             ...UserOwner
             ...CommunityOwner
@@ -180,6 +189,7 @@ export const Link = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         authorSocial
         tags
@@ -280,13 +290,18 @@ export const Community = gql`
                 }
             }
         }
-        members {
-            id
-            name
-            username
-            avatar
-            role
-            status
+        members(size: 10, sort: "role", dir: ASC) {
+            totalElements
+            totalElementsBreakdown
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    avatar
+                }
+            }
         }
         approvedId {
             id
@@ -295,32 +310,6 @@ export const Community = gql`
         pendingId {
             id
             type
-        }
-        approved {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
-        }
-        pending {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
         }
     }
     ${Article}

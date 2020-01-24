@@ -80,18 +80,17 @@ const Manage: React.FunctionComponent<any> = props => {
                         {...props}
                         communities={
                             Array.isArray(communities) &&
-                            communities.map(({ community: { id } }) => id)
+                            communities
+                                .filter(
+                                    ({ role }) =>
+                                        role === 'ADMIN' || role === 'CURATOR'
+                                )
+                                .map(({ community: { id } }) => id)
                         }
                     />
                 )}
                 {state.currentCategory === 'submitted updates' && (
-                    <Pending
-                        {...props}
-                        communities={
-                            Array.isArray(communities) &&
-                            communities.map(({ community: { id } }) => id)
-                        }
-                    />
+                    <Pending {...props} />
                 )}
                 {state.currentCategory === 'pending transfers' && (
                     <Transfers {...props} />

@@ -11,7 +11,7 @@ export interface IOption {
 }
 
 interface IProps {
-    type: string
+    type?: string
     userId: string
     communities: IOption[]
     handleSubmit: (
@@ -19,6 +19,7 @@ interface IProps {
         e: React.SyntheticEvent<HTMLButtonElement>
     ) => void
     closeModalAction: () => void
+    action?: string
 }
 
 const TooltipContainer = styled.div`
@@ -59,17 +60,22 @@ const Label = styled.span`
 `
 
 interface IContentProps {
+    action: string
     options: IOption[]
     setDestination: (destValue: IOption) => void
 }
 
-const Content: React.FC<IContentProps> = ({ options, setDestination }) => {
+const Content: React.FC<IContentProps> = ({
+    action,
+    options,
+    setDestination,
+}) => {
     return (
         <TooltipContainer>
             {options &&
                 options.map((option, key) => (
                     <Label key={key} onClick={() => setDestination(option)}>
-                        Publish to {option.name}
+                        {action} to {option.name}
                     </Label>
                 ))}
         </TooltipContainer>
@@ -77,24 +83,32 @@ const Content: React.FC<IContentProps> = ({ options, setDestination }) => {
 }
 
 const PublishingSelector = (props: IProps) => {
-    const options: any[] = [
-        { id: props.userId, name: `My ${props.type}`, type: 'USER' },
-        ...props.communities,
-    ]
+    let options: any[] = []
+    if (props.type) {
+        options.push({
+            id: props.userId,
+            name: `My ${props.type}`,
+            type: 'USER',
+        })
+    }
+    props.communities.map(c => options.push(c))
+
+    const action: string = props.action || 'Publish'
 
     const [destination, setDestination] = useState(options[0])
     return (
         <AlertView
-            title="Publish"
+            title={action}
             content={
                 <div>
                     <Select
                         placeHolder="placeholder text"
-                        value={`Publish to ${destination.name}`}
+                        value={`${action} to ${destination.name}`}
                     >
                         <Content
                             setDestination={setDestination}
                             options={options}
+                            action={action}
                         />
                     </Select>
                 </div>

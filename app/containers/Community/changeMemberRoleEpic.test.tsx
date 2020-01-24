@@ -1,13 +1,13 @@
 import testEpic from '../../lib/test-epic'
 import {
-    changeMemberRoleEpic,
-    changeMemberRoleAction,
-    memberRoleChangedAction,
+    changeGrantedMemberRoleEpic,
+    changeGrantedMemberRoleAction,
+    grantedMemberRoleChangedAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
 
-describe('changeMemberRoleEpic', () => {
+describe('changeGrantedMemberRoleEpic', () => {
     beforeAll(() => {
         // global.window = {}
         global.window.web3 = {
@@ -64,10 +64,11 @@ describe('changeMemberRoleEpic', () => {
 
         const communityId = 'Community ID'
 
-        const sourceAction = changeMemberRoleAction({
+        const sourceAction = changeGrantedMemberRoleAction({
             id: communityId,
             account: mockGetArticle.contributor,
             role: 'ADMIN' as any,
+            signature: '',
         })
 
         const expectedAction = [
@@ -77,11 +78,11 @@ describe('changeMemberRoleEpic', () => {
                 message: 'Member role changed',
                 notificationType: 'success',
             }),
-            memberRoleChangedAction(),
+            grantedMemberRoleChangedAction(),
         ]
 
         const resultingActions = await testEpic(
-            changeMemberRoleEpic,
+            changeGrantedMemberRoleEpic,
             sourceAction,
             {},
             {

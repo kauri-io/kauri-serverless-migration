@@ -20,8 +20,20 @@ export interface getExternalLink_getExternalLink_resourceIdentifier {
   id: string;
 }
 
+export interface getExternalLink_getExternalLink_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getExternalLink_getExternalLink_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier {
@@ -218,6 +230,10 @@ export interface getExternalLink_getExternalLink_comments {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getExternalLink_getExternalLink_voteResult {
@@ -263,6 +279,10 @@ export interface getExternalLink_getExternalLink {
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: getExternalLink_getExternalLink_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

@@ -124,6 +124,18 @@ export interface getArticleTransfers_getArticleTransfers_content_article_contrib
   communities: (getArticleTransfers_getArticleTransfers_content_article_contributors_communities | null)[];
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -165,7 +177,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article_author 
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO_resourceIdentifier {
@@ -282,6 +294,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article {
@@ -324,6 +340,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getArticleTransfers_getArticleTransfers_content_article_ownerId | null;
   /**
    * Date created
    */

@@ -76,11 +76,9 @@ const VoteWidget = ({
                 />
             </div>
             <Typography variant="h6">
-                {voteResult && voteResult.quantity['1']
-                    ? voteResult.quantity['1']
-                    : 0}
+                {voteResult && voteResult.sum ? voteResult.sum : 0}
             </Typography>
-            <Typography variant="caption">Up Votes</Typography>
+            <Typography variant="caption">Votes</Typography>
             <div
                 className={`${classes.container} ${
                     voteResult.hasVoted ? '' : 'active'

@@ -1414,7 +1414,8 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                   <AvatarComp
                     avatar="avatar url"
                     color="secondary"
-                    id="678"
+                    id="345"
+                    name="test username"
                     username="test username"
                     withName={true}
                   >

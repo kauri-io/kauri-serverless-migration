@@ -49,11 +49,13 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             [theme.breakpoints.down('lg')]: {
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'center',
             },
             [theme.breakpoints.up('lg')]: {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-between',
+                alignItems: 'center',
             },
         },
         tags: {
@@ -115,16 +117,20 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             },
         },
         toolbar: {
-            padding: theme.spacing(2, 0),
-            justifyContent: 'space-around',
+            justifyContent: 'space-between',
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
-            flexDirection: 'row',
-            position: 'fixed',
             background: theme.palette.common.white,
             zIndex: 1,
             width: '100%',
             maxWidth: 808,
+            padding: theme.spacing(2, 0),
+            position: 'fixed',
+        },
+        toolbarIcons: {
+            justifyContent: 'space-around',
+            display: 'flex',
+            width: '100%',
         },
         iconContainer: {
             '& span': {

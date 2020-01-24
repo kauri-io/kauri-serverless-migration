@@ -19,6 +19,10 @@ export interface searchAutocomplete_searchAutocomplete {
    */
   totalPages: number;
   /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
+  /**
    * Total amount of elements per type.
    */
   totalElementsBreakdown: any | null;

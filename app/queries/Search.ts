@@ -16,6 +16,7 @@ export const searchAutocomplete = gql`
         ) {
             totalElements
             totalPages
+            isLast
             totalElementsBreakdown
             content {
                 resourceIdentifier {
@@ -46,6 +47,7 @@ export const searchResultsAutocompleteTotalElementsBreakdown = gql`
         ) {
             totalElements
             totalPages
+            isLast
             totalElementsBreakdown
         }
     }
@@ -150,6 +152,7 @@ export const searchResultsAutocomplete = gql`
                             }
                             totalPages
                             totalElements
+                            isLast
                         }
                         isBookmarked
                     }
@@ -198,12 +201,11 @@ export const searchResultsAutocomplete = gql`
                         social
                         attributes
                         members {
-                            id
-                            name
-                            username
-                            avatar
-                            role
-                            status
+                            totalElements
+                            content {
+                                id
+                                role
+                            }
                         }
                         approvedId {
                             id

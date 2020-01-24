@@ -21,11 +21,15 @@ export interface relatedArticles_searchMoreLikeThis_content_resourceIdentifier {
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
-export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author {
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_contributors {
   __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
   /**
    * User full name
    */
@@ -34,10 +38,6 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_
    * Username
    */
   username: string | null;
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
   /**
    * User avatar URI
    */
@@ -79,9 +79,10 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
    */
   description: string | null;
   /**
-   * Article author (full profile)
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
    */
-  author: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author;
+  contributors: (relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_contributors | null)[];
   /**
    * Date created
    */

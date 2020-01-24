@@ -21,6 +21,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
     let uppy: {
         on: (arg0: string, arg1: (_data: any, data2: any) => void) => void
         close: () => void | (() => void | undefined)
+        reset: () => void | (() => void | undefined)
     }
 
     useEffect(() => {
@@ -32,6 +33,9 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
             uppy.on('upload-success', (_data, data2) => {
                 const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
                 format('image', url)
+            })
+            uppy.on('complete', function() {
+                uppy.reset()
             })
             return () => {
                 uppy.close()
