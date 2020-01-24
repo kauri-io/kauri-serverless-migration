@@ -124,6 +124,18 @@ export interface searchPersonalArticles_searchArticles_content_contributors {
   communities: (searchPersonalArticles_searchArticles_content_contributors_communities | null)[];
 }
 
+export interface searchPersonalArticles_searchArticles_content_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface searchPersonalArticles_searchArticles_content_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -333,6 +345,10 @@ export interface searchPersonalArticles_searchArticles_content {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: searchPersonalArticles_searchArticles_content_ownerId | null;
   /**
    * Date created
    */

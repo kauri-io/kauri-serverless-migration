@@ -36,6 +36,18 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
   id: string;
 }
 
+export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -283,6 +295,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

@@ -25,7 +25,7 @@ export default compose(
             fetchPolicy: 'network-only',
             variables: {
                 id,
-                filter: { resourceTypeIn: types },
+                filter: { resourceTypeIn: types, statusEquals: 'APPROVED' },
                 size: 10,
             },
         }),

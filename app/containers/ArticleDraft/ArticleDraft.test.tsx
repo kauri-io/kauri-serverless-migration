@@ -26,6 +26,7 @@ describe('containers/ArticleDraft', () => {
             closeModalAction: jest.fn(),
             publishArticleAction: jest.fn(),
             communities: [],
+            curateCommunityResourcesAction: jest.fn(),
         }
         const wrapper = mountWithRedux(
             <MockedProvider>

@@ -140,6 +140,18 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   communities: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -350,6 +362,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_ownerId | null;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -415,6 +431,18 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Resource ID
    */
   id: string;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_ArticleDTO {
@@ -665,6 +693,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   isBookmarked: boolean;
   /**
+   * The link owner
+   */
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_ownerId | null;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner | null;
@@ -914,6 +946,18 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   communities: (searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -1124,6 +1168,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -1189,6 +1237,18 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Resource ID
    */
   id: string;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -1438,6 +1498,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

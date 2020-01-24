@@ -128,6 +128,18 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
   communities: (getCommunityContent_getCommunityContent_content_resource_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface getCommunityContent_getCommunityContent_content_resource_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getCommunityContent_getCommunityContent_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -337,6 +349,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_ownerId | null;
   /**
    * Date created
    */
@@ -593,6 +609,18 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
   communities: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -803,6 +831,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    */
   authorId: string;
   /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_ownerId | null;
+  /**
    * Date created
    */
   dateCreated: any;
@@ -868,6 +900,18 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    * Resource ID
    */
   id: string;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
@@ -1118,6 +1162,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    */
   isBookmarked: boolean;
   /**
+   * The link owner
+   */
+  ownerId: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_ownerId | null;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1260,6 +1308,18 @@ export interface getCommunityContent_getCommunityContent_content_resource_Extern
    * Resource ID
    */
   id: string;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_owner_ArticleDTO {
@@ -1509,6 +1569,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Extern
    * Check if the external link is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * The link owner
+   */
+  ownerId: getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_ownerId | null;
   /**
    * load the external link owner (user or community resource type)
    */

@@ -20,6 +20,7 @@ import Toolbar from '../ViewLink/components/Toolbar'
 import { Chip } from '@material-ui/core'
 import Link from 'next/link'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { curateCommunityResourcesAction } from '../Community/Module'
 
 interface IProps {
     id: string
@@ -31,6 +32,7 @@ interface IProps {
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
     closeModalAction: typeof closeModalAction
+    curateCommunityResourcesAction: typeof curateCommunityResourcesAction
     deleteDraftArticleAction: ({
         id,
         version,
@@ -41,6 +43,7 @@ interface IProps {
     userId: string
     user: any
     hostName: string
+    communities: any
 }
 
 const ArticleComp = ({
@@ -50,6 +53,8 @@ const ArticleComp = ({
     routeChangeAction,
     deleteDraftArticleAction,
     userId,
+    communities,
+    curateCommunityResourcesAction,
     data: {
         getArticle: {
             dateCreated,
@@ -62,6 +67,7 @@ const ArticleComp = ({
             tags,
             version,
             author,
+            ownerId,
         },
     },
 }: IProps) => {
@@ -124,6 +130,12 @@ const ArticleComp = ({
                                 type={ResourceTypeInput.ARTICLE}
                                 isAuthor={author && userId === author.id}
                                 version={version}
+                                communities={communities}
+                                userId={userId}
+                                isOwner={ownerId && ownerId.id === userId} //TODO should check if community admin/curator too
+                                curateCommunityResourcesAction={
+                                    curateCommunityResourcesAction
+                                }
                             />
                         </Hidden>
                         <Grid

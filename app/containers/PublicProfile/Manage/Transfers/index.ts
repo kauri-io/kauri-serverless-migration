@@ -3,8 +3,12 @@ import { compose, graphql } from 'react-apollo'
 import { getArticleTransfers } from '../../../../queries/Article'
 import { connect } from 'react-redux'
 import withLoading from '../../../../lib/with-loading'
-import { withRouter } from 'next/router'
 import { routeChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
+import {
+    rejectArticleTransferAction,
+    acceptArticleTransferAction,
+} from '../TransferModule'
+import withPagination from '../../../../lib/with-pagination'
 
 const mapStateToProps = state => {
     return {
@@ -19,6 +23,8 @@ export default compose(
         mapStateToProps,
         {
             routeChangeAction,
+            rejectArticleTransferAction,
+            acceptArticleTransferAction,
         }
     ),
     graphql(getArticleTransfers, {
@@ -33,4 +39,4 @@ export default compose(
         }),
     }),
     withLoading()
-)(withRouter(View))
+)(withPagination(View, 'getArticleTransfers', 'PendingTransfersQuery'))
