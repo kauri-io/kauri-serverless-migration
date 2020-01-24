@@ -300,6 +300,11 @@ export interface Article_comments {
   isLast: boolean;
 }
 
+export interface Article_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface Article {
   __typename: "ArticleDTO";
   /**
@@ -396,4 +401,6 @@ export interface Article {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: Article_tips | null;
+  hasTipped: boolean;
 }

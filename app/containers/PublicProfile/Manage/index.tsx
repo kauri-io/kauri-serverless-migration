@@ -8,12 +8,14 @@ import Transfers from './Transfers'
 import MyCommunities from './MyCommunities'
 import { path } from 'ramda'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
+import TipHistory from './TipHistory'
 
 const categories = [
     'drafts',
     'awaiting approval',
     'submitted updates',
     // "communities",
+    'tip history',
 ]
 
 interface IState {
@@ -97,6 +99,9 @@ const Manage: React.FunctionComponent<any> = props => {
                 )}
                 {state.currentCategory === 'communities' && (
                     <MyCommunities {...props} data={communities} />
+                )}
+                {state.currentCategory === 'tip history' && (
+                    <TipHistory {...props} />
                 )}
             </Grid>
         </Grid>

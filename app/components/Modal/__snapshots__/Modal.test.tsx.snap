@@ -45,6 +45,9 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -893,6 +896,9 @@ exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -1522,6 +1528,9 @@ exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -2134,6 +2143,9 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
