@@ -17,9 +17,9 @@ import { searchDiscussions_searchDiscussions } from '../../../queries/__generate
 import Loading from '../../../components/Loading'
 import DiscussionCard from '../../../components/Card/DiscussionCard'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
-import Link from 'next/link'
 
 interface IProps {
+    isLoggedIn: boolean
     routeChangeAction: (payload: string) => IRouteChangeAction
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
@@ -60,9 +60,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: 660,
     },
     headerRight: {
+        display: 'flex',
         width: 90,
     },
     empty: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         width: '100%',
         height: 48,
         marginTop: theme.spacing(2),
@@ -70,6 +74,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 export const DiscussionList = ({
+    isLoggedIn,
+    routeChangeAction,
     data,
     parentId,
     parentType,
@@ -81,9 +87,17 @@ export const DiscussionList = ({
         return <Loading />
     }
 
-    const create = {
-        as: `/discussions/create?parent_id=${parentId}&parent_type=${parentType}`,
-        href: `/create-discussion?parent_id=${parentId}&parent_type=${parentType}`,
+    const createDiscussionRedirect = () => {
+        const createURL = {
+            as: `/discussions/create?parent_id=${parentId}&parent_type=${parentType}`,
+            href: `/create-discussion?parent_id=${parentId}&parent_type=${parentType}`,
+        }
+
+        if(isLoggedIn) {
+            return routeChangeAction(createURL.as)
+        } else {
+            return routeChangeAction(`/login?r=${createURL.as}`);
+        }
     }
 
     return (
@@ -109,15 +123,14 @@ export const DiscussionList = ({
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Link href={create.href} as={create.as}>
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                className={classes.button}
-                            >
-                                New Topic
-                            </Button>
-                        </Link>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}
+                            onClick={createDiscussionRedirect}
+                        >
+                            New Topic
+                        </Button>
                     </Grid>
                 </Grid>
 

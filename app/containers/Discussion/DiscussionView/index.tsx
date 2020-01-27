@@ -13,12 +13,13 @@ import {
     reopenDiscussionAction,
     deleteDiscussionAction,
 } from '../Module'
-import { voteAction } from '../../Article/Module'
+import { voteAction, addCommentAction } from '../../Article/Module'
 import { getDiscussion } from '../../../queries/Discussion'
 
 const mapStateToProps = state => {
     return {
         hostName: state.app && state.app.hostName,
+        user: state.app && state.app.user,
         currentUser:
             state.app && state.app.userId && state.app.userId.substring(2),
         isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
@@ -37,6 +38,7 @@ export default compose(
             reopenDiscussionAction,
             deleteDiscussionAction,
             voteAction,
+            addCommentAction,
         }
     ),
     graphql(getDiscussion, {

@@ -355,6 +355,10 @@ export interface Collection_sections_resources_ArticleDTO_comments_content {
    */
   author: Collection_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

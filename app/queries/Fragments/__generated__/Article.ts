@@ -271,6 +271,10 @@ export interface Article_comments_content {
    */
   author: Article_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

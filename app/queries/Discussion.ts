@@ -79,6 +79,7 @@ export const DiscussionViewFragment = gql`
         }
         comments {
             content {
+                id
                 posted
                 author {
                     ... on PublicUserDTO {

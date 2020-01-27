@@ -271,6 +271,10 @@ export interface searchPendingArticles_searchArticles_content_comments_content {
    */
   author: searchPendingArticles_searchArticles_content_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

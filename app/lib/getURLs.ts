@@ -86,8 +86,8 @@ export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
 })
 
 export const getDiscussionURL = ({ title, id }) => ({
-    as: `/${slugify(String(title), { lower: true })}/${String(id)}/d`,
-    href: `/discussion?discussion_id=${String(id)}`,
+    as: `/${slugify(String(title), { lower: true })}/${id}/d`,
+    href: `/discussion?discussion_id=${id}`,
 })
 
 export const getLinkUrl = ({ id, linkTitle }) => ({

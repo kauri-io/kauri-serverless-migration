@@ -355,6 +355,10 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    */
   author: getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

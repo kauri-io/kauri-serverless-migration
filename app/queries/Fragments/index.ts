@@ -111,6 +111,7 @@ export const Article = gql`
                     username
                     avatar
                 }
+                id
                 posted
                 body
             }

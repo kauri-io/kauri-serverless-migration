@@ -271,6 +271,10 @@ export interface searchPersonalArticles_searchArticles_content_comments_content 
    */
   author: searchPersonalArticles_searchArticles_content_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

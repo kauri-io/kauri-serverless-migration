@@ -379,6 +379,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    */
   author: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -2056,6 +2060,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    */
   author: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -3679,6 +3687,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * Comment author (full profile)
    */
   author: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
+  /**
+   * Comment ID
+   */
+  id: string;
   /**
    * Date the comment was published
    */

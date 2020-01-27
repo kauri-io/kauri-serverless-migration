@@ -153,5 +153,9 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             fontWeight: 600,
             margin: theme.spacing(1),
         },
+        commentTitle: {
+            textAlign: 'center',
+            margin: theme.spacing(2),
+        },
     }
 })

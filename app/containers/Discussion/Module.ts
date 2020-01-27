@@ -164,6 +164,7 @@ export const editDiscussionEpic: Epic<
                 ),
                 tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
+                merge(
                     of(
                         showNotificationAction({
                             description:
@@ -171,7 +172,16 @@ export const editDiscussionEpic: Epic<
                             message: `Discussion`,
                             notificationType: 'success',
                         })
+                    ),
+                    of(
+                        routeChangeAction(
+                            getDiscussionURL({
+                                id: payload.id,
+                                title: payload.title,
+                            }).as
+                        )
                     )
+                )
                 ),
                 catchError(err => {
                     console.error(err)

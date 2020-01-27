@@ -309,8 +309,8 @@ export const submitArticleVersionMutation = gql`
 `
 
 export const addCommentMutation = gql`
-    mutation addComment($parent: ResourceIdentifierInput!, $body: String!) {
-        addComment(parent: $parent, body: $body) {
+    mutation addComment($parent: ResourceIdentifierInput!, $body: String!, $replyTo: String) {
+        addComment(parent: $parent, body: $body, replyTo: $replyTo) {
             hash
         }
     }

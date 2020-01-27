@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     },
     iconContainer: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(0,1),
         '& svg': {
             height: 24,
             width: 24,

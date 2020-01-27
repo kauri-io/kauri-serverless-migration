@@ -119,11 +119,11 @@ export const addCommentEpic: Epic<
 > = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ADD_COMMENT),
-        switchMap(({ payload: { parent, body }, callback }) =>
+        switchMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<addComment, addCommentVariables>({
                     mutation: addCommentMutation,
-                    variables: { parent, body },
+                    variables: payload,
                 })
             ).pipe(
                 mergeMap(({ data }) =>
@@ -131,7 +131,6 @@ export const addCommentEpic: Epic<
                         path<string>(['addComment', 'hash'])(data) || ''
                     )
                 ),
-                // tap(console.log),
                 tap(_ => (callback ? callback() : null)),
                 tap(() =>
                     analytics.track('Leave Comment', {
@@ -143,7 +142,7 @@ export const addCommentEpic: Epic<
                     showNotificationAction({
                         notificationType: 'success',
                         message: 'Comment added',
-                        description: `Your comment has been added to the article!`,
+                        description: `Your comment has been added to the ${payload.parent.type === 'DISCUSSION' ? "discussion" : "article"}.`,
                     })
                 ),
                 catchError(err => {

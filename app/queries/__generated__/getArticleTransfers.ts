@@ -271,6 +271,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    */
   author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

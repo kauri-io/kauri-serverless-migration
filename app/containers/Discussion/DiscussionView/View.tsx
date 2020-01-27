@@ -20,7 +20,8 @@ import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import { getCommunityURL, getDiscussionURL } from '../../../lib/getURLs'
 import Link from 'next/link'
 import VoteWidget from '../../Article/components/VoteWidget'
-import { IVoteAction } from '../../Article/Module'
+import CommentsWidget from '../../Article/components/ArticleComments'
+import { IVoteAction, IAddCommentAction } from '../../Article/Module'
 import { voteVariables } from '../../../queries/__generated__/vote'
 import EditIcon from '@material-ui/icons/Edit'
 import TagList from '../../../components/Tags/TagList'
@@ -29,6 +30,7 @@ import AvatarList from '../../../components/AvatarList'
 import moment from 'moment-mini'
 import ShareWidget from '../../Article/components/ShareWidget'
 import MDRenderer from '../../../components/Markdown/Renderer'
+import { addCommentVariables } from '../../../queries/__generated__/addComment'
 
 interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
@@ -44,6 +46,7 @@ interface IProps {
         payload: deleteDiscussionVariables
     ) => IDeleteDiscussionAction
     voteAction: (payload: voteVariables) => IVoteAction
+    addCommentAction: (payload: addCommentVariables) => IAddCommentAction
     data: {
         loading: boolean
         getDiscussion: getDiscussion_getDiscussion
@@ -53,6 +56,7 @@ interface IProps {
     parentName: string
     parentType: ResourceTypeInput
     isLoggedIn: boolean
+    user: any
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -79,6 +83,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     right: {
         maxWidth: 808,
     },
+    content: {
+        minHeight: 100,
+    },
     row: {
         marginTop: theme.spacing(2),
     },
@@ -101,7 +108,9 @@ export const DiscussionView = ({
     parentId,
     parentName,
     isLoggedIn,
+    user,
     voteAction,
+    addCommentAction,
     routeChangeAction,
 }: IProps) => {
     const classes = useStyles()
@@ -110,13 +119,13 @@ export const DiscussionView = ({
         return <Loading />
     }
 
-    const back = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
-    const self = getDiscussionURL({ ...data.getDiscussion })
-    const edit = {
+    const backURL = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
+    const selfURL = getDiscussionURL({ ...data.getDiscussion })
+    const editURL = {
         as: `/discussions/${data.getDiscussion.id}/edit`,
         href: `/create-discussion?discussion_id=${data.getDiscussion.id}`,
     }
-    const login = () => routeChangeAction(`/login?r=${self.as}`)
+    const loginRedirect = () => routeChangeAction(`/login?r=${selfURL.as}`)
 
     return (
         <div className={classes.container}>
@@ -129,7 +138,7 @@ export const DiscussionView = ({
                     className={classes.left}
                 >
                     <Grid justify="center">
-                        <Link href={back.href} as={back.as}>
+                        <Link href={backURL.href} as={backURL.as}>
                             <Button color="primary" variant="text">
                                 Back to Topics
                             </Button>
@@ -148,7 +157,7 @@ export const DiscussionView = ({
                             resourceType="DISCUSSION"
                             voteAction={voteAction}
                             voteResult={data.getDiscussion.voteResult}
-                            loginFirstToVote={login}
+                            loginFirstToVote={loginRedirect}
                         />
                     </Grid>
 
@@ -156,9 +165,8 @@ export const DiscussionView = ({
                         justify="center"
                         alignItems="center"
                         className={classes.action}
-                        onClick={() => routeChangeAction(edit.as)}
                     >
-                        <Link href={edit.href} as={edit.as}>
+                        <Link href={editURL.href} as={editURL.as}>
                             <Button
                                 variant="text"
                                 size="small"
@@ -220,25 +228,22 @@ export const DiscussionView = ({
                     <Grid
                         direction="row"
                         justify="space-between"
-                        className={[classes.row, classes.flex].join(' ')}
+                        className={[classes.row, classes.flex, classes.content].join(' ')}
                     >
                         <MDRenderer markdown={data.getDiscussion.message} />
                     </Grid>
 
                     <Grid
                         direction="row"
-                        justify="space-between"
+                        justify="flex-end"
                         className={[
                             classes.row,
                             classes.border,
                             classes.flex,
                         ].join(' ')}
                     >
-                        <Button color="primary" variant="text">
-                            Leave a Comment
-                        </Button>
                         <ShareWidget
-                            href={self.as}
+                            href={selfURL.as}
                             name={`Kauri discussion: ${data.getDiscussion.title}`}
                             row={true}
                         />
@@ -264,6 +269,19 @@ export const DiscussionView = ({
                                 limit={10}
                             />
                         </Grid>
+                    </Grid>
+
+                    <Grid
+                        direction="row"
+                        justify="space-between"
+                        className={classes.row}
+                    >
+                        <CommentsWidget
+                            parent={data.getDiscussion.resourceIdentifier}
+                            addCommentAction={addCommentAction}
+                            user={user}
+                            comments={data.getDiscussion.comments.content}
+                        />
                     </Grid>
                 </Grid>
             </div>

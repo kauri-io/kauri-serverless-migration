@@ -62,7 +62,7 @@ describe('addCommentEpic', () => {
             showNotificationAction({
                 notificationType: 'success',
                 message: 'Comment added',
-                description: `Your comment has been added to the article!`,
+                description: `Your comment has been added to the article.`,
             }),
         ]
 

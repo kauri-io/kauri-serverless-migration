@@ -396,11 +396,19 @@ const ArticleComp = ({
                         </div>
                     )}
                     <div className={classes.section}>
+                        <Typography
+                            aria-label="title"
+                            className={classes.commentTitle}
+                            variant="h6"
+                        >
+                            {comments.totalElements} Comment{comments.totalElements !== 1 ? 's' : ''}
+                        </Typography>
+
                         <Comments
-                            article={resourceIdentifier}
+                            parent={resourceIdentifier}
                             addCommentAction={addCommentAction}
                             user={user}
-                            comments={comments}
+                            comments={comments.content}
                         />
                     </div>
                     <div className={classes.section}>

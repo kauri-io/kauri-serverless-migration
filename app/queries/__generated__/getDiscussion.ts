@@ -160,6 +160,10 @@ export interface getDiscussion_getDiscussion_comments_content_author {
 export interface getDiscussion_getDiscussion_comments_content {
   __typename: "CommentDTO";
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;

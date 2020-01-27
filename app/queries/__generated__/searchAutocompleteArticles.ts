@@ -287,6 +287,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -1085,6 +1089,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Comment author (full profile)
    */
   author: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
+  /**
+   * Comment ID
+   */
+  id: string;
   /**
    * Date the comment was published
    */

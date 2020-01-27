@@ -315,6 +315,10 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comment
    */
   author: getCommunity_getCommunity_homepage_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -1113,6 +1117,10 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    * Comment author (full profile)
    */
   author: getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
+  /**
+   * Comment ID
+   */
+  id: string;
   /**
    * Date the comment was published
    */
