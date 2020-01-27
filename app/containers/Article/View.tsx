@@ -36,7 +36,7 @@ import Toolbar from '../ViewLink/components/Toolbar'
 import ShareIcon from '@material-ui/icons/Share'
 import ShareDialog from '../../components/Card/ShareDialog'
 import ShareWidget from './components/ShareWidget'
-import { Chip } from '@material-ui/core'
+import { Chip, Box } from '@material-ui/core'
 import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
@@ -316,17 +316,28 @@ const ArticleComp = ({
                                 </Typography>
                             </Grid>
                             <Hidden lgUp={true}>
-                                <ShareIcon
-                                    onClick={() => setShareDialogOpen(true)}
-                                />
-                                <ShareDialog
-                                    href={url.as}
-                                    name={title}
-                                    open={shareDialogOpen}
-                                    handleClose={() =>
-                                        setShareDialogOpen(false)
-                                    }
-                                />
+                                <Box display="flex">
+                                    {tips && tips.totals && tips.totals.ETH && (
+                                        <Typography
+                                            variant="button"
+                                            align="center"
+                                            className={classes.compactTip}
+                                        >
+                                            {tips.totals.ETH} ETH
+                                        </Typography>
+                                    )}
+                                    <ShareIcon
+                                        onClick={() => setShareDialogOpen(true)}
+                                    />
+                                    <ShareDialog
+                                        href={url.as}
+                                        name={title}
+                                        open={shareDialogOpen}
+                                        handleClose={() =>
+                                            setShareDialogOpen(false)
+                                        }
+                                    />
+                                </Box>
                                 {/* <CardActions
                                     type="ARTICLE"
                                     id={id}
