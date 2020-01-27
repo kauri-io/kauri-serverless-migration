@@ -228,7 +228,11 @@ export const DiscussionView = ({
                     <Grid
                         direction="row"
                         justify="space-between"
-                        className={[classes.row, classes.flex, classes.content].join(' ')}
+                        className={[
+                            classes.row,
+                            classes.flex,
+                            classes.content,
+                        ].join(' ')}
                     >
                         <MDRenderer markdown={data.getDiscussion.message} />
                     </Grid>

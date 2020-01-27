@@ -29,14 +29,25 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface IProps {
     show: boolean
     currentUser: any
-    addCommentAction: (payload: addCommentVariables, callback: any) => IAddCommentAction
+    addCommentAction: (
+        payload: addCommentVariables,
+        callback: any
+    ) => IAddCommentAction
     parent: ResourceIdentifierInput
-    replyTo: string|null
+    replyTo: string | null
     withAvatar?: boolean
     afterPost?: () => void
 }
 
-const CommentForm = ({ show=true, currentUser, addCommentAction, parent, replyTo=null, withAvatar=true, afterPost}: IProps) => {
+const CommentForm = ({
+    show = true,
+    currentUser,
+    addCommentAction,
+    parent,
+    replyTo = null,
+    withAvatar = true,
+    afterPost,
+}: IProps) => {
     const classes = useStyles()
     const [comment, setComment] = useState('')
 
@@ -75,16 +86,19 @@ const CommentForm = ({ show=true, currentUser, addCommentAction, parent, replyTo
                             color="primary"
                             variant="text"
                             onClick={() =>
-                                addCommentAction({
-                                    parent,
-                                    replyTo,
-                                    body: comment,
-                                }, () => {
-                                    setComment('')
-                                    if(afterPost) {
-                                        afterPost()
+                                addCommentAction(
+                                    {
+                                        parent,
+                                        replyTo,
+                                        body: comment,
+                                    },
+                                    () => {
+                                        setComment('')
+                                        if (afterPost) {
+                                            afterPost()
+                                        }
                                     }
-                                })
+                                )
                             }
                             disabled={disableButton()}
                         >

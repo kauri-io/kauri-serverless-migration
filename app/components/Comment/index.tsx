@@ -11,26 +11,28 @@ import { addCommentVariables } from '../../queries/__generated__/addComment'
 import { IAddCommentAction } from '../../containers/Article/Module'
 import { IComment } from '../../containers/Article/components/ArticleComments'
 
-
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
         paddingTop: theme.spacing(2),
         margin: theme.spacing(1, 0),
     },
     flex: {
-        display: 'flex'
+        display: 'flex',
     },
     text: {
         margin: theme.spacing(2, 0),
     },
     replies: {
-        marginLeft: theme.spacing(4)
+        marginLeft: theme.spacing(4),
     },
 }))
 
 interface IProps {
     currentUser: any
-    addCommentAction: (payload: addCommentVariables, callback: any) => IAddCommentAction
+    addCommentAction: (
+        payload: addCommentVariables,
+        callback: any
+    ) => IAddCommentAction
     parent: ResourceIdentifierInput
     id: string
     author: UserOwner
@@ -39,14 +41,26 @@ interface IProps {
     replies: IComment[]
 }
 
-const Comment = ({ currentUser, addCommentAction, parent, id, author, body, posted, replies=[]}: IProps) => {
+const Comment = ({
+    currentUser,
+    addCommentAction,
+    parent,
+    id,
+    author,
+    body,
+    posted,
+    replies = [],
+}: IProps) => {
     const classes = useStyles()
     const [showReplyForm, setShowReplyForm] = useState(false)
-    
+
     return (
         <Grid className={classes.container}>
-
-            <Grid className={classes.flex} direction="row" justify='space-between'>
+            <Grid
+                className={classes.flex}
+                direction="row"
+                justify="space-between"
+            >
                 <Avatar
                     size={40}
                     id={author.id}
@@ -64,9 +78,9 @@ const Comment = ({ currentUser, addCommentAction, parent, id, author, body, post
             </Grid>
 
             <Grid className={classes.replies}>
-                {replies.map((comment) => (
-                    <Comment 
-                        {...comment} 
+                {replies.map(comment => (
+                    <Comment
+                        {...comment}
                         parent={parent}
                         addCommentAction={addCommentAction}
                         currentUser={currentUser}
@@ -76,11 +90,15 @@ const Comment = ({ currentUser, addCommentAction, parent, id, author, body, post
             </Grid>
 
             <Grid>
-                <Button color="primary" variant="text" onClick={()=>setShowReplyForm(!showReplyForm)}>
+                <Button
+                    color="primary"
+                    variant="text"
+                    onClick={() => setShowReplyForm(!showReplyForm)}
+                >
                     Reply
                 </Button>
 
-                <CommentForm 
+                <CommentForm
                     currentUser={currentUser}
                     addCommentAction={addCommentAction}
                     parent={parent}
@@ -90,7 +108,6 @@ const Comment = ({ currentUser, addCommentAction, parent, id, author, body, post
                     afterPost={() => setShowReplyForm(false)}
                 />
             </Grid>
-
         </Grid>
     )
 }

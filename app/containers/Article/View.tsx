@@ -401,7 +401,8 @@ const ArticleComp = ({
                             className={classes.commentTitle}
                             variant="h6"
                         >
-                            {comments.totalElements} Comment{comments.totalElements !== 1 ? 's' : ''}
+                            {comments.totalElements} Comment
+                            {comments.totalElements !== 1 ? 's' : ''}
                         </Typography>
 
                         <Comments

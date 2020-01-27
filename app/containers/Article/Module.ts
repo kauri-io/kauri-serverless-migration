@@ -142,7 +142,11 @@ export const addCommentEpic: Epic<
                     showNotificationAction({
                         notificationType: 'success',
                         message: 'Comment added',
-                        description: `Your comment has been added to the ${payload.parent.type === 'DISCUSSION' ? "discussion" : "article"}.`,
+                        description: `Your comment has been added to the ${
+                            payload.parent.type === 'DISCUSSION'
+                                ? 'discussion'
+                                : 'article'
+                        }.`,
                     })
                 ),
                 catchError(err => {

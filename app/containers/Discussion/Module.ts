@@ -164,24 +164,24 @@ export const editDiscussionEpic: Epic<
                 ),
                 tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
-                merge(
-                    of(
-                        showNotificationAction({
-                            description:
-                                'Your discussion has been successfully edited',
-                            message: `Discussion`,
-                            notificationType: 'success',
-                        })
-                    ),
-                    of(
-                        routeChangeAction(
-                            getDiscussionURL({
-                                id: payload.id,
-                                title: payload.title,
-                            }).as
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'Your discussion has been successfully edited',
+                                message: `Discussion`,
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                getDiscussionURL({
+                                    id: payload.id,
+                                    title: payload.title,
+                                }).as
+                            )
                         )
                     )
-                )
                 ),
                 catchError(err => {
                     console.error(err)

@@ -93,10 +93,10 @@ export const DiscussionList = ({
             href: `/create-discussion?parent_id=${parentId}&parent_type=${parentType}`,
         }
 
-        if(isLoggedIn) {
+        if (isLoggedIn) {
             return routeChangeAction(createURL.as)
         } else {
-            return routeChangeAction(`/login?r=${createURL.as}`);
+            return routeChangeAction(`/login?r=${createURL.as}`)
         }
     }
 

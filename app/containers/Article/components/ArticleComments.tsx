@@ -17,52 +17,50 @@ const useStyles = makeStyles((theme: Theme) => ({
         borderRadius: 4,
         '& > *:not(:first-child)': {
             borderTop: '1px solid #dadada',
-        }
-    }
+        },
+    },
 }))
 
 export interface IComment {
-    id: string;
-    posted: any;
-    author: UserOwner;
-    body: string;
-    replyTo: string | null;
+    id: string
+    posted: any
+    author: UserOwner
+    body: string
+    replyTo: string | null
     replies: IComment[]
-  }
+}
 
 export default ({ parent, comments, user, addCommentAction }) => {
     const classes = useStyles()
 
-    delete parent.__typename;
+    delete parent.__typename
 
     const [nestedComments, setNestedComments] = useState<IComment[]>([])
 
     useEffect(() => {
         setNestedComments(nestComments(comments))
-    }, [comments]);
+    }, [comments])
 
     const nestComments = comments => {
-        const commentMap = {};
+        const commentMap = {}
 
-        comments.forEach(comment => commentMap[comment.id] = comment);
+        comments.forEach(comment => (commentMap[comment.id] = comment))
 
         comments.forEach(comment => {
-          if(comment.replyTo !== null) {
-            const parent = commentMap[comment.replyTo];
-            (parent.replies = parent.replies || []).push(comment);
-          }
-        });
+            if (comment.replyTo !== null) {
+                const parent = commentMap[comment.replyTo]
+                ;(parent.replies = parent.replies || []).push(comment)
+            }
+        })
 
         return comments.filter(comment => {
-            return comment.replyTo === null;
-          });
-      }
-
+            return comment.replyTo === null
+        })
+    }
 
     return (
         <Grid id="comments" className={classes.container}>
-
-            <CommentForm 
+            <CommentForm
                 currentUser={user}
                 addCommentAction={addCommentAction}
                 parent={parent}
@@ -71,15 +69,14 @@ export default ({ parent, comments, user, addCommentAction }) => {
             />
 
             {nestedComments.map(comment => (
-                <Comment 
-                    {...comment} 
+                <Comment
+                    {...comment}
                     parent={parent}
                     addCommentAction={addCommentAction}
                     currentUser={user}
                     replies={comment.replies}
                 />
             ))}
-
         </Grid>
     )
 }
