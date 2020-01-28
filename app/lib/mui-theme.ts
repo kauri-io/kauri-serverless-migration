@@ -26,6 +26,9 @@ export default createMuiTheme({
                     backgroundColor: disabledColour,
                 },
             },
+            containedPrimary: {
+                color: '#fff',
+            },
             outlined: {
                 '&&:disabled': {
                     backgroundColor: disabledColour,

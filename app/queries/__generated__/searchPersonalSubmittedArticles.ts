@@ -300,6 +300,11 @@ export interface searchPersonalSubmittedArticles_searchArticles_content_comments
   isLast: boolean;
 }
 
+export interface searchPersonalSubmittedArticles_searchArticles_content_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface searchPersonalSubmittedArticles_searchArticles_content {
   __typename: "ArticleDTO";
   /**
@@ -396,6 +401,8 @@ export interface searchPersonalSubmittedArticles_searchArticles_content {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: searchPersonalSubmittedArticles_searchArticles_content_tips | null;
+  hasTipped: boolean;
 }
 
 export interface searchPersonalSubmittedArticles_searchArticles {

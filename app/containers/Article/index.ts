@@ -7,6 +7,7 @@ import {
     voteAction,
     addCommentAction,
     initiateArticleTransferAction,
+    tipAction,
 } from './Module'
 import { curateCommunityResourcesAction } from '../Community/Module'
 import View from './View'
@@ -37,6 +38,7 @@ export default compose(
             voteAction,
             initiateArticleTransferAction,
             curateCommunityResourcesAction,
+            tipAction,
         }
     ),
     graphql(getArticleQuery, {

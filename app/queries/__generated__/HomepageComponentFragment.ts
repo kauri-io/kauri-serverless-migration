@@ -408,6 +408,11 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
   isLast: boolean;
 }
 
+export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -504,6 +509,8 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -2085,6 +2092,11 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
   isLast: boolean;
 }
 
+export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -2181,6 +2193,8 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
@@ -3709,6 +3723,11 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
   isLast: boolean;
 }
 
+export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -3805,6 +3824,8 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {

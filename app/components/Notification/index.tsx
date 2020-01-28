@@ -10,6 +10,81 @@ import { IReduxState } from '../../lib/Module'
 import { WithStyles } from '@material-ui/styles'
 import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 
+// const useStyles = makeStyles((theme: Theme) => ({
+//     error: {
+//         backgroundColor: theme.palette.error.dark,
+//     },
+//     success: {
+//         backgroundColor: theme.palette.primary.main,
+//     },
+//     message: {
+//         display: 'flex',
+//         alignItems: 'center',
+//     },
+//     icon: {
+//         marginRight: 10,
+//     },
+// }))
+
+// const Notification = (props) => {
+//     const classes = useStyles()
+
+//     const [open, setOpen] = useState(true)
+
+//     const notification = useSelector((state: any) => {
+//         console.log("in useSelector STATE: " + JSON.stringify(state))
+//         console.log("NOTIFICATION: " + JSON.stringify(state.app.notification))
+//         return state.app.notification
+//     })
+
+//     useEffect(() => {
+//         console.log('notification changed', props.notification);
+//         if (notification) {
+//             setOpen(true);
+//         } else {
+//             setOpen(true);
+//         }
+//     }, [props.notification])
+
+//     const closeNotification = () => {
+//         setOpen(true)
+//     }
+
+//     return (
+//         <Snackbar
+//             open={open}
+//             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+//             autoHideDuration={4000}
+//             onClose={closeNotification}
+//         >
+//             <SnackbarContent
+//                 className={
+//                     notification &&
+//                     notification.notificationType === 'error'
+//                         ? classes.error
+//                         : classes.success
+//                 }
+//                 key={`top, center`}
+//                 message={
+//                     <Typography className={classes.message}>
+//                         {notification &&
+//                         notification.notificationType === 'success' ? (
+//                             <CheckCircleIcon className={classes.icon} />
+//                         ) : (
+//                             <ErrorIcon className={classes.icon} />
+//                         )}
+//                         {`${notification ? notification.message : null} - ${
+//                             notification ? notification.description : null
+//                         }`}
+//                     </Typography>
+//                 }
+//             />
+//         </Snackbar>
+//     )
+// }
+
+// export default Notification
+
 const styles = theme =>
     createStyles({
         error: {

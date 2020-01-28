@@ -45,6 +45,9 @@ exports[`components/typography BodyArticle should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -487,6 +490,9 @@ exports[`components/typography BodyCard should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -937,6 +943,9 @@ exports[`components/typography CTA should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -1395,6 +1404,9 @@ exports[`components/typography H1 should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -1855,6 +1867,9 @@ exports[`components/typography H2 should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -2312,6 +2327,9 @@ exports[`components/typography H3 should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -2771,6 +2789,9 @@ exports[`components/typography H4 should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -3228,6 +3249,9 @@ exports[`components/typography H5 should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -3687,6 +3711,9 @@ exports[`components/typography H6 should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -4145,6 +4172,9 @@ exports[`components/typography Label should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -4595,6 +4625,9 @@ exports[`components/typography ListBulletPoint should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -5040,6 +5073,9 @@ exports[`components/typography ListDashPoint should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -5482,6 +5518,9 @@ exports[`components/typography NavigationText should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {
@@ -5941,6 +5980,9 @@ exports[`components/typography PageDescription should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -6399,6 +6441,9 @@ exports[`components/typography Title1 should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -6856,6 +6901,9 @@ exports[`components/typography Title2 should match snapshot 1`] = `
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
+          },
+          "containedPrimary": Object {
+            "color": "#fff",
           },
           "outlined": Object {
             "&&:disabled": Object {

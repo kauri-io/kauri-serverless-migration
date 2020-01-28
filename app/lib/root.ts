@@ -30,6 +30,7 @@ import {
 import {
     voteEpic,
     initiateArticleTransferEpic,
+    tipEpic,
 } from '../containers/Article/Module'
 import {
     createCommunityEpic,
@@ -139,6 +140,7 @@ const epics = [
     banMemberEpic,
     unbanMemberEpic,
     initiateArticleTransferEpic,
+    tipEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

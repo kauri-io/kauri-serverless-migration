@@ -316,6 +316,11 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   isLast: boolean;
 }
 
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -412,6 +417,8 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_resourceIdentifier {
@@ -1115,6 +1122,11 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   isLast: boolean;
 }
 
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -1211,6 +1223,8 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
