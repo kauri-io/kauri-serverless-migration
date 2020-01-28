@@ -110,7 +110,9 @@ const CommentForm = ({
                             <Button
                                 color="primary"
                                 variant="text"
-                                onClick={() => routeChangeAction(`/login?r=${currentURL}`)}
+                                onClick={() =>
+                                    routeChangeAction(`/login?r=${currentURL}`)
+                                }
                             >
                                 Sign-in to Comment
                             </Button>
