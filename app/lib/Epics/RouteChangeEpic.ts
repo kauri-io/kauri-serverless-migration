@@ -10,14 +10,14 @@ export interface IRouteChangeAction {
     payload: IRouteChangePayload
 }
 
-export const routeChange = (payload: IRouteChangePayload): any => {
+export const routeChange = (payload: IRouteChangePayload, as?: string): any => {
     if (
         window.location.href.indexOf('redirected=true') !== -1 &&
         payload === 'back'
     ) {
         return Router.push('/')
     } else {
-        return payload === 'back' ? Router.back() : Router.push(payload)
+        return payload === 'back' ? Router.back() : Router.push(payload, as)
     }
 }
 

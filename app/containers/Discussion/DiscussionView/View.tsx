@@ -43,7 +43,7 @@ import { editCommentVariables } from '../../../queries/__generated__/editComment
 import { deleteCommentVariables } from '../../../queries/__generated__/deleteComment'
 
 interface IProps {
-    routeChangeAction: (payload: string) => IRouteChangeAction
+    routeChangeAction: (href: string, as?: string) => IRouteChangeAction
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
     closeDiscussionAction: (
@@ -161,7 +161,7 @@ export const DiscussionView = ({
         href: `/create-discussion?discussion_id=${data.getDiscussion.id}`,
     }
     const loginRedirect = () => routeChangeAction(`/login?r=${selfURL.as}`)
-    const editRedirect = () => routeChangeAction(editURL.as)
+    const editRedirect = () => routeChangeAction(editURL.href, editURL.as)
 
     return (
         <div className={classes.container}>

@@ -20,7 +20,7 @@ import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 
 interface IProps {
     isLoggedIn: boolean
-    routeChangeAction: (payload: string) => IRouteChangeAction
+    routeChangeAction: (href: string, as?: string) => IRouteChangeAction
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
     data: {
@@ -94,7 +94,7 @@ export const DiscussionList = ({
         }
 
         if (isLoggedIn) {
-            return routeChangeAction(createURL.as)
+            return routeChangeAction(createURL.href, createURL.href)
         } else {
             return routeChangeAction(`/login?r=${createURL.as}`)
         }
