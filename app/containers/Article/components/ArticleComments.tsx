@@ -31,6 +31,7 @@ export interface IComment {
 }
 
 export default ({
+    routeChangeAction,
     openModalAction,
     closeModalAction,
     parent,
@@ -39,6 +40,7 @@ export default ({
     addCommentAction,
     editCommentAction,
     deleteCommentAction,
+    currentURL,
 }) => {
     const classes = useStyles()
 
@@ -72,16 +74,19 @@ export default ({
         <Grid id="comments" className={classes.container}>
             <CommentForm
                 currentUser={user}
+                currentURL={currentURL}
+                routeChangeAction={routeChangeAction}
                 addCommentAction={addCommentAction}
                 editCommentAction={editCommentAction}
                 parent={parent}
                 replyTo={null}
-                show={!!user}
+                show={true}
             />
 
             {nestedComments.map(comment => (
                 <Comment
                     {...comment}
+                    routeChangeAction={routeChangeAction}
                     openModalAction={openModalAction}
                     closeModalAction={closeModalAction}
                     parent={parent}
@@ -89,6 +94,7 @@ export default ({
                     editCommentAction={editCommentAction}
                     deleteCommentAction={deleteCommentAction}
                     currentUser={user}
+                    currentURL={currentURL}
                 />
             ))}
         </Grid>

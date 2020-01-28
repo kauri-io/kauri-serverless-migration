@@ -434,6 +434,8 @@ const ArticleComp = ({
                             deleteCommentAction={deleteCommentAction}
                             user={user}
                             comments={comments.content}
+                            currentURL={url.as}
+                            routeChangeAction={routeChangeAction}
                         />
                     </div>
                     <div className={classes.section}>

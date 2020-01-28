@@ -5444,6 +5444,7 @@ exports[`containers/Article should match snapshot 1`] = `
                             addCommentAction={[MockFunction]}
                             closeModalAction={[MockFunction]}
                             comments={Array []}
+                            currentURL="/test-title-1/1231/a"
                             deleteCommentAction={[MockFunction]}
                             editCommentAction={[MockFunction]}
                             openModalAction={[MockFunction]}
@@ -5454,6 +5455,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                 "version": 1,
                               }
                             }
+                            routeChangeAction={[MockFunction]}
                             user={
                               Object {
                                 "id": "234",
@@ -5582,6 +5584,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                 >
                                   <CommentForm
                                     addCommentAction={[MockFunction]}
+                                    currentURL="/test-title-1/1231/a"
                                     currentUser={
                                       Object {
                                         "id": "234",
@@ -5597,6 +5600,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     }
                                     replyTo={null}
+                                    routeChangeAction={[MockFunction]}
                                     show={true}
                                   >
                                     <Hidden

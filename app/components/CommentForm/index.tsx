@@ -10,6 +10,7 @@ import {
     IEditCommentAction,
 } from '../../containers/Article/Module'
 import { editCommentVariables } from '../../queries/__generated__/editComment'
+import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
     editorWrapper: {
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 interface IProps {
+    routeChangeAction: (payload: string) => IRouteChangeAction
     show: boolean
     currentUser: any
     addCommentAction: (
@@ -47,9 +49,11 @@ interface IProps {
     callback?: () => void
     id?: string | null
     body?: string | null
+    currentURL?: string
 }
 
 const CommentForm = ({
+    routeChangeAction,
     show = true,
     currentUser,
     addCommentAction,
@@ -60,6 +64,7 @@ const CommentForm = ({
     callback,
     id,
     body = '',
+    currentURL,
 }: IProps) => {
     const classes = useStyles()
     const [comment, setComment] = React.useState<string>(
@@ -82,13 +87,13 @@ const CommentForm = ({
                         <Avatar
                             size={40}
                             withName={false}
-                            username={currentUser.username}
-                            id={currentUser.id}
-                            avatar={currentUser.avatar}
+                            username={currentUser && currentUser.username}
+                            id={currentUser && currentUser.id}
+                            avatar={currentUser && currentUser.avatar}
                         />
                     </Grid>
                 )}
-                <Grid item={true} sm={11}>
+                <Grid item={true} sm={withAvatar ? 11 : 12}>
                     <Grid className={classes.editorWrapper}>
                         <Editor
                             minHeight={80}
@@ -101,7 +106,16 @@ const CommentForm = ({
                         />
                     </Grid>
                     <Grid className={classes.button}>
-                        {id && (
+                        {!currentUser && currentURL && (
+                            <Button
+                                color="primary"
+                                variant="text"
+                                onClick={() => routeChangeAction(`/login?r=${currentURL}`)}
+                            >
+                                Sign-in to Comment
+                            </Button>
+                        )}
+                        {currentUser && id && (
                             <Button
                                 color="primary"
                                 variant="text"
@@ -110,7 +124,7 @@ const CommentForm = ({
                                 Cancel
                             </Button>
                         )}
-                        {!id && (
+                        {currentUser && !id && (
                             <Button
                                 color="primary"
                                 variant="text"
@@ -134,7 +148,7 @@ const CommentForm = ({
                                 Leave Comment
                             </Button>
                         )}
-                        {id && (
+                        {currentUser && id && (
                             <Button
                                 color="primary"
                                 variant="text"

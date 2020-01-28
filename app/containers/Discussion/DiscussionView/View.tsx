@@ -83,20 +83,6 @@ interface IProps {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-    // container: {
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     maxWidth: 1272,
-    //     width: '100%',
-    //     margin: 'auto',
-    //     flex: 1,
-    //     height: '100%',
-    // },
-    // root: {
-    //     paddingTop: theme.spacing(4),
-    //     marginBottom: theme.spacing(2),
-    //     display: 'flex',
-    // },
     container: {
         display: 'flex',
         alignItems: 'center',
@@ -166,7 +152,7 @@ export const DiscussionView = ({
         return <Loading />
     }
 
-    const isAuthor = user.id == data.getDiscussion.authorId
+    const isAuthor = user && user.id == data.getDiscussion.authorId
 
     const backURL = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
     const selfURL = getDiscussionURL({ ...data.getDiscussion })
@@ -398,12 +384,14 @@ export const DiscussionView = ({
                     >
                         <CommentsWidget
                             openModalAction={openModalAction}
+                            routeChangeAction={routeChangeAction}
                             closeModalAction={closeModalAction}
                             parent={data.getDiscussion.resourceIdentifier}
                             addCommentAction={addCommentAction}
                             editCommentAction={editCommentAction}
                             deleteCommentAction={deleteCommentAction}
                             user={user}
+                            currentURL={selfURL.as}
                             comments={data.getDiscussion.comments.content}
                         />
                     </Grid>

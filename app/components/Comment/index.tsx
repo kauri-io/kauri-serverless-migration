@@ -39,6 +39,7 @@ import {
 import AlertViewComponent from '../Modal/AlertView'
 import { BodyCard } from '../Typography'
 import { Row } from '../../containers/Community/Module'
+import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -60,6 +61,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     menu: {
         display: 'flex',
+        alignItems: 'center',
         cursor: 'pointer',
         '& > *': {
             marginRight: theme.spacing(1),
@@ -71,6 +73,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface IProps {
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
+    routeChangeAction: (payload: string) => IRouteChangeAction
     currentUser: any
     addCommentAction: (
         payload: addCommentVariables,
@@ -90,11 +93,13 @@ interface IProps {
     body: string
     posted: string
     replies: IComment[]
+    currentURL?: string
 }
 
 const Comment = ({
     openModalAction,
     closeModalAction,
+    routeChangeAction,
     currentUser,
     addCommentAction,
     editCommentAction,
@@ -105,10 +110,11 @@ const Comment = ({
     body,
     posted,
     replies = [],
+    currentURL,
 }: IProps) => {
     const classes = useStyles()
 
-    const isAuthor = currentUser.id === author.id
+    const isAuthor = currentUser && currentUser.id === author.id
 
     const [repliesCollapsed, setRepliesCollapsed] = React.useState(false)
     const [showReplyForm, setShowReplyForm] = React.useState(false)
@@ -177,9 +183,9 @@ const Comment = ({
                             role={undefined}
                             transition
                             disablePortal
-                            placement="bottom-start"
+                            placement="right-start"
                         >
-                            <Paper>
+                            <Paper elevation={3}>
                                 <ClickAwayListener
                                     onClickAway={menuHandleClose}
                                 >
@@ -260,6 +266,8 @@ const Comment = ({
 
                 <CommentForm
                     currentUser={currentUser}
+                    currentURL={currentURL}
+                    routeChangeAction={routeChangeAction}
                     addCommentAction={addCommentAction}
                     editCommentAction={editCommentAction}
                     parent={parent}
@@ -277,6 +285,7 @@ const Comment = ({
                     {replies.map(comment => (
                         <Comment
                             {...comment}
+                            routeChangeAction={routeChangeAction}
                             openModalAction={openModalAction}
                             closeModalAction={closeModalAction}
                             parent={parent}
@@ -284,6 +293,7 @@ const Comment = ({
                             editCommentAction={editCommentAction}
                             deleteCommentAction={deleteCommentAction}
                             currentUser={currentUser}
+                            currentURL={currentURL}
                         />
                     ))}
                 </Collapse>
