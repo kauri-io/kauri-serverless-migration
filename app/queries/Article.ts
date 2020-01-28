@@ -320,6 +320,22 @@ export const addCommentMutation = gql`
     }
 `
 
+export const editCommentMutation = gql`
+    mutation editComment($id: String!, $body: String!) {
+        editComment(id: $id, body: $body) {
+            hash
+        }
+    }
+`
+
+export const deleteCommentMutation = gql`
+    mutation deleteComment($id: String!) {
+        deleteComment(id: $id) {
+            hash
+        }
+    }
+`
+
 export const searchAwaitingApproval = gql`
     query searchArticles($size: Int = 8, $page: Int = 0, $owners: [String]) {
         searchArticles(

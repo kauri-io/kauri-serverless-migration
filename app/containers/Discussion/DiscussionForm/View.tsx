@@ -111,11 +111,20 @@ export const DiscussionForm = ({
     const [message, setMessage] = useState<string>(
         data ? data.getDiscussion.message : ''
     )
-    const [tags, setTags] = useState<any[]>(
-        data && data.getDiscussion.tags
-            ? data.getDiscussion.tags.map(t => t)
-            : []
-    )
+    const [tags, setTags] = useState<any[]>([])
+
+    React.useEffect(() => {
+        if (data && data.getDiscussion.tags) {
+            setTags(
+                data.getDiscussion.tags.map(tag => {
+                    return {
+                        label: tag,
+                        value: tag,
+                    }
+                })
+            )
+        }
+    }, [])
 
     const save = () => {
         let t: string[] = tags.map(i => i.label)

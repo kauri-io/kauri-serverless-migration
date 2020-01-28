@@ -326,6 +326,10 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comment
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comments {
@@ -652,6 +656,14 @@ export interface getCommunity_getCommunity_homepage_resources_ExternalLinkDTO_co
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_ExternalLinkDTO_comments {
@@ -1129,6 +1141,10 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -1455,6 +1471,14 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ExternalLinkDTO_comments {

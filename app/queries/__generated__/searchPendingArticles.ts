@@ -282,6 +282,10 @@ export interface searchPendingArticles_searchArticles_content_comments_content {
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface searchPendingArticles_searchArticles_content_comments {

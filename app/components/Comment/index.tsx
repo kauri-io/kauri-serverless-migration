@@ -1,15 +1,44 @@
-import { Grid, Typography, Theme, Button } from '@material-ui/core'
+import React from 'react'
+import {
+    Grid,
+    Typography,
+    Theme,
+    Button,
+    Popper,
+    Paper,
+    ClickAwayListener,
+    MenuList,
+    MenuItem,
+    Collapse,
+} from '@material-ui/core'
 import Avatar from '../Avatar'
 import moment from 'moment-mini'
 import { makeStyles } from '@material-ui/styles'
 import Renderer from '../Markdown/Renderer'
-import { useState } from 'react'
 import CommentForm from '../CommentForm'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { addCommentVariables } from '../../queries/__generated__/addComment'
-import { IAddCommentAction } from '../../containers/Article/Module'
+import {
+    IAddCommentAction,
+    IEditCommentAction,
+    IDeleteCommentAction,
+} from '../../containers/Article/Module'
 import { IComment } from '../../containers/Article/components/ArticleComments'
+import {
+    MoreVert as MoreVertIcon,
+    Reply as ReplyIcon,
+} from '@material-ui/icons'
+import { editCommentVariables } from '../../queries/__generated__/editComment'
+import { deleteCommentVariables } from '../../queries/__generated__/deleteComment'
+import {
+    IOpenModalPayload,
+    IOpenModalAction,
+    ICloseModalAction,
+} from '../Modal/Module'
+import AlertViewComponent from '../Modal/AlertView'
+import { BodyCard } from '../Typography'
+import { Row } from '../../containers/Community/Module'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -20,19 +49,41 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
     },
     text: {
-        margin: theme.spacing(2, 0),
+        margin: theme.spacing(1, 0, -2, 0),
+    },
+    actions: {
+        display: 'flex',
+        margin: theme.spacing(0, 0, 0, 0),
     },
     replies: {
         marginLeft: theme.spacing(4),
     },
+    menu: {
+        display: 'flex',
+        cursor: 'pointer',
+        '& > *': {
+            marginRight: theme.spacing(1),
+            fontWeight: 600,
+        },
+    },
 }))
 
 interface IProps {
+    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    closeModalAction: () => ICloseModalAction
     currentUser: any
     addCommentAction: (
         payload: addCommentVariables,
         callback: any
     ) => IAddCommentAction
+    editCommentAction: (
+        payload: editCommentVariables,
+        callback: any
+    ) => IEditCommentAction
+    deleteCommentAction: (
+        payload: deleteCommentVariables,
+        callback: any
+    ) => IDeleteCommentAction
     parent: ResourceIdentifierInput
     id: string
     author: UserOwner
@@ -42,8 +93,12 @@ interface IProps {
 }
 
 const Comment = ({
+    openModalAction,
+    closeModalAction,
     currentUser,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
     parent,
     id,
     author,
@@ -52,7 +107,29 @@ const Comment = ({
     replies = [],
 }: IProps) => {
     const classes = useStyles()
-    const [showReplyForm, setShowReplyForm] = useState(false)
+
+    const isAuthor = currentUser.id === author.id
+
+    const [repliesCollapsed, setRepliesCollapsed] = React.useState(false)
+    const [showReplyForm, setShowReplyForm] = React.useState(false)
+    const [currentComment, setCurrentComment] = React.useState<IComment | null>(
+        null
+    )
+    const [menuOpen, setMenuOpen] = React.useState(false)
+    const menuAnchorEl = React.useRef(null)
+
+    const menuHandleToggle = () => {
+        setMenuOpen(menuOpen => !menuOpen)
+    }
+
+    const menuHandleClose = () => {
+        setMenuOpen(false)
+    }
+
+    const showForm = comment => {
+        setShowReplyForm(!showReplyForm)
+        setCurrentComment(comment)
+    }
 
     return (
         <Grid className={classes.container}>
@@ -77,36 +154,139 @@ const Comment = ({
                 <Renderer markdown={body} />
             </Grid>
 
-            <Grid className={classes.replies}>
-                {replies.map(comment => (
-                    <Comment
-                        {...comment}
-                        parent={parent}
-                        addCommentAction={addCommentAction}
-                        currentUser={currentUser}
-                        replies={comment.replies}
-                    />
-                ))}
-            </Grid>
-
             <Grid>
-                <Button
-                    color="primary"
-                    variant="text"
-                    onClick={() => setShowReplyForm(!showReplyForm)}
-                >
-                    Reply
-                </Button>
+                <Grid className={classes.actions} direction="row">
+                    <Button
+                        variant="text"
+                        size="small"
+                        startIcon={<ReplyIcon />}
+                        onClick={() => showForm(null)}
+                    >
+                        Reply
+                    </Button>
+
+                    <Grid
+                        className={classes.menu}
+                        ref={menuAnchorEl}
+                        onClick={menuHandleToggle}
+                    >
+                        <MoreVertIcon />
+                        <Popper
+                            open={menuOpen}
+                            anchorEl={menuAnchorEl.current}
+                            role={undefined}
+                            transition
+                            disablePortal
+                            placement="bottom-start"
+                        >
+                            <Paper>
+                                <ClickAwayListener
+                                    onClickAway={menuHandleClose}
+                                >
+                                    <MenuList
+                                        autoFocusItem={menuOpen}
+                                        id="menu-comment-grow"
+                                    >
+                                        <MenuItem
+                                            onClick={() =>
+                                                setRepliesCollapsed(
+                                                    !repliesCollapsed
+                                                )
+                                            }
+                                        >
+                                            {repliesCollapsed
+                                                ? 'Uncollapse'
+                                                : 'Collapse'}
+                                        </MenuItem>
+                                        {isAuthor && body !== '[deleted]' && (
+                                            <MenuItem
+                                                onClick={() =>
+                                                    showForm({ id, body })
+                                                }
+                                            >
+                                                Edit
+                                            </MenuItem>
+                                        )}
+                                        {isAuthor && body !== '[deleted]' && (
+                                            <MenuItem
+                                                onClick={() =>
+                                                    openModalAction({
+                                                        children: (
+                                                            <AlertViewComponent
+                                                                closeModalAction={
+                                                                    closeModalAction
+                                                                }
+                                                                confirmButtonAction={() =>
+                                                                    deleteCommentAction(
+                                                                        { id },
+                                                                        closeModalAction
+                                                                    )
+                                                                }
+                                                                confirmButtonText={
+                                                                    'Delete'
+                                                                }
+                                                                content={
+                                                                    <BodyCard>
+                                                                        <Row>
+                                                                            Are
+                                                                            you
+                                                                            sure
+                                                                            you
+                                                                            want
+                                                                            to
+                                                                            delete
+                                                                            your
+                                                                            comment?
+                                                                        </Row>
+                                                                    </BodyCard>
+                                                                }
+                                                                title={
+                                                                    'Delete Comment'
+                                                                }
+                                                            />
+                                                        ),
+                                                    })
+                                                }
+                                            >
+                                                Delete
+                                            </MenuItem>
+                                        )}
+                                    </MenuList>
+                                </ClickAwayListener>
+                            </Paper>
+                        </Popper>
+                    </Grid>
+                </Grid>
 
                 <CommentForm
                     currentUser={currentUser}
                     addCommentAction={addCommentAction}
+                    editCommentAction={editCommentAction}
                     parent={parent}
                     replyTo={id}
                     show={showReplyForm}
+                    body={currentComment && currentComment.body}
+                    id={currentComment && currentComment.id}
                     withAvatar={false}
-                    afterPost={() => setShowReplyForm(false)}
+                    callback={() => setShowReplyForm(false)}
                 />
+            </Grid>
+
+            <Grid className={classes.replies}>
+                <Collapse in={!repliesCollapsed}>
+                    {replies.map(comment => (
+                        <Comment
+                            {...comment}
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
+                            parent={parent}
+                            addCommentAction={addCommentAction}
+                            editCommentAction={editCommentAction}
+                            deleteCommentAction={deleteCommentAction}
+                            currentUser={currentUser}
+                        />
+                    ))}
+                </Collapse>
             </Grid>
         </Grid>
     )

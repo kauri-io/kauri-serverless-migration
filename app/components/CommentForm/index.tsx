@@ -1,11 +1,15 @@
+import React from 'react'
 import { Grid, Theme, Button, Hidden } from '@material-ui/core'
 import Avatar from '../Avatar'
 import { makeStyles } from '@material-ui/styles'
-import { useState } from 'react'
 import Editor from '../Markdown/Editor'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import { addCommentVariables } from '../../queries/__generated__/addComment'
-import { IAddCommentAction } from '../../containers/Article/Module'
+import {
+    IAddCommentAction,
+    IEditCommentAction,
+} from '../../containers/Article/Module'
+import { editCommentVariables } from '../../queries/__generated__/editComment'
 
 const useStyles = makeStyles((theme: Theme) => ({
     editorWrapper: {
@@ -33,23 +37,38 @@ interface IProps {
         payload: addCommentVariables,
         callback: any
     ) => IAddCommentAction
+    editCommentAction: (
+        payload: editCommentVariables,
+        callback: any
+    ) => IEditCommentAction
     parent: ResourceIdentifierInput
     replyTo: string | null
     withAvatar?: boolean
-    afterPost?: () => void
+    callback?: () => void
+    id?: string | null
+    body?: string | null
 }
 
 const CommentForm = ({
     show = true,
     currentUser,
     addCommentAction,
+    editCommentAction,
     parent,
     replyTo = null,
     withAvatar = true,
-    afterPost,
+    callback,
+    id,
+    body = '',
 }: IProps) => {
     const classes = useStyles()
-    const [comment, setComment] = useState('')
+    const [comment, setComment] = React.useState<string>(
+        body === null ? '' : body
+    )
+
+    React.useEffect(() => {
+        setComment(body === null ? '' : body)
+    }, [body])
 
     const disableButton = () => {
         return !comment || comment === ''
@@ -82,28 +101,62 @@ const CommentForm = ({
                         />
                     </Grid>
                     <Grid className={classes.button}>
-                        <Button
-                            color="primary"
-                            variant="text"
-                            onClick={() =>
-                                addCommentAction(
-                                    {
-                                        parent,
-                                        replyTo,
-                                        body: comment,
-                                    },
-                                    () => {
-                                        setComment('')
-                                        if (afterPost) {
-                                            afterPost()
+                        {id && (
+                            <Button
+                                color="primary"
+                                variant="text"
+                                onClick={callback}
+                            >
+                                Cancel
+                            </Button>
+                        )}
+                        {!id && (
+                            <Button
+                                color="primary"
+                                variant="text"
+                                onClick={() =>
+                                    addCommentAction(
+                                        {
+                                            parent,
+                                            replyTo,
+                                            body: comment,
+                                        },
+                                        () => {
+                                            setComment('')
+                                            if (callback) {
+                                                callback()
+                                            }
                                         }
-                                    }
-                                )
-                            }
-                            disabled={disableButton()}
-                        >
-                            Leave Comment
-                        </Button>
+                                    )
+                                }
+                                disabled={disableButton()}
+                            >
+                                Leave Comment
+                            </Button>
+                        )}
+                        {id && (
+                            <Button
+                                color="primary"
+                                variant="text"
+                                onClick={() =>
+                                    editCommentAction(
+                                        {
+                                            id,
+                                            body: comment,
+                                        },
+                                        () => {
+                                            setComment('')
+                                            if (callback) {
+                                                callback()
+                                            }
+                                        }
+                                    )
+                                }
+                                disabled={disableButton()}
+                            >
+                                Edit Comment
+                            </Button>
+                        )}
                     </Grid>
                 </Grid>
             </Grid>

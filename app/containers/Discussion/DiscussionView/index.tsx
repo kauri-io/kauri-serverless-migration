@@ -13,7 +13,12 @@ import {
     reopenDiscussionAction,
     deleteDiscussionAction,
 } from '../Module'
-import { voteAction, addCommentAction } from '../../Article/Module'
+import {
+    voteAction,
+    addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
+} from '../../Article/Module'
 import { getDiscussion } from '../../../queries/Discussion'
 
 const mapStateToProps = state => {
@@ -39,6 +44,8 @@ export default compose(
             deleteDiscussionAction,
             voteAction,
             addCommentAction,
+            editCommentAction,
+            deleteCommentAction,
         }
     ),
     graphql(getDiscussion, {

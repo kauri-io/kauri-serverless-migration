@@ -114,6 +114,7 @@ export const Article = gql`
                 id
                 posted
                 body
+                replyTo
             }
             totalPages
             totalElements
@@ -187,6 +188,8 @@ export const Link = gql`
                 }
                 posted
                 body
+                id
+                replyTo
             }
             totalPages
             totalElements

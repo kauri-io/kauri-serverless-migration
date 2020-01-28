@@ -65,6 +65,8 @@ describe('containers/Article', () => {
             initiateArticleTransferAction: jest.fn(),
             curateCommunityResourcesAction: jest.fn(),
             communities: [],
+            editCommentAction: jest.fn(),
+            deleteCommentAction: jest.fn(),
         }
 
         const wrapper = mountWithRedux(

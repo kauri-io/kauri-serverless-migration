@@ -417,6 +417,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             parentName={getCommunity.name}
                             parentType={ResourceTypeInput.COMMUNITY}
                             discussionId={discussionId}
+                            permissionToDelete={
+                                isCommunityAdmin || isCommunityModerator
+                            }
                         />
                     )}
                 {this.state.tab === getActualTabId(2) &&

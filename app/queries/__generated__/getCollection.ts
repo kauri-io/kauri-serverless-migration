@@ -366,6 +366,10 @@ export interface getCollection_getCollection_sections_resources_ArticleDTO_comme
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCollection_getCollection_sections_resources_ArticleDTO_comments {
@@ -692,6 +696,14 @@ export interface getCollection_getCollection_sections_resources_ExternalLinkDTO_
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCollection_getCollection_sections_resources_ExternalLinkDTO_comments {

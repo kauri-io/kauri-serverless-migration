@@ -1,8 +1,8 @@
+import React from 'react'
 import Comment from '../../../components/Comment'
 import { Theme, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import CommentForm from '../../../components/CommentForm'
-import { useEffect, useState } from 'react'
 import { UserOwner } from '../../../queries/Fragments/__generated__/UserOwner'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -30,30 +30,40 @@ export interface IComment {
     replies: IComment[]
 }
 
-export default ({ parent, comments, user, addCommentAction }) => {
+export default ({
+    openModalAction,
+    closeModalAction,
+    parent,
+    comments,
+    user,
+    addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
+}) => {
     const classes = useStyles()
 
     delete parent.__typename
 
-    const [nestedComments, setNestedComments] = useState<IComment[]>([])
+    const [nestedComments, setNestedComments] = React.useState<IComment[]>([])
 
-    useEffect(() => {
-        setNestedComments(nestComments(comments))
+    React.useEffect(() => {
+        setNestedComments([...nestComments(comments)])
     }, [comments])
 
     const nestComments = comments => {
-        const commentMap = {}
+        let result = JSON.parse(JSON.stringify(comments)) // deep copy
+        let commentMap = {}
 
-        comments.forEach(comment => (commentMap[comment.id] = comment))
+        result.forEach(comment => (commentMap[comment.id] = comment))
 
-        comments.forEach(comment => {
+        result.forEach(comment => {
             if (comment.replyTo !== null) {
                 const parent = commentMap[comment.replyTo]
                 ;(parent.replies = parent.replies || []).push(comment)
             }
         })
 
-        return comments.filter(comment => {
+        return result.filter(comment => {
             return comment.replyTo === null
         })
     }
@@ -63,6 +73,7 @@ export default ({ parent, comments, user, addCommentAction }) => {
             <CommentForm
                 currentUser={user}
                 addCommentAction={addCommentAction}
+                editCommentAction={editCommentAction}
                 parent={parent}
                 replyTo={null}
                 show={!!user}
@@ -71,10 +82,13 @@ export default ({ parent, comments, user, addCommentAction }) => {
             {nestedComments.map(comment => (
                 <Comment
                     {...comment}
+                    openModalAction={openModalAction}
+                    closeModalAction={closeModalAction}
                     parent={parent}
                     addCommentAction={addCommentAction}
+                    editCommentAction={editCommentAction}
+                    deleteCommentAction={deleteCommentAction}
                     currentUser={user}
-                    replies={comment.replies}
                 />
             ))}
         </Grid>

@@ -21,9 +21,17 @@ import { getCommunityURL, getDiscussionURL } from '../../../lib/getURLs'
 import Link from 'next/link'
 import VoteWidget from '../../Article/components/VoteWidget'
 import CommentsWidget from '../../Article/components/ArticleComments'
-import { IVoteAction, IAddCommentAction } from '../../Article/Module'
+import {
+    IVoteAction,
+    IAddCommentAction,
+    IEditCommentAction,
+    IDeleteCommentAction,
+} from '../../Article/Module'
 import { voteVariables } from '../../../queries/__generated__/vote'
 import EditIcon from '@material-ui/icons/Edit'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff'
+import OpenInNewIcon from '@material-ui/icons/OpenInNew'
+import DeleteIcon from '@material-ui/icons/Delete'
 import TagList from '../../../components/Tags/TagList'
 import Avatar from '../../../components/Avatar'
 import AvatarList from '../../../components/AvatarList'
@@ -31,6 +39,8 @@ import moment from 'moment-mini'
 import ShareWidget from '../../Article/components/ShareWidget'
 import MDRenderer from '../../../components/Markdown/Renderer'
 import { addCommentVariables } from '../../../queries/__generated__/addComment'
+import { editCommentVariables } from '../../../queries/__generated__/editComment'
+import { deleteCommentVariables } from '../../../queries/__generated__/deleteComment'
 
 interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
@@ -43,10 +53,22 @@ interface IProps {
         payload: reopenDiscussionVariables
     ) => IReopenDiscussionAction
     deleteDiscussionAction: (
-        payload: deleteDiscussionVariables
+        payload: deleteDiscussionVariables,
+        callback: any
     ) => IDeleteDiscussionAction
     voteAction: (payload: voteVariables) => IVoteAction
-    addCommentAction: (payload: addCommentVariables) => IAddCommentAction
+    addCommentAction: (
+        payload: addCommentVariables,
+        callback: any
+    ) => IAddCommentAction
+    editCommentAction: (
+        payload: editCommentVariables,
+        callback: any
+    ) => IEditCommentAction
+    deleteCommentAction: (
+        payload: deleteCommentVariables,
+        callback: any
+    ) => IDeleteCommentAction
     data: {
         loading: boolean
         getDiscussion: getDiscussion_getDiscussion
@@ -57,22 +79,38 @@ interface IProps {
     parentType: ResourceTypeInput
     isLoggedIn: boolean
     user: any
+    permissionToDelete: boolean
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
+    // container: {
+    //     display: 'flex',
+    //     flexDirection: 'column',
+    //     maxWidth: 1272,
+    //     width: '100%',
+    //     margin: 'auto',
+    //     flex: 1,
+    //     height: '100%',
+    // },
+    // root: {
+    //     paddingTop: theme.spacing(4),
+    //     marginBottom: theme.spacing(2),
+    //     display: 'flex',
+    // },
     container: {
         display: 'flex',
+        alignItems: 'center',
         flexDirection: 'column',
-        maxWidth: 1272,
-        width: '100%',
-        margin: 'auto',
-        flex: 1,
-        height: '100%',
+        padding: theme.spacing(1, 1),
+        backgroundColor: theme.palette.common.white,
     },
     root: {
-        paddingTop: theme.spacing(4),
-        marginBottom: theme.spacing(2),
         display: 'flex',
+        flexDirection: 'row',
+        paddingTop: theme.spacing(4),
+        width: '100%',
+        maxWidth: 1272,
+        marginBottom: theme.spacing(2),
     },
     left: {
         width: 300,
@@ -85,6 +123,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     content: {
         minHeight: 100,
+        textAlign: 'justify',
     },
     row: {
         marginTop: theme.spacing(2),
@@ -111,13 +150,23 @@ export const DiscussionView = ({
     user,
     voteAction,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
+    openModalAction,
+    closeModalAction,
     routeChangeAction,
+    closeDiscussionAction,
+    reopenDiscussionAction,
+    deleteDiscussionAction,
+    permissionToDelete = false,
 }: IProps) => {
     const classes = useStyles()
 
     if (data.loading) {
         return <Loading />
     }
+
+    const isAuthor = user.id == data.getDiscussion.authorId
 
     const backURL = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
     const selfURL = getDiscussionURL({ ...data.getDiscussion })
@@ -126,6 +175,7 @@ export const DiscussionView = ({
         href: `/create-discussion?discussion_id=${data.getDiscussion.id}`,
     }
     const loginRedirect = () => routeChangeAction(`/login?r=${selfURL.as}`)
+    const editRedirect = () => routeChangeAction(editURL.as)
 
     return (
         <div className={classes.container}>
@@ -161,21 +211,88 @@ export const DiscussionView = ({
                         />
                     </Grid>
 
-                    <Grid
-                        justify="center"
-                        alignItems="center"
-                        className={classes.action}
-                    >
-                        <Link href={editURL.href} as={editURL.as}>
+                    {isAuthor && (
+                        <Grid
+                            justify="center"
+                            alignItems="center"
+                            className={classes.action}
+                        >
                             <Button
                                 variant="text"
                                 size="small"
                                 startIcon={<EditIcon />}
+                                onClick={editRedirect}
                             >
                                 Edit discussion
                             </Button>
-                        </Link>
-                    </Grid>
+                        </Grid>
+                    )}
+
+                    {isAuthor && data.getDiscussion.status === 'OPENED' && (
+                        <Grid
+                            justify="center"
+                            alignItems="center"
+                            className={classes.action}
+                            onClick={() =>
+                                closeDiscussionAction({
+                                    id: data.getDiscussion.id,
+                                })
+                            }
+                        >
+                            <Button
+                                variant="text"
+                                size="small"
+                                startIcon={<HighlightOffIcon />}
+                            >
+                                Close discussion
+                            </Button>
+                        </Grid>
+                    )}
+
+                    {isAuthor && data.getDiscussion.status === 'CLOSED' && (
+                        <Grid
+                            justify="center"
+                            alignItems="center"
+                            className={classes.action}
+                            onClick={() => {}}
+                        >
+                            <Button
+                                variant="text"
+                                size="small"
+                                startIcon={<OpenInNewIcon />}
+                                onClick={() =>
+                                    reopenDiscussionAction({
+                                        id: data.getDiscussion.id,
+                                    })
+                                }
+                            >
+                                Repoen discussion
+                            </Button>
+                        </Grid>
+                    )}
+
+                    {permissionToDelete && (
+                        <Grid
+                            justify="center"
+                            alignItems="center"
+                            className={classes.action}
+                            onClick={() => {}}
+                        >
+                            <Button
+                                variant="text"
+                                size="small"
+                                startIcon={<DeleteIcon />}
+                                onClick={() =>
+                                    deleteDiscussionAction(
+                                        { id: data.getDiscussion.id },
+                                        () => routeChangeAction(backURL.as)
+                                    )
+                                }
+                            >
+                                Delete discussion
+                            </Button>
+                        </Grid>
+                    )}
                 </Grid>
                 <Grid
                     container
@@ -183,7 +300,7 @@ export const DiscussionView = ({
                     direction="column"
                     className={classes.right}
                 >
-                    <Typography variant="h6" style={{ marginBottom: -8 }}>
+                    <Typography variant="h5" style={{ marginBottom: -8 }}>
                         {data.getDiscussion.title}
                     </Typography>
 
@@ -196,11 +313,8 @@ export const DiscussionView = ({
                     <Grid
                         direction="row"
                         justify="space-between"
-                        className={[
-                            classes.row,
-                            classes.border,
-                            classes.flex,
-                        ].join(' ')}
+                        alignItems="center"
+                        className={[classes.row, classes.flex].join(' ')}
                     >
                         <Avatar
                             id={data.getDiscussion.author.id}
@@ -208,6 +322,7 @@ export const DiscussionView = ({
                             username={data.getDiscussion.author.username}
                             avatar={data.getDiscussion.author.avatar}
                             withName={true}
+                            size={40}
                         />
                         <Typography variant="body2">
                             Posted{' '}
@@ -240,6 +355,7 @@ export const DiscussionView = ({
                     <Grid
                         direction="row"
                         justify="flex-end"
+                        alignItems="center"
                         className={[
                             classes.row,
                             classes.border,
@@ -262,7 +378,7 @@ export const DiscussionView = ({
                             classes.flex,
                         ].join(' ')}
                     >
-                        <Typography variant="subtitle2">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
+                        <Typography variant="subtitle1">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
                         <Grid direction="row" className={classes.flex}>
                             <AvatarList
                                 list={data.getDiscussion.contributors.content}
@@ -281,8 +397,12 @@ export const DiscussionView = ({
                         className={classes.row}
                     >
                         <CommentsWidget
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
                             parent={data.getDiscussion.resourceIdentifier}
                             addCommentAction={addCommentAction}
+                            editCommentAction={editCommentAction}
+                            deleteCommentAction={deleteCommentAction}
                             user={user}
                             comments={data.getDiscussion.comments.content}
                         />

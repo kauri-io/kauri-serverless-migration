@@ -832,6 +832,8 @@ exports[`containers/Article should match snapshot 1`] = `
                 },
               }
             }
+            deleteCommentAction={[MockFunction]}
+            editCommentAction={[MockFunction]}
             hostName="test hostname"
             id="123"
             initiateArticleTransferAction={[MockFunction]}
@@ -5440,7 +5442,11 @@ exports[`containers/Article should match snapshot 1`] = `
                           </WithStyles(ForwardRef(Typography))>
                           <_default
                             addCommentAction={[MockFunction]}
+                            closeModalAction={[MockFunction]}
                             comments={Array []}
+                            deleteCommentAction={[MockFunction]}
+                            editCommentAction={[MockFunction]}
+                            openModalAction={[MockFunction]}
                             parent={
                               Object {
                                 "id": "1231",
@@ -5582,6 +5588,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                         "username": "test-username",
                                       }
                                     }
+                                    editCommentAction={[MockFunction]}
                                     parent={
                                       Object {
                                         "id": "1231",

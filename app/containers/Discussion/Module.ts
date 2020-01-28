@@ -340,15 +340,18 @@ export const reopenDiscussionEpic: Epic<
 export interface IDeleteDiscussionAction {
     type: string
     payload: deleteDiscussionVariables
+    callback?: any
 }
 
 const DELETE_DISCUSSION: string = 'DELETE_DISCUSSION'
 
 export const deleteDiscussionAction = (
-    payload: deleteDiscussionVariables
+    payload: deleteDiscussionVariables,
+    callback: any
 ): IDeleteDiscussionAction => ({
     type: DELETE_DISCUSSION,
     payload,
+    callback,
 })
 
 export const deleteDiscussionEpic: Epic<
@@ -359,7 +362,7 @@ export const deleteDiscussionEpic: Epic<
 > = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(DELETE_DISCUSSION),
-        switchMap(({ payload }) => {
+        switchMap(({ payload, callback }) => {
             return from(
                 apolloClient.mutate<
                     deleteDiscussion,
@@ -379,6 +382,7 @@ export const deleteDiscussionEpic: Epic<
                         category: 'delete_discussion_action',
                     })
                 ),
+                tap(_ => (callback ? callback() : null)),
                 tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
                     of(

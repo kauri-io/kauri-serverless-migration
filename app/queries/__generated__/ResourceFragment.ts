@@ -370,6 +370,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_co
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -696,6 +700,14 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
@@ -1104,6 +1116,14 @@ export interface ResourceFragment_ExternalLinkDTO_comments_content {
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface ResourceFragment_ExternalLinkDTO_comments {

@@ -26,7 +26,12 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../components/Modal/Module'
-import { initiateArticleTransferAction } from './Module'
+import {
+    initiateArticleTransferAction,
+    IAddCommentAction,
+    IEditCommentAction,
+    IDeleteCommentAction,
+} from './Module'
 import Schema from '../../lib/with-schema'
 import ProfileCard from '../../components/Card/PublicProfileCard'
 import { curateCommunityResourcesAction } from '../Community/Module'
@@ -41,6 +46,9 @@ import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { addCommentVariables } from '../../queries/__generated__/addComment'
+import { editCommentVariables } from '../../queries/__generated__/editComment'
+import { deleteCommentVariables } from '../../queries/__generated__/deleteComment'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -114,7 +122,17 @@ interface IProps {
     userId: string
     user: any
     hostName: string
-    addCommentAction: (e: string) => void
+    addCommentAction: (
+        payload: addCommentVariables,
+        callback: any
+    ) => IAddCommentAction
+    editCommentAction: (
+        payload: editCommentVariables,
+        callback: any
+    ) => IEditCommentAction
+    deleteCommentAction: (
+        payload: deleteCommentVariables
+    ) => IDeleteCommentAction
     client?: ApolloClient<{}>
     initiateArticleTransferAction: typeof initiateArticleTransferAction
     curateCommunityResourcesAction: typeof curateCommunityResourcesAction
@@ -128,6 +146,8 @@ const ArticleComp = ({
     voteAction,
     routeChangeAction,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
     initiateArticleTransferAction,
     curateCommunityResourcesAction,
     userId,
@@ -406,8 +426,12 @@ const ArticleComp = ({
                         </Typography>
 
                         <Comments
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
                             parent={resourceIdentifier}
                             addCommentAction={addCommentAction}
+                            editCommentAction={editCommentAction}
+                            deleteCommentAction={deleteCommentAction}
                             user={user}
                             comments={comments.content}
                         />

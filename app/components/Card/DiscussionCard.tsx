@@ -54,9 +54,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         textTransform: 'capitalize',
         marginRight: theme.spacing(1),
         wordWrap: 'break-word',
-        [theme.breakpoints.down('xs')]: {
-            fontSize: 16,
-        },
+        fontSize: 16,
     },
     column: {
         width: 90,
@@ -90,7 +88,7 @@ const DiscussionCard = ({
                                 <TruncateMarkup lines={2}>
                                     <Typography
                                         className={classes.title}
-                                        variant="h6"
+                                        variant="subtitle2"
                                     >
                                         {title}
                                     </Typography>

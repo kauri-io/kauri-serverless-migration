@@ -282,6 +282,10 @@ export interface searchPersonalSubmittedArticles_searchArticles_content_comments
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface searchPersonalSubmittedArticles_searchArticles_content_comments {

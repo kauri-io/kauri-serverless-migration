@@ -282,6 +282,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_comments {

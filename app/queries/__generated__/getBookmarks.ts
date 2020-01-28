@@ -286,6 +286,10 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments_
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments {
@@ -764,6 +768,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -1090,6 +1098,14 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
@@ -1498,6 +1514,14 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comm
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments {

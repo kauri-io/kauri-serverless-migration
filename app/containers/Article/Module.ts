@@ -6,6 +6,8 @@ import {
     vote as voteMutation,
     addCommentMutation,
     finaliseArticleTransferMutation,
+    editCommentMutation,
+    deleteCommentMutation,
 } from '../../queries/Article'
 import { voteVariables, vote } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
@@ -26,6 +28,14 @@ import {
     finaliseArticleTransferVariables,
 } from '../../queries/__generated__/finaliseArticleTransfer'
 import { initiateArticleTransferMutation } from '../../queries/Community'
+import {
+    editCommentVariables,
+    editComment,
+} from '../../queries/__generated__/editComment'
+import {
+    deleteCommentVariables,
+    deleteComment,
+} from '../../queries/__generated__/deleteComment'
 
 export interface IVoteAction {
     type: string
@@ -94,6 +104,8 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
         )
     )
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 export type IAddCommentAction = {
     type: string
     payload: addCommentVariables
@@ -133,8 +145,8 @@ export const addCommentEpic: Epic<
                 ),
                 tap(_ => (callback ? callback() : null)),
                 tap(() =>
-                    analytics.track('Leave Comment', {
-                        category: 'article_actions',
+                    analytics.track('comment', {
+                        category: 'add_comment',
                     })
                 ),
                 tap(() => apolloClient.resetStore()),
@@ -147,6 +159,140 @@ export const addCommentEpic: Epic<
                                 ? 'discussion'
                                 : 'article'
                         }.`,
+                    })
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            notificationType: 'error',
+                            message: 'Submission error',
+                            description: 'Please try again!',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+export type IEditCommentAction = {
+    type: string
+    payload: editCommentVariables
+    callback: any
+}
+
+export const EDIT_COMMENT: string = 'EDIT_COMMENT'
+
+export const editCommentAction = (
+    payload: editCommentVariables,
+    callback: any
+): IEditCommentAction => ({
+    type: EDIT_COMMENT,
+    payload,
+    callback,
+})
+
+export const editCommentEpic: Epic<
+    IEditCommentAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(EDIT_COMMENT),
+        switchMap(({ payload, callback }) =>
+            from(
+                apolloClient.mutate<editComment, editCommentVariables>({
+                    mutation: editCommentMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ error?: string }>(
+                        path<string>(['editComment', 'hash'])(data) || ''
+                    )
+                ),
+                tap(_ => (callback ? callback() : null)),
+                tap(() =>
+                    analytics.track('comment', {
+                        category: 'edit_comment',
+                    })
+                ),
+                tap(() => apolloClient.resetStore()),
+                mapTo(
+                    showNotificationAction({
+                        notificationType: 'success',
+                        message: 'Comment edited',
+                        description: `Your comment has been edited.`,
+                    })
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            notificationType: 'error',
+                            message: 'Submission error',
+                            description: 'Please try again!',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+export type IDeleteCommentAction = {
+    type: string
+    payload: deleteCommentVariables
+    callback: any
+}
+
+export const DELETE_COMMENT: string = 'DELETE_COMMENT'
+
+export const deleteCommentAction = (
+    payload: deleteCommentVariables,
+    callback: any
+): IDeleteCommentAction => ({
+    type: DELETE_COMMENT,
+    payload,
+    callback,
+})
+
+export const deleteCommentEpic: Epic<
+    IDeleteCommentAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(DELETE_COMMENT),
+        switchMap(({ payload, callback }) =>
+            from(
+                apolloClient.mutate<deleteComment, deleteCommentVariables>({
+                    mutation: deleteCommentMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ error?: string }>(
+                        path<string>(['deleteComment', 'hash'])(data) || ''
+                    )
+                ),
+                tap(_ => (callback ? callback() : null)),
+                tap(() =>
+                    analytics.track('comment', {
+                        category: 'delete_comment',
+                    })
+                ),
+                tap(() => apolloClient.resetStore()),
+                mapTo(
+                    showNotificationAction({
+                        notificationType: 'success',
+                        message: 'Comment deleted',
+                        description: `Your comment has been deleted`,
                     })
                 ),
                 catchError(err => {
