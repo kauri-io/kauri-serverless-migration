@@ -83,6 +83,11 @@ export enum ScoringModeInput {
   TRENDING = "TRENDING",
 }
 
+export enum TipStatusInput {
+  CONFIRMED = "CONFIRMED",
+  PENDING = "PENDING",
+}
+
 export enum UserStatusInput {
   CREATED = "CREATED",
   EMAIL_VERIFIED = "EMAIL_VERIFIED",
@@ -212,6 +217,11 @@ export interface SectionDTOInput {
   id?: string | null;
   name?: string | null;
   resourcesId?: (ResourceIdentifierInput | null)[] | null;
+}
+
+export interface TipFilterInput {
+  includeReceived?: boolean | null;
+  includeSent?: boolean | null;
 }
 
 //==============================================================

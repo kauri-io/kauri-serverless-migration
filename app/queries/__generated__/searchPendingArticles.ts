@@ -308,6 +308,11 @@ export interface searchPendingArticles_searchArticles_content_comments {
   isLast: boolean;
 }
 
+export interface searchPendingArticles_searchArticles_content_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface searchPendingArticles_searchArticles_content {
   __typename: "ArticleDTO";
   /**
@@ -404,6 +409,8 @@ export interface searchPendingArticles_searchArticles_content {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: searchPendingArticles_searchArticles_content_tips | null;
+  hasTipped: boolean;
 }
 
 export interface searchPendingArticles_searchArticles {

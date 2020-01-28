@@ -57,6 +57,9 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -9066,6 +9069,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                         placeholder="Community Name (Required)"
                                                                         rowsMax={3}
                                                                         value="AFTER QUERY REFACTORING"
+                                                                        variant="standard"
                                                                       >
                                                                         <ForwardRef(TextField)
                                                                           InputProps={
@@ -9086,6 +9090,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           placeholder="Community Name (Required)"
                                                                           rowsMax={3}
                                                                           value="AFTER QUERY REFACTORING"
+                                                                          variant="standard"
                                                                         >
                                                                           <WithStyles(ForwardRef(FormControl))
                                                                             className="MuiTextField-root"
@@ -9604,6 +9609,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                         placeholder="Website"
                                                                         rowsMax={1}
                                                                         value=""
+                                                                        variant="standard"
                                                                       >
                                                                         <ForwardRef(TextField)
                                                                           InputProps={
@@ -9624,6 +9630,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           placeholder="Website"
                                                                           rowsMax={1}
                                                                           value=""
+                                                                          variant="standard"
                                                                         >
                                                                           <WithStyles(ForwardRef(FormControl))
                                                                             className="MuiTextField-root"
@@ -10112,6 +10119,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                             placeholder="Add description (Required)"
                                                             rowsMax={3}
                                                             value="fdsfdsfds"
+                                                            variant="standard"
                                                           >
                                                             <ForwardRef(TextField)
                                                               InputProps={
@@ -10132,6 +10140,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                               placeholder="Add description (Required)"
                                                               rowsMax={3}
                                                               value="fdsfdsfds"
+                                                              variant="standard"
                                                             >
                                                               <WithStyles(ForwardRef(FormControl))
                                                                 className="MuiTextField-root"

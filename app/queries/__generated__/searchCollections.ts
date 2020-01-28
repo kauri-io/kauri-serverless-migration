@@ -392,6 +392,11 @@ export interface searchCollections_searchCollections_content_sections_resources_
   isLast: boolean;
 }
 
+export interface searchCollections_searchCollections_content_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface searchCollections_searchCollections_content_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -488,6 +493,8 @@ export interface searchCollections_searchCollections_content_sections_resources_
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: searchCollections_searchCollections_content_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_ExternalLinkDTO_resourceIdentifier {

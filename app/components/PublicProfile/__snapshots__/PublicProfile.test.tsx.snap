@@ -57,6 +57,9 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -531,6 +534,9 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {
@@ -1082,6 +1088,9 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {

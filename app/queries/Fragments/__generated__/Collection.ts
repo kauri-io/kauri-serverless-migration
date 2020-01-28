@@ -392,6 +392,11 @@ export interface Collection_sections_resources_ArticleDTO_comments {
   isLast: boolean;
 }
 
+export interface Collection_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface Collection_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -488,6 +493,8 @@ export interface Collection_sections_resources_ArticleDTO {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: Collection_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface Collection_sections_resources_ExternalLinkDTO_resourceIdentifier {

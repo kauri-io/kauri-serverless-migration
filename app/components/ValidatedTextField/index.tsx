@@ -2,6 +2,8 @@ import React, { ChangeEvent, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { useState } from 'react'
 import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
+import { FilledInputProps } from '@material-ui/core/FilledInput'
+import { InputProps } from '@material-ui/core/Input'
 
 interface IProps {
     id: string
@@ -14,7 +16,10 @@ interface IProps {
     value: string
     placeholder?: string
     className?: string
-    InputProps?: Partial<OutlinedInputProps>
+    InputProps?:
+        | Partial<InputProps>
+        | Partial<FilledInputProps>
+        | Partial<OutlinedInputProps>
     validate?: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
@@ -22,6 +27,7 @@ interface IProps {
     multiline?: boolean
     label?: string
     rowsMax?: number
+    variant?: 'standard' | 'filled' | 'outlined'
 }
 
 const ValidatedTextField = ({
@@ -38,7 +44,17 @@ const ValidatedTextField = ({
     field,
     rowsMax = 1,
     label,
+    variant,
 }: IProps) => {
+    //Hack to overcome typescript issues when setting variant. urgh
+    //See: https://github.com/mui-org/material-ui/issues/15697
+    const variantProps =
+        variant === 'outlined'
+            ? { variant: 'outlined' as 'outlined' }
+            : variant === 'filled'
+            ? { variant: 'filled' as 'filled' }
+            : { variant: 'standard' as 'standard' }
+
     const [error, setError] = useState('')
     //Setting to this value will ensure that validation runs on intial render
     const [lastValueChange, setLastValueChange] = useState('***NOT-SET***')
@@ -85,6 +101,7 @@ const ValidatedTextField = ({
             InputProps={InputProps}
             multiline={rowsMax && rowsMax > 1 ? true : false}
             rowsMax={rowsMax}
+            {...variantProps}
         />
     )
 }

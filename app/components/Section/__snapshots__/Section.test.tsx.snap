@@ -57,6 +57,9 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -742,6 +745,9 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -1199,6 +1205,9 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {
@@ -1658,6 +1667,9 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -2113,6 +2125,9 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {
@@ -2790,6 +2805,9 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -3246,6 +3264,9 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {
@@ -3929,6 +3950,9 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
+            },
+            "containedPrimary": Object {
+              "color": "#fff",
             },
             "outlined": Object {
               "&&:disabled": Object {

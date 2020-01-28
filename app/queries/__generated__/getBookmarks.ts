@@ -312,6 +312,11 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments 
   isLast: boolean;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -408,6 +413,8 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: getBookmarks_getBookmarks_content_resource_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -794,6 +801,11 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
   isLast: boolean;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
   /**
@@ -890,6 +902,8 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_tips | null;
+  hasTipped: boolean;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {

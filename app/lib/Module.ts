@@ -151,13 +151,16 @@ const handlers = {
     [SHOW_NOTIFICATION]: (
         state: IReduxState,
         action: IShowNotificationAction
-    ) => ({
-        ...state,
-        notification: {
-            ...action.payload,
-            type: action.payload.notificationType,
-        },
-    }),
+    ) => {
+        console.log('SHOW_NOTIFICATION: ' + JSON.stringify(action))
+        return {
+            ...state,
+            notification: {
+                ...action.payload,
+                type: action.payload.notificationType,
+            },
+        }
+    },
     [SET_HOSTNAME]: (state: IReduxState, action: ISetHostNameAction) =>
         typeof action.payload.hostName === 'string'
             ? { ...state, hostName: action.payload.hostName }

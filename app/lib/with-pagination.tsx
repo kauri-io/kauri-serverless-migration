@@ -20,6 +20,7 @@ export type PaginationDataQuery =
     | 'getBookmarks'
     | 'searchExternalLinks'
     | 'searchDiscussions'
+    | 'getTips'
 
 interface IProps {
     [queryName: string]: { [key in PaginationDataQuery]: { isLast: boolean } } &

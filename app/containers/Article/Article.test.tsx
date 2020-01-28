@@ -67,6 +67,12 @@ describe('containers/Article', () => {
             communities: [],
             editCommentAction: jest.fn(),
             deleteCommentAction: jest.fn(),
+            tipAction: {
+                type: 'TIP',
+                payload: {},
+                setTransactionState: jest.fn(),
+                setTransactionHash: jest.fn(),
+            },
         }
 
         const wrapper = mountWithRedux(

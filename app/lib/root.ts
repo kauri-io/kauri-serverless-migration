@@ -32,6 +32,7 @@ import {
     initiateArticleTransferEpic,
     editCommentEpic,
     deleteCommentEpic,
+    tipEpic,
 } from '../containers/Article/Module'
 import {
     createCommunityEpic,
@@ -155,6 +156,7 @@ const epics = [
     deleteDiscussionEpic,
     editCommentEpic,
     deleteCommentEpic,
+    tipEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

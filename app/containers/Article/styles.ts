@@ -157,5 +157,8 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             textAlign: 'center',
             margin: theme.spacing(2),
         },
+        compactTip: {
+            marginRight: theme.spacing(2),
+        },
     }
 })

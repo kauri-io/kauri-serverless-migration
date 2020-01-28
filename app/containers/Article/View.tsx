@@ -41,7 +41,7 @@ import Toolbar from '../ViewLink/components/Toolbar'
 import ShareIcon from '@material-ui/icons/Share'
 import ShareDialog from '../../components/Card/ShareDialog'
 import ShareWidget from './components/ShareWidget'
-import { Chip } from '@material-ui/core'
+import { Chip, Box } from '@material-ui/core'
 import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
@@ -49,6 +49,8 @@ import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import { addCommentVariables } from '../../queries/__generated__/addComment'
 import { editCommentVariables } from '../../queries/__generated__/editComment'
 import { deleteCommentVariables } from '../../queries/__generated__/deleteComment'
+import TipWidget from './components/TipWidget'
+import { ITipAction } from './Module'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -119,6 +121,7 @@ interface IProps {
     routeChangeAction: typeof routeChangeAction
     closeModalAction: typeof closeModalAction
     openModalAction: typeof openModalAction
+    tipAction: ITipAction
     userId: string
     user: any
     hostName: string
@@ -148,6 +151,7 @@ const ArticleComp = ({
     addCommentAction,
     editCommentAction,
     deleteCommentAction,
+    tipAction,
     initiateArticleTransferAction,
     curateCommunityResourcesAction,
     userId,
@@ -173,6 +177,8 @@ const ArticleComp = ({
             contentHash,
             checkpoint,
             ownerId,
+            tips,
+            hasTipped,
         },
     },
     communities,
@@ -219,6 +225,13 @@ const ArticleComp = ({
 
     const url = getArticleURL({ title, id })
 
+    const doLogin = () =>
+        routeChangeAction(
+            `/login?r=/${slugify(String(title), {
+                lower: true,
+            })}/${id}/a`
+        )
+
     return (
         <>
             <Schema
@@ -253,13 +266,16 @@ const ArticleComp = ({
                                 resourceType="ARTICLE"
                                 voteAction={voteAction}
                                 voteResult={voteResult}
-                                loginFirstToVote={() =>
-                                    routeChangeAction(
-                                        `/login?r=/${slugify(String(title), {
-                                            lower: true,
-                                        })}/${id}/a`
-                                    )
-                                }
+                                loginFirstToVote={() => doLogin()}
+                            />
+                            <TipWidget
+                                isLoggedIn={!!userId}
+                                resourceId={String(id)}
+                                resourceType="ARTICLE"
+                                tipAction={tipAction}
+                                tips={tips}
+                                loginFirstToTip={() => doLogin()}
+                                hasTipped={hasTipped}
                             />
                             <ShareWidget href={url.as} name={title} />
                         </div>
@@ -320,17 +336,28 @@ const ArticleComp = ({
                                 </Typography>
                             </Grid>
                             <Hidden lgUp={true}>
-                                <ShareIcon
-                                    onClick={() => setShareDialogOpen(true)}
-                                />
-                                <ShareDialog
-                                    href={url.as}
-                                    name={title}
-                                    open={shareDialogOpen}
-                                    handleClose={() =>
-                                        setShareDialogOpen(false)
-                                    }
-                                />
+                                <Box display="flex">
+                                    {tips && tips.totals && tips.totals.ETH && (
+                                        <Typography
+                                            variant="button"
+                                            align="center"
+                                            className={classes.compactTip}
+                                        >
+                                            {tips.totals.ETH} ETH
+                                        </Typography>
+                                    )}
+                                    <ShareIcon
+                                        onClick={() => setShareDialogOpen(true)}
+                                    />
+                                    <ShareDialog
+                                        href={url.as}
+                                        name={title}
+                                        open={shareDialogOpen}
+                                        handleClose={() =>
+                                            setShareDialogOpen(false)
+                                        }
+                                    />
+                                </Box>
                                 {/* <CardActions
                                     type="ARTICLE"
                                     id={id}
