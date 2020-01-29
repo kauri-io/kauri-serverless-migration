@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         width: 88,
+        textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
             width: 70,
         },
@@ -131,7 +132,7 @@ const DiscussionCard = ({
                                 </Grid>
                                 <Grid className={classes.column}>
                                     <Typography variant="subtitle2">
-                                        {moment(lastActivity).fromNow(true)}
+                                        {moment(lastActivity).fromNow()}
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -192,7 +193,7 @@ const DiscussionCard = ({
                                 </Grid>
                                 <Grid className={classes.column}>
                                     <Typography variant="subtitle2">
-                                        {moment(lastActivity).fromNow(true)}
+                                        {moment(lastActivity).fromNow()}
                                     </Typography>
                                 </Grid>
                             </Grid>

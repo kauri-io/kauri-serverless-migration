@@ -55,12 +55,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         color: theme.palette.common.white,
     },
     header: {
-        padding: theme.spacing(1),
+        padding: theme.spacing(2),
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2),
+        [theme.breakpoints.down('sm')]: {
+            padding: theme.spacing(1),
         },
     },
     headerRight: {

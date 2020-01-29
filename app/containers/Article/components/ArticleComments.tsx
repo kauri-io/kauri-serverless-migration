@@ -41,6 +41,8 @@ export default ({
     editCommentAction,
     deleteCommentAction,
     currentURL,
+    disabled = false,
+    message = '',
 }) => {
     const classes = useStyles()
 
@@ -81,6 +83,8 @@ export default ({
                 parent={parent}
                 replyTo={null}
                 show={true}
+                disabled={disabled}
+                message={message}
             />
 
             {nestedComments.map(comment => (
@@ -95,6 +99,8 @@ export default ({
                     deleteCommentAction={deleteCommentAction}
                     currentUser={user}
                     currentURL={currentURL}
+                    disabled={disabled}
+                    message={message}
                 />
             ))}
         </Grid>

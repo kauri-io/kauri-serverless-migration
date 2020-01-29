@@ -25,6 +25,7 @@ interface IProps {
     setTitle?: (title: string) => void
     placeholder?: string
     focusOutline?: boolean
+    disabled?: boolean
 }
 
 const Editor = ({
@@ -42,6 +43,7 @@ const Editor = ({
     onValidation,
     placeholder,
     focusOutline = true,
+    disabled = false,
 }: IProps) => {
     const editorStyle = (theme): Style => {
         return {
@@ -144,6 +146,7 @@ const Editor = ({
                             }
                         }}
                         value={text}
+                        disabled={disabled}
                         id="editor-text-area"
                         className={
                             focusOutline

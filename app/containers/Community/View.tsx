@@ -284,47 +284,55 @@ class CommunityConnection extends React.Component<IProps, IState> {
 
         return (
             <>
-                <Head>
-                    <title
-                        dangerouslySetInnerHTML={{ __html: getCommunity.name }}
-                    />
-                    <meta
-                        name="description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.slice(0, 151)}...`}
-                    />
-                    <link rel="canonical" href={url} />
-                    <meta property="og:title" content={getCommunity.name} />
-                    <meta property="og:site_name" content="kauri.io" />
-                    <meta property="og:url" content={url} />
-                    <meta
-                        property="og:description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.substring(0, 100)}...`}
-                    />
-                    <meta property="og:type" content="article" />
-                    {typeof getCommunity.avatar === 'string' && (
-                        <meta
-                            property="og:image"
-                            content={getCommunity.avatar}
+                {/* Only if not discussion view*/}
+                {!discussionId && (
+                    <Head>
+                        <title
+                            dangerouslySetInnerHTML={{
+                                __html: getCommunity.name,
+                            }}
                         />
-                    )}
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content={url} />
-                    <meta name="twitter:title" content={getCommunity.name} />
-                    <meta
-                        name="twitter:description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.substring(0, 100)}...`}
-                    />
-                    <meta name="twitter:creator" content="@kauri_io" />
-                    {typeof getCommunity.avatar === 'string' && (
                         <meta
-                            property="twitter:image"
-                            content={getCommunity.avatar}
+                            name="description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.slice(0, 151)}...`}
                         />
-                    )}
-                </Head>
+                        <link rel="canonical" href={url} />
+                        <meta property="og:title" content={getCommunity.name} />
+                        <meta property="og:site_name" content="kauri.io" />
+                        <meta property="og:url" content={url} />
+                        <meta
+                            property="og:description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.substring(0, 100)}...`}
+                        />
+                        <meta property="og:type" content="article" />
+                        {typeof getCommunity.avatar === 'string' && (
+                            <meta
+                                property="og:image"
+                                content={getCommunity.avatar}
+                            />
+                        )}
+                        <meta name="twitter:card" content="summary" />
+                        <meta name="twitter:site" content={url} />
+                        <meta
+                            name="twitter:title"
+                            content={getCommunity.name}
+                        />
+                        <meta
+                            name="twitter:description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.substring(0, 100)}...`}
+                        />
+                        <meta name="twitter:creator" content="@kauri_io" />
+                        {typeof getCommunity.avatar === 'string' && (
+                            <meta
+                                property="twitter:image"
+                                content={getCommunity.avatar}
+                            />
+                        )}
+                    </Head>
+                )}
 
                 <Dialog
                     open={getCommunity.status === 'CREATED'}

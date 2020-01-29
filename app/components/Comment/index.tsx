@@ -95,6 +95,8 @@ interface IProps {
     posted: string
     replies: IComment[]
     currentURL?: string
+    disabled?: boolean
+    message?: string
 }
 
 const Comment = ({
@@ -112,6 +114,8 @@ const Comment = ({
     posted,
     replies = [],
     currentURL,
+    disabled,
+    message,
 }: IProps) => {
     const classes = useStyles()
 
@@ -169,6 +173,7 @@ const Comment = ({
                             size="small"
                             startIcon={<ReplyIcon />}
                             onClick={() => showForm(null)}
+                            disabled={disabled}
                         >
                             Reply
                         </Button>
@@ -206,19 +211,18 @@ const Comment = ({
                                                     ? 'Uncollapse'
                                                     : 'Collapse'}
                                             </MenuItem>
-                                            {isAuthor &&
-                                                body !== '[deleted]' && (
-                                                    <MenuItem
-                                                        onClick={() =>
-                                                            showForm({
-                                                                id,
-                                                                body,
-                                                            })
-                                                        }
-                                                    >
-                                                        Edit
-                                                    </MenuItem>
-                                                )}
+                                            {isAuthor && body !== '[deleted]' && (
+                                                <MenuItem
+                                                    onClick={() =>
+                                                        showForm({
+                                                            id,
+                                                            body,
+                                                        })
+                                                    }
+                                                >
+                                                    Edit
+                                                </MenuItem>
+                                            )}
                                             {isAuthor && body !== '[deleted]' && (
                                                 <MenuItem
                                                     onClick={() =>
@@ -285,6 +289,8 @@ const Comment = ({
                         id={currentComment && currentComment.id}
                         withAvatar={false}
                         callback={() => setShowReplyForm(false)}
+                        disabled={disabled}
+                        message={message}
                     />
                 </Grid>
             </Hidden>
@@ -303,6 +309,8 @@ const Comment = ({
                             deleteCommentAction={deleteCommentAction}
                             currentUser={currentUser}
                             currentURL={currentURL}
+                            disabled={disabled}
+                            message={message}
                         />
                     ))}
                 </Collapse>

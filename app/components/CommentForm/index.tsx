@@ -50,6 +50,8 @@ interface IProps {
     id?: string | null
     body?: string | null
     currentURL?: string
+    disabled?: boolean
+    message?: string
 }
 
 const CommentForm = ({
@@ -65,6 +67,8 @@ const CommentForm = ({
     id,
     body = '',
     currentURL,
+    disabled,
+    message,
 }: IProps) => {
     const classes = useStyles()
     const [comment, setComment] = React.useState<string>(
@@ -103,10 +107,20 @@ const CommentForm = ({
                             compact={true}
                             onChange={e => setComment(e)}
                             focusOutline={false}
+                            disabled={disabled}
                         />
                     </Grid>
                     <Grid className={classes.button}>
-                        {!currentUser && currentURL && (
+                        {message && message !== '' && (
+                            <Button
+                                color="primary"
+                                variant="text"
+                                disabled={true}
+                            >
+                                {message}
+                            </Button>
+                        )}
+                        {!currentUser && currentURL && !disabled && (
                             <Button
                                 color="primary"
                                 variant="text"
@@ -117,7 +131,7 @@ const CommentForm = ({
                                 Sign-in to Comment
                             </Button>
                         )}
-                        {currentUser && id && (
+                        {currentUser && id && !disabled && (
                             <Button
                                 color="primary"
                                 variant="text"
@@ -126,7 +140,7 @@ const CommentForm = ({
                                 Cancel
                             </Button>
                         )}
-                        {currentUser && !id && (
+                        {currentUser && !id && !disabled && (
                             <Button
                                 color="primary"
                                 variant="text"
@@ -150,7 +164,7 @@ const CommentForm = ({
                                 Leave Comment
                             </Button>
                         )}
-                        {currentUser && id && (
+                        {currentUser && id && !disabled && (
                             <Button
                                 color="primary"
                                 variant="text"

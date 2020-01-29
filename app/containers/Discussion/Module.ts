@@ -101,6 +101,10 @@ export const createDiscussionEpic: Epic<
                                 getDiscussionURL({
                                     id,
                                     title: payload.title,
+                                }).href,
+                                getDiscussionURL({
+                                    id,
+                                    title: payload.title,
                                 }).as
                             )
                         )
@@ -173,13 +177,18 @@ export const editDiscussionEpic: Epic<
                                 notificationType: 'success',
                             })
                         ),
-                        of(() => {
-                            const url = getDiscussionURL({
-                                id: payload.id,
-                                title: payload.title,
-                            })
-                            routeChangeAction(url.href, url.as)
-                        })
+                        of(
+                            routeChangeAction(
+                                getDiscussionURL({
+                                    id: payload.id,
+                                    title: payload.title,
+                                }).href,
+                                getDiscussionURL({
+                                    id: payload.id,
+                                    title: payload.title,
+                                }).as
+                            )
+                        )
                     )
                 ),
                 catchError(err => {
@@ -384,13 +393,16 @@ export const deleteDiscussionEpic: Epic<
                 tap(_ => (callback ? callback() : null)),
                 tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
-                    of(
-                        showNotificationAction({
-                            description:
-                                'Your discussion has been successfully deleted',
-                            message: `Discussion`,
-                            notificationType: 'success',
-                        })
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'Your discussion has been successfully deleted',
+                                message: `Discussion`,
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(routeChangeAction('back'))
                     )
                 ),
                 catchError(err => {

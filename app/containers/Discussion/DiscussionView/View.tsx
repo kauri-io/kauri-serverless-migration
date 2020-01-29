@@ -457,6 +457,14 @@ export const DiscussionView = ({
                                 user={user}
                                 currentURL={selfURL.as}
                                 comments={data.getDiscussion.comments.content}
+                                disabled={
+                                    data.getDiscussion.status === 'CLOSED'
+                                }
+                                message={
+                                    data.getDiscussion.status === 'CLOSED'
+                                        ? 'The discussion is closed'
+                                        : ''
+                                }
                             />
                         </Grid>
                     </Grid>

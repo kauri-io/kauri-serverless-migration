@@ -5617,7 +5617,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                         "username": "test-username",
                                       }
                                     }
+                                    disabled={false}
                                     editCommentAction={[MockFunction]}
+                                    message=""
                                     parent={
                                       Object {
                                         "id": "1231",
