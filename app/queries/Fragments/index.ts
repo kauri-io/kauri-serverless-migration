@@ -319,7 +319,7 @@ export const Community = gql`
             id
             type
         }
-        discussions {
+        discussions(filter: {statusIn: [OPENED,CLOSED]}) {
             totalElements
         }
     }

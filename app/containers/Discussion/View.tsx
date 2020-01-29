@@ -40,32 +40,32 @@ export const DiscussionEntryPoint = ({
     if (parentType === ResourceTypeInput.COMMUNITY) {
         return (
             <>
-            <Head>
-                <title
-                    dangerouslySetInnerHTML={{
-                        __html: `${title} - Discussion - Kauri`,
-                    }}
+                <Head>
+                    <title
+                        dangerouslySetInnerHTML={{
+                            __html: `${title} - Discussion - Kauri`,
+                        }}
+                    />
+                    <meta name="description" content={description} />
+                    <link rel="canonical" href={url.as} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:site_name" content="kauri.io" />
+                    <meta property="og:url" content={url.as} />
+                    <meta property="og:description" content={description} />
+                    <meta property="og:type" content="discussion" />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content={url.as} />
+                    <meta name="twitter:title" content={title} />
+                    <meta name="twitter:description" content={description} />
+                    <meta name="twitter:creator" content="@kauri_io" />
+                </Head>
+
+                <Community
+                    communityId={parentId}
+                    tab={2}
+                    discussionId={discussionId}
+                    discussionAction={discussionAction}
                 />
-                <meta name="description" content={description} />
-                <link rel="canonical" href={url.as} />
-                <meta property="og:title" content={title} />
-                <meta property="og:site_name" content="kauri.io" />
-                <meta property="og:url" content={url.as} />
-                <meta property="og:description" content={description} />
-                <meta property="og:type" content="discussion" />
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content={url.as} />
-                <meta name="twitter:title" content={title} />
-                <meta name="twitter:description" content={description} />
-                <meta name="twitter:creator" content="@kauri_io" />
-            </Head>
-            
-            <Community
-                communityId={parentId}
-                tab={2}
-                discussionId={discussionId}
-                discussionAction={discussionAction}
-            />
             </>
         )
     } else {

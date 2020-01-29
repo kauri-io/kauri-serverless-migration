@@ -177,7 +177,6 @@ export const DiscussionView = ({
     return (
         <div className={classes.container}>
             <div className={classes.root}>
-
                 <Hidden smDown={true}>
                     <Grid
                         container
@@ -227,50 +226,48 @@ export const DiscussionView = ({
                             </Grid>
                         )}
 
-                        {isAuthor &&
-                            data.getDiscussion.status === 'OPENED' && (
-                                <Grid
-                                    justify="center"
-                                    alignItems="center"
-                                    className={classes.action}
+                        {isAuthor && data.getDiscussion.status === 'OPENED' && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
+                                onClick={() =>
+                                    closeDiscussionAction({
+                                        id: data.getDiscussion.id,
+                                    })
+                                }
+                            >
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<HighlightOffIcon />}
+                                >
+                                    Close discussion
+                                </Button>
+                            </Grid>
+                        )}
+
+                        {isAuthor && data.getDiscussion.status === 'CLOSED' && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
+                                onClick={() => {}}
+                            >
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<OpenInNewIcon />}
                                     onClick={() =>
-                                        closeDiscussionAction({
+                                        reopenDiscussionAction({
                                             id: data.getDiscussion.id,
                                         })
                                     }
                                 >
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        startIcon={<HighlightOffIcon />}
-                                    >
-                                        Close discussion
-                                    </Button>
-                                </Grid>
-                            )}
-
-                        {isAuthor &&
-                            data.getDiscussion.status === 'CLOSED' && (
-                                <Grid
-                                    justify="center"
-                                    alignItems="center"
-                                    className={classes.action}
-                                    onClick={() => {}}
-                                >
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        startIcon={<OpenInNewIcon />}
-                                        onClick={() =>
-                                            reopenDiscussionAction({
-                                                id: data.getDiscussion.id,
-                                            })
-                                        }
-                                    >
-                                        Repoen discussion
-                                    </Button>
-                                </Grid>
-                            )}
+                                    Repoen discussion
+                                </Button>
+                            </Grid>
+                        )}
 
                         {permissionToDelete && (
                             <Grid
@@ -292,7 +289,12 @@ export const DiscussionView = ({
                                                     }
                                                     confirmButtonAction={() =>
                                                         deleteDiscussionAction(
-                                                            { id: data.getDiscussion.id },
+                                                            {
+                                                                id:
+                                                                    data
+                                                                        .getDiscussion
+                                                                        .id,
+                                                            },
                                                             () =>
                                                                 routeChangeAction(
                                                                     backURL.href,
@@ -300,17 +302,15 @@ export const DiscussionView = ({
                                                                 )
                                                         )
                                                     }
-                                                    confirmButtonText={
-                                                        'Delete'
-                                                    }
+                                                    confirmButtonText={'Delete'}
                                                     content={
                                                         <Typography variant="subtitle2">
-                                                            Are you sure you want to delete this discussion?
+                                                            Are you sure you
+                                                            want to delete this
+                                                            discussion?
                                                         </Typography>
                                                     }
-                                                    title={
-                                                        'Delete Discussion'
-                                                    }
+                                                    title={'Delete Discussion'}
                                                 />
                                             ),
                                         })
@@ -360,9 +360,9 @@ export const DiscussionView = ({
                         <Typography variant="body2">
                             Posted{' '}
                             <b>
-                                {moment(
-                                    data.getDiscussion.dateCreated
-                                ).format('DD MMM YY')}
+                                {moment(data.getDiscussion.dateCreated).format(
+                                    'DD MMM YY'
+                                )}
                             </b>
                             <Hidden smDown={true}>
                                 &nbsp; Last Reply{' '}
@@ -416,9 +416,7 @@ export const DiscussionView = ({
                         <Typography variant="subtitle1">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
                         <Grid direction="row" className={classes.flex}>
                             <AvatarList
-                                list={
-                                    data.getDiscussion.contributors.content
-                                }
+                                list={data.getDiscussion.contributors.content}
                                 total={
                                     data.getDiscussion.contributors
                                         .totalElements
@@ -444,9 +442,7 @@ export const DiscussionView = ({
                             user={user}
                             currentURL={selfURL.as}
                             comments={data.getDiscussion.comments.content}
-                            disabled={
-                                data.getDiscussion.status === 'CLOSED'
-                            }
+                            disabled={data.getDiscussion.status === 'CLOSED'}
                             message={
                                 data.getDiscussion.status === 'CLOSED'
                                     ? 'The discussion is closed'

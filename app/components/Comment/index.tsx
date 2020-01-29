@@ -243,7 +243,15 @@ const Comment = ({
                                                                     }
                                                                     content={
                                                                         <Typography variant="subtitle2">
-                                                                            Are you sure you want to delete your comment?
+                                                                            Are
+                                                                            you
+                                                                            sure
+                                                                            you
+                                                                            want
+                                                                            to
+                                                                            delete
+                                                                            your
+                                                                            comment?
                                                                         </Typography>
                                                                     }
                                                                     title={
