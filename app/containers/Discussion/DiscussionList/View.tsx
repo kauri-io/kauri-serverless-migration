@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        [theme.breakpoints.up('sm')]: { 
+        [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(2),
         },
     },

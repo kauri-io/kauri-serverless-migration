@@ -1,5 +1,12 @@
 import React from 'react'
-import { makeStyles, Theme, Grid, Button, Typography, Hidden } from '@material-ui/core'
+import {
+    makeStyles,
+    Theme,
+    Grid,
+    Button,
+    Typography,
+    Hidden,
+} from '@material-ui/core'
 import {
     ICloseDiscussionAction,
     IReopenDiscussionAction,
@@ -193,9 +200,12 @@ export const DiscussionView = ({
 
             <div className={classes.container}>
                 <div className={classes.root}>
-
                     <Hidden mdUp={true}>
-                        <Grid container justify="center" style={{marginBottom: 16}}>
+                        <Grid
+                            container
+                            justify="center"
+                            style={{ marginBottom: 16 }}
+                        >
                             <Link href={backURL.href} as={backURL.as}>
                                 <Button color="primary" variant="outlined">
                                     Back to Topics
@@ -253,48 +263,50 @@ export const DiscussionView = ({
                                 </Grid>
                             )}
 
-                            {isAuthor && data.getDiscussion.status === 'OPENED' && (
-                                <Grid
-                                    justify="center"
-                                    alignItems="center"
-                                    className={classes.action}
-                                    onClick={() =>
-                                        closeDiscussionAction({
-                                            id: data.getDiscussion.id,
-                                        })
-                                    }
-                                >
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        startIcon={<HighlightOffIcon />}
-                                    >
-                                        Close discussion
-                                    </Button>
-                                </Grid>
-                            )}
-
-                            {isAuthor && data.getDiscussion.status === 'CLOSED' && (
-                                <Grid
-                                    justify="center"
-                                    alignItems="center"
-                                    className={classes.action}
-                                    onClick={() => {}}
-                                >
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        startIcon={<OpenInNewIcon />}
+                            {isAuthor &&
+                                data.getDiscussion.status === 'OPENED' && (
+                                    <Grid
+                                        justify="center"
+                                        alignItems="center"
+                                        className={classes.action}
                                         onClick={() =>
-                                            reopenDiscussionAction({
+                                            closeDiscussionAction({
                                                 id: data.getDiscussion.id,
                                             })
                                         }
                                     >
-                                        Repoen discussion
-                                    </Button>
-                                </Grid>
-                            )}
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            startIcon={<HighlightOffIcon />}
+                                        >
+                                            Close discussion
+                                        </Button>
+                                    </Grid>
+                                )}
+
+                            {isAuthor &&
+                                data.getDiscussion.status === 'CLOSED' && (
+                                    <Grid
+                                        justify="center"
+                                        alignItems="center"
+                                        className={classes.action}
+                                        onClick={() => {}}
+                                    >
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            startIcon={<OpenInNewIcon />}
+                                            onClick={() =>
+                                                reopenDiscussionAction({
+                                                    id: data.getDiscussion.id,
+                                                })
+                                            }
+                                        >
+                                            Repoen discussion
+                                        </Button>
+                                    </Grid>
+                                )}
 
                             {permissionToDelete && (
                                 <Grid
@@ -310,7 +322,10 @@ export const DiscussionView = ({
                                         onClick={() =>
                                             deleteDiscussionAction(
                                                 { id: data.getDiscussion.id },
-                                                () => routeChangeAction(backURL.as)
+                                                () =>
+                                                    routeChangeAction(
+                                                        backURL.as
+                                                    )
                                             )
                                         }
                                     >
@@ -341,7 +356,11 @@ export const DiscussionView = ({
                             direction="row"
                             justify="space-between"
                             alignItems="center"
-                            className={[classes.row, classes.flex, classes.border].join(' ')}
+                            className={[
+                                classes.row,
+                                classes.flex,
+                                classes.border,
+                            ].join(' ')}
                         >
                             <Avatar
                                 id={data.getDiscussion.author.id}
@@ -354,13 +373,17 @@ export const DiscussionView = ({
                             <Typography variant="body2">
                                 Posted{' '}
                                 <b>
-                                    {moment(data.getDiscussion.dateCreated).format('DD MMM YY')}
+                                    {moment(
+                                        data.getDiscussion.dateCreated
+                                    ).format('DD MMM YY')}
                                 </b>
                                 <Hidden smDown={true}>
-                                &nbsp; Last Reply{' '}
-                                <b>
-                                    {moment(data.getDiscussion.lastActivity).format('DD MMM YY')}
-                                </b>
+                                    &nbsp; Last Reply{' '}
+                                    <b>
+                                        {moment(
+                                            data.getDiscussion.lastActivity
+                                        ).format('DD MMM YY')}
+                                    </b>
                                 </Hidden>
                             </Typography>
                         </Grid>

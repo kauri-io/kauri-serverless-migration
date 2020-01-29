@@ -206,15 +206,19 @@ const Comment = ({
                                                     ? 'Uncollapse'
                                                     : 'Collapse'}
                                             </MenuItem>
-                                            {isAuthor && body !== '[deleted]' && (
-                                                <MenuItem
-                                                    onClick={() =>
-                                                        showForm({ id, body })
-                                                    }
-                                                >
-                                                    Edit
-                                                </MenuItem>
-                                            )}
+                                            {isAuthor &&
+                                                body !== '[deleted]' && (
+                                                    <MenuItem
+                                                        onClick={() =>
+                                                            showForm({
+                                                                id,
+                                                                body,
+                                                            })
+                                                        }
+                                                    >
+                                                        Edit
+                                                    </MenuItem>
+                                                )}
                                             {isAuthor && body !== '[deleted]' && (
                                                 <MenuItem
                                                     onClick={() =>
@@ -226,7 +230,9 @@ const Comment = ({
                                                                     }
                                                                     confirmButtonAction={() =>
                                                                         deleteCommentAction(
-                                                                            { id },
+                                                                            {
+                                                                                id,
+                                                                            },
                                                                             closeModalAction
                                                                         )
                                                                     }
