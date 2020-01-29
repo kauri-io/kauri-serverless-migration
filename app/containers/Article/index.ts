@@ -7,7 +7,7 @@ import {
     voteAction,
     addCommentAction,
     editCommentAction,
-    deleteCommentEpic,
+    deleteCommentAction,
     initiateArticleTransferAction,
     tipAction,
 } from './Module'
@@ -35,7 +35,7 @@ export default compose(
         {
             addCommentAction,
             editCommentAction,
-            deleteCommentEpic,
+            deleteCommentAction,
             closeModalAction,
             openModalAction,
             routeChangeAction,

@@ -38,8 +38,6 @@ import {
     ICloseModalAction,
 } from '../Modal/Module'
 import AlertViewComponent from '../Modal/AlertView'
-import { BodyCard } from '../Typography'
-import { Row } from '../../containers/Community/Module'
 import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -244,19 +242,9 @@ const Comment = ({
                                                                         'Delete'
                                                                     }
                                                                     content={
-                                                                        <BodyCard>
-                                                                            <Row>
-                                                                                Are
-                                                                                you
-                                                                                sure
-                                                                                you
-                                                                                want
-                                                                                to
-                                                                                delete
-                                                                                your
-                                                                                comment?
-                                                                            </Row>
-                                                                        </BodyCard>
+                                                                        <Typography variant="subtitle2">
+                                                                            Are you sure you want to delete your comment?
+                                                                        </Typography>
                                                                     }
                                                                     title={
                                                                         'Delete Comment'

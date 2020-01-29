@@ -393,16 +393,13 @@ export const deleteDiscussionEpic: Epic<
                 tap(_ => (callback ? callback() : null)),
                 tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
-                    merge(
-                        of(
-                            showNotificationAction({
-                                description:
-                                    'Your discussion has been successfully deleted',
-                                message: `Discussion`,
-                                notificationType: 'success',
-                            })
-                        ),
-                        of(routeChangeAction('back'))
+                    of(
+                        showNotificationAction({
+                            description:
+                                'Your discussion has been successfully deleted',
+                            message: `Discussion`,
+                            notificationType: 'success',
+                        })
                     )
                 ),
                 catchError(err => {

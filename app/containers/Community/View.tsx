@@ -289,7 +289,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     <Head>
                         <title
                             dangerouslySetInnerHTML={{
-                                __html: getCommunity.name,
+                                __html: `${getCommunity.name} - Community - Kauri`,
                             }}
                         />
                         <meta
