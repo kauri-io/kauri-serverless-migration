@@ -50,7 +50,7 @@ const TipHistory = (props: IProps) => {
 
     const classes = useStyles({})
 
-    const [selectedTips, setSelectedTips] = useState('received')
+    const [selectedTips, setSelectedTips] = useState('RECEIVED')
 
     if (props.sentTipsQuery.loading) {
         return <LoadingComponent />
@@ -72,7 +72,7 @@ const TipHistory = (props: IProps) => {
     }
 
     const getTips = () => {
-        if (selectedTips === 'sent') {
+        if (selectedTips === 'SENT') {
             return sentTips
         }
 
@@ -99,8 +99,8 @@ const TipHistory = (props: IProps) => {
                                 className: classes.selectFont,
                             }}
                         >
-                            <MenuItem value="received">TIPS RECEIVED</MenuItem>
-                            <MenuItem value="sent">TIPS SENT</MenuItem>
+                            <MenuItem value="RECEIVED">TIPS RECEIVED</MenuItem>
+                            <MenuItem value="SENT">TIPS SENT</MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -123,12 +123,12 @@ const TipHistory = (props: IProps) => {
 
             <TipList
                 tips={getTips()}
-                type={selectedTips as 'sent' | 'received'}
+                type={selectedTips as 'SENT' | 'RECEIVED'}
                 emptyHeader={
-                    selectedTips === 'sent' ? 'Tips Sent' : 'Tips Received'
+                    selectedTips === 'SENT' ? 'Tips Sent' : 'Tips Received'
                 }
                 emptyText={
-                    selectedTips === 'sent'
+                    selectedTips === 'SENT'
                         ? "You haven't sent any tips at the moment."
                         : "You haven't received any tips at the moment."
                 }

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {
     tip: any
-    type: 'sent' | 'received'
+    type: 'SENT' | 'RECEIVED'
 }
 
 const TipCard = ({ tip, type }: IProps) => {
@@ -51,7 +51,7 @@ const TipCard = ({ tip, type }: IProps) => {
                             {tip.resource.title}
                         </Typography>
                         <CardDetails
-                            user={type == 'sent' ? tip.recipient : tip.tipper}
+                            user={type == 'SENT' ? tip.recipient : tip.tipper}
                             date={
                                 tip.status == 'PENDING'
                                     ? tip.dateStaged
@@ -92,7 +92,9 @@ const TipCard = ({ tip, type }: IProps) => {
                     >
                         <EtherScanLink
                             txHash={tip.transactionHash}
-                            linkText={tip.status}
+                            linkText={
+                                tip.status == 'CONFIRMED' ? type : tip.status
+                            }
                         />
                     </Grid>
                 </Grid>
