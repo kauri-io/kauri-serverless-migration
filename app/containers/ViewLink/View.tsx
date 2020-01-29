@@ -157,7 +157,6 @@ const ViewLink = ({
                             routeChangeAction={routeChangeAction}
                         />
                     </div>
-
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>

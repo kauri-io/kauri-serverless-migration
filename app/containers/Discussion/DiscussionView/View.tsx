@@ -167,11 +167,13 @@ export const DiscussionView = ({
     const editRedirect = () => routeChangeAction(editURL.href, editURL.as)
 
     return (
-
         <>
-
             <Head>
-                <title dangerouslySetInnerHTML={{ __html: `${title} - Discussion - Kauri` }} />
+                <title
+                    dangerouslySetInnerHTML={{
+                        __html: `${title} - Discussion - Kauri`,
+                    }}
+                />
                 <meta name="description" content={description} />
                 <link rel="canonical" href={selfURL.as} />
                 <meta property="og:title" content={title} />
@@ -389,7 +391,9 @@ export const DiscussionView = ({
                             <Typography variant="subtitle1">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
                             <Grid direction="row" className={classes.flex}>
                                 <AvatarList
-                                    list={data.getDiscussion.contributors.content}
+                                    list={
+                                        data.getDiscussion.contributors.content
+                                    }
                                     total={
                                         data.getDiscussion.contributors
                                             .totalElements

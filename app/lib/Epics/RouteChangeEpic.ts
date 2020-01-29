@@ -8,6 +8,7 @@ type IRouteChangePayload = string
 export interface IRouteChangeAction {
     type: string
     payload: IRouteChangePayload
+    as?: string
 }
 
 export const routeChange = (payload: IRouteChangePayload, as?: string): any => {
@@ -22,16 +23,18 @@ export const routeChange = (payload: IRouteChangePayload, as?: string): any => {
 }
 
 export const routeChangeAction = (
-    payload: IRouteChangePayload
+    payload: IRouteChangePayload,
+    as?: string
 ): IRouteChangeAction => ({
     type: ROUTE_CHANGE,
     payload,
+    as,
 })
 
 const routeChangeEpic: Epic<IRouteChangeAction, any> = action$ =>
     action$.pipe(
         filter(action => action.type === ROUTE_CHANGE),
-        map(({ payload }) => routeChange(payload)),
+        map(({ payload, as }) => routeChange(payload, as)),
         ignoreElements()
     )
 

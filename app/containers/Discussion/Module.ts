@@ -173,14 +173,13 @@ export const editDiscussionEpic: Epic<
                                 notificationType: 'success',
                             })
                         ),
-                        of(
-                            routeChangeAction(
-                                getDiscussionURL({
-                                    id: payload.id,
-                                    title: payload.title,
-                                }).as
-                            )
-                        )
+                        of(() => {
+                           const url = getDiscussionURL({
+                                id: payload.id,
+                                title: payload.title,
+                            }) 
+                            routeChangeAction(url.href, url.as)
+                        })
                     )
                 ),
                 catchError(err => {

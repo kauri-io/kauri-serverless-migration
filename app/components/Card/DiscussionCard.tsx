@@ -32,23 +32,24 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '100%',
     },
     card: {
-        [theme.breakpoints.up('xs')]: {
-            padding: theme.spacing(2),
-        },
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             padding: theme.spacing(1),
-            height: 80,
         },
         display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         margin: theme.spacing(1),
-        padding: theme.spacing(1),
+        padding: theme.spacing(2),
         borderRadius: theme.shape.borderRadius,
         width: '100%',
     },
     left: {
-        width: 512,
         display: 'flex',
         flexDirection: 'column',
+    },
+    right: {
+        display: 'flex',
+        flexDirection: 'row',
     },
     title: {
         textTransform: 'capitalize',
@@ -57,12 +58,21 @@ const useStyles = makeStyles((theme: Theme) => ({
         fontSize: 16,
     },
     column: {
-        width: 90,
-        display: 'flex',
-        justifyContent: 'center',
-        margin: 'auto',
         textTransform: 'uppercase',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 88,
+        [theme.breakpoints.down('sm')]: {
+            width: 70,
+        }, 
     },
+    avatarsListMobile: {
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: theme.spacing(1),
+    }
 }))
 
 const DiscussionCard = ({
@@ -82,7 +92,9 @@ const DiscussionCard = ({
         <Link href={link.href} as={link.as}>
             <a className={classes.link}>
                 <>
-                    <Hidden implementation="css" smUp={true}>
+
+                    {/* ###### MOBILE VIEW ###### */}
+                    <Hidden implementation="css" mdUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.left}>
                                 <TruncateMarkup lines={2}>
@@ -104,43 +116,32 @@ const DiscussionCard = ({
                                         tags={tags}
                                     />
                                 </div>
+                                <Grid className={classes.avatarsListMobile}>
+                                    <AvatarList
+                                        list={contributors.content}
+                                        total={contributors.totalElements}
+                                        limit={3}
+                                    />
+                                </Grid>
                             </Grid>
 
-                            <Grid
-                                className={classes.column}
-                                style={{ width: 160 }}
-                            >
-                                <AvatarList
-                                    list={contributors.content}
-                                    total={contributors.totalElements}
-                                    limit={3}
-                                />
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {voteResult.sum}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {status}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {comments.totalElements}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {moment(String(lastActivity)).format(
-                                        'DD MMM YY'
-                                    )}
-                                </Typography>
+                            <Grid className={classes.right}>
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {comments.totalElements}
+                                    </Typography>
+                                </Grid>
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {moment(lastActivity).fromNow(true)}
+                                    </Typography>
+                                </Grid>
                             </Grid>
                         </Card>
                     </Hidden>
-                    <Hidden implementation="css" xsDown={true}>
+
+                    {/* ###### DESKTOP VIEW ###### */}
+                    <Hidden implementation="css" smDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.left}>
                                 <TruncateMarkup lines={2}>
@@ -164,39 +165,41 @@ const DiscussionCard = ({
                                 </div>
                             </Grid>
 
-                            <Grid
-                                className={classes.column}
-                                style={{ width: 160 }}
-                            >
-                                <AvatarList
-                                    list={contributors.content}
-                                    total={contributors.totalElements}
-                                    limit={3}
-                                />
+
+                            <Grid className={classes.right}>
+                                <Grid
+                                    className={classes.column}
+                                    style={{ width: 160 }}
+                                >
+                                    <AvatarList
+                                        list={contributors.content}
+                                        total={contributors.totalElements}
+                                        limit={3}
+                                    />
+                                </Grid>
+
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {voteResult.sum}
+                                    </Typography>
+                                </Grid>
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {status}
+                                    </Typography>
+                                </Grid>
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {comments.totalElements}
+                                    </Typography>
+                                </Grid>
+                                <Grid className={classes.column}>
+                                    <Typography variant="subtitle2">
+                                        {moment(lastActivity).fromNow(true)}
+                                    </Typography>
+                                </Grid>
                             </Grid>
 
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {voteResult.sum}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {status}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {comments.totalElements}
-                                </Typography>
-                            </Grid>
-                            <Grid className={classes.column}>
-                                <Typography variant="subtitle2">
-                                    {moment(String(lastActivity)).format(
-                                        'DD MMM YY'
-                                    )}
-                                </Typography>
-                            </Grid>
                         </Card>
                     </Hidden>
                 </>

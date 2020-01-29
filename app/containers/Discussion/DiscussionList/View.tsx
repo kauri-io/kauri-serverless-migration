@@ -6,6 +6,7 @@ import {
     Typography,
     Button,
     Paper,
+    Hidden,
 } from '@material-ui/core'
 import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import {
@@ -55,13 +56,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     header: {
         padding: theme.spacing(2, 0, 2, 2),
-    },
-    headerLeft: {
-        width: 660,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     headerRight: {
         display: 'flex',
-        width: 90,
+        flexDirection: 'row',
+    },
+    headerRightColumn: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 88,
+        [theme.breakpoints.down('sm')]: {
+            width: 70,
+        },        
     },
     empty: {
         display: 'flex',
@@ -103,6 +114,7 @@ export const DiscussionList = ({
     return (
         <div className={classes.container}>
             <div className={classes.root}>
+
                 <Grid
                     container
                     spacing={2}
@@ -122,51 +134,69 @@ export const DiscussionList = ({
                             {parentName} community and more.
                         </Typography>
                     </Grid>
-                    <Grid item>
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            className={classes.button}
-                            onClick={createDiscussionRedirect}
-                        >
-                            New Topic
-                        </Button>
-                    </Grid>
+                    <Hidden smDown={true}>
+                        <Grid item>
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                className={classes.button}
+                                onClick={createDiscussionRedirect}
+                            >
+                                New Topic
+                            </Button>
+                        </Grid>
+                    </Hidden>
                 </Grid>
 
-                <Grid container={true} spacing={2} className={classes.header}>
-                    <Grid className={classes.headerLeft}>
-                        <Typography variant="subtitle2">TOPIC</Typography>
+                <Hidden smDown={true}>                
+                    <Grid className={classes.header}>
+                        <Grid>
+                            <Typography variant="subtitle2">TOPIC</Typography>
+                        </Grid>
+                        <Grid className={classes.headerRight}>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">VOTE</Typography>
+                            </Grid>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">STATUS</Typography>
+                            </Grid>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">REPLIES</Typography>
+                            </Grid>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">ACTIVITY</Typography>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid
-                        justify="center"
-                        alignItems="center"
-                        className={classes.headerRight}
-                    >
-                        <Typography variant="subtitle2">VOTES</Typography>
+                </Hidden>
+
+                <Hidden mdUp={true}>                
+                    <Grid className={classes.header}>
+                        <Grid>
+                            <Typography variant="subtitle2">TOPIC</Typography>
+                        </Grid>
+                        <Grid className={classes.headerRight}>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">REPLIES</Typography>
+                            </Grid>
+                            <Grid
+                                className={classes.headerRightColumn}
+                            >
+                                <Typography variant="subtitle2">ACTIVITY</Typography>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid
-                        justify="center"
-                        alignItems="center"
-                        className={classes.headerRight}
-                    >
-                        <Typography variant="subtitle2">STATUS</Typography>
-                    </Grid>
-                    <Grid
-                        justify="center"
-                        alignItems="center"
-                        className={classes.headerRight}
-                    >
-                        <Typography variant="subtitle2">REPLIES</Typography>
-                    </Grid>
-                    <Grid
-                        justify="center"
-                        alignItems="center"
-                        className={classes.headerRight}
-                    >
-                        <Typography variant="subtitle2">ACTIVITY</Typography>
-                    </Grid>
-                </Grid>
+                </Hidden>
 
                 <Grid container={true} spacing={2}>
                     {data.searchDiscussions.totalElements > 0 &&
