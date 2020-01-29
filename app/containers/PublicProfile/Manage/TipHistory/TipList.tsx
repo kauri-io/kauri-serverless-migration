@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {
     tips: any
-    type: 'sent' | 'received'
+    type: 'SENT' | 'RECEIVED'
     emptyHeader: string
     emptyText: string
 }
