@@ -10,7 +10,12 @@ import {
     openModalAction,
 } from '../../components/Modal/Module'
 import { getLink } from '../../queries/Link'
-import { addCommentAction, editCommentAction, deleteCommentAction, voteAction } from '../Article/Module'
+import {
+    addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
+    voteAction,
+} from '../Article/Module'
 import { curateCommunityResourcesAction } from '../Community/Module'
 
 const mapStateToProps = (state: IReduxState) => ({

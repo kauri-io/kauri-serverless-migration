@@ -139,7 +139,9 @@ const ViewLink = ({
                             variant="h6"
                         >
                             {getExternalLink.comments.totalElements} Comment
-                            {getExternalLink.comments.totalElements !== 1 ? 's' : ''}
+                            {getExternalLink.comments.totalElements !== 1
+                                ? 's'
+                                : ''}
                         </Typography>
 
                         <Comments
@@ -156,12 +158,6 @@ const ViewLink = ({
                         />
                     </div>
 
-                    {/* <LinkComments
-                        link={getExternalLink.resourceIdentifier}
-                        addCommentAction={addCommentAction}
-                        user={user}
-                        comments={getExternalLink.comments}
-                    /> */}
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>

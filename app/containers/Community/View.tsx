@@ -80,6 +80,7 @@ interface IProps {
     secret: null | string
     communityId: string
     data: {
+        loading: boolean
         getCommunity: getCommunity_getCommunity
         searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
@@ -100,46 +101,76 @@ interface IProps {
 }
 
 interface IState {
+    articlesCount: number,
+    collectionsCount: number
     tab: number
+    canDisplayHomepage: boolean
 }
 
 class CommunityConnection extends React.Component<IProps, IState> {
+
     constructor(props: IProps) {
         super(props)
         this.state = {
-            tab: Number(props.tab) || 0,
+            canDisplayHomepage: false,
+            articlesCount: 0,
+            collectionsCount: 0,
+            tab: 0,
         }
         this.changeTab = this.changeTab.bind(this)
+        this.recordView = this.recordView.bind(this)
+        this.showAcceptInvitationModal = this.showAcceptInvitationModal.bind(this)
+        this.openAddMemberModal = this.openAddMemberModal.bind(this)
+        this.setCounter = this.setCounter.bind(this)
+        this.setTab = this.setTab.bind(this)
     }
 
     componentDidMount() {
+        this.recordView()
+        this.showAcceptInvitationModal()
+        const counters = this.setCounter()
+        const tabs = this.setTab()
+
+        this.setState({...counters, ...tabs})
+    }
+
+    recordView() {
         this.props.client &&
-            this.props.client.mutate({
-                fetchPolicy: 'no-cache',
-                mutation: recordViewMutation,
-                variables: {
-                    resourceId: {
-                        id: this.props.communityId,
-                        type: 'COMMUNITY',
-                    },
-                    referrer: window.document.referrer
-                        ? window.document.referrer
-                        : null,
+        this.props.client.mutate({
+            fetchPolicy: 'no-cache',
+            mutation: recordViewMutation,
+            variables: {
+                resourceId: {
+                    id: this.props.communityId,
+                    type: 'COMMUNITY',
                 },
-            })
+                referrer: window.document.referrer
+                    ? window.document.referrer
+                    : null,
+            },
+        })
+    }
 
-        const {
-            data: { getCommunity },
-            currentUser,
-        } = this.props
-        const isCreator = getCommunity.creatorId === currentUser
+    setCounter() {
+        const articlesCount = (this.props.data.getCommunity.approvedId &&
+            this.props.data.getCommunity.approvedId.filter(
+                i => i && (i.type === 'ARTICLE' || i.type === 'LINK')
+            ).length) || 0
 
-        const isMember =
-            isCreator ||
-            any(propEq('id', currentUser), getCommunity.members.content || [])
+        const collectionsCount = (this.props.data.getCommunity.approvedId &&
+                this.props.data.getCommunity.approvedId.filter(
+                    i => i && i.type === 'COLLECTION'
+                ).length) || 0
+
+        return {articlesCount, collectionsCount}
+    }
+
+    showAcceptInvitationModal() {
+
+        const isCreator = this.props.data.getCommunity.creatorId === this.props.currentUser
+        const isMember = isCreator || any(propEq('id', this.props.currentUser), this.props.data.getCommunity.members.content || [])
 
         if (typeof this.props.secret === 'string' && !isMember) {
-            // AcceptCommunityInviteModal
             this.props.openModalAction({
                 children: (
                     <AlertViewComponent
@@ -161,23 +192,56 @@ class CommunityConnection extends React.Component<IProps, IState> {
         }
     }
 
+    openAddMemberModal() {
+        this.props.openModalAction({
+            children: (
+                <AddMemberModal
+                    showNotificationAction={
+                        this.props.showNotificationAction
+                    }
+                    confirmButtonAction={(invitation: any) => {
+                        this.props.sendCommunityInvitationAction({
+                            id: this.props.data.getCommunity.id,
+                            invitation,
+                        })
+                        this.props.closeModalAction()
+                    }}
+                    closeModalAction={this.props.closeModalAction}
+                />
+            ),
+        })
+    }
+
+    setTab() {
+        const firstCommunityHomepageSectionResources = path<any[]>([
+            0,
+            'resources',
+        ])(this.props.data.getCommunity.homepage)
+
+        const homepageExists =
+            Array.isArray(this.props.data.getCommunity.homepage) &&
+            this.props.data.getCommunity.homepage.length &&
+            firstCommunityHomepageSectionResources &&
+            firstCommunityHomepageSectionResources.length
+        const canDisplayHomepage = (homepageExists && homepageExists > 0) || this.props.isCommunityAdmin
+        const tab = Number(this.props.tab) || (canDisplayHomepage ? 0 : 1)
+
+        return {canDisplayHomepage, tab}
+    }
+
     changeTab(_event, tab: number) {
-        const href = `${
-            getCommunityURL({ ...this.props.data.getCommunity, tab }).href
-        }`
-        const as = `${
-            getCommunityURL({ ...this.props.data.getCommunity, tab }).as
-        }`
+        const url = getCommunityURL({ ...this.props.data.getCommunity, tab })
         this.setState({ tab })
-        this.props.router.push(href, as, { shallow: true })
+        this.props.router.push(url.href, url.as, { shallow: true })
     }
 
     render() {
-        if (!this.props.data || !this.props.data.getCommunity) {
-            return null
+        if (this.props.data.loading) {
+            return <Loading />
         }
 
         const {
+            classes,
             secret,
             data: { getCommunity },
             currentUser,
@@ -193,20 +257,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
             discussionAction = 'list',
         } = this.props
 
-        const articlesCount =
-            (getCommunity.approvedId &&
-                getCommunity.approvedId.filter(
-                    i => i && (i.type === 'ARTICLE' || i.type === 'LINK')
-                ).length) ||
-            0
-
-        const collectionsCount =
-            (getCommunity.approvedId &&
-                getCommunity.approvedId.filter(
-                    i => i && i.type === 'COLLECTION'
-                ).length) ||
-            0
-
         const isCreator = getCommunity.creatorId === currentUser
         const isMember =
             isCreator ||
@@ -215,42 +265,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
         const name = getCommunity.name
         const id = getCommunity.id
         const url = getCommunityURL({ name, id }).as
-
-        const openAddMemberModal = () =>
-            this.props.openModalAction({
-                children: (
-                    <AddMemberModal
-                        showNotificationAction={
-                            this.props.showNotificationAction
-                        }
-                        confirmButtonAction={(invitation: any) => {
-                            this.props.sendCommunityInvitationAction({
-                                id: getCommunity.id,
-                                invitation,
-                            })
-                            this.props.closeModalAction()
-                        }}
-                        closeModalAction={this.props.closeModalAction}
-                    />
-                ),
-            })
-
-        const firstCommunityHomepageSectionResources = path<any[]>([
-            0,
-            'resources',
-        ])(homepage)
-
-        const homepageExists =
-            Array.isArray(homepage) &&
-            homepage.length &&
-            firstCommunityHomepageSectionResources &&
-            firstCommunityHomepageSectionResources.length
-        const canDisplayHomepage = homepageExists || isCommunityAdmin
-
-        const getActualTabId = (id: number) =>
-            id === 0 ? 0 : canDisplayHomepage ? id : id - 1
-
-        const { classes } = this.props
 
         return (
             <>
@@ -296,9 +310,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     )}
                 </Head>
 
-                {/* Dialog used to prevent the access to the community page until the community is mined (saved on-chain).
-                     After being mined, status changes to OPENED
-                */}
                 <Dialog
                     open={getCommunity.status === 'CREATED'}
                     aria-labelledby="alert-dialog-title"
@@ -349,8 +360,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         getCommunity.attributes.background
                     }
                     social={getCommunity.social}
-                    articleCount={articlesCount}
-                    collectionCount={collectionsCount}
+                    articleCount={this.state.articlesCount}
+                    collectionCount={this.state.collectionsCount}
                     tags={getCommunity.tags}
                     members={getCommunity.members}
                     isMember={isMember}
@@ -360,13 +371,14 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     openModalAction={openModalAction}
                     closeModalAction={closeModalAction}
                     routeChangeAction={routeChangeAction}
-                    openAddMemberModal={openAddMemberModal}
+                    openAddMemberModal={this.openAddMemberModal}
                     userId={currentUser}
                     joinCommunityAction={joinCommunityAction}
                     curateCommunityResourcesAction={
                         curateCommunityResourcesAction
                     }
                 />
+
                 <Tabs
                     TabIndicatorProps={{ style: { height: 3 } }}
                     indicatorColor="primary"
@@ -375,9 +387,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     className={classes.tabs}
                     onChange={this.changeTab}
                 >
-                    {canDisplayHomepage && <Tab label="Home" />}
+                    <Tab label="Home" style={{display: !this.state.canDisplayHomepage?'none':''}}/>
                     <Tab
-                        label={`Content (${articlesCount + collectionsCount})`}
+                        label={`Content (${this.state.articlesCount + this.state.collectionsCount})`}
                     />
                     <Tab
                         label={`Discussions (${getCommunity.discussions.totalElements})`}
@@ -391,7 +403,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         <Tab label="Manage Community" />
                     )}
                 </Tabs>
-                {this.state.tab === getActualTabId(0) && canDisplayHomepage && (
+                
+                {this.state.tab === 0 && this.state.canDisplayHomepage && (
                     <HomepageResources
                         routeChangeAction={routeChangeAction}
                         id={String(getCommunity.id)}
@@ -403,13 +416,13 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         openModalAction={openModalAction}
                     />
                 )}
-                {this.state.tab === getActualTabId(1) && (
+                {this.state.tab === 1 && (
                     <ResourceTab
                         id={getCommunity.id}
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) &&
+                {this.state.tab === 2 &&
                     discussionAction === 'view' &&
                     discussionId && (
                         <DiscussionView
@@ -422,7 +435,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             }
                         />
                     )}
-                {this.state.tab === getActualTabId(2) &&
+                {this.state.tab === 2 &&
                     discussionAction === 'form' &&
                     !discussionId && (
                         <DiscussionCreateForm
@@ -431,7 +444,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             parentType={ResourceTypeInput.COMMUNITY}
                         />
                     )}
-                {this.state.tab === getActualTabId(2) &&
+                {this.state.tab === 2 &&
                     discussionAction === 'form' &&
                     discussionId && (
                         <DiscussionEditForm
@@ -441,7 +454,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             discussionId={discussionId}
                         />
                     )}
-                {this.state.tab === getActualTabId(2) &&
+                {this.state.tab === 2 &&
                     discussionAction === 'list' && (
                         <DiscussionList
                             parentId={getCommunity.id}
@@ -449,12 +462,12 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             parentType={ResourceTypeInput.COMMUNITY}
                         />
                     )}
-                {this.state.tab === getActualTabId(3) && (
+                {this.state.tab === 3 && (
                     <MembersTab id={getCommunity.id} />
                 )}
-                {this.state.tab === getActualTabId(4) && (
+                {this.state.tab === 4 && (
                     <ManageTab
-                        openAddMemberModal={openAddMemberModal}
+                        openAddMemberModal={this.openAddMemberModal}
                         communityId={getCommunity.id || ''}
                         key="manage"
                         isCommunityAdmin={isCommunityAdmin}

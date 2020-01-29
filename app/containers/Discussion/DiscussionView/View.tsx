@@ -41,6 +41,7 @@ import MDRenderer from '../../../components/Markdown/Renderer'
 import { addCommentVariables } from '../../../queries/__generated__/addComment'
 import { editCommentVariables } from '../../../queries/__generated__/editComment'
 import { deleteCommentVariables } from '../../../queries/__generated__/deleteComment'
+import Head from 'next/head'
 
 interface IProps {
     routeChangeAction: (href: string, as?: string) => IRouteChangeAction
@@ -153,6 +154,8 @@ export const DiscussionView = ({
     }
 
     const isAuthor = user && user.id == data.getDiscussion.authorId
+    const title = data.getDiscussion.title
+    const description = `${data.getDiscussion.message.slice(0, 151)}...`
 
     const backURL = getCommunityURL({ id: parentId, name: parentName, tab: 2 })
     const selfURL = getDiscussionURL({ ...data.getDiscussion })
@@ -164,240 +167,260 @@ export const DiscussionView = ({
     const editRedirect = () => routeChangeAction(editURL.href, editURL.as)
 
     return (
-        <div className={classes.container}>
-            <div className={classes.root}>
-                <Grid
-                    container
-                    spacing={2}
-                    direction="column"
-                    alignItems="center"
-                    className={classes.left}
-                >
-                    <Grid justify="center">
-                        <Link href={backURL.href} as={backURL.as}>
-                            <Button color="primary" variant="text">
-                                Back to Topics
-                            </Button>
-                        </Link>
-                    </Grid>
 
+        <>
+
+            <Head>
+                <title dangerouslySetInnerHTML={{ __html: `${title} - Discussion - Kauri` }} />
+                <meta name="description" content={description} />
+                <link rel="canonical" href={selfURL.as} />
+                <meta property="og:title" content={title} />
+                <meta property="og:site_name" content="kauri.io" />
+                <meta property="og:url" content={selfURL.as} />
+                <meta property="og:description" content={description} />
+                <meta property="og:type" content="discussion" />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:site" content={selfURL.as} />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:creator" content="@kauri_io" />
+            </Head>
+
+            <div className={classes.container}>
+                <div className={classes.root}>
                     <Grid
+                        container
+                        spacing={2}
                         direction="column"
-                        justify="center"
                         alignItems="center"
-                        className={classes.flex}
+                        className={classes.left}
                     >
-                        <VoteWidget
-                            isLoggedIn={isLoggedIn}
-                            id={discussionId}
-                            resourceType="DISCUSSION"
-                            voteAction={voteAction}
-                            voteResult={data.getDiscussion.voteResult}
-                            loginFirstToVote={loginRedirect}
-                        />
-                    </Grid>
-
-                    {isAuthor && (
-                        <Grid
-                            justify="center"
-                            alignItems="center"
-                            className={classes.action}
-                        >
-                            <Button
-                                variant="text"
-                                size="small"
-                                startIcon={<EditIcon />}
-                                onClick={editRedirect}
-                            >
-                                Edit discussion
-                            </Button>
+                        <Grid justify="center">
+                            <Link href={backURL.href} as={backURL.as}>
+                                <Button color="primary" variant="text">
+                                    Back to Topics
+                                </Button>
+                            </Link>
                         </Grid>
-                    )}
 
-                    {isAuthor && data.getDiscussion.status === 'OPENED' && (
                         <Grid
+                            direction="column"
                             justify="center"
                             alignItems="center"
-                            className={classes.action}
-                            onClick={() =>
-                                closeDiscussionAction({
-                                    id: data.getDiscussion.id,
-                                })
-                            }
+                            className={classes.flex}
                         >
-                            <Button
-                                variant="text"
-                                size="small"
-                                startIcon={<HighlightOffIcon />}
-                            >
-                                Close discussion
-                            </Button>
+                            <VoteWidget
+                                isLoggedIn={isLoggedIn}
+                                id={discussionId}
+                                resourceType="DISCUSSION"
+                                voteAction={voteAction}
+                                voteResult={data.getDiscussion.voteResult}
+                                loginFirstToVote={loginRedirect}
+                            />
                         </Grid>
-                    )}
 
-                    {isAuthor && data.getDiscussion.status === 'CLOSED' && (
-                        <Grid
-                            justify="center"
-                            alignItems="center"
-                            className={classes.action}
-                            onClick={() => {}}
-                        >
-                            <Button
-                                variant="text"
-                                size="small"
-                                startIcon={<OpenInNewIcon />}
+                        {isAuthor && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
+                            >
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<EditIcon />}
+                                    onClick={editRedirect}
+                                >
+                                    Edit discussion
+                                </Button>
+                            </Grid>
+                        )}
+
+                        {isAuthor && data.getDiscussion.status === 'OPENED' && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
                                 onClick={() =>
-                                    reopenDiscussionAction({
+                                    closeDiscussionAction({
                                         id: data.getDiscussion.id,
                                     })
                                 }
                             >
-                                Repoen discussion
-                            </Button>
-                        </Grid>
-                    )}
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<HighlightOffIcon />}
+                                >
+                                    Close discussion
+                                </Button>
+                            </Grid>
+                        )}
 
-                    {permissionToDelete && (
-                        <Grid
-                            justify="center"
-                            alignItems="center"
-                            className={classes.action}
-                            onClick={() => {}}
-                        >
-                            <Button
-                                variant="text"
-                                size="small"
-                                startIcon={<DeleteIcon />}
-                                onClick={() =>
-                                    deleteDiscussionAction(
-                                        { id: data.getDiscussion.id },
-                                        () => routeChangeAction(backURL.as)
-                                    )
-                                }
+                        {isAuthor && data.getDiscussion.status === 'CLOSED' && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
+                                onClick={() => {}}
                             >
-                                Delete discussion
-                            </Button>
-                        </Grid>
-                    )}
-                </Grid>
-                <Grid
-                    container
-                    spacing={2}
-                    direction="column"
-                    className={classes.right}
-                >
-                    <Typography variant="h5" style={{ marginBottom: -8 }}>
-                        {data.getDiscussion.title}
-                    </Typography>
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<OpenInNewIcon />}
+                                    onClick={() =>
+                                        reopenDiscussionAction({
+                                            id: data.getDiscussion.id,
+                                        })
+                                    }
+                                >
+                                    Repoen discussion
+                                </Button>
+                            </Grid>
+                        )}
 
-                    <TagList
-                        color="black"
-                        maxTags={7}
-                        tags={data.getDiscussion.tags}
-                    />
-
+                        {permissionToDelete && (
+                            <Grid
+                                justify="center"
+                                alignItems="center"
+                                className={classes.action}
+                                onClick={() => {}}
+                            >
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    startIcon={<DeleteIcon />}
+                                    onClick={() =>
+                                        deleteDiscussionAction(
+                                            { id: data.getDiscussion.id },
+                                            () => routeChangeAction(backURL.as)
+                                        )
+                                    }
+                                >
+                                    Delete discussion
+                                </Button>
+                            </Grid>
+                        )}
+                    </Grid>
                     <Grid
-                        direction="row"
-                        justify="space-between"
-                        alignItems="center"
-                        className={[classes.row, classes.flex].join(' ')}
+                        container
+                        spacing={2}
+                        direction="column"
+                        className={classes.right}
                     >
-                        <Avatar
-                            id={data.getDiscussion.author.id}
-                            name={data.getDiscussion.author.publicUserName}
-                            username={data.getDiscussion.author.username}
-                            avatar={data.getDiscussion.author.avatar}
-                            withName={true}
-                            size={40}
-                        />
-                        <Typography variant="body2">
-                            Posted{' '}
-                            <b>
-                                {moment(
-                                    String(data.getDiscussion.dateCreated)
-                                ).format('DD MMM YY')}
-                            </b>
-                            &nbsp; Last Reply{' '}
-                            <b>
-                                {moment(
-                                    String(data.getDiscussion.lastActivity)
-                                ).format('DD MMM YY')}
-                            </b>
+                        <Typography variant="h5" style={{ marginBottom: -8 }}>
+                            {data.getDiscussion.title}
                         </Typography>
-                    </Grid>
 
-                    <Grid
-                        direction="row"
-                        justify="space-between"
-                        className={[
-                            classes.row,
-                            classes.flex,
-                            classes.content,
-                        ].join(' ')}
-                    >
-                        <MDRenderer markdown={data.getDiscussion.message} />
-                    </Grid>
-
-                    <Grid
-                        direction="row"
-                        justify="flex-end"
-                        alignItems="center"
-                        className={[
-                            classes.row,
-                            classes.border,
-                            classes.flex,
-                        ].join(' ')}
-                    >
-                        <ShareWidget
-                            href={selfURL.as}
-                            name={`Kauri discussion: ${data.getDiscussion.title}`}
-                            row={true}
+                        <TagList
+                            color="black"
+                            maxTags={7}
+                            tags={data.getDiscussion.tags}
                         />
-                    </Grid>
 
-                    <Grid
-                        direction="row"
-                        justify="space-between"
-                        className={[
-                            classes.row,
-                            classes.border,
-                            classes.flex,
-                        ].join(' ')}
-                    >
-                        <Typography variant="subtitle1">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
-                        <Grid direction="row" className={classes.flex}>
-                            <AvatarList
-                                list={data.getDiscussion.contributors.content}
-                                total={
-                                    data.getDiscussion.contributors
-                                        .totalElements
-                                }
-                                limit={10}
+                        <Grid
+                            direction="row"
+                            justify="space-between"
+                            alignItems="center"
+                            className={[classes.row, classes.flex].join(' ')}
+                        >
+                            <Avatar
+                                id={data.getDiscussion.author.id}
+                                name={data.getDiscussion.author.publicUserName}
+                                username={data.getDiscussion.author.username}
+                                avatar={data.getDiscussion.author.avatar}
+                                withName={true}
+                                size={40}
+                            />
+                            <Typography variant="body2">
+                                Posted{' '}
+                                <b>
+                                    {moment(
+                                        String(data.getDiscussion.dateCreated)
+                                    ).format('DD MMM YY')}
+                                </b>
+                                &nbsp; Last Reply{' '}
+                                <b>
+                                    {moment(
+                                        String(data.getDiscussion.lastActivity)
+                                    ).format('DD MMM YY')}
+                                </b>
+                            </Typography>
+                        </Grid>
+
+                        <Grid
+                            direction="row"
+                            justify="space-between"
+                            className={[
+                                classes.row,
+                                classes.flex,
+                                classes.content,
+                            ].join(' ')}
+                        >
+                            <MDRenderer markdown={data.getDiscussion.message} />
+                        </Grid>
+
+                        <Grid
+                            direction="row"
+                            justify="flex-end"
+                            alignItems="center"
+                            className={[
+                                classes.row,
+                                classes.border,
+                                classes.flex,
+                            ].join(' ')}
+                        >
+                            <ShareWidget
+                                href={selfURL.as}
+                                name={`Kauri discussion: ${data.getDiscussion.title}`}
+                                row={true}
+                            />
+                        </Grid>
+
+                        <Grid
+                            direction="row"
+                            justify="space-between"
+                            className={[
+                                classes.row,
+                                classes.border,
+                                classes.flex,
+                            ].join(' ')}
+                        >
+                            <Typography variant="subtitle1">{`Replies (${data.getDiscussion.comments.totalElements})`}</Typography>
+                            <Grid direction="row" className={classes.flex}>
+                                <AvatarList
+                                    list={data.getDiscussion.contributors.content}
+                                    total={
+                                        data.getDiscussion.contributors
+                                            .totalElements
+                                    }
+                                    limit={10}
+                                />
+                            </Grid>
+                        </Grid>
+
+                        <Grid
+                            direction="row"
+                            justify="space-between"
+                            className={classes.row}
+                        >
+                            <CommentsWidget
+                                openModalAction={openModalAction}
+                                routeChangeAction={routeChangeAction}
+                                closeModalAction={closeModalAction}
+                                parent={data.getDiscussion.resourceIdentifier}
+                                addCommentAction={addCommentAction}
+                                editCommentAction={editCommentAction}
+                                deleteCommentAction={deleteCommentAction}
+                                user={user}
+                                currentURL={selfURL.as}
+                                comments={data.getDiscussion.comments.content}
                             />
                         </Grid>
                     </Grid>
-
-                    <Grid
-                        direction="row"
-                        justify="space-between"
-                        className={classes.row}
-                    >
-                        <CommentsWidget
-                            openModalAction={openModalAction}
-                            routeChangeAction={routeChangeAction}
-                            closeModalAction={closeModalAction}
-                            parent={data.getDiscussion.resourceIdentifier}
-                            addCommentAction={addCommentAction}
-                            editCommentAction={editCommentAction}
-                            deleteCommentAction={deleteCommentAction}
-                            user={user}
-                            currentURL={selfURL.as}
-                            comments={data.getDiscussion.comments.content}
-                        />
-                    </Grid>
-                </Grid>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
