@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        padding: theme.spacing(1, 1),
+        padding: theme.spacing(2),
     },
     root: {
         paddingTop: theme.spacing(4),
@@ -55,11 +55,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         color: theme.palette.common.white,
     },
     header: {
-        padding: theme.spacing(2, 0, 2, 2),
-        width: '100%',
+        padding: theme.spacing(1),
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        [theme.breakpoints.up('sm')]: { 
+            padding: theme.spacing(2),
+        },
     },
     headerRight: {
         display: 'flex',
@@ -72,7 +74,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: 88,
         [theme.breakpoints.down('sm')]: {
             width: 70,
-        },        
+        },
     },
     empty: {
         display: 'flex',
@@ -114,7 +116,6 @@ export const DiscussionList = ({
     return (
         <div className={classes.container}>
             <div className={classes.root}>
-
                 <Grid
                     container
                     spacing={2}
@@ -148,51 +149,51 @@ export const DiscussionList = ({
                     </Hidden>
                 </Grid>
 
-                <Hidden smDown={true}>                
+                <Hidden smDown={true}>
                     <Grid className={classes.header}>
                         <Grid>
                             <Typography variant="subtitle2">TOPIC</Typography>
                         </Grid>
                         <Grid className={classes.headerRight}>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">VOTE</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    VOTE
+                                </Typography>
                             </Grid>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">STATUS</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    STATUS
+                                </Typography>
                             </Grid>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">REPLIES</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    REPLIES
+                                </Typography>
                             </Grid>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">ACTIVITY</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    ACTIVITY
+                                </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Hidden>
 
-                <Hidden mdUp={true}>                
+                <Hidden mdUp={true}>
                     <Grid className={classes.header}>
                         <Grid>
                             <Typography variant="subtitle2">TOPIC</Typography>
                         </Grid>
                         <Grid className={classes.headerRight}>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">REPLIES</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    REPLIES
+                                </Typography>
                             </Grid>
-                            <Grid
-                                className={classes.headerRightColumn}
-                            >
-                                <Typography variant="subtitle2">ACTIVITY</Typography>
+                            <Grid className={classes.headerRightColumn}>
+                                <Typography variant="subtitle2">
+                                    ACTIVITY
+                                </Typography>
                             </Grid>
                         </Grid>
                     </Grid>

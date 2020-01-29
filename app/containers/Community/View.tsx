@@ -68,11 +68,11 @@ const styles = (theme: Theme) => ({
         justifyContent: 'center',
     },
     root: {
-        justifyContent: "center"
+        justifyContent: 'center',
     },
     scroller: {
         flexGrow: 0,
-    }
+    },
 })
 
 interface IProps {

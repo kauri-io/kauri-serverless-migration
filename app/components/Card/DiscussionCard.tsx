@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: theme.spacing(1),
         padding: theme.spacing(2),
         borderRadius: theme.shape.borderRadius,
-        width: '100%',
     },
     left: {
         display: 'flex',
@@ -66,13 +65,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: 88,
         [theme.breakpoints.down('sm')]: {
             width: 70,
-        }, 
+        },
     },
     avatarsListMobile: {
         display: 'flex',
         flexDirection: 'row',
         marginTop: theme.spacing(1),
-    }
+    },
 }))
 
 const DiscussionCard = ({
@@ -92,7 +91,6 @@ const DiscussionCard = ({
         <Link href={link.href} as={link.as}>
             <a className={classes.link}>
                 <>
-
                     {/* ###### MOBILE VIEW ###### */}
                     <Hidden implementation="css" mdUp={true}>
                         <Card className={classes.card}>
@@ -165,7 +163,6 @@ const DiscussionCard = ({
                                 </div>
                             </Grid>
 
-
                             <Grid className={classes.right}>
                                 <Grid
                                     className={classes.column}
@@ -199,7 +196,6 @@ const DiscussionCard = ({
                                     </Typography>
                                 </Grid>
                             </Grid>
-
                         </Card>
                     </Hidden>
                 </>

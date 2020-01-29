@@ -5630,15 +5630,15 @@ exports[`containers/Article should match snapshot 1`] = `
                                     show={true}
                                   >
                                     <Hidden
-                                      mdDown={true}
                                       mdUp={false}
+                                      smDown={true}
                                     >
                                       <WithWidth(HiddenJs)
                                         lgDown={false}
                                         lgUp={false}
-                                        mdDown={true}
+                                        mdDown={false}
                                         mdUp={false}
-                                        smDown={false}
+                                        smDown={true}
                                         smUp={false}
                                         xlDown={false}
                                         xlUp={false}

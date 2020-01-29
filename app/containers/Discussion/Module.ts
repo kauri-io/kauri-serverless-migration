@@ -174,10 +174,10 @@ export const editDiscussionEpic: Epic<
                             })
                         ),
                         of(() => {
-                           const url = getDiscussionURL({
+                            const url = getDiscussionURL({
                                 id: payload.id,
                                 title: payload.title,
-                            }) 
+                            })
                             routeChangeAction(url.href, url.as)
                         })
                     )

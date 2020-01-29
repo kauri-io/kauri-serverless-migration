@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Theme, Grid, Button, Typography } from '@material-ui/core'
+import { makeStyles, Theme, Grid, Button, Typography, Hidden } from '@material-ui/core'
 import {
     ICloseDiscussionAction,
     IReopenDiscussionAction,
@@ -88,16 +88,19 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        padding: theme.spacing(1, 1),
+        padding: theme.spacing(2),
         backgroundColor: theme.palette.common.white,
     },
     root: {
         display: 'flex',
         flexDirection: 'row',
-        paddingTop: theme.spacing(4),
+        paddingTop: theme.spacing(2),
         width: '100%',
         maxWidth: 1272,
         marginBottom: theme.spacing(2),
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column',
+        },
     },
     left: {
         width: 300,
@@ -190,120 +193,134 @@ export const DiscussionView = ({
 
             <div className={classes.container}>
                 <div className={classes.root}>
-                    <Grid
-                        container
-                        spacing={2}
-                        direction="column"
-                        alignItems="center"
-                        className={classes.left}
-                    >
-                        <Grid justify="center">
+
+                    <Hidden mdUp={true}>
+                        <Grid container justify="center" style={{marginBottom: 16}}>
                             <Link href={backURL.href} as={backURL.as}>
-                                <Button color="primary" variant="text">
+                                <Button color="primary" variant="outlined">
                                     Back to Topics
                                 </Button>
                             </Link>
                         </Grid>
+                    </Hidden>
 
+                    <Hidden smDown={true}>
                         <Grid
+                            container
+                            spacing={2}
                             direction="column"
-                            justify="center"
                             alignItems="center"
-                            className={classes.flex}
+                            className={classes.left}
                         >
-                            <VoteWidget
-                                isLoggedIn={isLoggedIn}
-                                id={discussionId}
-                                resourceType="DISCUSSION"
-                                voteAction={voteAction}
-                                voteResult={data.getDiscussion.voteResult}
-                                loginFirstToVote={loginRedirect}
-                            />
-                        </Grid>
-
-                        {isAuthor && (
-                            <Grid
-                                justify="center"
-                                alignItems="center"
-                                className={classes.action}
-                            >
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    startIcon={<EditIcon />}
-                                    onClick={editRedirect}
-                                >
-                                    Edit discussion
-                                </Button>
+                            <Grid justify="center">
+                                <Link href={backURL.href} as={backURL.as}>
+                                    <Button color="primary" variant="text">
+                                        Back to Topics
+                                    </Button>
+                                </Link>
                             </Grid>
-                        )}
 
-                        {isAuthor && data.getDiscussion.status === 'OPENED' && (
                             <Grid
+                                direction="column"
                                 justify="center"
                                 alignItems="center"
-                                className={classes.action}
-                                onClick={() =>
-                                    closeDiscussionAction({
-                                        id: data.getDiscussion.id,
-                                    })
-                                }
+                                className={classes.flex}
                             >
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    startIcon={<HighlightOffIcon />}
-                                >
-                                    Close discussion
-                                </Button>
+                                <VoteWidget
+                                    isLoggedIn={isLoggedIn}
+                                    id={discussionId}
+                                    resourceType="DISCUSSION"
+                                    voteAction={voteAction}
+                                    voteResult={data.getDiscussion.voteResult}
+                                    loginFirstToVote={loginRedirect}
+                                />
                             </Grid>
-                        )}
 
-                        {isAuthor && data.getDiscussion.status === 'CLOSED' && (
-                            <Grid
-                                justify="center"
-                                alignItems="center"
-                                className={classes.action}
-                                onClick={() => {}}
-                            >
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    startIcon={<OpenInNewIcon />}
+                            {isAuthor && (
+                                <Grid
+                                    justify="center"
+                                    alignItems="center"
+                                    className={classes.action}
+                                >
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        startIcon={<EditIcon />}
+                                        onClick={editRedirect}
+                                    >
+                                        Edit discussion
+                                    </Button>
+                                </Grid>
+                            )}
+
+                            {isAuthor && data.getDiscussion.status === 'OPENED' && (
+                                <Grid
+                                    justify="center"
+                                    alignItems="center"
+                                    className={classes.action}
                                     onClick={() =>
-                                        reopenDiscussionAction({
+                                        closeDiscussionAction({
                                             id: data.getDiscussion.id,
                                         })
                                     }
                                 >
-                                    Repoen discussion
-                                </Button>
-                            </Grid>
-                        )}
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        startIcon={<HighlightOffIcon />}
+                                    >
+                                        Close discussion
+                                    </Button>
+                                </Grid>
+                            )}
 
-                        {permissionToDelete && (
-                            <Grid
-                                justify="center"
-                                alignItems="center"
-                                className={classes.action}
-                                onClick={() => {}}
-                            >
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    startIcon={<DeleteIcon />}
-                                    onClick={() =>
-                                        deleteDiscussionAction(
-                                            { id: data.getDiscussion.id },
-                                            () => routeChangeAction(backURL.as)
-                                        )
-                                    }
+                            {isAuthor && data.getDiscussion.status === 'CLOSED' && (
+                                <Grid
+                                    justify="center"
+                                    alignItems="center"
+                                    className={classes.action}
+                                    onClick={() => {}}
                                 >
-                                    Delete discussion
-                                </Button>
-                            </Grid>
-                        )}
-                    </Grid>
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        startIcon={<OpenInNewIcon />}
+                                        onClick={() =>
+                                            reopenDiscussionAction({
+                                                id: data.getDiscussion.id,
+                                            })
+                                        }
+                                    >
+                                        Repoen discussion
+                                    </Button>
+                                </Grid>
+                            )}
+
+                            {permissionToDelete && (
+                                <Grid
+                                    justify="center"
+                                    alignItems="center"
+                                    className={classes.action}
+                                    onClick={() => {}}
+                                >
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        startIcon={<DeleteIcon />}
+                                        onClick={() =>
+                                            deleteDiscussionAction(
+                                                { id: data.getDiscussion.id },
+                                                () => routeChangeAction(backURL.as)
+                                            )
+                                        }
+                                    >
+                                        Delete discussion
+                                    </Button>
+                                </Grid>
+                            )}
+                        </Grid>
+                    </Hidden>
+
                     <Grid
                         container
                         spacing={2}
@@ -324,7 +341,7 @@ export const DiscussionView = ({
                             direction="row"
                             justify="space-between"
                             alignItems="center"
-                            className={[classes.row, classes.flex].join(' ')}
+                            className={[classes.row, classes.flex, classes.border].join(' ')}
                         >
                             <Avatar
                                 id={data.getDiscussion.author.id}
@@ -337,16 +354,14 @@ export const DiscussionView = ({
                             <Typography variant="body2">
                                 Posted{' '}
                                 <b>
-                                    {moment(
-                                        String(data.getDiscussion.dateCreated)
-                                    ).format('DD MMM YY')}
+                                    {moment(data.getDiscussion.dateCreated).format('DD MMM YY')}
                                 </b>
+                                <Hidden smDown={true}>
                                 &nbsp; Last Reply{' '}
                                 <b>
-                                    {moment(
-                                        String(data.getDiscussion.lastActivity)
-                                    ).format('DD MMM YY')}
+                                    {moment(data.getDiscussion.lastActivity).format('DD MMM YY')}
                                 </b>
+                                </Hidden>
                             </Typography>
                         </Grid>
 

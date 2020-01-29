@@ -80,7 +80,7 @@ const CommentForm = ({
     }
 
     return (
-        <Hidden mdDown={true} mdUp={!show}>
+        <Hidden smDown={true} mdUp={!show}>
             <Grid container={true} className={classes.addComment}>
                 {withAvatar && (
                     <Grid item={true} sm={1}>
