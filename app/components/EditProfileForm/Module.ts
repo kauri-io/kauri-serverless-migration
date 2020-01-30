@@ -70,7 +70,6 @@ export const saveUserDetailsEpic: Epic<
                             path<string>(['saveUser', 'hash'])(data) || ''
                         )
                     ),
-                    tap(console.log),
                     mergeMap(({ data: { getEvent: { output } } }) => {
                         if (typeof output.error === 'string') {
                             return throwError(output.error)

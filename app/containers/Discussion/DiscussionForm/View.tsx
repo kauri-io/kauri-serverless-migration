@@ -92,6 +92,8 @@ export const DiscussionForm = ({
     client,
     createDiscussionAction,
     editDiscussionAction,
+    openModalAction,
+    closeModalAction,
 }: IProps) => {
     const classes = useStyles()
 
@@ -202,6 +204,8 @@ export const DiscussionForm = ({
                             text={message}
                             placeholder="Enter your message"
                             onChange={e => setMessage(e)}
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
                         />
                     </Paper>
                 </Grid>

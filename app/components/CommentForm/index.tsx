@@ -11,6 +11,11 @@ import {
 } from '../../containers/Article/Module'
 import { editCommentVariables } from '../../queries/__generated__/editComment'
 import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import {
+    IOpenModalPayload,
+    IOpenModalAction,
+    ICloseModalAction,
+} from '../Modal/Module'
 
 const useStyles = makeStyles((theme: Theme) => ({
     editorWrapper: {
@@ -32,6 +37,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 interface IProps {
+    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    closeModalAction: () => ICloseModalAction
     routeChangeAction: (payload: string) => IRouteChangeAction
     show: boolean
     currentUser: any
@@ -55,6 +62,8 @@ interface IProps {
 }
 
 const CommentForm = ({
+    openModalAction,
+    closeModalAction,
     routeChangeAction,
     show = true,
     currentUser,
@@ -108,6 +117,8 @@ const CommentForm = ({
                             onChange={e => setComment(e)}
                             focusOutline={false}
                             disabled={disabled}
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
                         />
                     </Grid>
                     <Grid className={classes.button}>

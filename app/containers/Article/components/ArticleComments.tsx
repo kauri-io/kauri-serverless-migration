@@ -78,6 +78,8 @@ export default ({
                 currentUser={user}
                 currentURL={currentURL}
                 routeChangeAction={routeChangeAction}
+                openModalAction={openModalAction}
+                closeModalAction={closeModalAction}
                 addCommentAction={addCommentAction}
                 editCommentAction={editCommentAction}
                 parent={parent}
