@@ -36,7 +36,7 @@ interface IProps {
     voteAction: any
     voteResult: any
     id: string
-    resourceType: 'ARTICLE' | 'LINK'
+    resourceType: 'ARTICLE' | 'LINK' | 'DISCUSSION'
     loginFirstToVote: () => void
     isLoggedIn: boolean
 }

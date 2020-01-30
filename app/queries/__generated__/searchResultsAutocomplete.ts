@@ -230,6 +230,14 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_comments {

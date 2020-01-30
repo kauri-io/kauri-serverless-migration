@@ -1,4 +1,5 @@
 import React from 'react'
+import { compose } from 'react-apollo'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
 import { getCommunityAndPendingArticles_searchArticles } from '../../queries/__generated__/getCommunityAndPendingArticles'
 import CommunityHeader from './CommunityHeader'
@@ -39,7 +40,12 @@ import Loading from '../../components/Loading'
 import ResourceTab from './ResourceTab'
 import ManageTab from './ManageTab'
 import MembersTab from './MembersTab'
-import DiscussionTab from './DiscussionTab/View'
+import DiscussionList from '../Discussion/DiscussionList'
+import { withRouter, Router } from 'next/router'
+import DiscussionView from '../Discussion/DiscussionView'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import DiscussionCreateForm from '../Discussion/DiscussionForm/IndexCreate'
+import DiscussionEditForm from '../Discussion/DiscussionForm/IndexEdit'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -61,9 +67,16 @@ const styles = (theme: Theme) => ({
         display: 'flex',
         justifyContent: 'center',
     },
+    root: {
+        justifyContent: 'center',
+    },
+    scroller: {
+        flexGrow: 0,
+    },
 })
 
 interface IProps {
+    tab?: number
     classes: any
     client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
@@ -73,6 +86,7 @@ interface IProps {
     secret: null | string
     communityId: string
     data: {
+        loading: boolean
         getCommunity: getCommunity_getCommunity
         searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
@@ -87,20 +101,47 @@ interface IProps {
     showNotificationAction: typeof showNotification
     joinCommunityAction: typeof joinCommunityAction
     leaveCommunityAction: typeof leaveCommunityAction
+    router: Router
+    discussionId?: string
+    discussionAction?: 'list' | 'view' | 'form'
 }
 
 interface IState {
+    articlesCount: number
+    collectionsCount: number
     tab: number
+    canDisplayHomepage: boolean
 }
 
 class CommunityConnection extends React.Component<IProps, IState> {
-    constructor(props) {
+    constructor(props: IProps) {
         super(props)
         this.state = {
+            canDisplayHomepage: false,
+            articlesCount: 0,
+            collectionsCount: 0,
             tab: 0,
         }
+        this.changeTab = this.changeTab.bind(this)
+        this.recordView = this.recordView.bind(this)
+        this.showAcceptInvitationModal = this.showAcceptInvitationModal.bind(
+            this
+        )
+        this.openAddMemberModal = this.openAddMemberModal.bind(this)
+        this.setCounter = this.setCounter.bind(this)
+        this.setTab = this.setTab.bind(this)
     }
+
     componentDidMount() {
+        this.recordView()
+        this.showAcceptInvitationModal()
+        const counters = this.setCounter()
+        const tabs = this.setTab()
+
+        this.setState({ ...counters, ...tabs })
+    }
+
+    recordView() {
         this.props.client &&
             this.props.client.mutate({
                 fetchPolicy: 'no-cache',
@@ -115,19 +156,37 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         : null,
                 },
             })
+    }
 
-        const {
-            data: { getCommunity },
-            currentUser,
-        } = this.props
-        const isCreator = getCommunity.creatorId === currentUser
+    setCounter() {
+        const articlesCount =
+            (this.props.data.getCommunity.approvedId &&
+                this.props.data.getCommunity.approvedId.filter(
+                    i => i && (i.type === 'ARTICLE' || i.type === 'LINK')
+                ).length) ||
+            0
 
+        const collectionsCount =
+            (this.props.data.getCommunity.approvedId &&
+                this.props.data.getCommunity.approvedId.filter(
+                    i => i && i.type === 'COLLECTION'
+                ).length) ||
+            0
+
+        return { articlesCount, collectionsCount }
+    }
+
+    showAcceptInvitationModal() {
+        const isCreator =
+            this.props.data.getCommunity.creatorId === this.props.currentUser
         const isMember =
             isCreator ||
-            any(propEq('id', currentUser), getCommunity.members.content || [])
+            any(
+                propEq('id', this.props.currentUser),
+                this.props.data.getCommunity.members.content || []
+            )
 
         if (typeof this.props.secret === 'string' && !isMember) {
-            // AcceptCommunityInviteModal
             this.props.openModalAction({
                 children: (
                     <AlertViewComponent
@@ -149,12 +208,56 @@ class CommunityConnection extends React.Component<IProps, IState> {
         }
     }
 
+    openAddMemberModal() {
+        this.props.openModalAction({
+            children: (
+                <AddMemberModal
+                    showNotificationAction={this.props.showNotificationAction}
+                    confirmButtonAction={(invitation: any) => {
+                        this.props.sendCommunityInvitationAction({
+                            id: this.props.data.getCommunity.id,
+                            invitation,
+                        })
+                        this.props.closeModalAction()
+                    }}
+                    closeModalAction={this.props.closeModalAction}
+                />
+            ),
+        })
+    }
+
+    setTab() {
+        const firstCommunityHomepageSectionResources = path<any[]>([
+            0,
+            'resources',
+        ])(this.props.data.getCommunity.homepage)
+
+        const homepageExists =
+            Array.isArray(this.props.data.getCommunity.homepage) &&
+            this.props.data.getCommunity.homepage.length &&
+            firstCommunityHomepageSectionResources &&
+            firstCommunityHomepageSectionResources.length
+        const canDisplayHomepage =
+            (homepageExists && homepageExists > 0) ||
+            this.props.isCommunityAdmin
+        const tab = Number(this.props.tab) || (canDisplayHomepage ? 0 : 1)
+
+        return { canDisplayHomepage, tab }
+    }
+
+    changeTab(_event, tab: number) {
+        const url = getCommunityURL({ ...this.props.data.getCommunity, tab })
+        this.setState({ tab })
+        this.props.router.push(url.href, url.as, { shallow: true })
+    }
+
     render() {
-        if (!this.props.data || !this.props.data.getCommunity) {
-            return null
+        if (this.props.data.loading) {
+            return <Loading />
         }
 
         const {
+            classes,
             secret,
             data: { getCommunity },
             currentUser,
@@ -166,21 +269,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCommunityAdmin,
             isCommunityModerator,
             joinCommunityAction,
+            discussionId,
+            discussionAction = 'list',
         } = this.props
-
-        const articlesCount =
-            (getCommunity.approvedId &&
-                getCommunity.approvedId.filter(
-                    i => i && (i.type === 'ARTICLE' || i.type === 'LINK')
-                ).length) ||
-            0
-
-        const collectionsCount =
-            (getCommunity.approvedId &&
-                getCommunity.approvedId.filter(
-                    i => i && i.type === 'COLLECTION'
-                ).length) ||
-            0
 
         const isCreator = getCommunity.creatorId === currentUser
         const isMember =
@@ -191,89 +282,58 @@ class CommunityConnection extends React.Component<IProps, IState> {
         const id = getCommunity.id
         const url = getCommunityURL({ name, id }).as
 
-        const openAddMemberModal = () =>
-            this.props.openModalAction({
-                children: (
-                    <AddMemberModal
-                        showNotificationAction={
-                            this.props.showNotificationAction
-                        }
-                        confirmButtonAction={(invitation: any) => {
-                            this.props.sendCommunityInvitationAction({
-                                id: getCommunity.id,
-                                invitation,
-                            })
-                            this.props.closeModalAction()
-                        }}
-                        closeModalAction={this.props.closeModalAction}
-                    />
-                ),
-            })
-
-        const firstCommunityHomepageSectionResources = path<any[]>([
-            0,
-            'resources',
-        ])(homepage)
-
-        const homepageExists =
-            Array.isArray(homepage) &&
-            homepage.length &&
-            firstCommunityHomepageSectionResources &&
-            firstCommunityHomepageSectionResources.length
-        const canDisplayHomepage = homepageExists || isCommunityAdmin
-
-        const getActualTabId = (id: number) =>
-            id === 0 ? 0 : canDisplayHomepage ? id : id - 1
-
-        const { classes } = this.props
-
         return (
             <>
-                <Head>
-                    <title
-                        dangerouslySetInnerHTML={{ __html: getCommunity.name }}
-                    />
-                    <meta
-                        name="description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.slice(0, 151)}...`}
-                    />
-                    <link rel="canonical" href={url} />
-                    <meta property="og:title" content={getCommunity.name} />
-                    <meta property="og:site_name" content="kauri.io" />
-                    <meta property="og:url" content={url} />
-                    <meta
-                        property="og:description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.substring(0, 100)}...`}
-                    />
-                    <meta property="og:type" content="article" />
-                    {typeof getCommunity.avatar === 'string' && (
-                        <meta
-                            property="og:image"
-                            content={getCommunity.avatar}
+                {/* Only if not discussion view*/}
+                {!discussionId && (
+                    <Head>
+                        <title
+                            dangerouslySetInnerHTML={{
+                                __html: `${getCommunity.name} - Community - Kauri`,
+                            }}
                         />
-                    )}
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content={url} />
-                    <meta name="twitter:title" content={getCommunity.name} />
-                    <meta
-                        name="twitter:description"
-                        content={`${getCommunity.description &&
-                            getCommunity.description.substring(0, 100)}...`}
-                    />
-                    <meta name="twitter:creator" content="@kauri_io" />
-                    {typeof getCommunity.avatar === 'string' && (
                         <meta
-                            property="twitter:image"
-                            content={getCommunity.avatar}
+                            name="description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.slice(0, 151)}...`}
                         />
-                    )}
-                </Head>
+                        <link rel="canonical" href={url} />
+                        <meta property="og:title" content={getCommunity.name} />
+                        <meta property="og:site_name" content="kauri.io" />
+                        <meta property="og:url" content={url} />
+                        <meta
+                            property="og:description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.substring(0, 100)}...`}
+                        />
+                        <meta property="og:type" content="article" />
+                        {typeof getCommunity.avatar === 'string' && (
+                            <meta
+                                property="og:image"
+                                content={getCommunity.avatar}
+                            />
+                        )}
+                        <meta name="twitter:card" content="summary" />
+                        <meta name="twitter:site" content={url} />
+                        <meta
+                            name="twitter:title"
+                            content={getCommunity.name}
+                        />
+                        <meta
+                            name="twitter:description"
+                            content={`${getCommunity.description &&
+                                getCommunity.description.substring(0, 100)}...`}
+                        />
+                        <meta name="twitter:creator" content="@kauri_io" />
+                        {typeof getCommunity.avatar === 'string' && (
+                            <meta
+                                property="twitter:image"
+                                content={getCommunity.avatar}
+                            />
+                        )}
+                    </Head>
+                )}
 
-                {/* Dialog used to prevent the access to the community page until the community is mined (saved on-chain).
-                     After being mined, status changes to OPENED
-                */}
                 <Dialog
                     open={getCommunity.status === 'CREATED'}
                     aria-labelledby="alert-dialog-title"
@@ -324,8 +384,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         getCommunity.attributes.background
                     }
                     social={getCommunity.social}
-                    articleCount={articlesCount}
-                    collectionCount={collectionsCount}
+                    articleCount={this.state.articlesCount}
+                    collectionCount={this.state.collectionsCount}
                     tags={getCommunity.tags}
                     members={getCommunity.members}
                     isMember={isMember}
@@ -335,26 +395,39 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     openModalAction={openModalAction}
                     closeModalAction={closeModalAction}
                     routeChangeAction={routeChangeAction}
-                    openAddMemberModal={openAddMemberModal}
+                    openAddMemberModal={this.openAddMemberModal}
                     userId={currentUser}
                     joinCommunityAction={joinCommunityAction}
                     curateCommunityResourcesAction={
                         curateCommunityResourcesAction
                     }
                 />
+
                 <Tabs
                     TabIndicatorProps={{ style: { height: 3 } }}
                     indicatorColor="primary"
-                    centered={true}
                     value={this.state.tab}
                     className={classes.tabs}
-                    onChange={(_e, tab) => this.setState({ tab })}
+                    variant="scrollable"
+                    onChange={this.changeTab}
+                    scrollButtons="auto"
+                    classes={{ root: classes.root, scroller: classes.scroller }}
                 >
-                    {canDisplayHomepage && <Tab label="Home" />}
                     <Tab
-                        label={`Content (${articlesCount + collectionsCount})`}
+                        label="Home"
+                        style={{
+                            display: !this.state.canDisplayHomepage
+                                ? 'none'
+                                : '',
+                        }}
                     />
-                    <Tab label={`Discussions (${0})`} />
+                    <Tab
+                        label={`Content (${this.state.articlesCount +
+                            this.state.collectionsCount})`}
+                    />
+                    <Tab
+                        label={`Discussions (${getCommunity.discussions.totalElements})`}
+                    />
                     <Tab
                         label={`Members (${getCommunity.members.totalElements})`}
                     />
@@ -364,7 +437,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         <Tab label="Manage Community" />
                     )}
                 </Tabs>
-                {this.state.tab === getActualTabId(0) && canDisplayHomepage && (
+
+                {this.state.tab === 0 && this.state.canDisplayHomepage && (
                     <HomepageResources
                         routeChangeAction={routeChangeAction}
                         id={String(getCommunity.id)}
@@ -376,19 +450,55 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         openModalAction={openModalAction}
                     />
                 )}
-                {this.state.tab === getActualTabId(1) && (
+                {this.state.tab === 1 && (
                     <ResourceTab
                         id={getCommunity.id}
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && <DiscussionTab />}
-                {this.state.tab === getActualTabId(3) && (
-                    <MembersTab id={getCommunity.id} />
+                {this.state.tab === 2 &&
+                    discussionAction === 'view' &&
+                    discussionId && (
+                        <DiscussionView
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                            discussionId={discussionId}
+                            permissionToDelete={
+                                isCommunityAdmin || isCommunityModerator
+                            }
+                        />
+                    )}
+                {this.state.tab === 2 &&
+                    discussionAction === 'form' &&
+                    !discussionId && (
+                        <DiscussionCreateForm
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                        />
+                    )}
+                {this.state.tab === 2 &&
+                    discussionAction === 'form' &&
+                    discussionId && (
+                        <DiscussionEditForm
+                            parentId={getCommunity.id}
+                            parentName={getCommunity.name}
+                            parentType={ResourceTypeInput.COMMUNITY}
+                            discussionId={discussionId}
+                        />
+                    )}
+                {this.state.tab === 2 && discussionAction === 'list' && (
+                    <DiscussionList
+                        parentId={getCommunity.id}
+                        parentName={getCommunity.name}
+                        parentType={ResourceTypeInput.COMMUNITY}
+                    />
                 )}
-                {this.state.tab === getActualTabId(4) && (
+                {this.state.tab === 3 && <MembersTab id={getCommunity.id} />}
+                {this.state.tab === 4 && (
                     <ManageTab
-                        openAddMemberModal={openAddMemberModal}
+                        openAddMemberModal={this.openAddMemberModal}
                         communityId={getCommunity.id || ''}
                         key="manage"
                         isCommunityAdmin={isCommunityAdmin}
@@ -400,4 +510,4 @@ class CommunityConnection extends React.Component<IProps, IState> {
     }
 }
 
-export default withStyles(styles)(CommunityConnection)
+export default compose(withRouter)(withStyles(styles)(CommunityConnection))

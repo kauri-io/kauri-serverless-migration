@@ -30,6 +30,8 @@ import {
 import {
     voteEpic,
     initiateArticleTransferEpic,
+    editCommentEpic,
+    deleteCommentEpic,
     tipEpic,
 } from '../containers/Article/Module'
 import {
@@ -78,6 +80,13 @@ import {
     editExternalLinkEpic,
     changeOwnerExtenalLinkEpic,
 } from '../containers/CreateLink/Module'
+import {
+    createDiscussionEpic,
+    editDiscussionEpic,
+    closeDiscussionEpic,
+    reopenDiscussionEpic,
+    deleteDiscussionEpic,
+} from '../containers/Discussion/Module'
 
 export const rootReducer = {
     app,
@@ -140,6 +149,13 @@ const epics = [
     banMemberEpic,
     unbanMemberEpic,
     initiateArticleTransferEpic,
+    createDiscussionEpic,
+    editDiscussionEpic,
+    closeDiscussionEpic,
+    reopenDiscussionEpic,
+    deleteDiscussionEpic,
+    editCommentEpic,
+    deleteCommentEpic,
     tipEpic,
 ]
 

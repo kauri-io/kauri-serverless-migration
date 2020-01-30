@@ -558,6 +558,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                   "dateCreated": "2019-12-17T00:22:29.703Z",
                   "dateUpdated": "2019-12-17T00:28:33.775Z",
                   "description": "fdsfdsfds",
+                  "discussions": Object {
+                    "__typename": "ResponsePage_DiscussionDTO",
+                    "totalElements": 4,
+                  },
                   "homepage": Array [
                     Object {
                       "__typename": "SectionDTO",
@@ -2012,6 +2016,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                     "dateCreated": "2019-12-17T00:22:29.703Z",
                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                     "description": "fdsfdsfds",
+                    "discussions": Object {
+                      "__typename": "ResponsePage_DiscussionDTO",
+                      "totalElements": 4,
+                    },
                     "homepage": Array [
                       Object {
                         "__typename": "SectionDTO",
@@ -3464,6 +3472,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                       "dateCreated": "2019-12-17T00:22:29.703Z",
                       "dateUpdated": "2019-12-17T00:28:33.775Z",
                       "description": "fdsfdsfds",
+                      "discussions": Object {
+                        "__typename": "ResponsePage_DiscussionDTO",
+                        "totalElements": 4,
+                      },
                       "homepage": Array [
                         Object {
                           "__typename": "SectionDTO",
@@ -4859,6 +4871,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                     "dateCreated": "2019-12-17T00:22:29.703Z",
                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                     "description": "fdsfdsfds",
+                    "discussions": Object {
+                      "__typename": "ResponsePage_DiscussionDTO",
+                      "totalElements": 4,
+                    },
                     "homepage": Array [
                       Object {
                         "description": null,
@@ -5033,6 +5049,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                         "dateCreated": "2019-12-17T00:22:29.703Z",
                         "dateUpdated": "2019-12-17T00:28:33.775Z",
                         "description": "fdsfdsfds",
+                        "discussions": Object {
+                          "__typename": "ResponsePage_DiscussionDTO",
+                          "totalElements": 4,
+                        },
                         "homepage": Array [
                           Object {
                             "__typename": "SectionDTO",
@@ -6426,6 +6446,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                       "dateCreated": "2019-12-17T00:22:29.703Z",
                       "dateUpdated": "2019-12-17T00:28:33.775Z",
                       "description": "fdsfdsfds",
+                      "discussions": Object {
+                        "__typename": "ResponsePage_DiscussionDTO",
+                        "totalElements": 4,
+                      },
                       "homepage": Array [
                         Object {
                           "description": null,
@@ -6575,6 +6599,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                       "dateCreated": "2019-12-17T00:22:29.703Z",
                       "dateUpdated": "2019-12-17T00:28:33.775Z",
                       "description": "fdsfdsfds",
+                      "discussions": Object {
+                        "__typename": "ResponsePage_DiscussionDTO",
+                        "totalElements": 4,
+                      },
                       "homepage": Array [
                         Object {
                           "description": null,
@@ -6735,6 +6763,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                   "dateCreated": "2019-12-17T00:22:29.703Z",
                                   "dateUpdated": "2019-12-17T00:28:33.775Z",
                                   "description": "fdsfdsfds",
+                                  "discussions": Object {
+                                    "__typename": "ResponsePage_DiscussionDTO",
+                                    "totalElements": 4,
+                                  },
                                   "homepage": Array [
                                     Object {
                                       "description": null,
@@ -6879,6 +6911,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                   "dateCreated": "2019-12-17T00:22:29.703Z",
                                   "dateUpdated": "2019-12-17T00:28:33.775Z",
                                   "description": "fdsfdsfds",
+                                  "discussions": Object {
+                                    "__typename": "ResponsePage_DiscussionDTO",
+                                    "totalElements": 4,
+                                  },
                                   "homepage": Array [
                                     Object {
                                       "description": null,
@@ -8123,6 +8159,12 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                 dateCreated="2019-12-17T00:22:29.703Z"
                                 dateUpdated="2019-12-17T00:28:33.775Z"
                                 description="fdsfdsfds"
+                                discussions={
+                                  Object {
+                                    "__typename": "ResponsePage_DiscussionDTO",
+                                    "totalElements": 4,
+                                  }
+                                }
                                 errors={Object {}}
                                 homepage={
                                   Array [
@@ -8753,6 +8795,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                           "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                           "description": "fdsfdsfds",
+                                                                          "discussions": Object {
+                                                                            "__typename": "ResponsePage_DiscussionDTO",
+                                                                            "totalElements": 4,
+                                                                          },
                                                                           "homepage": Array [
                                                                             Object {
                                                                               "description": null,
@@ -8897,6 +8943,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                           "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                           "description": "fdsfdsfds",
+                                                                          "discussions": Object {
+                                                                            "__typename": "ResponsePage_DiscussionDTO",
+                                                                            "totalElements": 4,
+                                                                          },
                                                                           "homepage": Array [
                                                                             Object {
                                                                               "description": null,
@@ -9287,6 +9337,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                           "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                           "description": "fdsfdsfds",
+                                                                          "discussions": Object {
+                                                                            "__typename": "ResponsePage_DiscussionDTO",
+                                                                            "totalElements": 4,
+                                                                          },
                                                                           "homepage": Array [
                                                                             Object {
                                                                               "description": null,
@@ -9431,6 +9485,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                           "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                           "description": "fdsfdsfds",
+                                                                          "discussions": Object {
+                                                                            "__typename": "ResponsePage_DiscussionDTO",
+                                                                            "totalElements": 4,
+                                                                          },
                                                                           "homepage": Array [
                                                                             Object {
                                                                               "description": null,
@@ -9787,6 +9845,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                               "dateCreated": "2019-12-17T00:22:29.703Z",
                                                               "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                               "description": "fdsfdsfds",
+                                                              "discussions": Object {
+                                                                "__typename": "ResponsePage_DiscussionDTO",
+                                                                "totalElements": 4,
+                                                              },
                                                               "homepage": Array [
                                                                 Object {
                                                                   "description": null,
@@ -9931,6 +9993,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                               "dateCreated": "2019-12-17T00:22:29.703Z",
                                                               "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                               "description": "fdsfdsfds",
+                                                              "discussions": Object {
+                                                                "__typename": "ResponsePage_DiscussionDTO",
+                                                                "totalElements": 4,
+                                                              },
                                                               "homepage": Array [
                                                                 Object {
                                                                   "description": null,
@@ -11137,6 +11203,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                     "description": "fdsfdsfds",
+                                                                    "discussions": Object {
+                                                                      "__typename": "ResponsePage_DiscussionDTO",
+                                                                      "totalElements": 4,
+                                                                    },
                                                                     "homepage": Array [
                                                                       Object {
                                                                         "description": null,
@@ -11281,6 +11351,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                     "description": "fdsfdsfds",
+                                                                    "discussions": Object {
+                                                                      "__typename": "ResponsePage_DiscussionDTO",
+                                                                      "totalElements": 4,
+                                                                    },
                                                                     "homepage": Array [
                                                                       Object {
                                                                         "description": null,
@@ -11684,6 +11758,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                     "description": "fdsfdsfds",
+                                                                    "discussions": Object {
+                                                                      "__typename": "ResponsePage_DiscussionDTO",
+                                                                      "totalElements": 4,
+                                                                    },
                                                                     "homepage": Array [
                                                                       Object {
                                                                         "description": null,
@@ -11828,6 +11906,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                                                     "description": "fdsfdsfds",
+                                                                    "discussions": Object {
+                                                                      "__typename": "ResponsePage_DiscussionDTO",
+                                                                      "totalElements": 4,
+                                                                    },
                                                                     "homepage": Array [
                                                                       Object {
                                                                         "description": null,
@@ -12758,9 +12840,9 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           "componentStyle": ComponentStyle {
                                                                             "componentId": "AddMemberButton-sc-1817umg-0",
                                                                             "isStatic": false,
-                                                                            "lastClassName": "izyAKK",
+                                                                            "lastClassName": "KcNyJ",
                                                                             "rules": Array [
-                                                                              "height:30px;width:30px;cursor:pointer;",
+                                                                              "height:24px;width:24px;cursor:pointer;",
                                                                             ],
                                                                           },
                                                                           "displayName": "AddMemberButton",
@@ -12779,7 +12861,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                       src="/static/images/icons/add-member-icon.png"
                                                                     >
                                                                       <img
-                                                                        className="AddMemberButton-sc-1817umg-0 izyAKK"
+                                                                        className="AddMemberButton-sc-1817umg-0 KcNyJ"
                                                                         disabled={false}
                                                                         onClick={[Function]}
                                                                         src="/static/images/icons/add-member-icon.png"
@@ -12851,6 +12933,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                       "dateCreated": "2019-12-17T00:22:29.703Z",
                                       "dateUpdated": "2019-12-17T00:28:33.775Z",
                                       "description": "fdsfdsfds",
+                                      "discussions": Object {
+                                        "__typename": "ResponsePage_DiscussionDTO",
+                                        "totalElements": 4,
+                                      },
                                       "homepage": Array [
                                         Object {
                                           "__typename": "SectionDTO",
@@ -14246,6 +14332,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                     "description": "fdsfdsfds",
+                                    "discussions": Object {
+                                      "__typename": "ResponsePage_DiscussionDTO",
+                                      "totalElements": 4,
+                                    },
                                     "homepage": Array [
                                       Object {
                                         "description": null,
@@ -14396,6 +14486,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                     "description": "fdsfdsfds",
+                                    "discussions": Object {
+                                      "__typename": "ResponsePage_DiscussionDTO",
+                                      "totalElements": 4,
+                                    },
                                     "homepage": Array [
                                       Object {
                                         "description": null,
@@ -14984,6 +15078,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                           "dateCreated": "2019-12-17T00:22:29.703Z",
                                           "dateUpdated": "2019-12-17T00:28:33.775Z",
                                           "description": "fdsfdsfds",
+                                          "discussions": Object {
+                                            "__typename": "ResponsePage_DiscussionDTO",
+                                            "totalElements": 4,
+                                          },
                                           "homepage": Array [
                                             Object {
                                               "__typename": "SectionDTO",
@@ -16379,6 +16477,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                         "dateCreated": "2019-12-17T00:22:29.703Z",
                                         "dateUpdated": "2019-12-17T00:28:33.775Z",
                                         "description": "fdsfdsfds",
+                                        "discussions": Object {
+                                          "__typename": "ResponsePage_DiscussionDTO",
+                                          "totalElements": 4,
+                                        },
                                         "homepage": Array [
                                           Object {
                                             "description": null,
@@ -16529,6 +16631,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                         "dateCreated": "2019-12-17T00:22:29.703Z",
                                         "dateUpdated": "2019-12-17T00:28:33.775Z",
                                         "description": "fdsfdsfds",
+                                        "discussions": Object {
+                                          "__typename": "ResponsePage_DiscussionDTO",
+                                          "totalElements": 4,
+                                        },
                                         "homepage": Array [
                                           Object {
                                             "description": null,
@@ -16996,6 +17102,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                     "dateCreated": "2019-12-17T00:22:29.703Z",
                                     "dateUpdated": "2019-12-17T00:28:33.775Z",
                                     "description": "fdsfdsfds",
+                                    "discussions": Object {
+                                      "__typename": "ResponsePage_DiscussionDTO",
+                                      "totalElements": 4,
+                                    },
                                     "homepage": Array [
                                       Object {
                                         "description": null,
@@ -17127,6 +17237,10 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
     "__typename": "ResourceIdentifier"
   },
   "attributes": null,
+  "discussions": {
+    "__typename": "ResponsePage_DiscussionDTO",
+    "totalElements": 4
+  },
   "homepage": [
     {
       "name": "",

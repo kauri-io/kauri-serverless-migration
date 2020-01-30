@@ -70,16 +70,24 @@ export const getProfileURL = ({ username }: IProfileLinkProps) => ({
 interface ICommunityProps {
     id: string
     name: string | null
+    tab?: number
 }
 
-export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
-    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
-    href: `/community?community_id=${String(id)}`,
+export const getCommunityURL = ({ name, id, tab }: ICommunityProps) => ({
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm${
+        tab ? `?tab=${tab}` : ''
+    }`,
+    href: `/community?community_id=${String(id)}${tab ? `&tab=${tab}` : ''}`,
 })
 
 export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
     as: `/community/${String(id)}/update-community`,
     href: `/update-community?community_id=${String(id)}`,
+})
+
+export const getDiscussionURL = ({ title, id }) => ({
+    as: `/${slugify(String(title), { lower: true })}/${id}/d`,
+    href: `/discussion?discussion_id=${id}`,
 })
 
 export const getLinkUrl = ({ id, linkTitle }) => ({

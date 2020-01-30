@@ -355,6 +355,10 @@ export interface Collection_sections_resources_ArticleDTO_comments_content {
    */
   author: Collection_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -362,6 +366,10 @@ export interface Collection_sections_resources_ArticleDTO_comments_content {
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Collection_sections_resources_ArticleDTO_comments {
@@ -695,6 +703,14 @@ export interface Collection_sections_resources_ExternalLinkDTO_comments_content 
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Collection_sections_resources_ExternalLinkDTO_comments {

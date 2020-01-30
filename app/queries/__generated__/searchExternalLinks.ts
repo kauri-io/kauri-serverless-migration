@@ -214,6 +214,14 @@ export interface searchExternalLinks_searchExternalLinks_content_comments_conten
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_comments {

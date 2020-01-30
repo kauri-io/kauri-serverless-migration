@@ -6,7 +6,18 @@ import {
 import { makeStyles, Theme } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
-    container: {
+    containerColumn: {
+        display: 'flex',
+        flexDirection: 'column',
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+        },
+    },
+    containerRow: {
+        display: 'flex',
+        flexDirection: 'row',
         [theme.breakpoints.down('md')]: {
             display: 'flex',
             flexDirection: 'row',
@@ -14,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     },
     iconContainer: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(0, 1),
         '& svg': {
             height: 24,
             width: 24,
@@ -63,12 +74,14 @@ const Reddit = () => (
     </svg>
 )
 
-export default ({ href, name }) => {
+export default ({ href, name, row = false }) => {
     const url = `${global.window && global.window.location.origin}${href}`
 
     const classes = useStyles({})
+    const direction = row ? classes.containerRow : classes.containerColumn
+
     return (
-        <div className={classes.container}>
+        <div className={direction}>
             <div className={classes.iconContainer}>
                 <LinkedinShareButton url={url} title={name}>
                     <LinkedIn />

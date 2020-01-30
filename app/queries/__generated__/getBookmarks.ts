@@ -275,6 +275,10 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments_
    */
   author: getBookmarks_getBookmarks_content_resource_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -282,6 +286,10 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments_
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_comments {
@@ -756,6 +764,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   author: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -763,6 +775,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -1096,6 +1112,14 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
@@ -1504,6 +1528,14 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comm
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments {

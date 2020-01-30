@@ -315,6 +315,10 @@ export interface Community_homepage_resources_ArticleDTO_comments_content {
    */
   author: Community_homepage_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -322,6 +326,10 @@ export interface Community_homepage_resources_ArticleDTO_comments_content {
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Community_homepage_resources_ArticleDTO_comments {
@@ -655,6 +663,14 @@ export interface Community_homepage_resources_ExternalLinkDTO_comments_content {
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Community_homepage_resources_ExternalLinkDTO_comments {
@@ -1121,6 +1137,10 @@ export interface Community_homepage_resources_CollectionDTO_sections_resources_A
    */
   author: Community_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -1128,6 +1148,10 @@ export interface Community_homepage_resources_CollectionDTO_sections_resources_A
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Community_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -1461,6 +1485,14 @@ export interface Community_homepage_resources_CollectionDTO_sections_resources_E
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface Community_homepage_resources_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
@@ -1757,6 +1789,14 @@ export interface Community_pendingId {
   type: ResourceTypeInput;
 }
 
+export interface Community_discussions {
+  __typename: "ResponsePage_DiscussionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface Community {
   __typename: "CommunityDTO";
   /**
@@ -1828,4 +1868,8 @@ export interface Community {
    * List of pending curated content
    */
   pendingId: (Community_pendingId | null)[] | null;
+  /**
+   * Get a paginated list of discussions for a community
+   */
+  discussions: Community_discussions;
 }

@@ -7,8 +7,8 @@ interface IButtonStyleProps {
 }
 
 const AddMemberButton = styled.img<IButtonStyleProps>`
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     cursor: pointer;
 `
 

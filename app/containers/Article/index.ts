@@ -6,6 +6,8 @@ import withApolloError from '../../lib/with-apollo-error'
 import {
     voteAction,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
     initiateArticleTransferAction,
     tipAction,
 } from './Module'
@@ -32,6 +34,8 @@ export default compose(
         mapStateToProps,
         {
             addCommentAction,
+            editCommentAction,
+            deleteCommentAction,
             closeModalAction,
             openModalAction,
             routeChangeAction,

@@ -271,6 +271,10 @@ export interface searchPersonalSubmittedArticles_searchArticles_content_comments
    */
   author: searchPersonalSubmittedArticles_searchArticles_content_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -278,6 +282,10 @@ export interface searchPersonalSubmittedArticles_searchArticles_content_comments
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface searchPersonalSubmittedArticles_searchArticles_content_comments {

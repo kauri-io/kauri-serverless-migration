@@ -1077,10 +1077,10 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                 className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
                               >
                                 <WithStyles(ForwardRef(Grid))
-                                  className="makeStyles-nameAndDate-24"
+                                  className="makeStyles-nameAndDate-25"
                                 >
                                   <ForwardRef(Grid)
-                                    className="makeStyles-nameAndDate-24"
+                                    className="makeStyles-nameAndDate-25"
                                     classes={
                                       Object {
                                         "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -1190,7 +1190,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                     }
                                   >
                                     <div
-                                      className="MuiGrid-root makeStyles-nameAndDate-24"
+                                      className="MuiGrid-root makeStyles-nameAndDate-25"
                                     >
                                       <AvatarComp
                                         avatar="test avatar 1"
@@ -1209,11 +1209,11 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             target="_self"
                                           >
                                             <div
-                                              className="makeStyles-container-128"
+                                              className="makeStyles-container-129"
                                             >
                                               <ForwardRef
                                                 borderRadius="2px"
-                                                className="makeStyles-avatar-129"
+                                                className="makeStyles-avatar-130"
                                                 height={24}
                                                 image="test avatar 1"
                                                 width={24}
@@ -1225,7 +1225,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                                 >
                                                   <Image__Img
                                                     borderRadius="2px"
-                                                    className="makeStyles-avatar-129"
+                                                    className="makeStyles-avatar-130"
                                                     height={24}
                                                     image="test avatar 1"
                                                     inView={false}
@@ -1233,7 +1233,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                                   >
                                                     <StyledComponent
                                                       borderRadius="2px"
-                                                      className="makeStyles-avatar-129"
+                                                      className="makeStyles-avatar-130"
                                                       forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
@@ -1290,7 +1290,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                                       width={24}
                                                     >
                                                       <div
-                                                        className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-129"
+                                                        className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-130"
                                                         height={24}
                                                         width={24}
                                                       />
@@ -1299,11 +1299,11 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                                 </InView>
                                               </ForwardRef>
                                               <WithStyles(ForwardRef(Typography))
-                                                className="makeStyles-username-130"
+                                                className="makeStyles-username-131"
                                                 variant="subtitle2"
                                               >
                                                 <ForwardRef(Typography)
-                                                  className="makeStyles-username-130"
+                                                  className="makeStyles-username-131"
                                                   classes={
                                                     Object {
                                                       "alignCenter": "MuiTypography-alignCenter",
@@ -1341,7 +1341,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                                   variant="subtitle2"
                                                 >
                                                   <h6
-                                                    className="MuiTypography-root makeStyles-username-130 MuiTypography-subtitle2"
+                                                    className="MuiTypography-root makeStyles-username-131 MuiTypography-subtitle2"
                                                   >
                                                     test-author-username-1
                                                   </h6>
@@ -1470,7 +1470,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                             markdown="test contet 1"
                           >
                             <div
-                              className="makeStyles-rendered-164"
+                              className="makeStyles-rendered-165"
                             >
                               <Markdown
                                 options={
@@ -1488,7 +1488,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                       "a": Object {
                                         "component": [Function],
                                         "props": Object {
-                                          "className": "makeStyles-link-172",
+                                          "className": "makeStyles-link-173",
                                         },
                                       },
                                       "blockquote": Object {
@@ -1789,7 +1789,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "className": "makeStyles-quote-163",
+                                          "className": "makeStyles-quote-164",
                                         },
                                       },
                                       "code": Object {
@@ -2094,7 +2094,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                         },
                                         "props": Object {
                                           "aria-label": "title",
-                                          "className": "makeStyles-h1-166",
+                                          "className": "makeStyles-h1-167",
                                           "gutterBottom": true,
                                           "variant": "h4",
                                         },
@@ -2398,7 +2398,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                         },
                                         "props": Object {
                                           "aria-label": "title",
-                                          "className": "makeStyles-h2-167",
+                                          "className": "makeStyles-h2-168",
                                           "gutterBottom": true,
                                           "variant": "h4",
                                         },
@@ -2701,7 +2701,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "className": "makeStyles-h3-168",
+                                          "className": "makeStyles-h3-169",
                                           "gutterBottom": true,
                                           "variant": "h5",
                                         },
@@ -3004,7 +3004,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "className": "makeStyles-h4-169",
+                                          "className": "makeStyles-h4-170",
                                           "gutterBottom": true,
                                           "variant": "h6",
                                         },
@@ -3307,7 +3307,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "className": "makeStyles-h5-170",
+                                          "className": "makeStyles-h5-171",
                                           "gutterBottom": true,
                                           "variant": "h6",
                                         },
@@ -3610,7 +3610,7 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "className": "makeStyles-h6-171",
+                                          "className": "makeStyles-h6-172",
                                           "gutterBottom": true,
                                           "variant": "h6",
                                         },

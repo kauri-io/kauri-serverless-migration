@@ -111,8 +111,10 @@ export const Article = gql`
                     username
                     avatar
                 }
+                id
                 posted
                 body
+                replyTo
             }
             totalPages
             totalElements
@@ -190,6 +192,8 @@ export const Link = gql`
                 }
                 posted
                 body
+                id
+                replyTo
             }
             totalPages
             totalElements
@@ -314,6 +318,9 @@ export const Community = gql`
         pendingId {
             id
             type
+        }
+        discussions(filter: {statusIn: [OPENED,CLOSED]}) {
+            totalElements
         }
     }
     ${Article}

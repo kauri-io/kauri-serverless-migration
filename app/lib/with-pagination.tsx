@@ -19,6 +19,7 @@ export type PaginationDataQuery =
     | 'getArticleTransfers'
     | 'getBookmarks'
     | 'searchExternalLinks'
+    | 'searchDiscussions'
     | 'getTips'
 
 interface IProps {

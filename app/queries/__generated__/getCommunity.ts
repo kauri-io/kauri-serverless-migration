@@ -315,6 +315,10 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comment
    */
   author: getCommunity_getCommunity_homepage_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -322,6 +326,10 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comment
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_ArticleDTO_comments {
@@ -655,6 +663,14 @@ export interface getCommunity_getCommunity_homepage_resources_ExternalLinkDTO_co
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_ExternalLinkDTO_comments {
@@ -1121,6 +1137,10 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    */
   author: getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -1128,6 +1148,10 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ArticleDTO_comments {
@@ -1461,6 +1485,14 @@ export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sect
    * Comment
    */
   body: string;
+  /**
+   * Comment ID
+   */
+  id: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
@@ -1757,6 +1789,14 @@ export interface getCommunity_getCommunity_pendingId {
   type: ResourceTypeInput;
 }
 
+export interface getCommunity_getCommunity_discussions {
+  __typename: "ResponsePage_DiscussionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface getCommunity_getCommunity {
   __typename: "CommunityDTO";
   /**
@@ -1828,6 +1868,10 @@ export interface getCommunity_getCommunity {
    * List of pending curated content
    */
   pendingId: (getCommunity_getCommunity_pendingId | null)[] | null;
+  /**
+   * Get a paginated list of discussions for a community
+   */
+  discussions: getCommunity_getCommunity_discussions;
 }
 
 export interface getCommunity {

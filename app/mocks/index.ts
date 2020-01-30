@@ -143,6 +143,10 @@ export const Community = {
                 __typename: 'ResourceIdentifier',
             },
             attributes: null,
+            discussions: {
+                __typename: 'ResponsePage_DiscussionDTO',
+                totalElements: 4,
+            },
             homepage: [
                 {
                     name: '',

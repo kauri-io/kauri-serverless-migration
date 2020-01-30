@@ -77,6 +77,10 @@
       "dest": "/app/community?community_id=$2&slug=$1"
     },
     {
+      "src": "/(.*)/(.*)/cm?tab=(.*)",
+      "dest": "/app/community?community_id=$2&slug=$1&tab=$3"
+    },
+    {
       "src": "/community/(.*)/approve",
       "dest": "/app/approve?community_id=$1"
     },
@@ -87,6 +91,18 @@
     {
       "src": "/community/(.*)",
       "dest": "/app/community?community_id=$1"
+    },
+    {
+      "src": "/(.*)/(.*)/d",
+      "dest": "/app/discussion?discussion_id=$2&slug=$1"
+    },
+    {
+      "src": "/discussions/create",
+      "dest": "/app/create-discussion"
+    },
+    {
+      "src": "/discussions/(.*)/edit",
+      "dest": "/app/create-discussion?discussion_id=$1"
     },
     {
       "src": "/(.*)/(.*)/c",

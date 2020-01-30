@@ -142,5 +142,20 @@ export const useStyles = makeStyles((theme: Theme) => {
                 marginLeft: theme.spacing(2),
             },
         },
+        commentTitle: {
+            textAlign: 'center',
+            margin: theme.spacing(2),
+        },
+        section: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: theme.spacing(2),
+            '& > *': {
+                fontWeight: 500,
+                marginBottom: theme.spacing(2),
+            },
+        },
     }
 })

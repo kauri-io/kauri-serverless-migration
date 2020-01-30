@@ -426,9 +426,9 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "AddMemberButton-sc-1817umg-0",
                 "isStatic": false,
-                "lastClassName": "izyAKK",
+                "lastClassName": "KcNyJ",
                 "rules": Array [
-                  "height:30px;width:30px;cursor:pointer;",
+                  "height:24px;width:24px;cursor:pointer;",
                 ],
               },
               "displayName": "AddMemberButton",
@@ -446,7 +446,7 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
           src="/static/images/icons/add-member-icon.png"
         >
           <img
-            className="AddMemberButton-sc-1817umg-0 izyAKK"
+            className="AddMemberButton-sc-1817umg-0 KcNyJ"
             disabled={false}
             src="/static/images/icons/add-member-icon.png"
           />

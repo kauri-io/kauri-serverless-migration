@@ -1,6 +1,5 @@
 import Grid from '@material-ui/core/Grid'
 import LinkContent from './components/Content'
-import LinkComments from './components/LinkComments'
 import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
@@ -11,12 +10,16 @@ import { getLinkUrl } from '../../lib/getURLs'
 import slugify from 'slugify'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import TipWidget from '../Article/components/TipWidget'
+import { Typography } from '@material-ui/core'
+import Comments from '../Article/components/ArticleComments'
 
 const ViewLink = ({
     openModalAction,
     closeModalAction,
     routeChangeAction,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
     curateCommunityResourcesAction,
     voteAction,
     user,
@@ -129,12 +132,31 @@ const ViewLink = ({
                             {...getExternalLink}
                         />
                     </div>
-                    <LinkComments
-                        link={getExternalLink.resourceIdentifier}
-                        addCommentAction={addCommentAction}
-                        user={user}
-                        comments={getExternalLink.comments}
-                    />
+
+                    <div className={classes.section}>
+                        <Typography
+                            className={classes.commentTitle}
+                            variant="h6"
+                        >
+                            {getExternalLink.comments.totalElements} Comment
+                            {getExternalLink.comments.totalElements !== 1
+                                ? 's'
+                                : ''}
+                        </Typography>
+
+                        <Comments
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
+                            parent={getExternalLink.resourceIdentifier}
+                            addCommentAction={addCommentAction}
+                            editCommentAction={editCommentAction}
+                            deleteCommentAction={deleteCommentAction}
+                            user={user}
+                            comments={getExternalLink.comments.content}
+                            currentURL={url.as}
+                            routeChangeAction={routeChangeAction}
+                        />
+                    </div>
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>
