@@ -5,7 +5,11 @@ import formatMarkdown from './format'
 import { useState } from 'react'
 import Renderer from './Renderer'
 import Metadata from './Metadata'
-import { IOpenModalAction, ICloseModalAction, IOpenModalPayload } from '../Modal/Module'
+import {
+    IOpenModalAction,
+    ICloseModalAction,
+    IOpenModalPayload,
+} from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
 import Importer from '../../containers/Importer'
 import { Style } from 'jss'

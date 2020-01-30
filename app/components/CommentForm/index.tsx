@@ -11,7 +11,11 @@ import {
 } from '../../containers/Article/Module'
 import { editCommentVariables } from '../../queries/__generated__/editComment'
 import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { IOpenModalPayload, IOpenModalAction, ICloseModalAction } from '../Modal/Module'
+import {
+    IOpenModalPayload,
+    IOpenModalAction,
+    ICloseModalAction,
+} from '../Modal/Module'
 
 const useStyles = makeStyles((theme: Theme) => ({
     editorWrapper: {

@@ -93,7 +93,7 @@ export const DiscussionForm = ({
     createDiscussionAction,
     editDiscussionAction,
     openModalAction,
-    closeModalAction
+    closeModalAction,
 }: IProps) => {
     const classes = useStyles()
 
