@@ -101,7 +101,6 @@ interface IProps {
 
 const Container: React.SFC<IProps> = props => {
     const {
-        collectionCount,
         articleCount,
         description,
         id,
@@ -181,11 +180,7 @@ const Container: React.SFC<IProps> = props => {
                         {
                             count: articleCount,
                             name: 'Articles',
-                        },
-                        {
-                            count: collectionCount,
-                            name: 'Collections',
-                        },
+                        }
                     ]}
                 />
 
