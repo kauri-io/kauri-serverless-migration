@@ -55,7 +55,7 @@ const Component: React.SFC<
 > = props => {
     if (process.browser && !accountCheck()) {
         props.routeChangeAction(
-            `/account-check?page=${window.location.pathname}`
+            `/account-check?page=${window.location.pathname+window.location.search}`
         )
     }
 
