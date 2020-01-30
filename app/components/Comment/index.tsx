@@ -275,6 +275,8 @@ const Comment = ({
                     <CommentForm
                         currentUser={currentUser}
                         currentURL={currentURL}
+                        openModalAction={openModalAction}
+                        closeModalAction={closeModalAction}
                         routeChangeAction={routeChangeAction}
                         addCommentAction={addCommentAction}
                         editCommentAction={editCommentAction}

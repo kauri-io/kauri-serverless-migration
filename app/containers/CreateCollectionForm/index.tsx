@@ -205,12 +205,10 @@ export default compose<
                     props.editCollectionAction(payload, () => {
                         setSubmitting(false)
                     })
-                    console.log('Editing')
                 } else {
                     props.createCollectionAction(values, () => {
                         setSubmitting(false)
                     })
-                    console.log('Creating')
                 }
             }
         },

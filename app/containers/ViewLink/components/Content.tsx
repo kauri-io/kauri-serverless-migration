@@ -17,6 +17,7 @@ import ShareIcon from '@material-ui/icons/Share'
 import { useState } from 'react'
 import ShareDialog from '../../../components/Card/ShareDialog'
 import SocialWebsiteIcon from '../../../components/Social/SocialWebsiteIcon'
+import Renderer from '../../../components/Markdown/Renderer'
 
 const LinkContent = ({
     // id,
@@ -198,7 +199,7 @@ const LinkContent = ({
             </Grid>
 
             <Typography className={classes.summary} variant="body1">
-                {summary.value}
+                <Renderer markdown={summary.value} />
             </Typography>
         </>
     )

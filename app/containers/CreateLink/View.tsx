@@ -180,6 +180,8 @@ const CreateLink = ({
                                     text={summary || ''}
                                     placeholder="Enter a description for the link"
                                     onChange={e => setSummary(e)}
+                                    openModalAction={openModalAction}
+                                    closeModalAction={closeModalAction}
                                 />
                             </Paper>
                         </>

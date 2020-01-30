@@ -20,7 +20,6 @@ const translateNode = ($, str?: string) => {
     if (item.name === 'a') {
       const href = $(item).attr('href')
       if(href.indexOf('https://gist.github.com') !== -1) {
-        console.log('gist detected')
         string += `[GIST ID: ${href.split('/')[4]}](${href})`
       }
     }

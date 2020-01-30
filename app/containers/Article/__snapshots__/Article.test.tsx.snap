@@ -5609,6 +5609,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                 >
                                   <CommentForm
                                     addCommentAction={[MockFunction]}
+                                    closeModalAction={[MockFunction]}
                                     currentURL="/test-title-1/1231/a"
                                     currentUser={
                                       Object {
@@ -5619,6 +5620,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                     disabled={false}
                                     editCommentAction={[MockFunction]}
                                     message=""
+                                    openModalAction={[MockFunction]}
                                     parent={
                                       Object {
                                         "id": "1231",

@@ -12,7 +12,6 @@ export interface IRouteChangeAction {
 }
 
 export const routeChange = (payload: IRouteChangePayload, as?: string): any => {
-    console.log('routechange(href:' + payload + ', as:' + as + ')')
     if (
         window.location.href.indexOf('redirected=true') !== -1 &&
         payload === 'back'
