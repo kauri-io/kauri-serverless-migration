@@ -39,7 +39,8 @@ const AccountCheck = ({ router, page, userId }) => {
             <ErrorIcon />
             <Typography variant="h6">Metamask Account check</Typography>
             <Typography variant="body1">
-                In order to correctly publish an article or manage a community, you need to unlock your Metamask account
+                In order to correctly publish an article or manage a community,
+                you need to unlock your Metamask account
             </Typography>
             <Typography variant="body1">
                 and select the Web3 account associated to your Kauri account:

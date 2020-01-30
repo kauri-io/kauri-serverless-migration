@@ -3,17 +3,18 @@ import LinkContent from './components/Content'
 import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
-import Head from 'next/head'
+import Schema from '../../lib/with-schema'
 import VoteWidget from '../Article/components/VoteWidget'
 import ShareWidget from '../Article/components/ShareWidget'
 import { getLinkUrl } from '../../lib/getURLs'
-import slugify from 'slugify'
+import { slugify } from '../../lib/slugify'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import TipWidget from '../Article/components/TipWidget'
 import { Typography } from '@material-ui/core'
 import Comments from '../Article/components/ArticleComments'
 
 const ViewLink = ({
+    hostName,
     openModalAction,
     closeModalAction,
     routeChangeAction,
@@ -36,13 +37,19 @@ const ViewLink = ({
 
     return (
         <>
-            <Head>
-                <title
-                    dangerouslySetInnerHTML={{
-                        __html: getExternalLink.linkTitle.value,
-                    }}
-                />
-            </Head>
+            <Schema
+                type="Link"
+                url={url}
+                id={getExternalLink.id}
+                title={getExternalLink.linkTitle.value}
+                description={getExternalLink.linkDescription.value || ''}
+                dateCreated={getExternalLink.dateCreated}
+                datePublished={getExternalLink.dateCreated}
+                tags={getExternalLink.tags}
+                background={getExternalLink.linkAttributes.background_image.value !== null ? getExternalLink.linkAttributes.background_image.value : undefined}
+                author={getExternalLink.owner}
+                hostName={hostName}
+            />
             <Grid
                 className={classes.root}
                 container={true}
@@ -64,14 +71,7 @@ const ViewLink = ({
                                 voteResult={getExternalLink.voteResult}
                                 loginFirstToVote={() =>
                                     routeChangeAction(
-                                        `/login?r=/${slugify(
-                                            String(
-                                                getExternalLink.linkTitle.value
-                                            ),
-                                            {
-                                                lower: true,
-                                            }
-                                        )}/${getExternalLink.id}/l`
+                                        `/login?r=/${slugify(getExternalLink.linkTitle.value)}/${getExternalLink.id}/l`
                                     )
                                 }
                             />

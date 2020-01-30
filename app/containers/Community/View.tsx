@@ -27,7 +27,7 @@ import {
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import Head from 'next/head'
+import Schema from '../../lib/with-schema'
 import { Theme, withStyles } from '@material-ui/core/styles'
 import {
     Dialog,
@@ -76,6 +76,7 @@ const styles = (theme: Theme) => ({
 })
 
 interface IProps {
+    hostName: string
     tab?: number
     classes: any
     client?: ApolloClient<{}>
@@ -280,58 +281,27 @@ class CommunityConnection extends React.Component<IProps, IState> {
         const homepage = getCommunity.homepage
         const name = getCommunity.name
         const id = getCommunity.id
-        const url = getCommunityURL({ name, id }).as
+        const url = getCommunityURL({ name, id })
 
         return (
             <>
                 {/* Only if not discussion view*/}
                 {!discussionId && (
-                    <Head>
-                        <title
-                            dangerouslySetInnerHTML={{
-                                __html: `${getCommunity.name} - Community - Kauri`,
-                            }}
-                        />
-                        <meta
-                            name="description"
-                            content={`${getCommunity.description &&
-                                getCommunity.description.slice(0, 151)}...`}
-                        />
-                        <link rel="canonical" href={url} />
-                        <meta property="og:title" content={getCommunity.name} />
-                        <meta property="og:site_name" content="kauri.io" />
-                        <meta property="og:url" content={url} />
-                        <meta
-                            property="og:description"
-                            content={`${getCommunity.description &&
-                                getCommunity.description.substring(0, 100)}...`}
-                        />
-                        <meta property="og:type" content="article" />
-                        {typeof getCommunity.avatar === 'string' && (
-                            <meta
-                                property="og:image"
-                                content={getCommunity.avatar}
-                            />
-                        )}
-                        <meta name="twitter:card" content="summary" />
-                        <meta name="twitter:site" content={url} />
-                        <meta
-                            name="twitter:title"
-                            content={getCommunity.name}
-                        />
-                        <meta
-                            name="twitter:description"
-                            content={`${getCommunity.description &&
-                                getCommunity.description.substring(0, 100)}...`}
-                        />
-                        <meta name="twitter:creator" content="@kauri_io" />
-                        {typeof getCommunity.avatar === 'string' && (
-                            <meta
-                                property="twitter:image"
-                                content={getCommunity.avatar}
-                            />
-                        )}
-                    </Head>
+
+                    <Schema
+                        type="Community"
+                        url={url}
+                        id={id}
+                        title={getCommunity.name}
+                        description={getCommunity.description || ''}
+                        dateCreated={getCommunity.dateCreated}
+                        datePublished={getCommunity.dateCreated}
+                        tags={getCommunity.tags || []}
+                        background={getCommunity.avatar !== null ? getCommunity.avatar : undefined}
+                        author={getCommunity.creator}
+                        hostName={this.props.hostName}
+                    />
+
                 )}
 
                 <Dialog

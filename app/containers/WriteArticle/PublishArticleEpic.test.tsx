@@ -67,7 +67,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction('/test-username/p'),
+            routeChangeAction("/public-profile?username=test-username", '/test-username/p'),
         ]
 
         const resultingActions = await testEpic(
@@ -137,7 +137,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/test-username/p`),
+            routeChangeAction("/public-profile?username=test-username", `/test-username/p`),
         ]
 
         const resultingActions = await testEpic(
@@ -206,7 +206,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article submitted',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/test-username/p`),
+            routeChangeAction("/public-profile?username=test-username", `/test-username/p`),
         ]
 
         const resultingActions = await testEpic(

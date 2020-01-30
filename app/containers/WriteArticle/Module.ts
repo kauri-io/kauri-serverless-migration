@@ -534,6 +534,14 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                                         version: output.version,
                                     },
                                     'update'
+                                ).href,
+                                getArticleURL(
+                                    {
+                                        title: subject,
+                                        id: output.id,
+                                        version: output.version,
+                                    },
+                                    'update'
                                 ).as
                             )
                         )

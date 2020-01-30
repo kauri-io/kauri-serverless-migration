@@ -3,10 +3,11 @@ import { getDiscussion_getDiscussion } from '../../queries/__generated__/getDisc
 import Loading from '../../components/Loading'
 import Community from '../Community'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
-import Head from 'next/head'
+import Schema from '../../lib/with-schema'
 import { getDiscussionURL } from '../../lib/getURLs'
 
 interface IProps {
+    hostName: string
     discussionAction: 'list' | 'view' | 'form'
     discussionId?: string
     parentId?: string
@@ -18,6 +19,7 @@ interface IProps {
 }
 
 export const DiscussionEntryPoint = ({
+    hostName,
     discussionId,
     discussionAction,
     parentId,
@@ -33,32 +35,25 @@ export const DiscussionEntryPoint = ({
 
     const id = data && data.getDiscussion.id
     const title = data && data.getDiscussion.title
-    const description = `${data && data.getDiscussion.message.slice(0, 151)}...`
     const url = getDiscussionURL({ id, title })
 
     // This entry point is used to embed the discussion componetns in whatever parent it is associated to.
     if (parentType === ResourceTypeInput.COMMUNITY) {
         return (
             <>
-                <Head>
-                    <title
-                        dangerouslySetInnerHTML={{
-                            __html: `${title} - Discussion - Kauri`,
-                        }}
-                    />
-                    <meta name="description" content={description} />
-                    <link rel="canonical" href={url.as} />
-                    <meta property="og:title" content={title} />
-                    <meta property="og:site_name" content="kauri.io" />
-                    <meta property="og:url" content={url.as} />
-                    <meta property="og:description" content={description} />
-                    <meta property="og:type" content="discussion" />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content={url.as} />
-                    <meta name="twitter:title" content={title} />
-                    <meta name="twitter:description" content={description} />
-                    <meta name="twitter:creator" content="@kauri_io" />
-                </Head>
+
+                <Schema
+                    type="Discussion"
+                    url={url}
+                    id={data && data.getDiscussion.id || ''}
+                    title={data && data.getDiscussion.title || ''}
+                    description={data && data.getDiscussion.message || ''}
+                    dateCreated={data && data.getDiscussion.dateCreated}
+                    datePublished={data && data.getDiscussion.dateCreated}
+                    tags={data && data.getDiscussion.tags || []}
+                    author={data && data.getDiscussion.author}
+                    hostName={hostName}
+                />
 
                 <Community
                     communityId={parentId}

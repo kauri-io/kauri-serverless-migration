@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Head from 'next/head'
+import Schema from '../../lib/with-schema'
 import { path } from 'ramda'
 import CollectionHeader from '../../components/Headers/CollectionHeader'
 import CollectionSection from './CollectionSection'
@@ -69,6 +69,7 @@ type ICommunity = {
 }
 
 type IProps = {
+    hostName: string
     id: string
     data: getCollection
     proposedCommunityId?: string
@@ -122,8 +123,6 @@ class CollectionPage extends Component<IProps> {
                 openModalAction,
                 isLoggedIn,
             } = this.props
-            const bg = background
-            const url = getCollectionURL({ name, id }).as
 
             const resourceType = path([
                 'data',
@@ -132,6 +131,8 @@ class CollectionPage extends Component<IProps> {
                 'resourceIdentifier',
                 'type',
             ])(this.props)
+
+            const url = getCollectionURL({ name, id })
 
             const isMemberOfCommunityOwner = Boolean(
                 resourceType === 'COMMUNITY' &&
@@ -150,47 +151,28 @@ class CollectionPage extends Component<IProps> {
 
             return (
                 <>
-                    <Head>
-                        <title>{name} - Kauri</title>
-                        <meta
-                            name="description"
-                            content={`${description &&
-                                description.slice(0, 151)}...`}
-                        />
-                        <link rel="canonical" href={url} />
-                        <meta property="og:title" content={name} />
-                        <meta property="og:site_name" content="kauri.io" />
-                        <meta property="og:url" content={url} />
-                        <meta
-                            property="og:description"
-                            content={`${description &&
-                                description.substring(0, 100)}...`}
-                        />
-                        <meta property="og:type" content="article" />
-                        {typeof bg === 'string' && (
-                            <meta property="og:image" content={bg} />
-                        )}
-                        <meta name="twitter:card" content="summary" />
-                        <meta name="twitter:site" content={url} />
-                        <meta name="twitter:title" content={name} />
-                        <meta
-                            name="twitter:description"
-                            content={`${description &&
-                                description.substring(0, 100)}...`}
-                        />
-                        <meta name="twitter:creator" content="@kauri_io" />
-                        {typeof bg === 'string' && (
-                            <meta property="twitter:image" content={bg} />
-                        )}
-                    </Head>
+                    <Schema
+                        type="Collection"
+                        url={url}
+                        id={id}
+                        title={name}
+                        description={description || ''}
+                        dateCreated={dateCreated}
+                        datePublished={dateCreated}
+                        tags={tags}
+                        background={background !== null ? background : undefined}
+                        author={owner}
+                        hostName={this.props.hostName}
+                    />
+
                     <HeaderContainer>
-                        {bg && (
+                        {background && (
                             <Image
                                 height="100%"
                                 width="100%"
                                 overlay={{ opacity: 0.8 }}
                                 asBackground
-                                image={bg}
+                                image={background}
                             />
                         )}
                         <CollectionHeader
@@ -198,7 +180,7 @@ class CollectionPage extends Component<IProps> {
                             isLoggedIn={isLoggedIn}
                             openModalAction={openModalAction}
                             isMemberOfCommunityOwner={isMemberOfCommunityOwner}
-                            imageURL={typeof bg === 'string' ? bg : null}
+                            imageURL={typeof background === 'string' ? background : null}
                             id={id}
                             name={name}
                             description={description || ''}
@@ -289,7 +271,7 @@ class CollectionPage extends Component<IProps> {
                                     {childrenProps}
                                 </Link>
                             )}
-                            url={url}
+                            url={url.as}
                             routeChangeAction={routeChangeAction}
                         />
                     </HeaderContainer>

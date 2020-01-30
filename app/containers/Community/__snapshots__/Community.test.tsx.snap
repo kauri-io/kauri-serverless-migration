@@ -4791,13 +4791,42 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                 showNotificationAction={[MockFunction]}
                 transferArticleToCommunityAction={[MockFunction]}
               >
-                <Head>
-                  <Component
-                    handleStateChange={null}
-                    inAmpMode={false}
-                    reduceComponentsToState={[Function]}
-                  />
-                </Head>
+                <withSchema
+                  author={
+                    Object {
+                      "__typename": "PublicUserDTO",
+                      "id": "f0f15cedc719b5a55470877b0710d5c7816916b1",
+                      "name": "Gregoire Jeanmart",
+                      "username": "gregjeanmart",
+                    }
+                  }
+                  background="https://api.dev.kauri.io:443/ipfs/QmNcLPRxnB895dstAuRKewvUmVC8uTaSX4Htsz7asvNQma"
+                  dateCreated="2019-12-17T00:22:29.703Z"
+                  datePublished="2019-12-17T00:22:29.703Z"
+                  description="fdsfdsfds"
+                  id="5df81fc59c39750001a48158"
+                  tags={
+                    Array [
+                      "testing",
+                    ]
+                  }
+                  title="AFTER QUERY REFACTORING"
+                  type="Community"
+                  url={
+                    Object {
+                      "as": "/after-query-refactoring/5df81fc59c39750001a48158/cm",
+                      "href": "/community?community_id=5df81fc59c39750001a48158",
+                    }
+                  }
+                >
+                  <Head>
+                    <Component
+                      handleStateChange={null}
+                      inAmpMode={false}
+                      reduceComponentsToState={[Function]}
+                    />
+                  </Head>
+                </withSchema>
                 <WithStyles(ForwardRef(Dialog))
                   aria-describedby="alert-dialog-description"
                   aria-labelledby="alert-dialog-title"
@@ -21094,7 +21123,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   dateUpdated="2019-12-17T00:25:24.022Z"
                                   href={
                                     Object {
-                                      "as": "/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l",
+                                      "as": "/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l",
                                       "href": "/view-link?id=UicniThmUz",
                                     }
                                   }
@@ -21200,7 +21229,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                     dateUpdated="2019-12-17T00:25:24.022Z"
                                     href={
                                       Object {
-                                        "as": "/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l",
+                                        "as": "/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l",
                                         "href": "/view-link?id=UicniThmUz",
                                       }
                                     }
@@ -21286,12 +21315,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                     }
                                   >
                                     <Link
-                                      as="/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l"
+                                      as="/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l"
                                       href="/view-link?id=UicniThmUz"
                                     >
                                       <a
                                         className="makeStyles-link-349"
-                                        href="/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l"
+                                        href="/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
                                       >
@@ -23110,7 +23139,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               type="LINK"
                                                                               url={
                                                                                 Object {
-                                                                                  "as": "/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l",
+                                                                                  "as": "/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l",
                                                                                   "href": "/view-link?id=UicniThmUz",
                                                                                 }
                                                                               }
@@ -23242,7 +23271,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                 </div>
                                                                                 <WithStyles(ShareDialogComponent)
                                                                                   handleClose={[Function]}
-                                                                                  href="/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l"
+                                                                                  href="/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l"
                                                                                   name="Watch out Google: Brave surpasses 350,000 publisher milestone - Decrypt"
                                                                                   open={false}
                                                                                 >
@@ -23258,7 +23287,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                     handleClose={[Function]}
-                                                                                    href="/watch-out-google:-brave-surpasses-350000-publisher-milestone-decrypt/UicniThmUz/l"
+                                                                                    href="/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l"
                                                                                     name="Watch out Google: Brave surpasses 350,000 publisher milestone - Decrypt"
                                                                                     open={false}
                                                                                   >

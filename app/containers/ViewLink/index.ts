@@ -19,6 +19,7 @@ import {
 import { curateCommunityResourcesAction } from '../Community/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
+    hostName: state.app && state.app.hostName,
     personalUsername: state.app && state.app.user && state.app.user.username,
     userId: state.app && state.app.user && state.app.user.id,
     user: state.app && state.app.user,
