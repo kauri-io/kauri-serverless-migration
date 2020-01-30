@@ -15,7 +15,7 @@ export default compose(
     withApollo,
     connect(
         mapStateToProps,
-        { }
+        {}
     ),
     graphql(getDiscussion, {
         name: 'data',

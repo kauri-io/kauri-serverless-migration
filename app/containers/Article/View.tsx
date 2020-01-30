@@ -224,7 +224,8 @@ const ArticleComp = ({
 
     const url = getArticleURL({ title, id })
 
-    const doLogin = () => routeChangeAction(`/login?r=/${slugify(title)}/${id}/a`)
+    const doLogin = () =>
+        routeChangeAction(`/login?r=/${slugify(title)}/${id}/a`)
 
     return (
         <>

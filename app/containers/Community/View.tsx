@@ -287,7 +287,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
             <>
                 {/* Only if not discussion view*/}
                 {!discussionId && (
-
                     <Schema
                         type="Community"
                         url={url}
@@ -297,11 +296,14 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         dateCreated={getCommunity.dateCreated}
                         datePublished={getCommunity.dateCreated}
                         tags={getCommunity.tags || []}
-                        background={getCommunity.avatar !== null ? getCommunity.avatar : undefined}
+                        background={
+                            getCommunity.avatar !== null
+                                ? getCommunity.avatar
+                                : undefined
+                        }
                         author={getCommunity.creator}
                         hostName={this.props.hostName}
                     />
-
                 )}
 
                 <Dialog

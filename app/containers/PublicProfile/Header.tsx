@@ -103,11 +103,10 @@ const ProfileHeader = ({
         },
     }))
     const classes = useStyles()
-    
+
     return (
         <Grid className={classes.root}>
             <Grid container={true} className={classes.container}>
-
                 <Schema
                     type="Profile"
                     url={getProfileURL({ username })}

@@ -75,9 +75,7 @@ interface ICommunityProps {
 }
 
 export const getCommunityURL = ({ name, id, tab }: ICommunityProps) => ({
-    as: `/${slugify(String(name))}/${String(id)}/cm${
-        tab ? `?tab=${tab}` : ''
-    }`,
+    as: `/${slugify(String(name))}/${String(id)}/cm${tab ? `?tab=${tab}` : ''}`,
     href: `/community?community_id=${String(id)}${tab ? `&tab=${tab}` : ''}`,
 })
 

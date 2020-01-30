@@ -41,16 +41,15 @@ export const DiscussionEntryPoint = ({
     if (parentType === ResourceTypeInput.COMMUNITY) {
         return (
             <>
-
                 <Schema
                     type="Discussion"
                     url={url}
-                    id={data && data.getDiscussion.id || ''}
-                    title={data && data.getDiscussion.title || ''}
-                    description={data && data.getDiscussion.message || ''}
+                    id={(data && data.getDiscussion.id) || ''}
+                    title={(data && data.getDiscussion.title) || ''}
+                    description={(data && data.getDiscussion.message) || ''}
                     dateCreated={data && data.getDiscussion.dateCreated}
                     datePublished={data && data.getDiscussion.dateCreated}
-                    tags={data && data.getDiscussion.tags || []}
+                    tags={(data && data.getDiscussion.tags) || []}
                     author={data && data.getDiscussion.author}
                     hostName={hostName}
                 />

@@ -56,9 +56,7 @@ class Link extends Component<IProps> {
     render() {
         let url =
             this.props.as || this.props.href || this.props.children.props.href
-        const slug = this.props.toSlug
-            ? slugify(this.props.toSlug)
-            : null
+        const slug = this.props.toSlug ? slugify(this.props.toSlug) : null
         if (slug) url += `/${slug}`
         const { fullWidth } = this.props
 

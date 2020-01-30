@@ -160,7 +160,9 @@ class CollectionPage extends Component<IProps> {
                         dateCreated={dateCreated}
                         datePublished={dateCreated}
                         tags={tags}
-                        background={background !== null ? background : undefined}
+                        background={
+                            background !== null ? background : undefined
+                        }
                         author={owner}
                         hostName={this.props.hostName}
                     />
@@ -180,7 +182,11 @@ class CollectionPage extends Component<IProps> {
                             isLoggedIn={isLoggedIn}
                             openModalAction={openModalAction}
                             isMemberOfCommunityOwner={isMemberOfCommunityOwner}
-                            imageURL={typeof background === 'string' ? background : null}
+                            imageURL={
+                                typeof background === 'string'
+                                    ? background
+                                    : null
+                            }
                             id={id}
                             name={name}
                             description={description || ''}

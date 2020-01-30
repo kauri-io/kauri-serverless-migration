@@ -46,7 +46,12 @@ const ViewLink = ({
                 dateCreated={getExternalLink.dateCreated}
                 datePublished={getExternalLink.dateCreated}
                 tags={getExternalLink.tags}
-                background={getExternalLink.linkAttributes.background_image.value !== null ? getExternalLink.linkAttributes.background_image.value : undefined}
+                background={
+                    getExternalLink.linkAttributes.background_image.value !==
+                    null
+                        ? getExternalLink.linkAttributes.background_image.value
+                        : undefined
+                }
                 author={getExternalLink.owner}
                 hostName={hostName}
             />
@@ -71,7 +76,9 @@ const ViewLink = ({
                                 voteResult={getExternalLink.voteResult}
                                 loginFirstToVote={() =>
                                     routeChangeAction(
-                                        `/login?r=/${slugify(getExternalLink.linkTitle.value)}/${getExternalLink.id}/l`
+                                        `/login?r=/${slugify(
+                                            getExternalLink.linkTitle.value
+                                        )}/${getExternalLink.id}/l`
                                     )
                                 }
                             />

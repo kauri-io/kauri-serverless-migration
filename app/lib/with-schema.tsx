@@ -1,9 +1,14 @@
 import Head from 'next/head'
 
-
 interface IProps {
     hostName: string
-    type?: "Article"|"Community"|"Collection"|"Discussion"|"Link"|"Profile"
+    type?:
+        | 'Article'
+        | 'Community'
+        | 'Collection'
+        | 'Discussion'
+        | 'Link'
+        | 'Profile'
     id: string
     title: string
     description: string
@@ -13,12 +18,12 @@ interface IProps {
     author?: any
     datePublished?: Date
     dateCreated?: Date
-    tags?: (string|null)[]|null
+    tags?: (string | null)[] | null
 }
 
 const withSchema = ({
     hostName,
-    type = "Article",
+    type = 'Article',
     id,
     title,
     description,
@@ -30,10 +35,10 @@ const withSchema = ({
     dateCreated,
     tags,
 }: IProps) => {
-
-    title = title.substr(0, 100);
-    description = (description && description !== null) ? description.substr(0, 300) : '';
-    background = (background && background !== null) ? background : undefined;
+    title = title.substr(0, 100)
+    description =
+        description && description !== null ? description.substr(0, 300) : ''
+    background = background && background !== null ? background : undefined
 
     const schema = `{
         "@context": "http://schema.org",
@@ -45,8 +50,9 @@ const withSchema = ({
         "description": "${description && description.substring(0, 160)}",
         "genre": "development tutorial",
         "headline": "${title}",
-        "image": "${background ||  `${hostName}/static/images/kauri_ioLogo.png`}",
-        "keywords": "${tags && tags.join(", ")}",
+        "image": "${background ||
+            `${hostName}/static/images/kauri_ioLogo.png`}",
+        "keywords": "${tags && tags.join(', ')}",
         "mainEntityOfPage": {
             "@id": "${id}",
             "@type": "WebPage"
@@ -81,7 +87,9 @@ const withSchema = ({
             <meta property="og:type" content={type} />
             <meta
                 property="og:image"
-                content={ background || `https://${hostName}/static/images/kauri_ioLogo.png`
+                content={
+                    background ||
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
             <meta name="twitter:card" content="summary" />
@@ -91,7 +99,9 @@ const withSchema = ({
             <meta name="twitter:creator" content="@kauri_io" />
             <meta
                 name="twitter:image"
-                content={ background || `https://${hostName}/static/images/kauri_ioLogo.png`
+                content={
+                    background ||
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
         </Head>
