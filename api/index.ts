@@ -39,7 +39,10 @@ const translateNode = ($, str?: string) => {
       string += `\n\n${$(item).text()} \n\n`
     }
     if (item.name === 'img') {
-      string += `\n![${$(item).attr('alt')}](${$(item).attr('src')})\n`
+      const src = $(item).attr('src')
+      const alt = $(item).attr('alt')
+      if(src)
+        string += `\n![${alt?alt:''}](${src})\n`
     }
     if (item.name === 'code') {
       string += '\n\n```\n'
