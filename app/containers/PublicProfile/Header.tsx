@@ -3,7 +3,7 @@ import anchorme from 'anchorme'
 import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
-import Head from 'next/head'
+import Schema from '../../lib/with-schema'
 import Avatar from '../../components/Avatar'
 import { getProfileURL } from '../../lib/getURLs'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
@@ -24,6 +24,7 @@ const getURL = (string, type) => {
 }
 
 interface IProps {
+    hostName: string
     id: string
     avatar: string
     title: string
@@ -36,10 +37,10 @@ interface IProps {
     collections: number
     articles: number
     toggleEditing: () => void
-    hostName: string
 }
 
 const ProfileHeader = ({
+    hostName,
     id,
     avatar,
     title,
@@ -102,34 +103,21 @@ const ProfileHeader = ({
         },
     }))
     const classes = useStyles()
-    const url = getProfileURL({ username }).as
+
     return (
         <Grid className={classes.root}>
             <Grid container={true} className={classes.container}>
-                <Head>
-                    <title>{`Kauri - ${name ||
-                        (username && `@${username}`) ||
-                        id}`}</title>
-                    <meta name="description" content={`${title}`} />
-                    <link rel="canonical" href={url} />
-                    <meta
-                        property="og:title"
-                        content={`Kauri - ${name ||
-                            (username && `@${username}`) ||
-                            id}`}
-                    />
-                    <meta property="og:site_name" content="kauri.io" />
-                    <meta property="og:url" content={url} />
-                    <meta property="og:description" content={`${title}`} />
-                    <meta property="og:type" content="public profile" />
-                    <meta property="og:image" content={avatar} />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content={url} />
-                    <meta name="twitter:title" content={name} />
-                    <meta name="twitter:description" content={title} />
-                    <meta name="twitter:creator" content="@kauri_io" />
-                    <meta name="twitter:image" content={avatar} />
-                </Head>
+                <Schema
+                    type="Profile"
+                    url={getProfileURL({ username })}
+                    id={id}
+                    title={`@${username}`}
+                    description={`Kauri user - @${username}`}
+                    background={avatar}
+                    author={username}
+                    hostName={hostName}
+                />
+
                 <Avatar
                     className={classes.avatar}
                     id={id}

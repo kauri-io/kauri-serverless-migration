@@ -11,7 +11,7 @@ import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
-import slugify from 'slugify'
+import { slugify } from '../../lib/slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
 import ApolloClient from 'apollo-client'
@@ -187,7 +187,6 @@ const ArticleComp = ({
 
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
-    const canonicalUrl = attributes.canonical
 
     const [shareDialogOpen, setShareDialogOpen] = useState(false)
 
@@ -226,24 +225,20 @@ const ArticleComp = ({
     const url = getArticleURL({ title, id })
 
     const doLogin = () =>
-        routeChangeAction(
-            `/login?r=/${slugify(String(title), {
-                lower: true,
-            })}/${id}/a`
-        )
+        routeChangeAction(`/login?r=/${slugify(title)}/${id}/a`)
 
     return (
         <>
             <Schema
                 url={url}
-                canonicalURL={canonicalUrl}
+                canonicalURL={attributes.canonical}
                 id={id}
                 title={title}
-                description={description}
+                description={description || ''}
                 dateCreated={dateCreated}
                 datePublished={datePublished}
                 tags={tags}
-                attributes={attributes}
+                background={attributes.background}
                 author={author}
                 hostName={hostName}
             />

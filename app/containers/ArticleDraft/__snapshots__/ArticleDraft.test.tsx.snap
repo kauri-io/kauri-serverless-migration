@@ -638,7 +638,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
             voteAction={[MockFunction]}
           >
             <withSchema
-              attributes={Object {}}
               author={
                 Object {
                   "__typename": "PublicUserDTO",

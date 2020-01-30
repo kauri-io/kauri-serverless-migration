@@ -154,6 +154,11 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                                         'value',
                                         'app',
                                         'user',
+                                    ])(state$) as IProfileLinkProps).href,
+                                    getProfileURL(path([
+                                        'value',
+                                        'app',
+                                        'user',
                                     ])(state$) as IProfileLinkProps).as
                                 )
                             )

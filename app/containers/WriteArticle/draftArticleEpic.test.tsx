@@ -70,7 +70,10 @@ describe('draftArticleEpic', () => {
                 message: 'Draft Created',
                 notificationType: 'info',
             }),
-            routeChangeAction(getArticleURL(mockGetArticle, 'update').as),
+            routeChangeAction(
+                getArticleURL(mockGetArticle, 'update').href,
+                getArticleURL(mockGetArticle, 'update').as
+            ),
         ]
 
         const resultingActions = await testEpic(

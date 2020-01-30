@@ -73,7 +73,6 @@ const ArticleComp = ({
 }: IProps) => {
     const classes = ArticleStyles({})
     const originalAuthor = contributors && contributors[0]
-    const canonicalUrl = attributes.canonical
 
     const url = getArticleURL({ id, title }, 'draft')
 
@@ -81,14 +80,14 @@ const ArticleComp = ({
         <>
             <Schema
                 url={url}
-                canonicalURL={canonicalUrl}
+                canonicalURL={attributes.canonical}
                 id={id}
                 title={title}
-                description={description}
+                description={description || ''}
                 dateCreated={dateCreated}
                 datePublished={dateCreated}
                 tags={tags}
-                attributes={attributes}
+                background={attributes.background}
                 author={originalAuthor}
                 hostName={hostName}
             />
