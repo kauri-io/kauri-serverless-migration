@@ -1,5 +1,14 @@
 import React from 'react'
-import { Button, DialogTitle, DialogContent, DialogActions, Typography, IconButton, makeStyles, Theme } from '@material-ui/core'
+import {
+    Button,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    Typography,
+    IconButton,
+    makeStyles,
+    Theme,
+} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -26,7 +35,6 @@ interface IProps {
 }
 
 const AlertViewComponent: React.FunctionComponent<IProps> = props => {
-
     const classes = useStyles()
 
     const handleConfirmAction = (confirmButtonAction: any) => () => {
@@ -45,9 +53,7 @@ const AlertViewComponent: React.FunctionComponent<IProps> = props => {
             </DialogTitle>
 
             {props.content && (
-                <DialogContent dividers>
-                    {props.content}
-                </DialogContent>
+                <DialogContent dividers>{props.content}</DialogContent>
             )}
 
             {!props.hideCloseButton && !props.hideConfirmButton && (
@@ -56,7 +62,9 @@ const AlertViewComponent: React.FunctionComponent<IProps> = props => {
                         <Button
                             color="primary"
                             variant="outlined"
-                            onClick={handleConfirmAction(props.closeModalAction)}
+                            onClick={handleConfirmAction(
+                                props.closeModalAction
+                            )}
                         >
                             {props.closeButtonText || 'Cancel'}
                         </Button>
@@ -66,15 +74,17 @@ const AlertViewComponent: React.FunctionComponent<IProps> = props => {
                             color="primary"
                             variant="contained"
                             style={{ color: 'white' }}
-                            onClick={handleConfirmAction(props.confirmButtonAction)}
+                            onClick={handleConfirmAction(
+                                props.confirmButtonAction
+                            )}
                         >
                             {props.confirmButtonText || 'Confirm'}
                         </Button>
                     )}
                 </DialogActions>
             )}
-
         </>
-)}
+    )
+}
 
 export default AlertViewComponent

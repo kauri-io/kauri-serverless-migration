@@ -205,7 +205,6 @@ const ArticleEditor = props => {
         updateComment?: string,
         destination?: IOption
     ) => (e: React.SyntheticEvent<HTMLButtonElement> | null) => {
-
         if (e) {
             e.preventDefault()
         }

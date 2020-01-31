@@ -89,8 +89,7 @@ export default ({
     setAttributes,
     attributes,
     disableActions,
-}: IProps) => {    
-
+}: IProps) => {
     useEffect(() => {
         uppy = initUppy({
             allowGifs: false,
@@ -106,7 +105,7 @@ export default ({
             uppy.reset()
         })
     }, [])
-    
+
     const classes = useStyles()
 
     return (
@@ -161,7 +160,9 @@ export default ({
                                     openModalAction({
                                         children: (
                                             <ProposeArticleModal
-                                                closeModalAction={closeModalAction}
+                                                closeModalAction={
+                                                    closeModalAction
+                                                }
                                                 handleSubmit={handleSubmit}
                                             />
                                         ),

@@ -20,9 +20,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: '0 12px',
         display: 'flex',
         alignItems: 'center',
+        flexDirection: 'column',
     },
     wrapper: {
+        width: '100%',
         display: 'flex',
+        justifyContent: 'flex-end',
+    },
+    field: {
+        width: '100%',
     },
     button: {
         padding: theme.spacing(1, 1),
@@ -94,6 +100,7 @@ export const CreateBookmarkFolderComponent = ({
                             onChange={e => updateFolder(e.target.value)}
                             value={folder}
                             placeholder="Folder name"
+                            className={classes.field}
                         />
                         <div className={classes.wrapper}>
                             <Button

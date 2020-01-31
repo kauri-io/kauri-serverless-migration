@@ -1,6 +1,12 @@
 import { ICollection } from './CollectionsContent'
 import { ISection } from './SectionsContent'
-import { Typography, Select, MenuItem, makeStyles, Theme } from '@material-ui/core'
+import {
+    Typography,
+    Select,
+    MenuItem,
+    makeStyles,
+    Theme,
+} from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
     select: {
@@ -31,10 +37,12 @@ const Content: React.FunctionComponent<IProps> = ({
     articleAlreadyInAllCollections,
 }) => {
     const classes = useStyles()
-    
+
     if (articleAlreadyInAllCollections) {
         return (
-            <Typography variant="body1">{'Article is already in all your collections!'}</Typography>
+            <Typography variant="body1">
+                {'Article is already in all your collections!'}
+            </Typography>
         )
     }
 
@@ -54,34 +62,42 @@ const Content: React.FunctionComponent<IProps> = ({
                         value={parentState.chosenCollection}
                         onChange={handleCollectionSelection}
                         className={classes.select}
-                        >
-                        {collectionsThatDoNotHaveTheChosenArticleId.map((option, key) => (
-                            <MenuItem 
-                                key={key} 
-                                // @ts-ignore [2]
-                                value={option}>
-                                {option.name}
-                            </MenuItem>
-                        ))}  
+                    >
+                        {collectionsThatDoNotHaveTheChosenArticleId.map(
+                            (option, key) => (
+                                <MenuItem
+                                    key={key}
+                                    // @ts-ignore [2]
+                                    value={option}
+                                >
+                                    {option.name}
+                                </MenuItem>
+                            )
+                        )}
                     </Select>
-            )}
-            {parentState.chosenCollection && parentState.chosenCollection.sections.length > 0 && (
-                
-                <Select
-                    value={parentState.chosenSection}
-                    onChange={handleSectionSelection}
-                    className={classes.select}
-                >
-                    {parentState.chosenCollection.sections.map((option, key) => (
-                        <MenuItem 
-                            key={key} 
-                            // @ts-ignore [2]
-                            value={option}>
-                            {option.name}
-                        </MenuItem>
-                    ))} 
-                </Select>
-            )}
+                )}
+            {parentState.chosenCollection &&
+                parentState.chosenCollection.sections.length > 0 && (
+                    <Select
+                        value={parentState.chosenSection}
+                        onChange={handleSectionSelection}
+                        className={classes.select}
+                    >
+                        {parentState.chosenCollection.sections.map(
+                            (option, key) => (
+                                <MenuItem
+                                    key={key}
+                                    // @ts-ignore [2]
+                                    value={option}
+                                >
+                                    {option.name.length > 0
+                                        ? option.name
+                                        : '[Empty section name]'}
+                                </MenuItem>
+                            )
+                        )}
+                    </Select>
+                )}
         </>
     )
 }

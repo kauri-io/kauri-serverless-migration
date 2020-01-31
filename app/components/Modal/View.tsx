@@ -14,13 +14,13 @@ const ModalComponent: React.FunctionComponent<IProps> = ({
     children,
 }) =>
     isModalOpen ? (
-        <Dialog 
-          open={isModalOpen} 
-          onClose={handleCloseModal(closeModalAction)}
-          fullWidth={true}
-          maxWidth="xs"
+        <Dialog
+            open={isModalOpen}
+            onClose={handleCloseModal(closeModalAction)}
+            fullWidth={true}
+            maxWidth="xs"
         >
-          {children}
+            {children}
         </Dialog>
     ) : null
 
