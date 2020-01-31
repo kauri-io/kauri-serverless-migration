@@ -148,11 +148,13 @@ const LinkContent = ({
             {url.value.indexOf('youtube.com') === -1 &&
                 linkAttributes.background_image &&
                 linkAttributes.background_image.value && (
-                    <Image
-                        height={360}
-                        width={808}
-                        image={linkAttributes.background_image.value}
-                    />
+                    <div className={classes.headerImage}>
+                        <Image
+                            height={360}
+                            width={808}
+                            image={linkAttributes.background_image.value}
+                        />
+                    </div>
                 )}
             {url.value.indexOf('youtube.com') !== -1 && (
                 <iframe

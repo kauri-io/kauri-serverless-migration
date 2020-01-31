@@ -157,5 +157,10 @@ export const useStyles = makeStyles((theme: Theme) => {
                 marginBottom: theme.spacing(2),
             },
         },
+        headerImage: {
+            '& > *': {
+                width: '100%',
+            },
+        },
     }
 })
