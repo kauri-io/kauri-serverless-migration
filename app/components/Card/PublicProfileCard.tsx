@@ -1,5 +1,5 @@
 import Card from '@material-ui/core/Card'
-import Image from '../Image'
+import Avatar from '../Avatar'
 import { makeStyles } from '@material-ui/styles'
 import { Theme, Typography, Hidden } from '@material-ui/core'
 import anchorme from 'anchorme'
@@ -91,15 +91,15 @@ export default ({
             <a className={classes.link}>
                 <Card className={classes.card}>
                     <div className={classes.row}>
-                        {avatar && (
-                            <Image
-                                className={classes.avatar}
-                                borderRadius="4px"
-                                height={90}
-                                width={90}
-                                image={avatar}
-                            />
-                        )}
+                        <Avatar
+                            id={id}
+                            name={name}
+                            username={username}
+                            avatar={avatar}
+                            withName={false}
+                            size={90}
+                            borderRadius={4}
+                        />
                         <div className={classes.column}>
                             <Typography
                                 className={classes.name}

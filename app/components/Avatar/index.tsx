@@ -21,6 +21,7 @@ interface IProps {
     ignoreLink?: boolean
     newTab?: boolean
     tooltip?: string
+    borderRadius?: number
 }
 
 const AvatarComp = ({
@@ -36,6 +37,7 @@ const AvatarComp = ({
     ignoreLink,
     newTab,
     tooltip,
+    borderRadius=2
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -80,7 +82,7 @@ const AvatarComp = ({
                     image={avatar}
                     width={size || 24}
                     height={size || 24}
-                    borderRadius={'2px'}
+                    borderRadius={`${borderRadius}px`}
                 />
             ) : (
                 <img
