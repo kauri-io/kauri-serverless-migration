@@ -1,8 +1,8 @@
 import Readability from 'readability'
 import request from 'request-promise'
 import { JSDOM } from 'jsdom'
-import cheerio from 'cheerio'
 import { parseMedium } from './tweaks/medium'
+import TurndownService from 'turndown'
 
 const headers = {
   'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0',
@@ -14,49 +14,29 @@ const headers = {
   'Cache-Control': 'max-age=0',
 }
 
-const translateNode = ($, str?: string) => {
-  let string = str || ''
-  $('*').each((_index, item) =>{
-    if (item.name === 'a') {
-      const href = $(item).attr('href')
-      if(href.indexOf('https://gist.github.com') !== -1) {
-        string += `[GIST ID: ${href.split('/')[4]}](${href})`
-      }
+const turndownService = new TurndownService({codeBlockStyle: "fenced"})
+turndownService.addRule('gist', {
+  filter: function (node, _options) {
+    return (node.nodeName === 'A' &&
+            node.getAttribute('href').indexOf('https://gist.github.com') !== -1)
+  },
+  replacement: function (_content, node, _options) {
+    const href = node.getAttribute('href')
+    return `[GIST ID: ${href.split('/')[4]}](${href})`
+  }
+})
+turndownService.addRule('code', {
+  filter: function (node, _options) {
+    return (node.nodeName === 'CODE' || node.nodeName === 'SPAN')
+  },
+  replacement: function (content) {
+    if(content.indexOf("\n") !== -1) {
+      return '\n\n```\n' + content + '\n```\n\n'
+    } else {
+      return '`' + content + '`'
     }
-    if (item.name === 'h1') {
-      string += `\n\n# ${$(item).text()} \n`
-    }
-    if (item.name === 'h2') {
-      string += `\n\n## ${$(item).text()} \n`
-    }
-    if (item.name === 'h3') {
-      string += `\n\n### ${$(item).text()} \n`
-    }
-    if (item.name === 'h4') {
-      string += `\n\n#### ${$(item).text()} \n`
-    }
-    if (item.name === 'p') {
-      string += `\n\n${$(item).text()} \n\n`
-    }
-    if (item.name === 'img') {
-      const src = $(item).attr('src')
-      const alt = $(item).attr('alt')
-      if(src)
-        string += `\n![${alt?alt:''}](${src})\n`
-    }
-    if (item.name === 'code') {
-      string += '\n\n```\n'
-      string += `${$(item).text()}`
-      string += '\n```\n\n'
-    }
-    if (item.name === 'pre') {
-      string += '\n\n```\n'
-      string += `${$(item).text()}`
-      string += '\n```\n\n'
-    }
-  })
-  return string
-}
+  }
+})
 
 module.exports = async (req, res) => {
 
@@ -66,6 +46,7 @@ module.exports = async (req, res) => {
   if (!url) {
     res.send('Please provide a url')
   } else {
+
     const body = await request(url, { headers, gzip: true })
     const doc = new JSDOM(body, {
       url
@@ -73,10 +54,8 @@ module.exports = async (req, res) => {
     const document = await parseMedium(doc.window.document)
     const reader = new Readability(document)
     const article = reader.parse()
-    let $ = cheerio.load(article.content,
-      { xmlMode: true, decodeEntities: false}
-      )
-    const md = translateNode($)
+
+    const md = turndownService.turndown(article.content);
     article.md = md.trim()
     res.send(article)
   }
