@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
         width: '100%',
         display: 'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
     field: {
         width: '100%',

@@ -90,7 +90,9 @@ const Content: React.FunctionComponent<IProps> = ({
                                     // @ts-ignore [2]
                                     value={option}
                                 >
-                                    {option.name.length > 0 ? option.name : "empty section name"}
+                                    {option.name.length > 0
+                                        ? option.name
+                                        : '[Empty section name]'}
                                 </MenuItem>
                             )
                         )}
