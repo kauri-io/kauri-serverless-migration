@@ -37,7 +37,7 @@ const AvatarComp = ({
     ignoreLink,
     newTab,
     tooltip,
-    borderRadius=2
+    borderRadius = 2,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {

@@ -180,7 +180,7 @@ const Container: React.SFC<IProps> = props => {
                         {
                             count: articleCount,
                             name: 'Articles',
-                        }
+                        },
                     ]}
                 />
 
