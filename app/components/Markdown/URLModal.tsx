@@ -6,11 +6,16 @@ export default ({ classes, closeModalAction, format, type }) => {
     const [url, setURL] = useState('')
     const [text, setText] = useState('')
     return (
-
         <AlertViewComponent
-            title={type === 'url' ? "Add Hyperlink" : (type === 'youtube' ? "Add Youtube URL" : "")}
+            title={
+                type === 'url'
+                    ? 'Add Hyperlink'
+                    : type === 'youtube'
+                    ? 'Add Youtube URL'
+                    : ''
+            }
             content={
-                <Grid  className={classes.urlContainer}>
+                <Grid className={classes.urlContainer}>
                     <TextField
                         onChange={e => setURL(e.target.value)}
                         margin="normal"
@@ -25,15 +30,9 @@ export default ({ classes, closeModalAction, format, type }) => {
                     )}
                 </Grid>
             }
-            closeModalAction={() =>
-                closeModalAction()
-            }
-            confirmButtonText={
-                'Add'
-            }
-            closeButtonText={
-                'Cancel'
-            }
+            closeModalAction={() => closeModalAction()}
+            confirmButtonText={'Add'}
+            closeButtonText={'Cancel'}
             confirmButtonAction={() => {
                 if (type === 'url') {
                     format('link', url, text)

@@ -89,7 +89,8 @@ const CreateLink = ({
                                     communities={communities
                                         .filter(
                                             ({ role }) =>
-                                                role === 'ADMIN' || role === 'CURATOR'
+                                                role === 'ADMIN' ||
+                                                role === 'CURATOR'
                                         )
                                         .map(({ community }) => ({
                                             ...community,

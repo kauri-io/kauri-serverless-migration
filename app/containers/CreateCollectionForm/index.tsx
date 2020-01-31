@@ -156,7 +156,7 @@ export default compose<
                                 )
                                 .map(({ community }) => ({
                                     ...community,
-                                    __typename: "CommunityDTO",
+                                    __typename: 'CommunityDTO',
                                     type: 'COMMUNITY',
                                 }))}
                             handleSubmit={destination => {

@@ -29,7 +29,6 @@ import PublishingSelector from '../../PublishingSelector'
 import { curateCommunityResourcesAction } from '../../Community/Module'
 import AlertViewComponent from '../../../components/Modal/AlertView'
 
-
 interface IProps {
     classes: any
     comments?: number
@@ -202,9 +201,9 @@ const Toolbar = ({
                                         }}
                                         content={
                                             <Typography variant="body1">
-                                                You won't be able to
-                                                retrieve the draft article
-                                                after deleting.
+                                                You won't be able to retrieve
+                                                the draft article after
+                                                deleting.
                                             </Typography>
                                         }
                                         title={'Are you sure?'}
@@ -345,11 +344,9 @@ const Toolbar = ({
                                                         title="Share to Community"
                                                         content={
                                                             <Typography variant="body1">
-                                                                You not part
-                                                                of any
-                                                                community.
-                                                                Join a
-                                                                Community
+                                                                You not part of
+                                                                any community.
+                                                                Join a Community
                                                                 first.
                                                             </Typography>
                                                         }

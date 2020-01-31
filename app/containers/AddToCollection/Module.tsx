@@ -82,9 +82,9 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
                             title="Add to Collection"
                             content={
                                 <Typography variant="body1">
-                                    Article successfully added to {` ${payload.getCollection &&
-                                            payload.getCollection
-                                                .name} Collection`}
+                                    Article successfully added to{' '}
+                                    {` ${payload.getCollection &&
+                                        payload.getCollection.name} Collection`}
                                 </Typography>
                             }
                             closeModalAction={() => payload.closeModalAction()}

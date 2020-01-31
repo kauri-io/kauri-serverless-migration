@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import AlertView from '../../components/Modal/AlertView'
 import { Select, MenuItem, makeStyles, Theme } from '@material-ui/core'
@@ -30,7 +29,6 @@ interface IProps {
 }
 
 const PublishingSelector = (props: IProps) => {
-
     const classes = useStyles()
 
     let options: any[] = []
@@ -46,10 +44,10 @@ const PublishingSelector = (props: IProps) => {
     const action: string = props.action || 'Publish'
 
     const [destination, setDestination] = useState(options[0])
-    
+
     const handleChange = event => {
-        setDestination(event.target.value);
-      }
+        setDestination(event.target.value)
+    }
 
     return (
         <AlertView
@@ -59,15 +57,16 @@ const PublishingSelector = (props: IProps) => {
                     value={destination}
                     onChange={handleChange}
                     className={classes.select}
-                    >
+                >
                     {options.map((option, key) => (
-                        <MenuItem 
-                            key={key} 
+                        <MenuItem
+                            key={key}
                             // @ts-ignore [2]
-                            value={option}>
+                            value={option}
+                        >
                             {option.name}
                         </MenuItem>
-                    ))}  
+                    ))}
                 </Select>
             }
             closeModalAction={props.closeModalAction}

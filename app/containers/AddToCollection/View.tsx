@@ -191,7 +191,9 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                             }}
                             confirmButtonText={'Create new collection'}
                             content={
-                                <Typography variant="body1">{' You don\'t have any collections.'}</Typography>
+                                <Typography variant="body1">
+                                    {" You don't have any collections."}
+                                </Typography>
                             }
                         />
                     )

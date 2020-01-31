@@ -532,9 +532,10 @@ export const curateCommunityResourcesEpic: Epic<
                                       <AlertViewComponent
                                           title="Share to Community"
                                           content={
-                                            <Typography variant="body1">
-                                                Article successfully shared to {` ${payload.communityName} Community`}
-                                            </Typography>
+                                              <Typography variant="body1">
+                                                  Article successfully shared to{' '}
+                                                  {` ${payload.communityName} Community`}
+                                              </Typography>
                                           }
                                           closeModalAction={() =>
                                               payload.closeModalAction()

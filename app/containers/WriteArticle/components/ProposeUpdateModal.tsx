@@ -1,5 +1,11 @@
 import React from 'react'
-import { Grid, Typography, makeStyles, Theme, TextField } from '@material-ui/core'
+import {
+    Grid,
+    Typography,
+    makeStyles,
+    Theme,
+    TextField,
+} from '@material-ui/core'
 import { IField } from '../../CreateCommunityForm/AddMemberModal'
 import AlertViewComponent from '../../../components/Modal/AlertView'
 
@@ -15,12 +21,15 @@ interface IProps {
 }
 
 const ProposeArticleModal: React.FunctionComponent<IProps> = props => {
-
     const [updateComment, setUpdateComment] = React.useState<IField>({
         value: '',
         hasError: false,
         handleChange: (value: string) => {
-            setUpdateComment({ ...updateComment, value, hasError: !updateComment.validate(value) })
+            setUpdateComment({
+                ...updateComment,
+                value,
+                hasError: !updateComment.validate(value),
+            })
         },
         validate: (value: string) => {
             return value.length > 3
@@ -32,12 +41,9 @@ const ProposeArticleModal: React.FunctionComponent<IProps> = props => {
             title="Submit Update"
             closeModalAction={props.closeModalAction}
             content={
-                <ProposeArticleContentModal 
-                    updateComment={updateComment}
-                />
+                <ProposeArticleContentModal updateComment={updateComment} />
             }
             confirmButtonAction={e => {
-
                 let hasError = false
                 if (!updateComment.validate(updateComment.value)) {
                     setUpdateComment({ ...updateComment, hasError: true })
@@ -46,7 +52,9 @@ const ProposeArticleModal: React.FunctionComponent<IProps> = props => {
 
                 if (hasError) return
 
-                return props.handleSubmit('submit/update', updateComment.value)(e)
+                return props.handleSubmit('submit/update', updateComment.value)(
+                    e
+                )
             }}
         />
     )
@@ -64,8 +72,10 @@ const ProposeArticleContentModal: React.FunctionComponent<IPropsContent> = ({
     return (
         <Grid container>
             <Typography variant="body1">
-                Please enter a note to the author explaining your changes. 
-                At a minimum, describe what you've changed. Adding detail will greatly increase the likelihood the author will accept and publish your proposed update!
+                Please enter a note to the author explaining your changes. At a
+                minimum, describe what you've changed. Adding detail will
+                greatly increase the likelihood the author will accept and
+                publish your proposed update!
             </Typography>
 
             <TextField
