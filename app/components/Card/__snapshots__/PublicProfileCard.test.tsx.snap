@@ -483,93 +483,119 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                     <div
                       className="makeStyles-row-3"
                     >
-                      <ForwardRef
-                        borderRadius="4px"
-                        className="makeStyles-avatar-6"
-                        height={90}
-                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                        width={90}
+                      <AvatarComp
+                        avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                        borderRadius={4}
+                        id="1234567890"
+                        name="PublicProfile"
+                        size={90}
+                        username="test username"
+                        withName={false}
                       >
-                        <InView
-                          rootMargin="200px 0px"
-                          threshold={0}
-                          triggerOnce={true}
+                        <Link
+                          as="/test username/p"
+                          href="/public-profile?username=test username"
                         >
-                          <Image__Img
-                            borderRadius="4px"
-                            className="makeStyles-avatar-6"
-                            height={90}
-                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                            inView={false}
-                            width={90}
+                          <a
+                            href="/test username/p"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            target="_self"
                           >
-                            <StyledComponent
-                              borderRadius="4px"
-                              className="makeStyles-avatar-6"
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Image__Img-sc-1jpuda7-0",
-                                    "isStatic": false,
-                                    "lastClassName": "hCIuTQ",
-                                    "rules": Array [
-                                      "height:",
-                                      [Function],
-                                      ";width:",
-                                      [Function],
-                                      ";",
-                                      [Function],
-                                      ";background:",
-                                      [Function],
-                                      ";background-size:cover;opacity:",
-                                      [Function],
-                                      ";transition:opacity ",
-                                      [Function],
-                                      "s;",
-                                      [Function],
-                                      ";",
-                                      [Function],
-                                      ";position:",
-                                      [Function],
-                                      ";",
-                                      [Function],
-                                      ";",
-                                      [Function],
-                                      ";",
-                                      [Function],
-                                      " ",
-                                      [Function],
-                                      ";",
-                                    ],
-                                  },
-                                  "displayName": "Image__Img",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                  "target": "div",
-                                  "toString": [Function],
-                                  "usesTheme": true,
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
-                                }
-                              }
-                              forwardedRef={[Function]}
-                              height={90}
-                              image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                              inView={false}
-                              width={90}
+                            <div
+                              className="makeStyles-container-37"
                             >
-                              <div
-                                className="Image__Img-sc-1jpuda7-0 hCIuTQ makeStyles-avatar-6"
+                              <ForwardRef
+                                borderRadius="4px"
+                                className="makeStyles-avatar-38"
                                 height={90}
+                                image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                 width={90}
-                              />
-                            </StyledComponent>
-                          </Image__Img>
-                        </InView>
-                      </ForwardRef>
+                              >
+                                <InView
+                                  rootMargin="200px 0px"
+                                  threshold={0}
+                                  triggerOnce={true}
+                                >
+                                  <Image__Img
+                                    borderRadius="4px"
+                                    className="makeStyles-avatar-38"
+                                    height={90}
+                                    image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                    inView={false}
+                                    width={90}
+                                  >
+                                    <StyledComponent
+                                      borderRadius="4px"
+                                      className="makeStyles-avatar-38"
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "Image__Img-sc-1jpuda7-0",
+                                            "isStatic": false,
+                                            "lastClassName": "hCIuTQ",
+                                            "rules": Array [
+                                              "height:",
+                                              [Function],
+                                              ";width:",
+                                              [Function],
+                                              ";",
+                                              [Function],
+                                              ";background:",
+                                              [Function],
+                                              ";background-size:cover;opacity:",
+                                              [Function],
+                                              ";transition:opacity ",
+                                              [Function],
+                                              "s;",
+                                              [Function],
+                                              ";",
+                                              [Function],
+                                              ";position:",
+                                              [Function],
+                                              ";",
+                                              [Function],
+                                              ";",
+                                              [Function],
+                                              ";",
+                                              [Function],
+                                              " ",
+                                              [Function],
+                                              ";",
+                                            ],
+                                          },
+                                          "displayName": "Image__Img",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                          "target": "div",
+                                          "toString": [Function],
+                                          "usesTheme": true,
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={[Function]}
+                                      height={90}
+                                      image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                      inView={false}
+                                      width={90}
+                                    >
+                                      <div
+                                        className="Image__Img-sc-1jpuda7-0 hCIuTQ makeStyles-avatar-38"
+                                        height={90}
+                                        width={90}
+                                      />
+                                    </StyledComponent>
+                                  </Image__Img>
+                                </InView>
+                              </ForwardRef>
+                            </div>
+                          </a>
+                        </Link>
+                      </AvatarComp>
                       <div
                         className="makeStyles-column-4"
                       >
@@ -692,21 +718,21 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                               <HiddenCss
                                 classes={
                                   Object {
-                                    "lgDown": "PrivateHiddenCss-lgDown-78",
-                                    "lgUp": "PrivateHiddenCss-lgUp-77",
-                                    "mdDown": "PrivateHiddenCss-mdDown-75",
-                                    "mdUp": "PrivateHiddenCss-mdUp-74",
-                                    "onlyLg": "PrivateHiddenCss-onlyLg-76",
-                                    "onlyMd": "PrivateHiddenCss-onlyMd-73",
-                                    "onlySm": "PrivateHiddenCss-onlySm-70",
-                                    "onlyXl": "PrivateHiddenCss-onlyXl-79",
-                                    "onlyXs": "PrivateHiddenCss-onlyXs-67",
-                                    "smDown": "PrivateHiddenCss-smDown-72",
-                                    "smUp": "PrivateHiddenCss-smUp-71",
-                                    "xlDown": "PrivateHiddenCss-xlDown-81",
-                                    "xlUp": "PrivateHiddenCss-xlUp-80",
-                                    "xsDown": "PrivateHiddenCss-xsDown-69",
-                                    "xsUp": "PrivateHiddenCss-xsUp-68",
+                                    "lgDown": "PrivateHiddenCss-lgDown-81",
+                                    "lgUp": "PrivateHiddenCss-lgUp-80",
+                                    "mdDown": "PrivateHiddenCss-mdDown-78",
+                                    "mdUp": "PrivateHiddenCss-mdUp-77",
+                                    "onlyLg": "PrivateHiddenCss-onlyLg-79",
+                                    "onlyMd": "PrivateHiddenCss-onlyMd-76",
+                                    "onlySm": "PrivateHiddenCss-onlySm-73",
+                                    "onlyXl": "PrivateHiddenCss-onlyXl-82",
+                                    "onlyXs": "PrivateHiddenCss-onlyXs-70",
+                                    "smDown": "PrivateHiddenCss-smDown-75",
+                                    "smUp": "PrivateHiddenCss-smUp-74",
+                                    "xlDown": "PrivateHiddenCss-xlDown-84",
+                                    "xlUp": "PrivateHiddenCss-xlUp-83",
+                                    "xsDown": "PrivateHiddenCss-xsDown-72",
+                                    "xsUp": "PrivateHiddenCss-xsUp-71",
                                   }
                                 }
                                 lgDown={false}
@@ -721,7 +747,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                 xsUp={false}
                               >
                                 <div
-                                  className="PrivateHiddenCss-smDown-72"
+                                  className="PrivateHiddenCss-smDown-75"
                                 >
                                   <div
                                     className="makeStyles-row-3"
