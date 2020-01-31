@@ -9051,7 +9051,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                       onValidation={[Function]}
                                                                       placeholder="Community Name"
                                                                       required={true}
-                                                                      rowsMax={3}
+                                                                      rowsMax={2}
                                                                       validate={[Function]}
                                                                       value="AFTER QUERY REFACTORING"
                                                                     >
@@ -9067,7 +9067,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                         name="name"
                                                                         onChange={[Function]}
                                                                         placeholder="Community Name (Required)"
-                                                                        rowsMax={3}
+                                                                        rowsMax={2}
                                                                         value="AFTER QUERY REFACTORING"
                                                                         variant="standard"
                                                                       >
@@ -9088,7 +9088,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                           name="name"
                                                                           onChange={[Function]}
                                                                           placeholder="Community Name (Required)"
-                                                                          rowsMax={3}
+                                                                          rowsMax={2}
                                                                           value="AFTER QUERY REFACTORING"
                                                                           variant="standard"
                                                                         >
@@ -9123,7 +9123,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                                   name="name"
                                                                                   onChange={[Function]}
                                                                                   placeholder="Community Name (Required)"
-                                                                                  rowsMax={3}
+                                                                                  rowsMax={2}
                                                                                   value="AFTER QUERY REFACTORING"
                                                                                 >
                                                                                   <ForwardRef(Input)
@@ -9148,7 +9148,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                                     name="name"
                                                                                     onChange={[Function]}
                                                                                     placeholder="Community Name (Required)"
-                                                                                    rowsMax={3}
+                                                                                    rowsMax={2}
                                                                                     value="AFTER QUERY REFACTORING"
                                                                                   >
                                                                                     <WithStyles(ForwardRef(InputBase))
@@ -9175,7 +9175,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                                       name="name"
                                                                                       onChange={[Function]}
                                                                                       placeholder="Community Name (Required)"
-                                                                                      rowsMax={3}
+                                                                                      rowsMax={2}
                                                                                       type="text"
                                                                                       value="AFTER QUERY REFACTORING"
                                                                                     >
@@ -9209,7 +9209,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                                         name="name"
                                                                                         onChange={[Function]}
                                                                                         placeholder="Community Name (Required)"
-                                                                                        rowsMax={3}
+                                                                                        rowsMax={2}
                                                                                         type="text"
                                                                                         value="AFTER QUERY REFACTORING"
                                                                                       >
@@ -9228,7 +9228,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                                             onFocus={[Function]}
                                                                                             placeholder="Community Name (Required)"
                                                                                             required={false}
-                                                                                            rowsMax={3}
+                                                                                            rowsMax={2}
                                                                                             value="AFTER QUERY REFACTORING"
                                                                                           >
                                                                                             <textarea

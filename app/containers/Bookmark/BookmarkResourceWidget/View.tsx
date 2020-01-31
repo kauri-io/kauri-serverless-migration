@@ -80,7 +80,6 @@ export const BookmarkResourceComponent = ({
     return (
         <AlertView
             closeModalAction={closeModalAction}
-            closeButtonText={'CLOSE'}
             hideCloseButton={true}
             hideConfirmButton={true}
             confirmButtonAction={() => {}}

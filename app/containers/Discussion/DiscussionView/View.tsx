@@ -304,7 +304,7 @@ export const DiscussionView = ({
                                                     }
                                                     confirmButtonText={'Delete'}
                                                     content={
-                                                        <Typography variant="subtitle2">
+                                                        <Typography variant="body1">
                                                             Are you sure you
                                                             want to delete this
                                                             discussion?

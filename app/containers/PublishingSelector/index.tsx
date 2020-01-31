@@ -1,7 +1,14 @@
-import AlertView from '../../components/Modal/AlertView'
-import Select from '../../components/Select'
-import styled from 'styled-components'
+
 import React, { useState } from 'react'
+import AlertView from '../../components/Modal/AlertView'
+import { Select, MenuItem, makeStyles, Theme } from '@material-ui/core'
+
+const useStyles = makeStyles((_theme: Theme) => ({
+    select: {
+        width: '100%',
+        zIndex: 100000,
+    },
+}))
 
 export interface IOption {
     __typename: string
@@ -22,67 +29,10 @@ interface IProps {
     action?: string
 }
 
-const TooltipContainer = styled.div`
-    display: flex;
-    width: 300px;
-    padding: 0 20px;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
-    border-radius: 4px;
-    > div:not(:last-child) {
-        margin-bottom: 20px;
-    }
-    > * {
-        cursor: pointer;
-    }
-`
-
-const Label = styled.span`
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: ${props => props.theme.primary};
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    transition: all 0.3s;
-
-    &:hover {
-        color: #108e72;
-    }
-
-    &:not(:last-child) {
-        border-bottom: 1px solid #d8d8d8;
-    }
-`
-
-interface IContentProps {
-    action: string
-    options: IOption[]
-    setDestination: (destValue: IOption) => void
-}
-
-const Content: React.FC<IContentProps> = ({
-    action,
-    options,
-    setDestination,
-}) => {
-    return (
-        <TooltipContainer>
-            {options &&
-                options.map((option, key) => (
-                    <Label key={key} onClick={() => setDestination(option)}>
-                        {action} to {option.name}
-                    </Label>
-                ))}
-        </TooltipContainer>
-    )
-}
-
 const PublishingSelector = (props: IProps) => {
+
+    const classes = useStyles()
+
     let options: any[] = []
     if (props.type) {
         options.push({
@@ -96,22 +46,29 @@ const PublishingSelector = (props: IProps) => {
     const action: string = props.action || 'Publish'
 
     const [destination, setDestination] = useState(options[0])
+    
+    const handleChange = event => {
+        setDestination(event.target.value);
+      }
+
     return (
         <AlertView
             title={action}
             content={
-                <div>
-                    <Select
-                        placeHolder="placeholder text"
-                        value={`${action} to ${destination.name}`}
+                <Select
+                    value={destination}
+                    onChange={handleChange}
+                    className={classes.select}
                     >
-                        <Content
-                            setDestination={setDestination}
-                            options={options}
-                            action={action}
-                        />
-                    </Select>
-                </div>
+                    {options.map((option, key) => (
+                        <MenuItem 
+                            key={key} 
+                            // @ts-ignore [2]
+                            value={option}>
+                            {option.name}
+                        </MenuItem>
+                    ))}  
+                </Select>
             }
             closeModalAction={props.closeModalAction}
             confirmButtonAction={(

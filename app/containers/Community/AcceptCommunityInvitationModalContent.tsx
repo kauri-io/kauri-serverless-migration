@@ -1,31 +1,17 @@
-import styled from 'styled-components'
-import { BodyCard } from '../../components/Typography'
-
-const Container = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    > :first-child {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-    width: 330px;
-    margin-top: ${props => props.theme.space[2]}px;
-    margin-bottom: ${props => props.theme.space[3]}px;
-`
+import { Grid, Typography } from '@material-ui/core'
 
 const AcceptCommunityInvitationModalContent: React.FunctionComponent = () => (
-    <Container>
-        <BodyCard>
+    <Grid container>
+        <Typography variant="body1">
             You’ve been invited to join this community as a member!
-        </BodyCard>
-        <BodyCard>
+        </Typography>
+        <br />
+        <Typography variant="body2">
             By accepting, you can add new articles and collections to this
             community, update existing content, and modify the community home
             page.
-        </BodyCard>
-    </Container>
+        </Typography>
+    </Grid>
 )
 
 export default AcceptCommunityInvitationModalContent

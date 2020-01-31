@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Button from '../../../components/Button'
-import ProposeUpdateModal from './ProposeUpdateModal'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import initUppy from '../../../lib/init-uppy'
 import config from '../../../config'
@@ -9,6 +8,7 @@ import BackIcon from '@material-ui/icons/ArrowLeft'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { IAttributes } from '../View'
+import ProposeArticleModal from './ProposeUpdateModal'
 
 export const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) => {
 
 interface IProps {
     routeChangeAction: (route: string) => void
-    handleSubmit: (submissionType: string, updateComment?: string) => void
+    handleSubmit: (submissionType: string, updateComment?: string) => any
     userId: string
     openModalAction: (children: any) => void
     closeModalAction: () => void
@@ -84,13 +84,13 @@ export default ({
     status,
     closeModalAction,
     openModalAction,
-    showNotificationAction,
     selectDestination,
     communities,
     setAttributes,
     attributes,
     disableActions,
-}: IProps) => {
+}: IProps) => {    
+
     useEffect(() => {
         uppy = initUppy({
             allowGifs: false,
@@ -106,8 +106,9 @@ export default ({
             uppy.reset()
         })
     }, [])
-
+    
     const classes = useStyles()
+
     return (
         <div className={classes.container}>
             <Grid className={classes.actions} container={true}>
@@ -159,14 +160,9 @@ export default ({
                                 onClick={() =>
                                     openModalAction({
                                         children: (
-                                            <ProposeUpdateModal
-                                                closeModalAction={() =>
-                                                    closeModalAction()
-                                                }
-                                                confirmModal={handleSubmit}
-                                                showNotificationAction={
-                                                    showNotificationAction
-                                                }
+                                            <ProposeArticleModal
+                                                closeModalAction={closeModalAction}
+                                                handleSubmit={handleSubmit}
                                             />
                                         ),
                                     })

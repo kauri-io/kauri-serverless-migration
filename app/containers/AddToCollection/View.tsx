@@ -6,7 +6,6 @@ import { ICollection } from './CollectionsContent'
 import { ISection } from './SectionsContent'
 import Loading from '../../components/Loading'
 import { ErrorMessage } from '../../lib/with-apollo-error'
-import { Label } from '../..//components/Typography'
 import { getCollectionsForUser as query } from '../../queries/Collection'
 import {
     getCollectionsForUser,
@@ -15,6 +14,7 @@ import {
 import { useState } from 'react'
 import { addResourceToCollectionAction } from './Module'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { Typography } from '@material-ui/core'
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -191,11 +191,7 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                             }}
                             confirmButtonText={'Create new collection'}
                             content={
-                                <section>
-                                    <Label>
-                                        You don't have any collections.
-                                    </Label>
-                                </section>
+                                <Typography variant="body1">{' You don\'t have any collections.'}</Typography>
                             }
                         />
                     )

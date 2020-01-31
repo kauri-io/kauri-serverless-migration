@@ -10,8 +10,6 @@ import PublishingSelector, {
 } from '../../containers/PublishingSelector'
 import { path } from 'ramda'
 import Image from '../../components/Image'
-import Button from '../../components/Button'
-import { Typography, Grid } from '@material-ui/core'
 import {
     setArticleCacheItem,
     getArticleCachedItem,
@@ -172,35 +170,16 @@ const ArticleEditor = props => {
         ) {
             props.openModalAction({
                 children: (
-                    <div>
-                        <Typography variant="h5">
-                            Unsaved Changes Detected
-                        </Typography>
-                        <Grid
-                            style={{ padding: 20 }}
-                            container={true}
-                            spacing={3}
-                            justify="space-between"
-                        >
-                            <Button
-                                onClick={() => props.closeModalAction()}
-                                variant="outlined"
-                                color="primary"
-                            >
-                                Ignore
-                            </Button>
-                            <Button
-                                onClick={() => {
-                                    updateState(item)
-                                    props.closeModalAction()
-                                }}
-                                variant="contained"
-                                color="primary"
-                            >
-                                Restore Changes
-                            </Button>
-                        </Grid>
-                    </div>
+                    <AlertView
+                        title="Unsaved Changes Detected"
+                        closeModalAction={props.closeModalAction}
+                        closeButtonText="Ignore"
+                        confirmButtonAction={() => {
+                            updateState(item)
+                            props.closeModalAction()
+                        }}
+                        confirmButtonText="Restore Changes"
+                    />
                 ),
             })
         }
@@ -226,7 +205,7 @@ const ArticleEditor = props => {
         updateComment?: string,
         destination?: IOption
     ) => (e: React.SyntheticEvent<HTMLButtonElement> | null) => {
-        console.log('*** SUBMITTING ***', updateComment)
+
         if (e) {
             e.preventDefault()
         }

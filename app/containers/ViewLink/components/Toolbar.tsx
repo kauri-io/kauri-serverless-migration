@@ -14,7 +14,6 @@ import BookmarkIcon from '@material-ui/icons/Bookmark'
 import DeleteIcon from '@material-ui/icons/Delete'
 import PencilIcon from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
-import { BodyCard } from '../../../components/Typography'
 import AlertView from '../../../components/Modal/AlertView'
 import {
     Popper,
@@ -29,17 +28,7 @@ import { initiateArticleTransferAction } from '../../Article/Module'
 import PublishingSelector from '../../PublishingSelector'
 import { curateCommunityResourcesAction } from '../../Community/Module'
 import AlertViewComponent from '../../../components/Modal/AlertView'
-import styled from 'styled-components'
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    min-height: 130px;
-    align-items: center;
-    > :first-child {
-        margin-right: 3px;
-    }
-`
 
 interface IProps {
     classes: any
@@ -66,6 +55,7 @@ interface IProps {
     context?: 'draft' | 'submitted-update'
     userId: string
     communities: any
+    url: string
 }
 
 const Toolbar = ({
@@ -87,6 +77,7 @@ const Toolbar = ({
     context,
     userId,
     communities,
+    url,
 }: IProps) => {
     const [menuOpen, setMenuOpen] = React.useState(false)
     const menuAnchorEl = React.useRef(null)
@@ -123,7 +114,7 @@ const Toolbar = ({
     const executeOrLoginRedirect = action => {
         return isLoggedIn && action
             ? action()
-            : routeChangeAction && routeChangeAction(`/login`)
+            : routeChangeAction && routeChangeAction(`/login?r=${url}`)
     }
 
     const isDraft = () => {
@@ -210,13 +201,11 @@ const Toolbar = ({
                                                 closeModalAction()
                                         }}
                                         content={
-                                            <div>
-                                                <BodyCard>
-                                                    You won't be able to
-                                                    retrieve the draft article
-                                                    after deleting.
-                                                </BodyCard>
-                                            </div>
+                                            <Typography variant="body1">
+                                                You won't be able to
+                                                retrieve the draft article
+                                                after deleting.
+                                            </Typography>
                                         }
                                         title={'Are you sure?'}
                                     />
@@ -236,6 +225,10 @@ const Toolbar = ({
                         onClick={() =>
                             executeOrLoginRedirect(() =>
                                 routeChangeAction(
+                                    getArticleURL(
+                                        { id, title: '', version },
+                                        'update'
+                                    ).href,
                                     getArticleURL(
                                         { id, title: '', version },
                                         'update'
@@ -351,16 +344,14 @@ const Toolbar = ({
                                                     <AlertViewComponent
                                                         title="Share to Community"
                                                         content={
-                                                            <BodyCard>
-                                                                <Row>
-                                                                    You not part
-                                                                    of any
-                                                                    community.
-                                                                    Join a
-                                                                    Community
-                                                                    first.
-                                                                </Row>
-                                                            </BodyCard>
+                                                            <Typography variant="body1">
+                                                                You not part
+                                                                of any
+                                                                community.
+                                                                Join a
+                                                                Community
+                                                                first.
+                                                            </Typography>
                                                         }
                                                         closeModalAction={() =>
                                                             closeModalAction()
