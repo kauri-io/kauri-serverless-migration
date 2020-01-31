@@ -18,6 +18,8 @@ interface IProps {
 const useStyles = makeStyles((theme: Theme) => ({
     form: {
         padding: '0 12px',
+        display: 'flex',
+        alignItems: 'center',
     },
     wrapper: {
         display: 'flex',

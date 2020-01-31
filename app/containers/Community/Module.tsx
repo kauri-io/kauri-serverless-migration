@@ -124,18 +124,7 @@ import {
     unbanMember,
 } from '../../queries/__generated__/unbanMember'
 import AlertViewComponent from '../../components/Modal/AlertView'
-import { BodyCard, H4 } from '../../components/Typography'
-import styled from 'styled-components'
-
-export const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    min-height: 130px;
-    align-items: center;
-    > :first-child {
-        margin-right: 3px;
-    }
-`
+import { Typography } from '@material-ui/core'
 
 interface IWaitForInvitationReconciliationPayload {
     id: string
@@ -543,13 +532,9 @@ export const curateCommunityResourcesEpic: Epic<
                                       <AlertViewComponent
                                           title="Share to Community"
                                           content={
-                                              <Row>
-                                                  <BodyCard>
-                                                      Article successfully
-                                                      shared to
-                                                  </BodyCard>
-                                                  <H4>{` ${payload.communityName} Community`}</H4>
-                                              </Row>
+                                            <Typography variant="body1">
+                                                Article successfully shared to {` ${payload.communityName} Community`}
+                                            </Typography>
                                           }
                                           closeModalAction={() =>
                                               payload.closeModalAction()

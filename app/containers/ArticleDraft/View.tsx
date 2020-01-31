@@ -135,6 +135,7 @@ const ArticleComp = ({
                                 curateCommunityResourcesAction={
                                     curateCommunityResourcesAction
                                 }
+                                url={url.as}
                             />
                         </Hidden>
                         <Grid

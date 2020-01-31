@@ -1,18 +1,13 @@
-import styled from 'styled-components'
-import theme from '../../lib/theme-config'
-import Select from '../../components/Select'
-import CollectionsContent, { ICollection } from './CollectionsContent'
-import SectionsContent, { ISection } from './SectionsContent'
-import { Label } from '../../components/Typography'
+import { ICollection } from './CollectionsContent'
+import { ISection } from './SectionsContent'
+import { Typography, Select, MenuItem, makeStyles, Theme } from '@material-ui/core'
 
-export const AddToCollectionSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    margin-top: ${theme.space[2]}px;
-    > * {
-        margin-bottom: ${theme.space[3]}px;
-    }
-`
+const useStyles = makeStyles((theme: Theme) => ({
+    select: {
+        width: '100%',
+        marginBottom: theme.spacing(1),
+    },
+}))
 
 interface IParentState {
     chosenCollection: ICollection | null
@@ -34,67 +29,60 @@ const Content: React.FunctionComponent<IProps> = ({
     parentState,
     collectionsThatDoNotHaveTheChosenArticleId,
     articleAlreadyInAllCollections,
-    changeToPrefilledArticleCreateCollectionRoute,
 }) => {
-    const chosenCollection = collectionsThatDoNotHaveTheChosenArticleId.find(
-        ({ id }) =>
-            parentState.chosenCollection
-                ? id === parentState.chosenCollection.id
-                : false
-    )
-
+    const classes = useStyles()
+    
     if (articleAlreadyInAllCollections) {
         return (
-            <AddToCollectionSection>
-                <Label>{'Article is already in all your collections!'}</Label>
-            </AddToCollectionSection>
+            <Typography variant="body1">{'Article is already in all your collections!'}</Typography>
         )
     }
 
+    const handleCollectionSelection = event => {
+        setCollection({ chosenCollection: event.target.value })
+    }
+
+    const handleSectionSelection = event => {
+        setSection({ chosenSection: event.target.value })
+    }
+
     return (
-        <AddToCollectionSection>
+        <>
             {Array.isArray(collectionsThatDoNotHaveTheChosenArticleId) &&
                 collectionsThatDoNotHaveTheChosenArticleId.length > 0 && (
                     <Select
-                        value={
-                            parentState.chosenCollection &&
-                            parentState.chosenCollection.name
-                        }
-                        placeHolder={'Collection name'}
-                    >
-                        <CollectionsContent
-                            changeToPrefilledArticleCreateCollectionRoute={
-                                changeToPrefilledArticleCreateCollectionRoute
-                            }
-                            handleClick={collection => {
-                                setCollection({ chosenCollection: collection })
-                            }}
-                            collections={
-                                collectionsThatDoNotHaveTheChosenArticleId
-                            }
-                        />
+                        value={parentState.chosenCollection}
+                        onChange={handleCollectionSelection}
+                        className={classes.select}
+                        >
+                        {collectionsThatDoNotHaveTheChosenArticleId.map((option, key) => (
+                            <MenuItem 
+                                key={key} 
+                                // @ts-ignore [2]
+                                value={option}>
+                                {option.name}
+                            </MenuItem>
+                        ))}  
                     </Select>
-                )}
-            {chosenCollection && chosenCollection.sections.length > 0 && (
+            )}
+            {parentState.chosenCollection && parentState.chosenCollection.sections.length > 0 && (
+                
                 <Select
-                    value={
-                        parentState.chosenSection
-                            ? parentState.chosenSection.name !== ''
-                                ? parentState.chosenSection.name
-                                : 'Untitled section'
-                            : null
-                    }
-                    placeHolder={'Section name'}
+                    value={parentState.chosenSection}
+                    onChange={handleSectionSelection}
+                    className={classes.select}
                 >
-                    <SectionsContent
-                        handleClick={section =>
-                            setSection({ chosenSection: section })
-                        }
-                        sections={chosenCollection.sections}
-                    />
+                    {parentState.chosenCollection.sections.map((option, key) => (
+                        <MenuItem 
+                            key={key} 
+                            // @ts-ignore [2]
+                            value={option}>
+                            {option.name}
+                        </MenuItem>
+                    ))} 
                 </Select>
             )}
-        </AddToCollectionSection>
+        </>
     )
 }
 

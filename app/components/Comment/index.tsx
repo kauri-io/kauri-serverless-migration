@@ -242,7 +242,7 @@ const Comment = ({
                                                                         'Delete'
                                                                     }
                                                                     content={
-                                                                        <Typography variant="subtitle2">
+                                                                        <Typography variant="body1">
                                                                             Are
                                                                             you
                                                                             sure

@@ -130,6 +130,7 @@ const ViewLink = ({
                                 curateCommunityResourcesAction={
                                     curateCommunityResourcesAction
                                 }
+                                url={url.as}
                             />
                         </Hidden>
                         <LinkContent
