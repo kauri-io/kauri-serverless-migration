@@ -46,17 +46,13 @@ const ArticleEditor = props => {
     useEffect(() => {
         const {
             userId,
-            router,
             routeChangeAction,
             communities,
             openModalAction,
             closeModalAction,
         } = props
 
-        if (!userId) {
-            // routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
-            console.log(router)
-        } else {
+        if (userId) {
             analytics.track('Write Article Start', {
                 category: 'generic',
             })
@@ -102,7 +98,7 @@ const ArticleEditor = props => {
                         routeChangeAction(
                             `/account-check?page=${window.location.pathname}`
                         ),
-                    1000
+                    500
                 )
             }
         }

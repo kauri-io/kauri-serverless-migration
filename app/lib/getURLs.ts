@@ -13,8 +13,8 @@ export const getArticleURL = (
     switch (type) {
         case 'update':
             return {
-                href: `/app/update-article?id=${id}&version=${version}`,
                 as: `/article/${id}/v${version}/update-article`,
+                href: `/update-article?id=${id}&version=${version}`,
             }
         case 'draft':
             return {

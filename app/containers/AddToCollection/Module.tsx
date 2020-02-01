@@ -18,6 +18,7 @@ import {
     getCollectionTitleVariables,
 } from '../../queries/__generated__/getCollectionTitle'
 import { Typography } from '@material-ui/core'
+import { getCollectionURL } from '../../lib/getURLs'
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
@@ -93,9 +94,8 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
                             confirmButtonAction={() => {
                                 payload.closeModalAction()
                                 payload.routeChangeAction(
-                                    `/collection/${payload.getCollection &&
-                                        payload.getCollection
-                                            .id}/update-collection`
+                                    getCollectionURL({...payload.getCollection}).href,
+                                    getCollectionURL({...payload.getCollection}).as,
                                 )
                             }}
                         />
