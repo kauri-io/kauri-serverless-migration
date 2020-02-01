@@ -94,8 +94,12 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
                             confirmButtonAction={() => {
                                 payload.closeModalAction()
                                 payload.routeChangeAction(
-                                    getCollectionURL({...payload.getCollection}).href,
-                                    getCollectionURL({...payload.getCollection}).as,
+                                    getCollectionURL({
+                                        ...payload.getCollection,
+                                    }).href,
+                                    getCollectionURL({
+                                        ...payload.getCollection,
+                                    }).as
                                 )
                             }}
                         />
