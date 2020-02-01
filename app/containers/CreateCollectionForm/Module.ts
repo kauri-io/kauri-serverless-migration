@@ -164,7 +164,14 @@ export const composeCollectionEpic: Epic<
                                                     ? 'collection-updated'
                                                     : 'collection-created',
                                             id,
-                                        }).href
+                                        }).href,
+                                        getCollectionURL({
+                                            name:
+                                                typeof updating !== 'undefined'
+                                                    ? 'collection-updated'
+                                                    : 'collection-created',
+                                            id,
+                                        }).as
                                     )
                                 )
                             )

@@ -76,6 +76,9 @@ export const deleteDraftArticleEpic: Epic<
                         of(
                             routeChangeAction(
                                 state$.value.app.user
+                                    ? getProfileURL(state$.value.app.user).href
+                                    : '/',
+                                state$.value.app.user
                                     ? getProfileURL(state$.value.app.user).as
                                     : '/'
                             )

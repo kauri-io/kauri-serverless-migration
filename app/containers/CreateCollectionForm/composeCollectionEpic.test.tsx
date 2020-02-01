@@ -75,7 +75,10 @@ describe('composeCollectionEpic', () => {
                 message: 'Collection updated!',
                 description: 'Your collection is now available for viewing!',
             }),
-            routeChangeAction(`/collection?collection_id=${id}`),
+            routeChangeAction(
+                `/collection?collection_id=${id}`,
+                `/collectionupdated/${id}/c`
+            ),
         ]
 
         const resultingActions = await testEpic(
@@ -154,7 +157,10 @@ describe('composeCollectionEpic', () => {
                 message: 'Collection created!',
                 description: 'Your collection is now available for viewing!',
             }),
-            routeChangeAction(`/collection?collection_id=${id}`),
+            routeChangeAction(
+                `/collection?collection_id=${id}`,
+                `/collectioncreated/${id}/c`
+            ),
         ]
 
         const resultingActions = await testEpic(
