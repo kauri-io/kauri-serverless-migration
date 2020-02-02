@@ -127,33 +127,23 @@ const ProfileHeader = ({
                     username={username}
                 />
                 <Grid item={true} className={classes.data}>
-                    {username || name ? (
-                        <>
-                            {username && (
-                                <Typography
-                                    component={!name ? 'h1' : 'h6'}
-                                    variant="subtitle1"
-                                    color="secondary"
-                                >
-                                    @{username}
-                                </Typography>
-                            )}
-                            {name && (
-                                <Typography
-                                    component={name ? 'h1' : 'h6'}
-                                    variant="h6"
-                                    color="secondary"
-                                >
-                                    {name}
-                                </Typography>
-                            )}
-                        </>
-                    ) : (
-                        id && (
-                            <Typography variant="subtitle1" color="secondary">
-                                {id}
-                            </Typography>
-                        )
+                    {username && (
+                        <Typography
+                            component={!name ? 'h1' : 'h6'}
+                            variant="subtitle1"
+                            color="secondary"
+                        >
+                            @{username}
+                        </Typography>
+                    )}
+                    {name && (
+                        <Typography
+                            component={name ? 'h1' : 'h6'}
+                            variant="h6"
+                            color="secondary"
+                        >
+                            {name}
+                        </Typography>
                     )}
                     {title && (
                         <Typography variant="subtitle2" color="secondary">
