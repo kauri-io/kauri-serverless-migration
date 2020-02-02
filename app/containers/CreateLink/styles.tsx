@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             maxWidth: 870,
             margin: 'auto',
             marginTop: theme.spacing(2),
-            padding: theme.spacing(2),
+            padding: theme.spacing(0, 2, 2, 2),
         },
         linkInputContainer: {
             padding: theme.spacing(2),

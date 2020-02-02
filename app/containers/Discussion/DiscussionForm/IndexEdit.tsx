@@ -8,6 +8,7 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../../components/Modal/Module'
+import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { createDiscussionAction, editDiscussionAction } from '../Module'
 
@@ -30,6 +31,7 @@ export default compose(
             routeChangeAction,
             createDiscussionAction,
             editDiscussionAction,
+            showNotificationAction,
         }
     ),
     graphql(getDiscussion, {

@@ -42,7 +42,9 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     setAttributes={[Function]}
     setTitle={[Function]}
     text={null}
-    withTabs={true}
+    withTabImport={true}
+    withTabMetadata={true}
+    withTabPreview={true}
     withToolbar={true}
   />
 </Fragment>

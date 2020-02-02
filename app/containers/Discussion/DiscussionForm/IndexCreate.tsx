@@ -4,6 +4,7 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../../components/Modal/Module'
+import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { createDiscussionAction, editDiscussionAction } from '../Module'
 import { withApollo, compose } from 'react-apollo'
@@ -27,6 +28,7 @@ export default compose(
             routeChangeAction,
             createDiscussionAction,
             editDiscussionAction,
+            showNotificationAction,
         }
     )
 )(View)
