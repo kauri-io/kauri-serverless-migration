@@ -62,6 +62,7 @@ describe('composeCollectionEpic', () => {
         const sourceAction = composeCollectionAction(
             {
                 id,
+                name,
                 sections,
                 tags,
                 updating: true,
@@ -77,7 +78,7 @@ describe('composeCollectionEpic', () => {
             }),
             routeChangeAction(
                 `/collection?collection_id=${id}`,
-                `/collectionupdated/${id}/c`
+                `/${name}/${id}/c`
             ),
         ]
 
@@ -145,6 +146,7 @@ describe('composeCollectionEpic', () => {
         const sourceAction = composeCollectionAction(
             {
                 id,
+                name,
                 sections,
                 tags,
             },
@@ -159,7 +161,7 @@ describe('composeCollectionEpic', () => {
             }),
             routeChangeAction(
                 `/collection?collection_id=${id}`,
-                `/collectioncreated/${id}/c`
+                `/${name}/${id}/c`
             ),
         ]
 

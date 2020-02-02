@@ -38,6 +38,7 @@ export interface ICreateCollectionPayload {
 
 export interface IComposeCollectionPayload {
     id: string
+    name: string
     sections: Array<ISection>
     updating?: boolean
     tags?: any
@@ -102,7 +103,7 @@ export const composeCollectionEpic: Epic<
 > = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(COMPOSE_COLLECTION),
-        switchMap(({ payload: { id, sections, updating }, callback }) =>
+        switchMap(({ payload: { id, name, sections, updating }, callback }) =>
             from(
                 apolloClient.mutate<
                     composeCollection,
@@ -158,20 +159,8 @@ export const composeCollectionEpic: Epic<
                                 ),
                                 of(
                                     routeChangeAction(
-                                        getCollectionURL({
-                                            name:
-                                                typeof updating !== 'undefined'
-                                                    ? 'collection-updated'
-                                                    : 'collection-created',
-                                            id,
-                                        }).href,
-                                        getCollectionURL({
-                                            name:
-                                                typeof updating !== 'undefined'
-                                                    ? 'collection-updated'
-                                                    : 'collection-created',
-                                            id,
-                                        }).as
+                                        getCollectionURL({ id, name }).href,
+                                        getCollectionURL({ id, name }).as
                                     )
                                 )
                             )
@@ -242,7 +231,7 @@ export const createCollectionEpic: Epic<
                     tap(console.log),
                     map(({ data: { getEvent: { output: { id } } } }) =>
                         composeCollectionAction(
-                            { id, sections, tags },
+                            { id, name, sections, tags },
                             callback
                         )
                     )
@@ -286,7 +275,7 @@ export const editCollectionEpic: Epic<
                     tap(console.log),
                     map(({ data: { getEvent: { output: { id } } } }) =>
                         composeCollectionAction(
-                            { id, sections, updating: true },
+                            { id, name, sections, updating: true },
                             callback
                         )
                     )
