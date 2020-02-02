@@ -122,15 +122,9 @@ const Editor = ({
                         onChange={(_e, tab) => setTab(tab)}
                     >
                         <Tab label="Editor" />
-                        {withTabPreview && (
-                            <Tab label="Preview" />
-                        )}
-                        {withTabMetadata && (
-                            <Tab label="Metadata" />
-                        )}
-                        {withTabImport && (
-                            <Tab label="Import" />
-                        )}
+                        {withTabPreview && <Tab label="Preview" />}
+                        {withTabMetadata && <Tab label="Metadata" />}
+                        {withTabImport && <Tab label="Import" />}
                     </Tabs>
                 )}
                 {tab === 0 && withToolbar && (

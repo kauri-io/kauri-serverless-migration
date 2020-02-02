@@ -135,13 +135,13 @@ export const DiscussionForm = ({
     }, [])
 
     const save = () => {
-        if(title === '' || tags.length === 0 || message === '') {
+        if (title === '' || tags.length === 0 || message === '') {
             showNotificationAction({
                 description: 'Please complete the form',
                 message: 'Invalid form',
                 notificationType: 'error',
             })
-            return;
+            return
         }
 
         let t: string[] = tags.map(i => i.label)
@@ -210,7 +210,9 @@ export const DiscussionForm = ({
                         </Grid>
                     </Paper>
 
-                    <Paper className={[classes.paper, classes.message].join(' ')}>
+                    <Paper
+                        className={[classes.paper, classes.message].join(' ')}
+                    >
                         <Editor
                             minHeight={200}
                             withTabPreview={true}
