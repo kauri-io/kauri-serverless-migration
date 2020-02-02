@@ -78,7 +78,7 @@ describe('editCollectionEpic', () => {
         )
 
         const expectedAction = [
-            composeCollectionAction({ id, sections, tags }, () => {}),
+            composeCollectionAction({ id, name, sections, tags }, () => {}),
         ]
 
         const resultingActions = await testEpic(

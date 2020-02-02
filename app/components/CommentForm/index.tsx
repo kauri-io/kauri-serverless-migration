@@ -111,7 +111,6 @@ const CommentForm = ({
                         <Editor
                             minHeight={80}
                             text={comment}
-                            withTabs={false}
                             withToolbar={true}
                             compact={true}
                             onChange={e => setComment(e)}

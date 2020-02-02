@@ -494,7 +494,9 @@ const ArticleEditor = props => {
 
             <Editor
                 setTitle={setSubject}
-                withTabs={true}
+                withTabPreview={true}
+                withTabMetadata={true}
+                withTabImport={true}
                 withToolbar={true}
                 compact={false}
                 text={content}

@@ -25,6 +25,7 @@ import Link from 'next/link'
 import TagSelector from '../../CreateLink/components/TagSelector'
 import ApolloClient from 'apollo-client'
 import Editor from '../../../components/Markdown/Editor'
+import { IShowNotificationPayload } from '../../../lib/Epics/ShowNotificationEpic'
 
 interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
@@ -36,6 +37,7 @@ interface IProps {
     editDiscussionAction: (
         payload: editDiscussionVariables
     ) => IEditDiscussionAction
+    showNotificationAction: (payload: IShowNotificationPayload) => void
     discussionId?: string
     parentId: string
     parentName: string
@@ -81,6 +83,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginTop: theme.spacing(4),
         padding: theme.spacing(2),
     },
+    message: {
+        paddingTop: 0,
+    },
 }))
 
 export const DiscussionForm = ({
@@ -94,6 +99,7 @@ export const DiscussionForm = ({
     editDiscussionAction,
     openModalAction,
     closeModalAction,
+    showNotificationAction,
 }: IProps) => {
     const classes = useStyles()
 
@@ -129,6 +135,15 @@ export const DiscussionForm = ({
     }, [])
 
     const save = () => {
+        if (title === '' || tags.length === 0 || message === '') {
+            showNotificationAction({
+                description: 'Please complete the form',
+                message: 'Invalid form',
+                notificationType: 'error',
+            })
+            return
+        }
+
         let t: string[] = tags.map(i => i.label)
 
         if (isEditing && discussionId) {
@@ -195,10 +210,12 @@ export const DiscussionForm = ({
                         </Grid>
                     </Paper>
 
-                    <Paper className={classes.paper}>
+                    <Paper
+                        className={[classes.paper, classes.message].join(' ')}
+                    >
                         <Editor
                             minHeight={200}
-                            withTabs={false}
+                            withTabPreview={true}
                             withToolbar={true}
                             compact={true}
                             text={message}

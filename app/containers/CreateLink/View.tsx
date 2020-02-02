@@ -178,7 +178,7 @@ const CreateLink = ({
                             <Paper className={classes.editor}>
                                 <Editor
                                     minHeight={200}
-                                    withTabs={false}
+                                    withTabPreview={true}
                                     withToolbar={true}
                                     compact={true}
                                     text={summary || ''}
