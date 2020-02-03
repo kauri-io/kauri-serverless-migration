@@ -137,11 +137,11 @@
       "dest": "/app/bookmarks"
     },
     {
-      "src": "draft/(.*)/(.*)",
+      "src": "/draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
     },
     {
-      "src": "submitted-update/(.*)/(.*)",
+      "src": "/submitted-update/(.*)/(.*)",
       "dest": "/app/submitted-update?id=$1&version=$2"
     },
     {

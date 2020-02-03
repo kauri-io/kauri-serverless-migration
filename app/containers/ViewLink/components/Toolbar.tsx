@@ -261,7 +261,7 @@ const Toolbar = ({
                 <Paper>
                     <ClickAwayListener onClickAway={menuHandleClose}>
                         <MenuList autoFocusItem={menuOpen} id="menu-list-grow">
-                            {initiateArticleTransferAction && isOwner && (
+                            {!isDraft() && initiateArticleTransferAction && isOwner && (
                                 <MenuItem
                                     onClick={() =>
                                         executeOrLoginRedirect(() => {
@@ -273,107 +273,110 @@ const Toolbar = ({
                                     Transfer Ownership
                                 </MenuItem>
                             )}
-                            <MenuItem
-                                onClick={() =>
-                                    executeOrLoginRedirect(() =>
-                                        openModalAction({
-                                            children: (
-                                                <AddToCollection
-                                                    resourceId={id}
-                                                    type={type}
-                                                />
-                                            ),
+                            {!isDraft() && (
+                                <MenuItem
+                                    onClick={() =>
+                                        executeOrLoginRedirect(() =>
+                                            openModalAction({
+                                                children: (
+                                                    <AddToCollection
+                                                        resourceId={id}
+                                                        type={type}
+                                                    />
+                                                ),
+                                            })
+                                        )
+                                    }
+                                >
+                                    Add to collection
+                                </MenuItem>
+                            )}
+                            {!isDraft() && (
+                                <MenuItem
+                                    onClick={() =>
+                                        executeOrLoginRedirect(() => {
+                                            if (
+                                                communities &&
+                                                communities.length > 0
+                                            ) {
+                                                return openModalAction({
+                                                    children: (
+                                                        <PublishingSelector
+                                                            userId={userId}
+                                                            action="Share"
+                                                            closeModalAction={
+                                                                closeModalAction
+                                                            }
+                                                            communities={communities.map(
+                                                                ({
+                                                                    community,
+                                                                }) => ({
+                                                                    ...community,
+                                                                    type:
+                                                                        'COMMUNITY',
+                                                                })
+                                                            )}
+                                                            handleSubmit={destination =>
+                                                                curateCommunityResourcesAction(
+                                                                    {
+                                                                        id:
+                                                                            destination.id,
+                                                                        resources: [
+                                                                            {
+                                                                                type,
+                                                                                id,
+                                                                            },
+                                                                        ],
+                                                                        routeChangeAction: routeChangeAction,
+                                                                        closeModalAction: closeModalAction,
+                                                                        communityId:
+                                                                            destination.id,
+                                                                        communityName:
+                                                                            destination.name,
+                                                                    }
+                                                                )
+                                                            }
+                                                        />
+                                                    ),
+                                                })
+                                            } else {
+                                                return openModalAction({
+                                                    children: (
+                                                        <AlertViewComponent
+                                                            title="Share to Community"
+                                                            content={
+                                                                <Typography variant="body1">
+                                                                    You not part of
+                                                                    any community.
+                                                                    Join a Community
+                                                                    first.
+                                                                </Typography>
+                                                            }
+                                                            closeModalAction={() =>
+                                                                closeModalAction()
+                                                            }
+                                                            confirmButtonText={
+                                                                'Discover Communities'
+                                                            }
+                                                            closeButtonText={
+                                                                'Close'
+                                                            }
+                                                            confirmButtonAction={() => {
+                                                                closeModalAction()
+                                                                routeChangeAction(
+                                                                    '/communities'
+                                                                )
+                                                            }}
+                                                        />
+                                                    ),
+                                                })
+                                            }
                                         })
-                                    )
-                                }
-                            >
-                                Add to collection
-                            </MenuItem>
-
-                            <MenuItem
-                                onClick={() =>
-                                    executeOrLoginRedirect(() => {
-                                        if (
-                                            communities &&
-                                            communities.length > 0
-                                        ) {
-                                            return openModalAction({
-                                                children: (
-                                                    <PublishingSelector
-                                                        userId={userId}
-                                                        action="Share"
-                                                        closeModalAction={
-                                                            closeModalAction
-                                                        }
-                                                        communities={communities.map(
-                                                            ({
-                                                                community,
-                                                            }) => ({
-                                                                ...community,
-                                                                type:
-                                                                    'COMMUNITY',
-                                                            })
-                                                        )}
-                                                        handleSubmit={destination =>
-                                                            curateCommunityResourcesAction(
-                                                                {
-                                                                    id:
-                                                                        destination.id,
-                                                                    resources: [
-                                                                        {
-                                                                            type,
-                                                                            id,
-                                                                        },
-                                                                    ],
-                                                                    routeChangeAction: routeChangeAction,
-                                                                    closeModalAction: closeModalAction,
-                                                                    communityId:
-                                                                        destination.id,
-                                                                    communityName:
-                                                                        destination.name,
-                                                                }
-                                                            )
-                                                        }
-                                                    />
-                                                ),
-                                            })
-                                        } else {
-                                            return openModalAction({
-                                                children: (
-                                                    <AlertViewComponent
-                                                        title="Share to Community"
-                                                        content={
-                                                            <Typography variant="body1">
-                                                                You not part of
-                                                                any community.
-                                                                Join a Community
-                                                                first.
-                                                            </Typography>
-                                                        }
-                                                        closeModalAction={() =>
-                                                            closeModalAction()
-                                                        }
-                                                        confirmButtonText={
-                                                            'Discover Communities'
-                                                        }
-                                                        closeButtonText={
-                                                            'Close'
-                                                        }
-                                                        confirmButtonAction={() => {
-                                                            closeModalAction()
-                                                            routeChangeAction(
-                                                                '/communities'
-                                                            )
-                                                        }}
-                                                    />
-                                                ),
-                                            })
-                                        }
-                                    })
-                                }
-                            >
-                                Share to community
-                            </MenuItem>
+                                    }
+                                >
+                                    Share to community
+                                </MenuItem>
+                            )}
                         </MenuList>
                     </ClickAwayListener>
                 </Paper>

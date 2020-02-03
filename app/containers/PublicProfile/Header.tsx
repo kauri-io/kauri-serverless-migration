@@ -12,6 +12,9 @@ const getURL = (string, type) => {
     const split = string.split('/')
     switch (type) {
         case 'website':
+            if(string.indexOf("http") === -1) {
+                string = "http://"+string
+            }
             const url = anchorme(string, { list: true })[0]
             return `${url ? `${url.protocol}${url.encoded}` : string}`
         case 'twitter':
