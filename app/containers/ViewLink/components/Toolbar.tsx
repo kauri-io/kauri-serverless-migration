@@ -261,18 +261,20 @@ const Toolbar = ({
                 <Paper>
                     <ClickAwayListener onClickAway={menuHandleClose}>
                         <MenuList autoFocusItem={menuOpen} id="menu-list-grow">
-                            {!isDraft() && initiateArticleTransferAction && isOwner && (
-                                <MenuItem
-                                    onClick={() =>
-                                        executeOrLoginRedirect(() => {
-                                            openTransferOwnershipModal()
-                                            menuHandleClose()
-                                        })
-                                    }
-                                >
-                                    Transfer Ownership
-                                </MenuItem>
-                            )}
+                            {!isDraft() &&
+                                initiateArticleTransferAction &&
+                                isOwner && (
+                                    <MenuItem
+                                        onClick={() =>
+                                            executeOrLoginRedirect(() => {
+                                                openTransferOwnershipModal()
+                                                menuHandleClose()
+                                            })
+                                        }
+                                    >
+                                        Transfer Ownership
+                                    </MenuItem>
+                                )}
                             {!isDraft() && (
                                 <MenuItem
                                     onClick={() =>
@@ -346,9 +348,11 @@ const Toolbar = ({
                                                             title="Share to Community"
                                                             content={
                                                                 <Typography variant="body1">
-                                                                    You not part of
-                                                                    any community.
-                                                                    Join a Community
+                                                                    You not part
+                                                                    of any
+                                                                    community.
+                                                                    Join a
+                                                                    Community
                                                                     first.
                                                                 </Typography>
                                                             }
