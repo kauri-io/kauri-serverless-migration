@@ -158,7 +158,7 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
     this._selectionStart = this._selectionEnd = 0;
     this._selectionDirection = "none";
-    this._value = null;
+    this._value = "";
     this._dirtyValue = false;
     this._checkedness = false;
     this._dirtyCheckedness = false;
@@ -179,6 +179,8 @@ class HTMLInputElementImpl extends HTMLElementImpl {
     return convertStringToNumberByTypeMap.get(this.type);
   }
 
+  // For <input>, https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-value
+  // is a simple value that is gotten and set, not computed.
   _getValue() {
     return this._value;
   }
@@ -340,7 +342,7 @@ class HTMLInputElementImpl extends HTMLElementImpl {
     switch (valueAttributeMode(this.type)) {
       // https://html.spec.whatwg.org/multipage/input.html#dom-input-value-value
       case "value":
-        return this._value !== null ? this._value : "";
+        return this._getValue();
       // https://html.spec.whatwg.org/multipage/input.html#dom-input-value-default
       case "default": {
         const attr = this.getAttributeNS(null, "value");
@@ -364,11 +366,7 @@ class HTMLInputElementImpl extends HTMLElementImpl {
       // https://html.spec.whatwg.org/multipage/input.html#dom-input-value-value
       case "value": {
         const oldValue = this._value;
-        if (val === null) {
-          this._value = null;
-        } else {
-          this._value = sanitizeValueByType(this, String(val));
-        }
+        this._value = sanitizeValueByType(this, val);
         this._dirtyValue = true;
 
         if (oldValue !== this._value) {
@@ -662,16 +660,20 @@ class HTMLInputElementImpl extends HTMLElementImpl {
     return this.value;
   }
 
-  // https://html.spec.whatwg.org/multipage/input.html#attr-input-step
-  get _step() {
-    let step = this._defaultStep;
-    if (this.hasAttributeNS(null, "step") && !asciiCaseInsensitiveMatch(this.getAttributeNS(null, "step"), "any")) {
-      const parsedStep = parseFloatingPointNumber(this.getAttributeNS(null, "step"));
-      if (!isNaN(parsedStep) && parsedStep > 0) {
-        step = parsedStep;
-      }
+  // https://html.spec.whatwg.org/multipage/input.html#concept-input-step
+  get _allowedValueStep() {
+    const attr = this.getAttributeNS(null, "step");
+    if (attr === null) {
+      return this._defaultStep * this._stepScaleFactor;
     }
-    return step;
+    if (asciiCaseInsensitiveMatch(attr, "any")) {
+      return null;
+    }
+    const parsedStep = parseFloatingPointNumber(this.getAttributeNS(null, "step"));
+    if (isNaN(parsedStep) || parsedStep <= 0) {
+      return this._defaultStep * this._stepScaleFactor;
+    }
+    return parsedStep * this._stepScaleFactor;
   }
 
   // https://html.spec.whatwg.org/multipage/input.html#concept-input-step-scale
@@ -720,7 +722,7 @@ class HTMLInputElementImpl extends HTMLElementImpl {
   get _defaultStepBase() {
     if (this.type === "week") {
       // The start of week 1970-W01
-      return 259200000;
+      return -259200000;
     }
     return 0;
   }
@@ -807,26 +809,18 @@ class HTMLInputElementImpl extends HTMLElementImpl {
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-a-step-mismatch
         // https://html.spec.whatwg.org/multipage/input.html#attr-input-step
         stepMismatch: () => {
-          // Constraint validation: When the element has an allowed value step, and the result of applying
-          // the algorithm to convert a string to a number to the string given by the element's value is a
-          // number, and that number subtracted from the step base is not an integral multiple of the
-          // allowed value step, the element is suffering from a step mismatch.
-          if (!this._attributeApplies("step")) {
+          const allowedValueStep = this._allowedValueStep;
+          if (allowedValueStep === null) {
             return false;
           }
-          const step = parseFloatingPointNumber(this.getAttributeNS(null, "step"));
-          if (isNaN(step) || step <= 0) {
+          if (this._convertStringToNumber === undefined) {
             return false;
           }
-
-          let number = this._parsedValue;
-          if (isNaN(number) || this.value === "") {
+          const number = this._parsedValue;
+          if (typeof number !== "number" || isNaN(number)) {
             return false;
           }
-          if (this._type === "month") {
-            number = parseMonthString(this.value).month - 1;
-          }
-          return number % (this._stepBase - (this._step * this._stepScaleFactor)) !== 0;
+          return (number - this._stepBase) % allowedValueStep !== 0;
         },
 
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-a-type-mismatch
