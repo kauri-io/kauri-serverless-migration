@@ -1,6 +1,12 @@
 import uppyConfig from './uppy'
 
 export default {
+    title: 'Where Developers Write, Share & Learn',
+    description: {
+        line1:
+            'Learn about blockchain development and be rewarded for contributing technical content and tutorials.',
+        line2: 'Built with ♥ on Ethereum + IPFS',
+    },
     gateway: 'api.kauri.io',
     KauriCommunityId: '5d2c6edefe402500014349f5',
     uppyConfig,
