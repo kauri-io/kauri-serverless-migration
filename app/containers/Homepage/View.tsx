@@ -221,7 +221,7 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
                 <title>{`Kauri - ${config.title}`}</title>
                 <meta
                     name="description"
-                    content={`${config.description.line1} - ${config.description.line2}`}
+                    content={`${config.description.line1} ${config.description.line2}`}
                 />
                 <meta property="og:url" content="https://kauri.io" />
                 <link rel="canonical" href="https://kauri.io" />

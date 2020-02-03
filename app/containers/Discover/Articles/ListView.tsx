@@ -40,7 +40,7 @@ class Articles extends Component<IProps> {
                     <title>{`Kauri - ${config.title} - Articles`}</title>
                     <meta
                         name="description"
-                        content={`${config.description.line1} - ${config.description.line2}`}
+                        content={`${config.description.line1} ${config.description.line2}`}
                     />
                     <link
                         rel="canonical"
