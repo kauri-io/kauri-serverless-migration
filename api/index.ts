@@ -27,7 +27,8 @@ turndownService.addRule('gist', {
 })
 turndownService.addRule('code', {
   filter: function (node, _options) {
-    return (node.nodeName === 'CODE' || node.nodeName === 'SPAN')
+    return (node.nodeName === 'CODE' 
+        || (node.nodeName === 'SPAN' || node.parentNode.nodeName === "PRE")) // Medium
   },
   replacement: function (content) {
     if(content.indexOf("\n") !== -1) {
@@ -54,8 +55,8 @@ module.exports = async (req, res) => {
     const document = await parseMedium(doc.window.document)
     const reader = new Readability(document)
     const article = reader.parse()
-
     const md = turndownService.turndown(article.content);
+
     article.md = md.trim()
     res.send(article)
   }
