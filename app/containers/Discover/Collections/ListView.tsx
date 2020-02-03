@@ -13,6 +13,7 @@ import {
 import { getCollectionURL } from '../../../lib/getURLs'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../../components/Modal/Module'
+import config from '../../../config/index'
 
 interface IProps {
     CollectionQuery: {
@@ -50,13 +51,10 @@ class Collections extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>
-                        Beginner to Advanced Blockchain & Ethereum Tutorials |
-                        Collections - Kauri
-                    </title>
+                    <title>{`Kauri - ${config.title} - Collections`}</title>
                     <meta
                         name="description"
-                        content="Discover the best collections of blockchain related articles, tutorials and how-to guides"
+                        content={`${config.description.line1} - ${config.description.line2}`}
                     />
                     <link
                         rel="canonical"

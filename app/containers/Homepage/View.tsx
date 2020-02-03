@@ -20,6 +20,7 @@ import { Theme } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
+import config from '../../config/index'
 
 interface IProps {
     hostName: string
@@ -67,24 +68,7 @@ export const HomePageComponent = (props: {
     const classes = useStyles()
     return (
         <>
-            <Head>
-                <title>
-                    Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri
-                </title>
-                <meta property="og:url" content="https://kauri.io" />
-                <meta
-                    property="og:image"
-                    content={`https://${props.hostName}/static/images/kauri_ioLogo.png`}
-                />
-                <meta
-                    name="description"
-                    content={
-                        'Learn Blockchain and Ethereum with Kauri, Articles, Tutorials, Guides, Documentation and Best Practices. Focused on Getting Started, Scaling, Privacy, Storage, Defi, Gaming, UX and much more.'
-                    }
-                />
-            </Head>
-
-            {!props.isLoggedIn && <SignupBanner />}
+            <SignupBanner isLoggedIn={props.isLoggedIn} />
 
             {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
                 const hasSidebar = row.sidebar !== null
@@ -234,22 +218,17 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
     return (
         <>
             <Head>
-                <title
-                    dangerouslySetInnerHTML={{
-                        __html:
-                            'Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri',
-                    }}
+                <title>{`Kauri - ${config.title}`}</title>
+                <meta
+                    name="description"
+                    content={`${config.description.line1} - ${config.description.line2}`}
                 />
                 <meta property="og:url" content="https://kauri.io" />
+                <link rel="canonical" href="https://kauri.io" />
                 <meta
                     property="og:image"
                     content={`https://${props.hostName}/static/images/kauri_ioLogo.png`}
                 />
-                <meta
-                    name="description"
-                    content="Learn Blockchain and Ethereum with Kauri, Articles, Tutorials, Guides, Documentation and Best Practices. Focused on Getting Started, Scaling, Privacy, Storage, Defi, Gaming, UX and much more."
-                />
-                <link rel="canonical" href="https://kauri.io" />
             </Head>
             <Query<homePageContent> query={query}>
                 {({ loading, error, data }) => {

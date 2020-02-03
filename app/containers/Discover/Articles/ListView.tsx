@@ -13,6 +13,7 @@ import AddToCollection from '../../AddToCollection'
 import { searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO } from '../../../queries/__generated__/searchResultsAutocomplete'
 import LinkCard from '../../../components/Card/LinkCard'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
+import config from '../../../config/index'
 
 interface IProps {
     ArticlesQuery: {
@@ -36,13 +37,10 @@ class Articles extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>
-                        Beginner to Advanced Blockchain & Ethereum Tutorials |
-                        Articles - Kauri
-                    </title>
+                    <title>{`Kauri - ${config.title} - Articles`}</title>
                     <meta
                         name="description"
-                        content="Discover the best blockchain related articles, tutorials and how-to guides"
+                        content={`${config.description.line1} - ${config.description.line2}`}
                     />
                     <link
                         rel="canonical"

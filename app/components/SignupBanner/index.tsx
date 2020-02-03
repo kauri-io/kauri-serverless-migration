@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/styles'
 import { Theme, Grid, Typography, Hidden } from '@material-ui/core'
 import ButtonComp from '../Button'
 import Link from 'next/link'
+import config from '../../config/index'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -50,7 +51,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default () => {
+interface IProps {
+    isLoggedIn: boolean
+}
+
+export default ({ isLoggedIn }: IProps) => {
     const classes = useStyles({})
 
     return (
@@ -69,33 +74,41 @@ export default () => {
                 </a>
             </Link>
             <Typography className={classes.title} component="h1">
-                Beginner to Advanced Blockchain & Ethereum Tutorials
+                {config.title}
             </Typography>
             <Typography className={classes.subtitle} component="h2">
-                Learn from technical tutorials and content created and curated
-                by developers
+                {config.description.line1}
             </Typography>
-            <Grid>
-                <Hidden mdDown={true}>
-                    <Link href="/login">
+            <Typography className={classes.subtitle} component="h2">
+                {config.description.line2}
+            </Typography>
+
+            {!isLoggedIn && (
+                <Grid>
+                    <Hidden mdDown={true}>
+                        <Link href="/login">
+                            <a>
+                                <ButtonComp
+                                    className={classes.button}
+                                    color="primary"
+                                >
+                                    Join Kauri
+                                </ButtonComp>
+                            </a>
+                        </Link>
+                    </Hidden>
+                    <Link href="/help">
                         <a>
                             <ButtonComp
                                 className={classes.button}
                                 color="primary"
                             >
-                                Get Involved
+                                Learn More
                             </ButtonComp>
                         </a>
                     </Link>
-                </Hidden>
-                <Link href="/help">
-                    <a>
-                        <ButtonComp className={classes.button} color="primary">
-                            Learn More
-                        </ButtonComp>
-                    </a>
-                </Link>
-            </Grid>
+                </Grid>
+            )}
         </Grid>
     )
 }

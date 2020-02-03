@@ -8,6 +8,7 @@ import {
 } from '../../../queries/__generated__/searchResultsAutocomplete'
 import { getCommunityURL } from '../../../lib/getURLs'
 import { Grid, withStyles } from '@material-ui/core'
+import config from '../../../config/index'
 
 interface IProps {
     CommunityQuery: {
@@ -32,17 +33,14 @@ class Communities extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>
-                        Beginner to Advanced Blockchain & Ethereum Tutorials |
-                        Communities - Kauri
-                    </title>
+                    <title>{`Kauri - ${config.title} - Communities`}</title>
                     <meta
                         name="description"
-                        content="Discover the best collections of blockchain related articles, tutorials and how-to guides"
+                        content={`${config.description.line1} - ${config.description.line2}`}
                     />
                     <link
                         rel="canonical"
-                        href={`https://${this.props.hostName}/collections`}
+                        href={`https://${this.props.hostName}/communities`}
                     />
                 </Head>
                 <div className={this.props.classes.root}>
