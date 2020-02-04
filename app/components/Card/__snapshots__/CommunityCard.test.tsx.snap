@@ -575,6 +575,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
               href="/community/1234567890/cm"
               onClick={[Function]}
               onMouseEnter={[Function]}
+              title="Community"
             >
               <Hidden
                 implementation="css"

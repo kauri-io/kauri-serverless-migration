@@ -1224,6 +1224,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
                                             target="_self"
+                                            title="test-author-username-1"
                                           >
                                             <div
                                               className="makeStyles-container-128"

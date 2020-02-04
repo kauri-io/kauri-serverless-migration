@@ -529,6 +529,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
               href="h6"
               onClick={[Function]}
               onMouseEnter={[Function]}
+              title="Article"
             >
               <Hidden
                 implementation="css"
@@ -1279,6 +1280,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                     target="_self"
+                                                    title="test name"
                                                   >
                                                     <div
                                                       className="makeStyles-container-187"
@@ -2192,6 +2194,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                 onClick={[Function]}
                                                                 onMouseEnter={[Function]}
                                                                 target="_self"
+                                                                title="test name"
                                                               >
                                                                 <div
                                                                   className="makeStyles-container-190"

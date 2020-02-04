@@ -154,10 +154,11 @@ const Renderer = ({ markdown }) => {
     }
 
     const LinkOrGist = props => {
+        console.log("props", props)
         if (props.href.indexOf('https://gist.github.com') !== -1) {
             return <Gist id={props.href.split('/')[4]} />
         } else {
-            return <Link {...props} target="_blank" rel="noopener" />
+            return <Link {...props} title={props.title || props.children[0]} target="_blank" rel="noopener" />
         }
     }
 

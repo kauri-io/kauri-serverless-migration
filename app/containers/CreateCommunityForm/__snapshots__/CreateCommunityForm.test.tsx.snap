@@ -12755,6 +12755,7 @@ exports[`containers/CreateCommunityForm/View should match the snapshot 1`] = `
                                                                       onClick={[Function]}
                                                                       onMouseEnter={[Function]}
                                                                       target="_blank"
+                                                                      title="test-username"
                                                                     >
                                                                       <div
                                                                         className="makeStyles-container-189"

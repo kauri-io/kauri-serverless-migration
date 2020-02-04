@@ -90,7 +90,7 @@ const DiscussionCard = ({
 
     return (
         <Link href={link.href} as={link.as}>
-            <a className={classes.link}>
+            <a className={classes.link} title={title}>
                 <>
                     {/* ###### MOBILE VIEW ###### */}
                     <Hidden implementation="css" mdUp={true}>
