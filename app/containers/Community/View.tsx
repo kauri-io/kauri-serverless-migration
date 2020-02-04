@@ -142,6 +142,17 @@ class CommunityConnection extends React.Component<IProps, IState> {
         this.setState({ ...counters, ...tabs })
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.data.getCommunity.dateUpdated !== prevProps.data.getCommunity.dateUpdated
+            || (this.props.data.getCommunity.approvedId && prevProps.data.getCommunity.approvedId && this.props.data.getCommunity.approvedId.length !== prevProps.data.getCommunity.approvedId.length)
+            || (this.props.data.getCommunity.pendingId && prevProps.data.getCommunity.pendingId && this.props.data.getCommunity.pendingId.length !== prevProps.data.getCommunity.pendingId.length)
+            || this.props.data.getCommunity.members.totalElements !== prevProps.data.getCommunity.members.totalElements) {
+            const counters = this.setCounter()
+            this.setState({ ...counters })
+        }
+
+    }
+
     recordView() {
         this.props.client &&
             this.props.client.mutate({

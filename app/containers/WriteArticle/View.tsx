@@ -416,6 +416,9 @@ const ArticleEditor = props => {
 
         const version = Number(path(['getArticle', 'version'])(data))
         const status = data && data.getArticle && data.getArticle.status
+        const communitiesModerating = communities
+            .filter(({ role }) => role === 'ADMIN' || role === 'CURATOR')
+            .map(({ community }) => ({...community,  type: 'COMMUNITY' }));
 
         // Updating article from a community I am in
         if (
@@ -425,22 +428,14 @@ const ArticleEditor = props => {
             return handleSubmit('submit/update')(null)
         }
         // Submitting fresh article or submitting v1 article draft and I potentially want to choose a community?
-        else if (communities && communities.length > 0) {
+        else if (communitiesModerating.length > 0) {
             return openModalAction({
                 children: (
                     <PublishingSelector
                         userId={userId}
                         type="Articles"
                         closeModalAction={closeModalAction}
-                        communities={communities
-                            .filter(
-                                ({ role }) =>
-                                    role === 'ADMIN' || role === 'CURATOR'
-                            )
-                            .map(({ community }) => ({
-                                ...community,
-                                type: 'COMMUNITY',
-                            }))}
+                        communities={communitiesModerating}
                         handleSubmit={(destination, e) =>
                             handleSubmit(
                                 'submit/update',
