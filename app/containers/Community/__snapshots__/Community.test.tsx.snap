@@ -6541,6 +6541,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         onClick={[Function]}
                                                                         onMouseEnter={[Function]}
                                                                         target="_self"
+                                                                        title="gregjeanmart"
                                                                       >
                                                                         <WithStyles(ForwardRef(Tooltip))
                                                                           placement="bottom-end"
@@ -6703,6 +6704,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         onClick={[Function]}
                                                                         onMouseEnter={[Function]}
                                                                         target="_self"
+                                                                        title="greg123"
                                                                       >
                                                                         <WithStyles(ForwardRef(Tooltip))
                                                                           placement="bottom-end"
@@ -12266,6 +12268,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         href="/dfdsfsdf-edit2/df5cedcc4eb5495ca443a630ad93b343/a"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
+                                        title="dfdsfsdf EDIT2"
                                       >
                                         <Hidden
                                           implementation="css"
@@ -13261,6 +13264,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                               target="_self"
+                                                                              title="Gregoire Jeanmart"
                                                                             >
                                                                               <div
                                                                                 className="makeStyles-container-308"
@@ -14502,6 +14506,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                           onClick={[Function]}
                                                                                           onMouseEnter={[Function]}
                                                                                           target="_self"
+                                                                                          title="Gregoire Jeanmart"
                                                                                         >
                                                                                           <div
                                                                                             className="makeStyles-container-311"
@@ -16964,6 +16969,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         href="/cxvcxvcxv/f1ac39e882394b0e99d26621aa78826e/a"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
+                                        title="cxvcxvcxv"
                                       >
                                         <Hidden
                                           implementation="css"
@@ -17959,6 +17965,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                               target="_self"
+                                                                              title="Gregoire Jeanmart"
                                                                             >
                                                                               <div
                                                                                 className="makeStyles-container-335"
@@ -19200,6 +19207,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                           onClick={[Function]}
                                                                                           onMouseEnter={[Function]}
                                                                                           target="_self"
+                                                                                          title="Gregoire Jeanmart"
                                                                                         >
                                                                                           <div
                                                                                             className="makeStyles-container-338"
@@ -21323,6 +21331,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         href="/watch-out-google-brave-surpasses-350000-publisher/UicniThmUz/l"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
+                                        title="Watch out Google: Brave surpasses 350,000 publisher milestone - Decrypt"
                                       >
                                         <Hidden
                                           implementation="css"
@@ -22071,6 +22080,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                               target="_self"
+                                                                              title="Gregoire Jeanmart"
                                                                             >
                                                                               <div
                                                                                 className="makeStyles-container-351"
@@ -22934,6 +22944,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                           onClick={[Function]}
                                                                                           onMouseEnter={[Function]}
                                                                                           target="_self"
+                                                                                          title="Gregoire Jeanmart"
                                                                                         >
                                                                                           <div
                                                                                             className="makeStyles-container-354"
@@ -25672,6 +25683,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         href="/sdfdsf/5df820999c39750001a4815b/c"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
+                                        title="sdfdsf"
                                       >
                                         <Hidden
                                           implementation="css"
@@ -26296,6 +26308,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                               target="_self"
+                                                                              title="AFTER QUERY REFACTORING"
                                                                             >
                                                                               <div
                                                                                 className="makeStyles-container-367"
@@ -27268,6 +27281,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                           onClick={[Function]}
                                                                                           onMouseEnter={[Function]}
                                                                                           target="_self"
+                                                                                          title="AFTER QUERY REFACTORING"
                                                                                         >
                                                                                           <div
                                                                                             className="makeStyles-container-370"
@@ -29543,6 +29557,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         href="/ffffffffff-edit-by-bla/ebd3386c34ff4e2cba8e5f62150f84fb/a"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
+                                        title="ffffffffff EDIT BY BLA"
                                       >
                                         <Hidden
                                           implementation="css"
@@ -30538,6 +30553,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                               target="_self"
+                                                                              title="Gregoire Jeanmart"
                                                                             >
                                                                               <div
                                                                                 className="makeStyles-container-373"
@@ -31779,6 +31795,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                           onClick={[Function]}
                                                                                           onMouseEnter={[Function]}
                                                                                           target="_self"
+                                                                                          title="Gregoire Jeanmart"
                                                                                         >
                                                                                           <div
                                                                                             className="makeStyles-container-376"

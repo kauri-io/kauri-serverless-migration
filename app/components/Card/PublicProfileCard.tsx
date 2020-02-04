@@ -88,7 +88,7 @@ export default ({
 
     return (
         <Link href={url.href} as={url.as}>
-            <a className={classes.link}>
+            <a className={classes.link} title={name || username || ''}>
                 <Card className={classes.card}>
                     <div className={classes.row}>
                         <Avatar

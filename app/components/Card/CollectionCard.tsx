@@ -122,7 +122,7 @@ const CollectionCard = ({
 
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
-            <a className={classes.link}>
+            <a className={classes.link} title={name}>
                 <>
                     {/*  Mobile Version */}
                     <Hidden implementation="css" smUp={true}>

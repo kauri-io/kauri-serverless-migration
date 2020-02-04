@@ -107,7 +107,7 @@ const ArticleCard = ({
 
     return (
         <Link href={href.href} as={href.as}>
-            <a className={classes.link}>
+            <a className={classes.link} title={title}>
                 <>
                     <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>

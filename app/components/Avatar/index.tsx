@@ -117,7 +117,12 @@ const AvatarComp = ({
 
     return (
         <Link as={url.as} href={url.href}>
-            <a target={newTab ? '_blank' : '_self'}>{AvatarContent}</a>
+            <a
+                target={newTab ? '_blank' : '_self'}
+                title={name || username || ''}
+            >
+                {AvatarContent}
+            </a>
         </Link>
     )
 }

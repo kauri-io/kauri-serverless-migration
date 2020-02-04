@@ -426,6 +426,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
           href="/test username/p"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="PublicProfile"
         >
           <WithStyles(ForwardRef(Card))
             className="makeStyles-card-1"
@@ -501,6 +502,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                             target="_self"
+                            title="PublicProfile"
                           >
                             <div
                               className="makeStyles-container-37"

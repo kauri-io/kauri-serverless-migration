@@ -37,7 +37,7 @@ const withSchema = ({
 }: IProps) => {
     title = title.substr(0, 100)
     description =
-        description && description !== null ? description.substr(0, 300) : ''
+        description && description !== null ? description.substr(0, 155) : ''
     background = background && background !== null ? background : undefined
 
     const schema = `{
@@ -47,7 +47,7 @@ const withSchema = ({
         "author": "${author && (author.name || author.username)}",
         "datePublished": "${dateCreated}",
         "dateModified": "${datePublished}",
-        "description": "${description && description.substring(0, 160)}",
+        "description": "${description}",
         "genre": "development tutorial",
         "headline": "${title}",
         "image": "${background ||

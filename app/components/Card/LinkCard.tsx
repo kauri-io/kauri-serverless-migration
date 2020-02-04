@@ -128,7 +128,7 @@ const LinkCard = ({
 
     return (
         <Link href={linkURL.href} as={linkURL.as}>
-            <a className={classes.link}>
+            <a className={classes.link} title={linkTitle.value}>
                 <>
                     <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
