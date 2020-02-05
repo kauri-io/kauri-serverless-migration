@@ -16,7 +16,7 @@ const CollectionDiscover = () => {
     const [tab, setTab] = useState(0)
     return (
         <div>
-            <Header category={'COLLECTION'} />
+            <Header />
             <Tabs
                 TabIndicatorProps={{ style: { height: 3 } }}
                 indicatorColor="primary"

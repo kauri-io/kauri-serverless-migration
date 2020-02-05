@@ -17,7 +17,7 @@ const ArticleDiscover = () => {
     const [tab, setTab] = useState(0)
     return (
         <div>
-            <Header category={'ARTICLE'} />
+            <Header />
             <Tabs
                 TabIndicatorProps={{ style: { height: 3 } }}
                 indicatorColor="primary"

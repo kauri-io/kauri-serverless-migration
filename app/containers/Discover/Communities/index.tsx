@@ -11,7 +11,7 @@ const ContentContainer = styled.section`
 
 const CommunityDiscover = () => (
     <ContentContainer>
-        <Header category={'COMMUNITY'} />
+        <Header />
         <List />
     </ContentContainer>
 )
