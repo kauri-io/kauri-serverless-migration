@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Hidden } from '@material-ui/core'
-import Link from 'next/link'
 
 const ArticlesHeader = styled.div`
     background: white url('static/images/discover-articles-banner.svg')
@@ -33,17 +32,23 @@ const KauriDescription = styled.div`
     }
 `
 
-const Header: React.FunctionComponent = () => (
+const Header = ({ isLoggedIn, routeChangeAction }) => (
     <ArticlesHeader>
         <KauriTitle>Discover Articles</KauriTitle>
         <KauriDescription>User and Community Articles</KauriDescription>
 
         <Hidden xsDown={true}>
-            <Link as="/write-article" href="/write-article">
-                <Button color="primary" variant="text">
-                    Write an article
-                </Button>
-            </Link>
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() => {
+                    return isLoggedIn
+                        ? routeChangeAction(`/write-article`)
+                        : routeChangeAction(`/login?r=/write-article`)
+                }}
+            >
+                Write an article
+            </Button>
         </Hidden>
     </ArticlesHeader>
 )

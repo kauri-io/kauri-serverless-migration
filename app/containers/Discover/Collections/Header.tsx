@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Hidden } from '@material-ui/core'
-import Link from 'next/link'
 
 const CollectionsHeader = styled.div`
     background: white url('static/images/discover-collections-banner.svg')
@@ -34,17 +33,23 @@ const KauriDescription = styled.div`
     }
 `
 
-const Header: React.FunctionComponent = () => (
+const Header = ({ isLoggedIn, routeChangeAction }) => (
     <CollectionsHeader>
         <KauriTitle>Discover Collections</KauriTitle>
         <KauriDescription>User and Community Collections</KauriDescription>
 
         <Hidden xsDown={true}>
-            <Link as="/create-collection" href="/create-collection">
-                <Button color="primary" variant="text">
-                    Create a collection
-                </Button>
-            </Link>
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() => {
+                    return isLoggedIn
+                        ? routeChangeAction(`/create-collection`)
+                        : routeChangeAction(`/login?r=/create-collection`)
+                }}
+            >
+                > Create a collection
+            </Button>
         </Hidden>
     </CollectionsHeader>
 )

@@ -4,6 +4,8 @@ import Header from './Header'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
@@ -12,12 +14,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const ArticleDiscover = () => {
+const ArticleDiscover = ({ isLoggedIn, routeChangeAction }) => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
     return (
         <div>
-            <Header />
+            <Header
+                isLoggedIn={isLoggedIn}
+                routeChangeAction={routeChangeAction}
+            />
             <Tabs
                 TabIndicatorProps={{ style: { height: 3 } }}
                 indicatorColor="primary"
@@ -37,4 +42,14 @@ const ArticleDiscover = () => {
     )
 }
 
-export default ArticleDiscover
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        routeChangeAction,
+    }
+)(ArticleDiscover)

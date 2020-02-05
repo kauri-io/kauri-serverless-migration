@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Hidden } from '@material-ui/core'
-import Link from 'next/link'
 
 const CommunitiesHeader = styled.div`
     background: white url('static/images/discover-communities-banner.svg')
@@ -33,17 +32,23 @@ const KauriDescription = styled.div`
     }
 `
 
-const Header: React.FunctionComponent = () => (
+const Header = ({ isLoggedIn, routeChangeAction }) => (
     <CommunitiesHeader>
         <KauriTitle>Discover Communities</KauriTitle>
         <KauriDescription>User Communities</KauriDescription>
 
         <Hidden xsDown={true}>
-            <Link as="/create-community" href="/create-community">
-                <Button color="primary" variant="text">
-                    Create a Community
-                </Button>
-            </Link>
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() => {
+                    return isLoggedIn
+                        ? routeChangeAction(`/create-community`)
+                        : routeChangeAction(`/login?r=/create-community`)
+                }}
+            >
+                Create a Community
+            </Button>
         </Hidden>
     </CommunitiesHeader>
 )
