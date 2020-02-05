@@ -5,6 +5,7 @@ import { IDependencies, IReduxState } from '../../lib/Module'
 import { of, from } from 'rxjs'
 import { ofType, Epic } from 'redux-observable'
 import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators'
+import config from '../../config'
 
 const CHECKPOINT_ARTICLES = 'CHECKPOINT_ARTICLES'
 
@@ -71,7 +72,7 @@ export const checkpointArticlesEpic: Epic<
                     }) =>
                         from(getGasPrice()).pipe(
                             mergeMap<number, string>(gasPrice =>
-                                smartContracts().KauriCore.checkpointArticles(
+                                smartContracts().KauriCheckpoint.checkpointArticles(
                                     merkleRoot,
                                     checkpointHash,
                                     signatureV,
@@ -118,7 +119,7 @@ export const checkpointArticlesEpic: Epic<
                                 } else if (
                                     (err.message &&
                                         err.message.includes(
-                                            "'KauriCore' of undefined"
+                                            "'KauriCheckpoint' of undefined"
                                         )) ||
                                     err.message.includes('Wrong network')
                                 ) {
@@ -126,8 +127,7 @@ export const checkpointArticlesEpic: Epic<
                                         showNotificationAction({
                                             notificationType: 'error',
                                             message: 'Wrong network',
-                                            description:
-                                                'Please switch to the Rinkeby network to checkpoint articles!',
+                                            description: `Please switch to the ${config.ethereumNetwork} network to checkpoint articles!`,
                                         })
                                     )
                                 } else if (
@@ -167,7 +167,9 @@ export const checkpointArticlesEpic: Epic<
                         )
                     } else if (
                         (err.message &&
-                            err.message.includes("'KauriCore' of undefined")) ||
+                            err.message.includes(
+                                "'KauriCheckpoint' of undefined"
+                            )) ||
                         err.message.includes('Wrong network')
                     ) {
                         return of(

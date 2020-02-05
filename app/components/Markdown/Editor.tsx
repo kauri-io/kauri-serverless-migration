@@ -12,7 +12,7 @@ import {
 } from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
 import Importer from '../../containers/Importer'
-import { Style } from 'jss'
+import { Styles } from 'jss'
 
 interface IProps {
     withTabPreview?: boolean
@@ -53,13 +53,13 @@ const Editor = ({
     focusOutline = true,
     disabled = false,
 }: IProps) => {
-    const editorStyle = (theme): Style => {
+    const editorStyle = (theme): Styles => {
         return {
             fontSize: '16px',
             resize: 'vertical',
             border: 'none',
             paddingTop: theme.spacing(2),
-            flex: 1,
+            flex: '1',
         }
     }
     const useStyles = makeStyles((theme: Theme) => ({
