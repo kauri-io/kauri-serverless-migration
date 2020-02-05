@@ -52,6 +52,7 @@ import {
 import { State } from './components/TransactionModal'
 import { sendTransaction } from '../../lib/web3-send-transaction'
 import ApolloClient from 'apollo-client'
+import config from '../../config'
 
 export interface IVoteAction {
     type: string
@@ -515,8 +516,7 @@ const handleTippingError = (err, setTransactionState) => {
     } else if (err.message && err.message.includes('Wrong network')) {
         return of(
             showNotificationAction({
-                description:
-                    'Please switch to the Rinkeby network to tip an article author!',
+                description: `Please switch to the ${config.ethereumNetwork} network to tip an article author!`,
                 message: 'Wrong network',
                 notificationType: 'error',
             })

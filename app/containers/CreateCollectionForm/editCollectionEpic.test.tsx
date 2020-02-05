@@ -47,7 +47,7 @@ describe('editCollectionEpic', () => {
         const mockWeb3GetNetwork = () => from(Promise.resolve(true))
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
-            KauriCore: {
+            KauriCheckpoint: {
                 editCollection: {
                     sendTransaction: () => Promise.resolve('transactionHash'),
                 },

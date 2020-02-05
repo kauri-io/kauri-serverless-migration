@@ -49,7 +49,7 @@ describe('composeCollectionEpic', () => {
         const mockWeb3GetNetwork = () => from(Promise.resolve(true))
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
-            KauriCore: {
+            KauriCheckpoint: {
                 composeCollection: {
                     sendTransaction: () => Promise.resolve('transactionHash'),
                 },
@@ -133,7 +133,7 @@ describe('composeCollectionEpic', () => {
         const mockWeb3GetNetwork = () => from(Promise.resolve(true))
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
-            KauriCore: {
+            KauriCheckpoint: {
                 composeCollection: {
                     sendTransaction: () => Promise.resolve('transactionHash'),
                 },

@@ -54,7 +54,7 @@ describe('checkpointArticlesEpic', () => {
         const mockWeb3GetNetwork = () => from(Promise.resolve(true))
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
-            KauriCore: {
+            KauriCheckpoint: {
                 checkpointArticles: () => Promise.resolve('transactionHash'),
             },
         })

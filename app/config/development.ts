@@ -27,4 +27,5 @@ export default {
     debug: true,
     ipfsGateway: 'https://ipfs.infura.io/ipfs/',
     enableAPM: true,
+    ethereumNetwork: 'Rinkeby',
 }

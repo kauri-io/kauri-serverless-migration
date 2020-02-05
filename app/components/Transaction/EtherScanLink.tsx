@@ -1,5 +1,6 @@
 import ButtonComp from '../Button'
 import { Link } from '@material-ui/core'
+import config from '../../config'
 
 interface IProps {
     txHash: string
@@ -7,9 +8,11 @@ interface IProps {
 }
 
 const EtherScanLink = ({ txHash, linkText }: IProps) => {
+    const prefix =
+        config.ethereumNetwork === 'mainnet' ? '' : config.ethereumNetwork + '.'
     return (
         <Link
-            href={`https://rinkeby.etherscan.io/tx/${txHash}`}
+            href={`https://${prefix}etherscan.io/tx/${txHash}`}
             target="_blank"
         >
             <a>
