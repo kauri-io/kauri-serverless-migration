@@ -48,7 +48,7 @@ const Header = ({ isLoggedIn, routeChangeAction }) => (
                         : routeChangeAction(`/login?r=/create-collection`)
                 }}
             >
-                > Create a collection
+                Create a collection
             </Button>
         </Hidden>
     </CollectionsHeader>
