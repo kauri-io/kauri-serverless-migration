@@ -418,7 +418,7 @@ const ArticleEditor = props => {
         const status = data && data.getArticle && data.getArticle.status
         const communitiesModerating = communities
             .filter(({ role }) => role === 'ADMIN' || role === 'CURATOR')
-            .map(({ community }) => ({...community,  type: 'COMMUNITY' }));
+            .map(({ community }) => ({ ...community, type: 'COMMUNITY' }))
 
         // Updating article from a community I am in
         if (

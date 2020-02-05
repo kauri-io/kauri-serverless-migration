@@ -413,7 +413,6 @@ export const unbanMemberAction = (
     type: UNBAN_MEMBER,
 })
 
-
 interface IAcceptInvitationCommandOutput {
     transactionHash: string
     error?: string
@@ -509,14 +508,11 @@ export const curateCommunityResourcesEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     apolloSubscriber<ICurateCommunityResourcesCommandOutput>(
-                        path<string>(['curateResources', 'hash'])(
-                            data
-                        ) || ''
+                        path<string>(['curateResources', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data }) => {
-                    console.log("data",data)
-                    return data.getEvent.output.error
+                mergeMap(({ data }) => 
+                    data.getEvent.output.error
                         ? of(
                               showNotificationAction({
                                   description: 'Please try again',
@@ -531,12 +527,14 @@ export const curateCommunityResourcesEpic: Epic<
                                           title="Share to Community"
                                           content={
                                               <Typography variant="body1">
-                                                {data.getEvent.output.commandResult === "communityResourceApproved" &&
-                                                    `Article successfully shared to ${payload.communityName} Community`
-                                                }
-                                                {data.getEvent.output.commandResult === "communityResourcePending" &&
-                                                    `Article successfully proposed to ${payload.communityName} Community. A moderator of this community will approve it soon.`
-                                                }
+                                                  {data.getEvent.output
+                                                      .commandResult ===
+                                                      'communityResourceApproved' &&
+                                                      `Article successfully shared to ${payload.communityName} Community`}
+                                                  {data.getEvent.output
+                                                      .commandResult ===
+                                                      'communityResourcePending' &&
+                                                      `Article successfully proposed to ${payload.communityName} Community. A moderator of this community will approve it soon.`}
                                               </Typography>
                                           }
                                           closeModalAction={() =>
@@ -558,7 +556,6 @@ export const curateCommunityResourcesEpic: Epic<
                                   ),
                               })
                           )
-                    }
                 ),
                 tap(() => apolloClient.resetStore()),
                 catchError(err => {
