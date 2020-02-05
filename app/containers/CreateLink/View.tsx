@@ -58,6 +58,9 @@ const CreateLink = ({
         (description || summary) &&
         authorName &&
         (tags && tags.length > 0)
+    const communitiesModerating = communities
+        .filter(({ role }) => role === 'ADMIN' || role === 'CURATOR')
+        .map(({ community }) => ({ ...community, type: 'COMMUNITY' }))
 
     const handleSubmit = ownerId => {
         console.log(JSON.stringify(ownerId))
@@ -79,23 +82,14 @@ const CreateLink = ({
             <Nav
                 disabled={!hasAllRequiredData}
                 submitExtenalLinkAction={() => {
-                    if (communities && communities.length > 0) {
+                    if (communitiesModerating.length > 0) {
                         return openModalAction({
                             children: (
                                 <PublishingSelector
                                     userId={userId}
                                     type="Articles"
                                     closeModalAction={closeModalAction}
-                                    communities={communities
-                                        .filter(
-                                            ({ role }) =>
-                                                role === 'ADMIN' ||
-                                                role === 'CURATOR'
-                                        )
-                                        .map(({ community }) => ({
-                                            ...community,
-                                            type: 'COMMUNITY',
-                                        }))}
+                                    communities={communitiesModerating}
                                     handleSubmit={destination =>
                                         handleSubmit({
                                             type: destination.type,

@@ -511,7 +511,7 @@ export const curateCommunityResourcesEpic: Epic<
                         path<string>(['curateResources', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data }) => 
+                mergeMap(({ data }) =>
                     data.getEvent.output.error
                         ? of(
                               showNotificationAction({

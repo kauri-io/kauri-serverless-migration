@@ -78,7 +78,9 @@ const withSchema = ({
             <meta name="description" content={description} />
             <link
                 rel="canonical"
-                href={canonicalURL ? canonicalURL : `https://${hostName}${url.as}`}
+                href={
+                    canonicalURL ? canonicalURL : `https://${hostName}${url.as}`
+                }
             />
             <meta property="og:title" content={title} />
             <meta property="og:site_name" content="kauri.io" />
