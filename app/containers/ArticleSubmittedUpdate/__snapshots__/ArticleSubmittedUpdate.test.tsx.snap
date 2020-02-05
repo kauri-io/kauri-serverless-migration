@@ -1512,7 +1512,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -1817,7 +1816,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2122,7 +2120,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2427,7 +2424,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2731,7 +2727,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3035,7 +3030,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3339,7 +3333,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3649,7 +3642,6 @@ exports[`containers/ArticleSubmittedUpdate should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {

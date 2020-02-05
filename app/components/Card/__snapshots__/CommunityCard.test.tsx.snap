@@ -2042,7 +2042,6 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                                       },
                                                                       "render": [Function],
                                                                     },
-                                                                    "defaultProps": undefined,
                                                                     "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                     "options": Object {
                                                                       "defaultTheme": Object {

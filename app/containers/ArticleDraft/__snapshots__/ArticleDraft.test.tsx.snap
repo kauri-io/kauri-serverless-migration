@@ -1530,7 +1530,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -1835,7 +1834,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2140,7 +2138,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2445,7 +2442,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2749,7 +2745,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3053,7 +3048,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3357,7 +3351,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3667,7 +3660,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
-                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
