@@ -51,7 +51,7 @@ const withSchema = ({
         "genre": "development tutorial",
         "headline": "${title}",
         "image": "${background ||
-            `${hostName}/static/images/kauri_ioLogo.png`}",
+            `https://${hostName}/static/images/kauri_ioLogo.png`}",
         "keywords": "${tags && tags.join(', ')}",
         "mainEntityOfPage": {
             "@id": "${id}",
@@ -61,11 +61,11 @@ const withSchema = ({
             "@type": "Organization",
             "logo": {
                 "@type": "ImageObject",
-                "url": "${hostName}/static/images/kauri_ioLogo.png'"
+                "url": "https://${hostName}/static/images/kauri_ioLogo.png'"
             },
             "name": "Kauri"
         },
-        "url": "${canonicalURL ? canonicalURL : `${hostName}${url.as}`}"
+        "url": "${canonicalURL ? canonicalURL : `https://${hostName}${url.as}`}"
     };
     `
     return (
@@ -78,7 +78,9 @@ const withSchema = ({
             <meta name="description" content={description} />
             <link
                 rel="canonical"
-                href={canonicalURL ? canonicalURL : `${hostName}${url.as}`}
+                href={
+                    canonicalURL ? canonicalURL : `https://${hostName}${url.as}`
+                }
             />
             <meta property="og:title" content={title} />
             <meta property="og:site_name" content="kauri.io" />

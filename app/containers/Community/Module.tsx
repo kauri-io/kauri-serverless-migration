@@ -413,11 +413,6 @@ export const unbanMemberAction = (
     type: UNBAN_MEMBER,
 })
 
-interface ICurateCommunityResourcesCommandOutput {
-    id: string
-    error?: string
-}
-
 interface IAcceptInvitationCommandOutput {
     transactionHash: string
     error?: string
@@ -431,6 +426,7 @@ interface ICurateCommunityResourcesCommandOutput {
     messageHash: string
     secret: string
     error?: string
+    commandResult: string
 }
 
 interface IRemoveResourceCommandOutput {
@@ -512,13 +508,11 @@ export const curateCommunityResourcesEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     apolloSubscriber<ICurateCommunityResourcesCommandOutput>(
-                        path<string>(['curateCommunityResources', 'hash'])(
-                            data
-                        ) || ''
+                        path<string>(['curateResources', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
-                    error
+                mergeMap(({ data }) =>
+                    data.getEvent.output.error
                         ? of(
                               showNotificationAction({
                                   description: 'Please try again',
@@ -533,8 +527,14 @@ export const curateCommunityResourcesEpic: Epic<
                                           title="Share to Community"
                                           content={
                                               <Typography variant="body1">
-                                                  Article successfully shared to{' '}
-                                                  {` ${payload.communityName} Community`}
+                                                  {data.getEvent.output
+                                                      .commandResult ===
+                                                      'communityResourceApproved' &&
+                                                      `Article successfully shared to ${payload.communityName} Community`}
+                                                  {data.getEvent.output
+                                                      .commandResult ===
+                                                      'communityResourcePending' &&
+                                                      `Article successfully proposed to ${payload.communityName} Community. A moderator of this community will approve it soon.`}
                                               </Typography>
                                           }
                                           closeModalAction={() =>
