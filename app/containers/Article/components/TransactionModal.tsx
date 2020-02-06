@@ -130,6 +130,10 @@ const TransactionModal = ({ open, handleClose, state, txHash }: IProps) => {
                             take some time. You'll get an email when the tip has
                             been received by the author.
                         </Typography>
+                        <EtherScanLink
+                            txHash={txHash}
+                            linkText="View Transaction On Etherscan"
+                        />
                     </>
                 )
             case State.MINED:
