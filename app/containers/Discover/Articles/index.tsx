@@ -9,8 +9,7 @@ import { connect } from 'react-redux'
 
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
-        background: theme.palette.common.black,
-        color: theme.palette.common.white,
+        background: theme.palette.common.white,
     },
 }))
 

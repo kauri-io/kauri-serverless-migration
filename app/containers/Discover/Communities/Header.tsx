@@ -4,7 +4,7 @@ import { Button, Hidden } from '@material-ui/core'
 
 const CommunitiesHeader = styled.div`
     background: white url('static/images/discover-communities-banner.svg')
-        no-repeat center center;
+        no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,8 @@ const KauriDescription = styled.div`
 
 const Header = ({ isLoggedIn, routeChangeAction }) => (
     <CommunitiesHeader>
-        <KauriTitle>Discover Communities</KauriTitle>
-        <KauriDescription>User Communities</KauriDescription>
+        <KauriTitle>Communities</KauriTitle>
+        <KauriDescription>Curate, manage and discuss content around topics important to you.</KauriDescription>
 
         <Hidden xsDown={true}>
             <Button

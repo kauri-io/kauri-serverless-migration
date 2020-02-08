@@ -4,7 +4,7 @@ import { Button, Hidden } from '@material-ui/core'
 
 const ArticlesHeader = styled.div`
     background: white url('static/images/discover-articles-banner.svg')
-        no-repeat center center;
+        no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,8 @@ const KauriDescription = styled.div`
 
 const Header = ({ isLoggedIn, routeChangeAction }) => (
     <ArticlesHeader>
-        <KauriTitle>Discover Articles</KauriTitle>
-        <KauriDescription>User and Community Articles</KauriDescription>
+        <KauriTitle>Articles</KauriTitle>
+        <KauriDescription>Find tutorials, opinions, and answers. Tip authors you love and suggest changes to help other readers.</KauriDescription>
 
         <Hidden xsDown={true}>
             <Button
