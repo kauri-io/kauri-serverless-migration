@@ -35,7 +35,9 @@ const KauriDescription = styled.div`
 const Header = ({ isLoggedIn, routeChangeAction }) => (
     <CommunitiesHeader>
         <KauriTitle>Communities</KauriTitle>
-        <KauriDescription>Curate, manage and discuss content around topics important to you.</KauriDescription>
+        <KauriDescription>
+            Curate, manage and discuss content around topics important to you.
+        </KauriDescription>
 
         <Hidden xsDown={true}>
             <Button
