@@ -24,7 +24,9 @@ const Copy = styled.div`
 const Error = () => (
     <ErrorContainer>
         <Code>Kauri is down for maintenance!</Code>
-        <Copy>We expect to a back in a few hours, thanks for your patience.</Copy>
+        <Copy>
+            We expect to be back in a few hours, thanks for your patience.
+        </Copy>
     </ErrorContainer>
 )
 
