@@ -22,146 +22,28 @@
   ],
   "routes": [
     {
-      "src": "/api/import/(.*)",
-      "dest": "/api?url=$1"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/app/static/robots.txt"
-    },
-    {
-      "src": "/sitemap",
-      "dest": "https://api.kauri.io/sitemap"
-    },
-    {
-      "src": "/feed",
-      "dest": "https://api.kauri.io/feed"
-    },
-    {
-      "src": "/feed/(.*)/(.*)",
-      "dest": "https://api.kauri.io/feed/$1/$2"
-    },
-    {
       "src": "/favicon.ico",
       "dest": "/app/static/favicon/favicon.ico"
     },
     {
-      "src": "/(.*)/(.*)/l",
-      "dest": "/app/view-link?id=$2"
+      "src": "/static/(.*)",
+      "dest": "/app/static/$1"
     },
     {
-      "src": "/article/(.*)/v(.*)/update-article",
-      "dest": "/app/update-article?id=$1&version=$2"
-    },
-    {
-      "src": "/(.*)/(.*)/a",
-      "dest": "/app/article?article_id=$2&slug=$1"
-    },
-    {
-      "src": "/article/(.*)/(.*)/(.*)",
-      "dest": "/app/article?article_id=$1"
-    },
-    {
-      "src": "/article/(.*)/(.*)",
-      "dest": "/app/article?article_id=$1"
-    },
-    {
-      "src": "/article/(.*)",
-      "dest": "/app/article?article_id=$1"
-    },
-    {
-      "src": "/(.*)/(.*)/cm",
-      "dest": "/app/community?community_id=$2&slug=$1"
-    },
-    {
-      "src": "/(.*)/(.*)/cm?tab=(.*)",
-      "dest": "/app/community?community_id=$2&slug=$1&tab=$3"
-    },
-    {
-      "src": "/community/(.*)/approve",
-      "dest": "/app/approve?community_id=$1"
-    },
-    {
-      "src": "/community/(.*)/(.*)",
-      "dest": "/app/community?community_id=$1"
-    },
-    {
-      "src": "/community/(.*)",
-      "dest": "/app/community?community_id=$1"
-    },
-    {
-      "src": "/(.*)/(.*)/d",
-      "dest": "/app/discussion?discussion_id=$2&slug=$1"
-    },
-    {
-      "src": "/discussions/create",
-      "dest": "/app/create-discussion"
-    },
-    {
-      "src": "/discussions/(.*)/edit",
-      "dest": "/app/create-discussion?discussion_id=$1"
-    },
-    {
-      "src": "/(.*)/(.*)/c",
-      "dest": "/app/collection?collection_id=$2&slug=$1"
-    },
-    {
-      "src": "/collection/(.*)/(.*)",
-      "dest": "/app/collection?collection_id=$1"
-    },
-    {
-      "src": "/collection/(.*)",
-      "dest": "/app/collection?collection_id=$1"
-    },
-    {
-      "src": "/community/(.*)/update-community",
-      "dest": "/app/update-community?community_id=$1"
-    },
-    {
-      "src": "/collection/(.*)/update-collection",
-      "dest": "/app/update-collection?collection_id=$1"
-    },
-    {
-      "src": "/(.*)/p",
-      "dest": "/app/public-profile?username=$1"
-    },
-    {
-      "src": "/public-profile/(.*)",
-      "dest": "/app/public-profile?user_id=$1"
-    },
-    {
-      "src": "/bookmarks",
-      "dest": "/app/bookmarks"
-    },
-    {
-      "src": "/draft/(.*)/(.*)",
-      "dest": "/app/draft?id=$1&version=$2"
-    },
-    {
-      "src": "/submitted-update/(.*)/(.*)",
-      "dest": "/app/submitted-update?id=$1&version=$2"
-    },
-    {
-      "src": "/activate/(.*)",
-      "dest": "/app/activate?uuid=$1"
-    },
-    {
-      "src": "/login",
-      "dest": "/app/login"
+      "src": "/",
+      "dest": "/app/maintenance"
     },
     {
       "src": "/(.*)",
-      "dest": "/app/$1"
+      "dest": "/app/maintenance"
     },
     {
-      "src": "/.*",
-      "status": 404,
-      "dest": "/app/404"
+      "src": "/(.*)/(.*)",
+      "dest": "/app/maintenance"
     },
     {
-      "src": "/.*",
-      "status": 500,
-      "dest": "/app/500"
+      "src": "/(.*)/(.*)/(.*)",
+      "dest": "/app/maintenance"
     }
   ]
 }
