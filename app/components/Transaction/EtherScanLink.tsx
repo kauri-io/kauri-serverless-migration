@@ -9,7 +9,7 @@ interface IProps {
 
 const EtherScanLink = ({ txHash, linkText }: IProps) => {
     const prefix =
-        config.ethereumNetwork === 'mainnet' ? '' : config.ethereumNetwork + '.'
+        config.ethereumNetwork === 'Main' ? '' : config.ethereumNetwork + '.'
     return (
         <Link
             href={`https://${prefix}etherscan.io/tx/${txHash}`}
