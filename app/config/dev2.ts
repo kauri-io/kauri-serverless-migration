@@ -1,6 +1,12 @@
 import uppyConfig from './uppy'
 
 export default {
+    title: 'Where Developers Write, Share & Learn',
+    description: {
+        line1:
+            'Learn about blockchain development and be rewarded for contributing technical content and tutorials.',
+        line2: 'Built with ♥ on Ethereum + IPFS',
+    },
     gateway: 'api.dev2.kauri.io',
     KauriCommunityId: '5d2c6edefe402500014349f5',
     uppyConfig,
@@ -19,5 +25,7 @@ export default {
     cloudImageId: 'asdgvdoyen',
     useCloudImage: false,
     debug: false,
+    ipfsGateway: 'https://ipfs.infura.io/ipfs/',
     enableAPM: false,
+    ethereumNetwork: 'Rinkeby',
 }

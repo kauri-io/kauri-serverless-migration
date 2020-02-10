@@ -1,5 +1,4 @@
 import { Epic, ofType } from 'redux-observable'
-import styled from 'styled-components'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import analytics from '../../lib/analytics'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -7,7 +6,6 @@ import { getCollectionTitleQuery } from '../../queries/Article'
 import { addResourceToCollectionMutation } from '../../queries/Collection'
 import { openModalAction } from '../../components/Modal/Module'
 import AlertViewComponent from '../../components/Modal/AlertView'
-import { BodyCard, H4 } from '../../components/Typography'
 import {
     addResourceToCollectionVariables,
     addResourceToCollection,
@@ -19,6 +17,8 @@ import {
     getCollectionTitle,
     getCollectionTitleVariables,
 } from '../../queries/__generated__/getCollectionTitle'
+import { Typography } from '@material-ui/core'
+import { getCollectionURL } from '../../lib/getURLs'
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
@@ -67,16 +67,6 @@ interface IAddArticleToCollectionCommandOutput {
     version: number
 }
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    min-height: 130px;
-    align-items: center;
-    > :first-child {
-        margin-right: 3px;
-    }
-`
-
 export const openAddArticleToCollectionConfirmationModalEpic: Epic<
     IOpenAddArticleToCollectionConfirmationModalAction,
     any,
@@ -92,14 +82,11 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
                         <AlertViewComponent
                             title="Add to Collection"
                             content={
-                                <Row>
-                                    <BodyCard>
-                                        Article successfully added to
-                                    </BodyCard>
-                                    <H4>{` ${payload.getCollection &&
-                                        payload.getCollection
-                                            .name} Collection`}</H4>
-                                </Row>
+                                <Typography variant="body1">
+                                    Article successfully added to{' '}
+                                    {` ${payload.getCollection &&
+                                        payload.getCollection.name} Collection`}
+                                </Typography>
                             }
                             closeModalAction={() => payload.closeModalAction()}
                             confirmButtonText={'View Collection'}
@@ -107,9 +94,12 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
                             confirmButtonAction={() => {
                                 payload.closeModalAction()
                                 payload.routeChangeAction(
-                                    `/collection/${payload.getCollection &&
-                                        payload.getCollection
-                                            .id}/update-collection`
+                                    getCollectionURL({
+                                        ...payload.getCollection,
+                                    }).href,
+                                    getCollectionURL({
+                                        ...payload.getCollection,
+                                    }).as
                                 )
                             }}
                         />

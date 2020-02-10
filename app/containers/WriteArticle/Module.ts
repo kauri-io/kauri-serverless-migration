@@ -177,14 +177,12 @@ export const submitArticleEpic: Epic<
                         },
                     })
                 ).pipe(
-                    tap(console.log),
                     mergeMap(({ data }) =>
                         apolloSubscriber<{ id: string; version: number }>(
                             path<string>(['submitNewArticle', 'hash'])(data) ||
                                 ''
                         )
                     ),
-                    tap(console.log),
                     mergeMap(({ data: { getEvent: { output } } }) =>
                         apolloClient.query<getArticle, getArticleVariables>({
                             fetchPolicy: 'network-only',
@@ -527,6 +525,14 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         ),
                         of(
                             routeChangeAction(
+                                getArticleURL(
+                                    {
+                                        title: subject,
+                                        id: output.id,
+                                        version: output.version,
+                                    },
+                                    'update'
+                                ).href,
                                 getArticleURL(
                                     {
                                         title: subject,

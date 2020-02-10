@@ -309,8 +309,28 @@ export const submitArticleVersionMutation = gql`
 `
 
 export const addCommentMutation = gql`
-    mutation addComment($parent: ResourceIdentifierInput!, $body: String!) {
-        addComment(parent: $parent, body: $body) {
+    mutation addComment(
+        $parent: ResourceIdentifierInput!
+        $body: String!
+        $replyTo: String
+    ) {
+        addComment(parent: $parent, body: $body, replyTo: $replyTo) {
+            hash
+        }
+    }
+`
+
+export const editCommentMutation = gql`
+    mutation editComment($id: String!, $body: String!) {
+        editComment(id: $id, body: $body) {
+            hash
+        }
+    }
+`
+
+export const deleteCommentMutation = gql`
+    mutation deleteComment($id: String!) {
+        deleteComment(id: $id) {
             hash
         }
     }
@@ -535,10 +555,10 @@ export const relatedArticles = gql`
                         version
                         title
                         description
-                        author {
+                        contributors {
+                            id
                             name
                             username
-                            id
                             avatar
                         }
                         dateCreated

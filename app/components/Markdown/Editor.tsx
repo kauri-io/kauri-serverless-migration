@@ -5,17 +5,23 @@ import formatMarkdown from './format'
 import { useState } from 'react'
 import Renderer from './Renderer'
 import Metadata from './Metadata'
-import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
+import {
+    IOpenModalAction,
+    ICloseModalAction,
+    IOpenModalPayload,
+} from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
 import Importer from '../../containers/Importer'
-import { Style } from 'jss'
+import { Styles } from 'jss'
 
 interface IProps {
-    withTabs: boolean
+    withTabPreview?: boolean
+    withTabMetadata?: boolean
+    withTabImport?: boolean
     withToolbar: boolean
     compact: boolean
-    openModalAction?: IOpenModalAction
-    closeModalAction?: ICloseModalAction
+    openModalAction?: (payload: IOpenModalPayload) => IOpenModalAction
+    closeModalAction?: () => ICloseModalAction
     onChange: (e: string) => void
     text: string
     minHeight?: number
@@ -25,10 +31,13 @@ interface IProps {
     setTitle?: (title: string) => void
     placeholder?: string
     focusOutline?: boolean
+    disabled?: boolean
 }
 
 const Editor = ({
-    withTabs,
+    withTabPreview = false,
+    withTabMetadata = false,
+    withTabImport = false,
     withToolbar,
     compact,
     openModalAction,
@@ -42,14 +51,15 @@ const Editor = ({
     onValidation,
     placeholder,
     focusOutline = true,
+    disabled = false,
 }: IProps) => {
-    const editorStyle = (theme): Style => {
+    const editorStyle = (theme): Styles => {
         return {
             fontSize: '16px',
             resize: 'vertical',
             border: 'none',
             paddingTop: theme.spacing(2),
-            flex: 1,
+            flex: '1',
         }
     }
     const useStyles = makeStyles((theme: Theme) => ({
@@ -104,7 +114,7 @@ const Editor = ({
     return (
         <div className={classes.root}>
             <div className={classes.editorContainer}>
-                {withTabs && (
+                {(withTabPreview || withTabMetadata || withTabImport) && (
                     <Tabs
                         TabIndicatorProps={{ style: { height: 3 } }}
                         indicatorColor="primary"
@@ -112,9 +122,9 @@ const Editor = ({
                         onChange={(_e, tab) => setTab(tab)}
                     >
                         <Tab label="Editor" />
-                        <Tab label="Preview" />
-                        <Tab label="Metadata" />
-                        <Tab label="Import" />
+                        {withTabPreview && <Tab label="Preview" />}
+                        {withTabMetadata && <Tab label="Metadata" />}
+                        {withTabImport && <Tab label="Import" />}
                     </Tabs>
                 )}
                 {tab === 0 && withToolbar && (
@@ -144,6 +154,7 @@ const Editor = ({
                             }
                         }}
                         value={text}
+                        disabled={disabled}
                         id="editor-text-area"
                         className={
                             focusOutline

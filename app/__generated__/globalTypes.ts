@@ -25,6 +25,8 @@ export enum CommunityInvitationStatusInput {
 
 export enum CommunityPermissionInput {
   ADMIN = "ADMIN",
+  BANNED = "BANNED",
+  BASIC = "BASIC",
   CURATOR = "CURATOR",
 }
 
@@ -45,6 +47,12 @@ export enum DirectionInput {
   DESC = "DESC",
 }
 
+export enum DiscussionStatusInput {
+  CLOSED = "CLOSED",
+  DELETED = "DELETED",
+  OPENED = "OPENED",
+}
+
 export enum EventStatusInput {
   ERROR = "ERROR",
   NOTHINGTODO = "NOTHINGTODO",
@@ -57,6 +65,7 @@ export enum ResourceTypeInput {
   COMMENT = "COMMENT",
   COMMUNITY = "COMMUNITY",
   CURATED_LIST = "CURATED_LIST",
+  DISCUSSION = "DISCUSSION",
   INVITATION = "INVITATION",
   LINK = "LINK",
   REQUEST = "REQUEST",
@@ -72,6 +81,11 @@ export enum ScoringModeInput {
   NONE = "NONE",
   RANDOM = "RANDOM",
   TRENDING = "TRENDING",
+}
+
+export enum TipStatusInput {
+  CONFIRMED = "CONFIRMED",
+  PENDING = "PENDING",
 }
 
 export enum UserStatusInput {
@@ -128,10 +142,28 @@ export interface CommunityInvitationFilterInput {
   statusIn?: (CommunityInvitationStatusInput | null)[] | null;
 }
 
+export interface CommunityMemberFilterInput {
+  roleIn?: (CommunityPermissionInput | null)[] | null;
+}
+
 export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
   resourceTypeIn?: (ResourceTypeInput | null)[] | null;
   statusEquals?: CommunityResourceStatusInput | null;
+}
+
+export interface DiscussionFilterInput {
+  authorIdEquals?: string | null;
+  dateCreatedGreaterThan?: any | null;
+  dateCreatedLessThan?: any | null;
+  dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
+  fullText?: string | null;
+  messageContains?: string | null;
+  parentResourceIdIn?: (string | null)[] | null;
+  parentResourceTypeIn?: (ResourceTypeInput | null)[] | null;
+  statusIn?: (DiscussionStatusInput | null)[] | null;
+  titleContains?: string | null;
 }
 
 export interface ExternalLinkFilterInput {
@@ -185,6 +217,11 @@ export interface SectionDTOInput {
   id?: string | null;
   name?: string | null;
   resourcesId?: (ResourceIdentifierInput | null)[] | null;
+}
+
+export interface TipFilterInput {
+  includeReceived?: boolean | null;
+  includeSent?: boolean | null;
 }
 
 //==============================================================

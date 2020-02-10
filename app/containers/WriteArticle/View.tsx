@@ -10,8 +10,6 @@ import PublishingSelector, {
 } from '../../containers/PublishingSelector'
 import { path } from 'ramda'
 import Image from '../../components/Image'
-import Button from '../../components/Button'
-import { Typography, Grid } from '@material-ui/core'
 import {
     setArticleCacheItem,
     getArticleCachedItem,
@@ -48,17 +46,13 @@ const ArticleEditor = props => {
     useEffect(() => {
         const {
             userId,
-            router,
             routeChangeAction,
             communities,
             openModalAction,
             closeModalAction,
         } = props
 
-        if (!userId) {
-            // routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
-            console.log(router)
-        } else {
+        if (userId) {
             analytics.track('Write Article Start', {
                 category: 'generic',
             })
@@ -104,7 +98,7 @@ const ArticleEditor = props => {
                         routeChangeAction(
                             `/account-check?page=${window.location.pathname}`
                         ),
-                    1000
+                    500
                 )
             }
         }
@@ -172,35 +166,16 @@ const ArticleEditor = props => {
         ) {
             props.openModalAction({
                 children: (
-                    <div>
-                        <Typography variant="h5">
-                            Unsaved Changes Detected
-                        </Typography>
-                        <Grid
-                            style={{ padding: 20 }}
-                            container={true}
-                            spacing={3}
-                            justify="space-between"
-                        >
-                            <Button
-                                onClick={() => props.closeModalAction()}
-                                variant="outlined"
-                                color="primary"
-                            >
-                                Ignore
-                            </Button>
-                            <Button
-                                onClick={() => {
-                                    updateState(item)
-                                    props.closeModalAction()
-                                }}
-                                variant="contained"
-                                color="primary"
-                            >
-                                Restore Changes
-                            </Button>
-                        </Grid>
-                    </div>
+                    <AlertView
+                        title="Unsaved Changes Detected"
+                        closeModalAction={props.closeModalAction}
+                        closeButtonText="Ignore"
+                        confirmButtonAction={() => {
+                            updateState(item)
+                            props.closeModalAction()
+                        }}
+                        confirmButtonText="Restore Changes"
+                    />
                 ),
             })
         }
@@ -226,7 +201,6 @@ const ArticleEditor = props => {
         updateComment?: string,
         destination?: IOption
     ) => (e: React.SyntheticEvent<HTMLButtonElement> | null) => {
-        console.log('*** SUBMITTING ***', updateComment)
         if (e) {
             e.preventDefault()
         }
@@ -442,6 +416,9 @@ const ArticleEditor = props => {
 
         const version = Number(path(['getArticle', 'version'])(data))
         const status = data && data.getArticle && data.getArticle.status
+        const communitiesModerating = communities
+            .filter(({ role }) => role === 'ADMIN' || role === 'CURATOR')
+            .map(({ community }) => ({ ...community, type: 'COMMUNITY' }))
 
         // Updating article from a community I am in
         if (
@@ -451,17 +428,14 @@ const ArticleEditor = props => {
             return handleSubmit('submit/update')(null)
         }
         // Submitting fresh article or submitting v1 article draft and I potentially want to choose a community?
-        else if (communities && communities.length > 0) {
+        else if (communitiesModerating.length > 0) {
             return openModalAction({
                 children: (
                     <PublishingSelector
                         userId={userId}
                         type="Articles"
                         closeModalAction={closeModalAction}
-                        communities={communities.map(({ community }) => ({
-                            ...community,
-                            type: 'COMMUNITY',
-                        }))}
+                        communities={communitiesModerating}
                         handleSubmit={(destination, e) =>
                             handleSubmit(
                                 'submit/update',
@@ -515,7 +489,9 @@ const ArticleEditor = props => {
 
             <Editor
                 setTitle={setSubject}
-                withTabs={true}
+                withTabPreview={true}
+                withTabMetadata={true}
+                withTabImport={true}
                 withToolbar={true}
                 compact={false}
                 text={content}

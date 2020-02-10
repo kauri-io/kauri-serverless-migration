@@ -13,7 +13,7 @@ export interface prepareAcceptInvitation_prepareAcceptInvitation {
 
 export interface prepareAcceptInvitation {
   /**
-   * Accept an invitation (prepare call, return a meta-tx hash to sign).
+   * Accept an invitation (prepare call, return a meta-tx hash to sign) to be a granted member (admin, moderator)
    * This operation can only be performed by a logged user in possession of the invitation secret
    */
   prepareAcceptInvitation: prepareAcceptInvitation_prepareAcceptInvitation;

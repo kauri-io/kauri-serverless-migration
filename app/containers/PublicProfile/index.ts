@@ -13,7 +13,10 @@ import {
     rejectArticleTransferAction,
     acceptArticleTransferAction,
 } from './Manage/TransferModule'
-import { removeMemberAction } from '../Community/Module'
+import {
+    removeGrantedMemberAction,
+    leaveCommunityAction,
+} from '../Community/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
 import { resendEmailVerificationAction } from '../EmailVerification/Module'
@@ -36,7 +39,8 @@ export default compose(
             openModalAction,
             rejectArticleTransferAction,
             acceptArticleTransferAction,
-            removeMemberAction,
+            removeGrantedMemberAction,
+            leaveCommunityAction,
             saveUserDetailsAction,
             resendEmailVerificationAction,
             showNotificationAction,

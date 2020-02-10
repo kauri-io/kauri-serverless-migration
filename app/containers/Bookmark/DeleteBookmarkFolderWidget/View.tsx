@@ -29,7 +29,6 @@ export const DeleteBookmarkFolderWidgetComponent = ({
         <AlertView
             closeModalAction={closeModalAction}
             confirmButtonAction={confirm}
-            content={<div />}
             title={'Delete folder?'}
         />
     )

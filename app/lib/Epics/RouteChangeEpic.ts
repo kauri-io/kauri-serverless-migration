@@ -8,30 +8,33 @@ type IRouteChangePayload = string
 export interface IRouteChangeAction {
     type: string
     payload: IRouteChangePayload
+    as?: string
 }
 
-export const routeChange = (payload: IRouteChangePayload): any => {
+export const routeChange = (payload: IRouteChangePayload, as?: string): any => {
     if (
         window.location.href.indexOf('redirected=true') !== -1 &&
         payload === 'back'
     ) {
         return Router.push('/')
     } else {
-        return payload === 'back' ? Router.back() : Router.push(payload)
+        return payload === 'back' ? Router.back() : Router.push(payload, as)
     }
 }
 
 export const routeChangeAction = (
-    payload: IRouteChangePayload
+    payload: IRouteChangePayload,
+    as?: string
 ): IRouteChangeAction => ({
     type: ROUTE_CHANGE,
     payload,
+    as,
 })
 
 const routeChangeEpic: Epic<IRouteChangeAction, any> = action$ =>
     action$.pipe(
         filter(action => action.type === ROUTE_CHANGE),
-        map(({ payload }) => routeChange(payload)),
+        map(({ payload, as }) => routeChange(payload, as)),
         ignoreElements()
     )
 

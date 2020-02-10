@@ -92,8 +92,6 @@ class EditableHeader extends Component<IProps, IState> {
             assocPath(['redirectURL'], route)
         )(this.state)
 
-        console.log(payload)
-
         this.props.saveUserDetailsAction(payload, (pendingSubmit: any) => {
             this.setState({ pendingSubmit })
         })

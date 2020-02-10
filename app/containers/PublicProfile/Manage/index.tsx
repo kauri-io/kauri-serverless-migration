@@ -8,12 +8,14 @@ import Transfers from './Transfers'
 import MyCommunities from './MyCommunities'
 import { path } from 'ramda'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
+import TipHistory from './TipHistory'
 
 const categories = [
     'drafts',
     'awaiting approval',
     'submitted updates',
     // "communities",
+    'tip history',
 ]
 
 interface IState {
@@ -80,24 +82,26 @@ const Manage: React.FunctionComponent<any> = props => {
                         {...props}
                         communities={
                             Array.isArray(communities) &&
-                            communities.map(({ community: { id } }) => id)
+                            communities
+                                .filter(
+                                    ({ role }) =>
+                                        role === 'ADMIN' || role === 'CURATOR'
+                                )
+                                .map(({ community: { id } }) => id)
                         }
                     />
                 )}
                 {state.currentCategory === 'submitted updates' && (
-                    <Pending
-                        {...props}
-                        communities={
-                            Array.isArray(communities) &&
-                            communities.map(({ community: { id } }) => id)
-                        }
-                    />
+                    <Pending {...props} />
                 )}
                 {state.currentCategory === 'pending transfers' && (
                     <Transfers {...props} />
                 )}
                 {state.currentCategory === 'communities' && (
                     <MyCommunities {...props} data={communities} />
+                )}
+                {state.currentCategory === 'tip history' && (
+                    <TipHistory {...props} />
                 )}
             </Grid>
         </Grid>

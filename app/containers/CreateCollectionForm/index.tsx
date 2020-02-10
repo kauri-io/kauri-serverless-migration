@@ -149,13 +149,16 @@ export default compose<
                                 props.closeModalAction()
                                 setSubmitting(false)
                             }}
-                            communities={props.communities.map(
-                                ({ community }) => ({
+                            communities={props.communities
+                                .filter(
+                                    ({ role }) =>
+                                        role === 'ADMIN' || role === 'CURATOR'
+                                )
+                                .map(({ community }) => ({
                                     ...community,
                                     __typename: 'CommunityDTO',
                                     type: 'COMMUNITY',
-                                })
-                            )}
+                                }))}
                             handleSubmit={destination => {
                                 values.destination = destination
                                 props.createCollectionAction(values, () => {
@@ -205,12 +208,10 @@ export default compose<
                     props.editCollectionAction(payload, () => {
                         setSubmitting(false)
                     })
-                    console.log('Editing')
                 } else {
                     props.createCollectionAction(values, () => {
                         setSubmitting(false)
                     })
-                    console.log('Creating')
                 }
             }
         },

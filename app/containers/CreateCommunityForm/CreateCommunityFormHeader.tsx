@@ -172,7 +172,7 @@ const Component: React.SFC<IProps> = props => {
                                     id="name"
                                     field={field}
                                     multiline={true}
-                                    rowsMax={3}
+                                    rowsMax={2}
                                     placeholder="Community Name"
                                     InputProps={{
                                         className: classes.inputLong,

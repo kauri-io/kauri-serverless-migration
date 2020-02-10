@@ -11,7 +11,7 @@ import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
-import slugify from 'slugify'
+import { slugify } from '../../lib/slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
 import ApolloClient from 'apollo-client'
@@ -22,21 +22,35 @@ import {
     recordViewVariables,
 } from '../../queries/__generated__/recordView'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { openModalAction } from '../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
+import {
+    initiateArticleTransferAction,
+    IAddCommentAction,
+    IEditCommentAction,
+    IDeleteCommentAction,
+} from './Module'
 import Schema from '../../lib/with-schema'
 import ProfileCard from '../../components/Card/PublicProfileCard'
-// import CardActions from '../../components/Card/CardComponents/CardActions'
+import { curateCommunityResourcesAction } from '../Community/Module'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
 import Toolbar from '../ViewLink/components/Toolbar'
 import ShareIcon from '@material-ui/icons/Share'
 import ShareDialog from '../../components/Card/ShareDialog'
 import ShareWidget from './components/ShareWidget'
-import { Chip } from '@material-ui/core'
+import { Chip, Box } from '@material-ui/core'
 import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { addCommentVariables } from '../../queries/__generated__/addComment'
+import { editCommentVariables } from '../../queries/__generated__/editComment'
+import { deleteCommentVariables } from '../../queries/__generated__/deleteComment'
+import TipWidget from './components/TipWidget'
+import { ITipAction } from './Module'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -105,20 +119,41 @@ interface IProps {
     router: any
     voteAction: any
     routeChangeAction: typeof routeChangeAction
+    closeModalAction: typeof closeModalAction
     openModalAction: typeof openModalAction
+    tipAction: ITipAction
     userId: string
     user: any
     hostName: string
-    addCommentAction: (e: string) => void
+    addCommentAction: (
+        payload: addCommentVariables,
+        callback: any
+    ) => IAddCommentAction
+    editCommentAction: (
+        payload: editCommentVariables,
+        callback: any
+    ) => IEditCommentAction
+    deleteCommentAction: (
+        payload: deleteCommentVariables
+    ) => IDeleteCommentAction
     client?: ApolloClient<{}>
+    initiateArticleTransferAction: typeof initiateArticleTransferAction
+    curateCommunityResourcesAction: typeof curateCommunityResourcesAction
+    communities: any
 }
 
 const ArticleComp = ({
     hostName,
     openModalAction,
+    closeModalAction,
     voteAction,
     routeChangeAction,
     addCommentAction,
+    editCommentAction,
+    deleteCommentAction,
+    tipAction,
+    initiateArticleTransferAction,
+    curateCommunityResourcesAction,
     userId,
     user,
     RelatedArticles: { searchMoreLikeThis },
@@ -141,14 +176,17 @@ const ArticleComp = ({
             version,
             contentHash,
             checkpoint,
+            ownerId,
+            tips,
+            hasTipped,
         },
     },
+    communities,
 }: IProps) => {
     attributes = attributes !== null ? attributes : {}
 
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
-    const canonicalUrl = attributes.canonical
 
     const [shareDialogOpen, setShareDialogOpen] = useState(false)
 
@@ -186,18 +224,21 @@ const ArticleComp = ({
 
     const url = getArticleURL({ title, id })
 
+    const doLogin = () =>
+        routeChangeAction(`/login?r=/${slugify(title)}/${id}/a`)
+
     return (
         <>
             <Schema
                 url={url}
-                canonicalURL={canonicalUrl}
+                canonicalURL={attributes.canonical}
                 id={id}
                 title={title}
-                description={description}
+                description={description || ''}
                 dateCreated={dateCreated}
                 datePublished={datePublished}
                 tags={tags}
-                attributes={attributes}
+                background={attributes.background}
                 author={author}
                 hostName={hostName}
             />
@@ -220,13 +261,16 @@ const ArticleComp = ({
                                 resourceType="ARTICLE"
                                 voteAction={voteAction}
                                 voteResult={voteResult}
-                                loginFirstToVote={() =>
-                                    routeChangeAction(
-                                        `/login?r=/${slugify(String(title), {
-                                            lower: true,
-                                        })}/${id}/a`
-                                    )
-                                }
+                                loginFirstToVote={() => doLogin()}
+                            />
+                            <TipWidget
+                                isLoggedIn={!!userId}
+                                resourceId={String(id)}
+                                resourceType="ARTICLE"
+                                tipAction={tipAction}
+                                tips={tips}
+                                loginFirstToTip={() => doLogin()}
+                                hasTipped={hasTipped}
                             />
                             <ShareWidget href={url.as} name={title} />
                         </div>
@@ -244,6 +288,9 @@ const ArticleComp = ({
                             <Toolbar
                                 id={id}
                                 openModalAction={openModalAction}
+                                initiateArticleTransferAction={
+                                    initiateArticleTransferAction
+                                }
                                 comments={comments.totalElements}
                                 classes={classes}
                                 routeChangeAction={routeChangeAction}
@@ -251,7 +298,15 @@ const ArticleComp = ({
                                 isLoggedIn={!!userId}
                                 type={ResourceTypeInput.ARTICLE}
                                 isAuthor={author && userId === author.id}
+                                isOwner={ownerId && ownerId.id === userId} //TODO should check if community admin/curator too
                                 version={version}
+                                userId={userId}
+                                communities={communities}
+                                closeModalAction={closeModalAction}
+                                curateCommunityResourcesAction={
+                                    curateCommunityResourcesAction
+                                }
+                                url={url.as}
                             />
                         </Hidden>
                         <Grid
@@ -277,17 +332,28 @@ const ArticleComp = ({
                                 </Typography>
                             </Grid>
                             <Hidden lgUp={true}>
-                                <ShareIcon
-                                    onClick={() => setShareDialogOpen(true)}
-                                />
-                                <ShareDialog
-                                    href={url.as}
-                                    name={title}
-                                    open={shareDialogOpen}
-                                    handleClose={() =>
-                                        setShareDialogOpen(false)
-                                    }
-                                />
+                                <Box display="flex">
+                                    {tips && tips.totals && tips.totals.ETH && (
+                                        <Typography
+                                            variant="button"
+                                            align="center"
+                                            className={classes.compactTip}
+                                        >
+                                            {tips.totals.ETH} ETH
+                                        </Typography>
+                                    )}
+                                    <ShareIcon
+                                        onClick={() => setShareDialogOpen(true)}
+                                    />
+                                    <ShareDialog
+                                        href={url.as}
+                                        name={title}
+                                        open={shareDialogOpen}
+                                        handleClose={() =>
+                                            setShareDialogOpen(false)
+                                        }
+                                    />
+                                </Box>
                                 {/* <CardActions
                                     type="ARTICLE"
                                     id={id}
@@ -335,11 +401,12 @@ const ArticleComp = ({
                                 ))}
                         </div>
                         <div className={classes.checkpointAndIPFS}>
-                            <div className={classes.tags}>
+                            <div>
                                 <IPFSIcon />
                                 <a
                                     className={classes.contentLink}
-                                    href={`https://${config.gateway}/ipfs/${contentHash}`}
+                                    href={`${config.ipfsGateway}/${contentHash}`}
+                                    target="_blank"
                                 >
                                     Content
                                 </a>
@@ -349,9 +416,10 @@ const ArticleComp = ({
                                     href={
                                         'https://creativecommons.org/licenses/by-sa/4.0/'
                                     }
+                                    target="_blank"
                                 >{`"CC-BY-SA 4.0" licensed`}</a>
                             </div>
-                            <div className={classes.tags}>
+                            <div>
                                 <CheckpointArticles
                                     isOwner={true}
                                     articleCheckpointed={!!checkpoint}
@@ -371,11 +439,26 @@ const ArticleComp = ({
                         </div>
                     )}
                     <div className={classes.section}>
+                        <Typography
+                            aria-label="title"
+                            className={classes.commentTitle}
+                            variant="h6"
+                        >
+                            {comments.totalElements} Comment
+                            {comments.totalElements !== 1 ? 's' : ''}
+                        </Typography>
+
                         <Comments
-                            article={resourceIdentifier}
+                            openModalAction={openModalAction}
+                            closeModalAction={closeModalAction}
+                            parent={resourceIdentifier}
                             addCommentAction={addCommentAction}
+                            editCommentAction={editCommentAction}
+                            deleteCommentAction={deleteCommentAction}
                             user={user}
-                            comments={comments}
+                            comments={comments.content}
+                            currentURL={url.as}
+                            routeChangeAction={routeChangeAction}
                         />
                     </div>
                     <div className={classes.section}>

@@ -29,10 +29,11 @@ export const getAllCommunities = gql`
                 dateCreated
                 dateUpdated
                 members {
-                    id
-                    avatar
-                    username
-                    name
+                    totalElements
+                    content {
+                        id
+                        role
+                    }
                 }
                 attributes
                 approvedId {
@@ -270,46 +271,50 @@ export const getCommunityInvitationsQuery = gql`
     }
 `
 
-export const prepareRemoveMemberQuery = gql`
-    query prepareRemoveMember($id: String!, $account: String!) {
-        prepareRemoveMember(id: $id, account: $account) {
+export const prepareRemoveGrantedMemberQuery = gql`
+    query prepareRemoveGrantedMember($id: String!, $account: String!) {
+        prepareRemoveGrantedMember(id: $id, account: $account) {
             messageHash
         }
     }
 `
 
-export const removeMemberMutation = gql`
-    mutation removeMember(
+export const removeGrantedMemberMutation = gql`
+    mutation removeGrantedMember(
         $signature: String!
         $id: String!
         $account: String!
     ) {
-        removeMember(signature: $signature, id: $id, account: $account) {
+        removeGrantedMember(signature: $signature, id: $id, account: $account) {
             hash
         }
     }
 `
 
-export const prepareChangeMemberRoleQuery = gql`
-    query prepareChangeMemberRole(
+export const prepareChangeGrantedMemberRoleQuery = gql`
+    query prepareChangeGrantedMemberRole(
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        prepareChangeMemberRole(id: $id, account: $account, role: $role) {
+        prepareChangeGrantedMemberRole(
+            id: $id
+            account: $account
+            role: $role
+        ) {
             messageHash
         }
     }
 `
 
-export const changeMemberRoleMutation = gql`
-    mutation changeMemberRole(
+export const changeGrantedMemberRoleMutation = gql`
+    mutation changeGrantedMemberRole(
         $signature: String!
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        changeMemberRole(
+        changeGrantedMemberRole(
             signature: $signature
             id: $id
             account: $account
@@ -380,4 +385,99 @@ export const getCommunityContent = gql`
     ${Article}
     ${Collection}
     ${Link}
+`
+
+export const getCommunityMembers = gql`
+    query getCommunityMembers(
+        $id: String!
+        $page: Int = 0
+        $size: Int
+        $sort: String
+        $dir: DirectionInput
+        $filter: CommunityMemberFilterInput
+    ) {
+        getCommunityMembers(
+            id: $id
+            page: $page
+            size: $size
+            sort: $sort
+            dir: $dir
+            filter: $filter
+        ) {
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    publicUserName: name
+                    avatar
+                    social
+                    userTitle: title
+                    articles(
+                        page: 0
+                        size: 1
+                        filter: { latestVersion: true }
+                    ) {
+                        totalElements
+                    }
+                    collections(page: 0, size: 1) {
+                        totalElements
+                    }
+                    links(page: 0, size: 1) {
+                        totalElements
+                    }
+                    communities {
+                        community {
+                            id
+                            name
+                        }
+                    }
+                }
+            }
+            totalPages
+            totalElements
+            isLast
+        }
+    }
+`
+
+export const joinCommunityMutation = gql`
+    mutation joinCommunity($id: String!) {
+        joinCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const leaveCommunityMutation = gql`
+    mutation leaveCommunity($id: String!) {
+        leaveCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const removeMemberMutation = gql`
+    mutation removeMember($id: String!, $userId: String!) {
+        removeMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const banMemberMutation = gql`
+    mutation banMember($id: String!, $userId: String!) {
+        banMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const unbanMemberMutation = gql`
+    mutation unbanMember($id: String!, $userId: String!) {
+        unbanMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
 `

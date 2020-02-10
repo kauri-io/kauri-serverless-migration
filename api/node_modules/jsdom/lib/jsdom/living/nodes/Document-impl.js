@@ -26,7 +26,10 @@ const { validateAndExtract } = require("../helpers/validate-names");
 const { fireAnEvent } = require("../helpers/events");
 const { shadowIncludingInclusiveDescendantsIterator } = require("../helpers/shadow-dom");
 
+const DocumentOrShadowRootImpl = require("./DocumentOrShadowRoot-impl").implementation;
 const GlobalEventHandlersImpl = require("./GlobalEventHandlers-impl").implementation;
+const NonElementParentNodeImpl = require("./NonElementParentNode-impl").implementation;
+const ParentNodeImpl = require("./ParentNode-impl").implementation;
 
 const { clone, listOfElementsWithQualifiedName, listOfElementsWithNamespaceAndLocalName,
   listOfElementsWithClassNames } = require("../node");
@@ -37,8 +40,6 @@ const CDATASection = require("../generated/CDATASection");
 const Text = require("../generated/Text");
 const DocumentFragment = require("../generated/DocumentFragment");
 const DOMImplementation = require("../generated/DOMImplementation");
-const NonElementParentNodeImpl = require("./NonElementParentNode-impl").implementation;
-const ParentNodeImpl = require("./ParentNode-impl").implementation;
 const Element = require("../generated/Element");
 const HTMLUnknownElement = require("../generated/HTMLUnknownElement");
 const SVGElement = require("../generated/SVGElement");
@@ -185,7 +186,7 @@ class DocumentImpl extends NodeImpl {
     this._queue = new ResourceQueue({ asyncQueue: this._asyncQueue, paused: false });
     this._deferQueue = new ResourceQueue({ paused: true });
     this._requestManager = new RequestManager();
-    this.readyState = privateData.options.readyState || "loading";
+    this._currentDocumentReadiness = privateData.options.readyState || "loading";
 
     this._lastFocusedElement = null;
 
@@ -264,12 +265,13 @@ class DocumentImpl extends NodeImpl {
     return this._currentScript;
   }
 
-  get activeElement() {
-    if (this._lastFocusedElement) {
-      return this._lastFocusedElement;
-    }
+  get readyState() {
+    return this._currentDocumentReadiness;
+  }
 
-    return this.body;
+  set readyState(state) {
+    this._currentDocumentReadiness = state;
+    fireAnEvent("readystatechange", this);
   }
 
   hasFocus() {
@@ -862,6 +864,7 @@ class DocumentImpl extends NodeImpl {
 }
 
 eventAccessors.createEventAccessor(DocumentImpl.prototype, "readystatechange");
+mixin(DocumentImpl.prototype, DocumentOrShadowRootImpl.prototype);
 mixin(DocumentImpl.prototype, GlobalEventHandlersImpl.prototype);
 mixin(DocumentImpl.prototype, NonElementParentNodeImpl.prototype);
 mixin(DocumentImpl.prototype, ParentNodeImpl.prototype);

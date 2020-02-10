@@ -30,16 +30,16 @@
             "dest": "/app/static/development/robots.txt"
         },
         {
-          "src": "/sitemap",
-          "dest": "https://api.dev.kauri.io/sitemap"
+            "src": "/sitemap",
+            "dest": "https://api.dev.kauri.io/sitemap"
         },
         {
-          "src": "/feed",
-          "dest": "https://api.dev.kauri.io/feed"
+            "src": "/feed",
+            "dest": "https://api.dev.kauri.io/feed"
         },
         {
-          "src": "/feed/(.*)/(.*)",
-          "dest": "https://api.dev.kauri.io/feed/$1/$2"
+            "src": "/feed/(.*)/(.*)",
+            "dest": "https://api.dev.kauri.io/feed/$1/$2"
         },
         {
             "src": "/favicon.ico",
@@ -74,6 +74,10 @@
             "dest": "/app/community?community_id=$2&slug=$1"
         },
         {
+            "src": "/(.*)/(.*)/cm?tab=(.*)",
+            "dest": "/app/community?community_id=$2&slug=$1&tab=$3"
+        },
+        {
             "src": "/community/(.*)/approve",
             "dest": "/app/approve?community_id=$1"
         },
@@ -84,6 +88,18 @@
         {
             "src": "/community/(.*)",
             "dest": "/app/community?community_id=$1"
+        },
+        {
+            "src": "/(.*)/(.*)/d",
+            "dest": "/app/discussion?discussion_id=$2&slug=$1"
+        },
+        {
+            "src": "/discussions/create",
+            "dest": "/app/create-discussion"
+        },
+        {
+            "src": "/discussions/(.*)/edit",
+            "dest": "/app/create-discussion?discussion_id=$1"
         },
         {
             "src": "/(.*)/(.*)/c",
@@ -118,23 +134,24 @@
             "dest": "/app/bookmarks"
         },
         {
-            "src": "draft/(.*)/(.*)",
+            "src": "/draft/(.*)/(.*)",
             "dest": "/app/draft?id=$1&version=$2"
+        },
+        {
+            "src": "/submitted-update/(.*)/(.*)",
+            "dest": "/app/submitted-update?id=$1&version=$2"
         },
         {
             "src": "/activate/(.*)",
             "dest": "/app/activate?uuid=$1"
         },
         {
-          "src": "/login",
-          "dest": "/app/login"
+            "src": "/login",
+            "dest": "/app/login"
         },
         {
-          "src": "/(.*)",
-          "dest": "/app/$1"
-        },
-        {
-            "handle": "filesystem"
+            "src": "/(.*)",
+            "dest": "/app/$1"
         },
         {
             "src": "/.*",

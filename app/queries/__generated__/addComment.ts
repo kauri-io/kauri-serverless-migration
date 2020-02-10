@@ -27,4 +27,5 @@ export interface addComment {
 export interface addCommentVariables {
   parent: ResourceIdentifierInput;
   body: string;
+  replyTo?: string | null;
 }

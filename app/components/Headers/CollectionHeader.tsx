@@ -96,11 +96,11 @@ interface IProps {
     isBookmarked: boolean
     isLoggedIn: boolean
     openModalAction: any
+    type?: ResourceTypeInput
 }
 
 const Container: React.SFC<IProps> = props => {
     const {
-        collectionCount,
         articleCount,
         description,
         id,
@@ -120,6 +120,7 @@ const Container: React.SFC<IProps> = props => {
         isBookmarked,
         isLoggedIn,
         openModalAction,
+        type,
     } = props
     return (
         <CollectionHeaderSection>
@@ -180,10 +181,6 @@ const Container: React.SFC<IProps> = props => {
                             count: articleCount,
                             name: 'Articles',
                         },
-                        {
-                            count: collectionCount,
-                            name: 'Collections',
-                        },
                     ]}
                 />
 
@@ -193,8 +190,10 @@ const Container: React.SFC<IProps> = props => {
                 <Avatar
                     color="secondary"
                     username={username}
-                    id={userId}
+                    name={username}
+                    id={ownerId}
                     avatar={userAvatar || imageURL}
+                    type={type}
                     withName={true}
                 />
                 {userId === ownerId || isMemberOfCommunityOwner ? (

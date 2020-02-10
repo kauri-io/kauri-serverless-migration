@@ -7,6 +7,5 @@ Disallow: /contracts
 Disallow: /build
 Disallow: /public-profile/utils
 Disallow: /public-profile
-Disallow: /*/p$
 Disallow: /bookmarks
 Disallow: /search-results

@@ -16,14 +16,13 @@ export interface removeMember_removeMember {
 
 export interface removeMember {
   /**
-   * Remove a member from the community (execute call).
-   * This operation can only be performed by a community admin
+   * Remove a basic member from a community
+   * This operation can only be performed by a communinity admin.
    */
   removeMember: removeMember_removeMember;
 }
 
 export interface removeMemberVariables {
-  signature: string;
   id: string;
-  account: string;
+  userId: string;
 }

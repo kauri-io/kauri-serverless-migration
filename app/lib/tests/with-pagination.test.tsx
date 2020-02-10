@@ -27,40 +27,10 @@ describe('lib/with-pagination', () => {
     it('should set event listeners when the component mounts', async () => {
         expect(window.addEventListener).toHaveBeenNthCalledWith(
             1,
-            'touchstart',
-            expect.any(Function)
-        )
-        expect(window.addEventListener).toHaveBeenNthCalledWith(
-            2,
-            'scroll',
-            expect.any(Function)
-        )
-    })
-
-    it('should handle touch start correctly', async () => {
-        wrapper.instance().triggerTouchStartEvent()()
-        expect(window.addEventListener).toHaveBeenNthCalledWith(
-            3,
             'touchend',
-            expect.any(Function),
-            false
-        )
-        expect(window.removeEventListener).toHaveBeenNthCalledWith(
-            1,
-            'touchstart',
             expect.any(Function)
         )
-    })
-
-    it('should handle scroll correctly', async () => {
-        wrapper.instance().triggerScrollEvent()()
         expect(window.addEventListener).toHaveBeenNthCalledWith(
-            4,
-            'scroll',
-            expect.any(Function),
-            false
-        )
-        expect(window.removeEventListener).toHaveBeenNthCalledWith(
             2,
             'scroll',
             expect.any(Function)

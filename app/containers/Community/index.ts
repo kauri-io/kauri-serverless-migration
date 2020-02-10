@@ -15,9 +15,9 @@ import {
     acceptCommunityInvitationAction,
     sendCommunityInvitationAction,
     removeResourceAction,
-    transferArticleToCommunityAction,
+    joinCommunityAction,
+    leaveCommunityAction,
 } from './Module'
-import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 
 const mapStateToProps = (state: IReduxState, ownProps: any) => {
     return {
@@ -36,6 +36,19 @@ const mapStateToProps = (state: IReduxState, ownProps: any) => {
                     ({ community }) => community.id === ownProps.communityId
                 ) as any)
             ).role === 'ADMIN',
+        isCommunityModerator:
+            state.app &&
+            state.app.user &&
+            state.app &&
+            state.app.user.communities.find(
+                ({ community }) => community.id === ownProps.communityId
+            ) &&
+            (
+                state.app &&
+                (state.app.user.communities.find(
+                    ({ community }) => community.id === ownProps.communityId
+                ) as any)
+            ).role === 'CURATOR',
         isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
     }
 }
@@ -53,8 +66,8 @@ export default compose(
             routeChangeAction,
             sendCommunityInvitationAction,
             showNotificationAction,
-            transferArticleToCommunityAction,
-            changeOwnerExtenalLinkAction,
+            joinCommunityAction,
+            leaveCommunityAction,
         }
     ),
     graphql(getCommunity, {

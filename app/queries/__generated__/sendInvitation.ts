@@ -18,7 +18,7 @@ export interface sendInvitation_sendInvitation {
 
 export interface sendInvitation {
   /**
-   * Send an invitation to join te community (execute call).
+   * Send an invitation to join te community as a granted member [admin/moderator]  (execute call).
    * This operation can only be performed by a community admin
    */
   sendInvitation: sendInvitation_sendInvitation;

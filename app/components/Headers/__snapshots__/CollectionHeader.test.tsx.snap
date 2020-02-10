@@ -45,6 +45,9 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "containedPrimary": Object {
+            "color": "#fff",
+          },
           "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
@@ -1059,10 +1062,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                           "count": 2,
                           "name": "Articles",
                         },
-                        Object {
-                          "count": 5,
-                          "name": "Collections",
-                        },
                       ]
                     }
                   >
@@ -1228,136 +1227,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                               </StyledComponent>
                             </StatisticCount__SectionContainer>
                           </Container>
-                          <Container
-                            count={5}
-                            key="Collections"
-                            name="Collections"
-                            pageType="CollectionPage"
-                          >
-                            <StatisticCount__SectionContainer
-                              key="Collections"
-                            >
-                              <StyledComponent
-                                forwardedComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                      "isStatic": false,
-                                      "lastClassName": "hBrKEM",
-                                      "rules": Array [
-                                        "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                                      ],
-                                    },
-                                    "displayName": "StatisticCount__SectionContainer",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                    "target": "section",
-                                    "toString": [Function],
-                                    "usesTheme": false,
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
-                                  }
-                                }
-                                forwardedRef={null}
-                              >
-                                <section
-                                  className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
-                                >
-                                  <StatisticCount__Count
-                                    pageType="CollectionPage"
-                                  >
-                                    <StyledComponent
-                                      forwardedComponent={
-                                        Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Array [],
-                                          "componentStyle": ComponentStyle {
-                                            "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                            "isStatic": false,
-                                            "lastClassName": "hyOXiO",
-                                            "rules": Array [
-                                              "color:white;font-size:",
-                                              [Function],
-                                              "px;font-weight:",
-                                              [Function],
-                                              ";margin:0px;margin-bottom:",
-                                              [Function],
-                                              "px;opacity:",
-                                              [Function],
-                                              ";",
-                                            ],
-                                          },
-                                          "displayName": "StatisticCount__Count",
-                                          "foldedComponentIds": Array [],
-                                          "render": [Function],
-                                          "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                          "target": "h3",
-                                          "toString": [Function],
-                                          "usesTheme": true,
-                                          "warnTooManyClasses": [Function],
-                                          "withComponent": [Function],
-                                        }
-                                      }
-                                      forwardedRef={null}
-                                      pageType="CollectionPage"
-                                    >
-                                      <h3
-                                        className="StatisticCount__Count-sc-1xyux9h-0 hyOXiO"
-                                      >
-                                        5
-                                      </h3>
-                                    </StyledComponent>
-                                  </StatisticCount__Count>
-                                  <StatisticCount__Name
-                                    pageType="CollectionPage"
-                                  >
-                                    <StyledComponent
-                                      forwardedComponent={
-                                        Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Array [],
-                                          "componentStyle": ComponentStyle {
-                                            "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                            "isStatic": false,
-                                            "lastClassName": "glOdbU",
-                                            "rules": Array [
-                                              "color:white;font-size:",
-                                              [Function],
-                                              "px;font-weight:",
-                                              [Function],
-                                              ";opacity:",
-                                              [Function],
-                                              ";text-transform:uppercase;",
-                                            ],
-                                          },
-                                          "displayName": "StatisticCount__Name",
-                                          "foldedComponentIds": Array [],
-                                          "render": [Function],
-                                          "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                          "target": "span",
-                                          "toString": [Function],
-                                          "usesTheme": true,
-                                          "warnTooManyClasses": [Function],
-                                          "withComponent": [Function],
-                                        }
-                                      }
-                                      forwardedRef={null}
-                                      pageType="CollectionPage"
-                                    >
-                                      <span
-                                        className="StatisticCount__Name-sc-1xyux9h-2 glOdbU"
-                                      >
-                                        Collections
-                                      </span>
-                                    </StyledComponent>
-                                  </StatisticCount__Name>
-                                </section>
-                              </StyledComponent>
-                            </StatisticCount__SectionContainer>
-                          </Container>
                         </section>
                       </StyledComponent>
                     </StatisticsContainer>
@@ -1414,7 +1283,8 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                   <AvatarComp
                     avatar="avatar url"
                     color="secondary"
-                    id="678"
+                    id="345"
+                    name="test username"
                     username="test username"
                     withName={true}
                   >
@@ -1427,6 +1297,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                         target="_self"
+                        title="test username"
                       >
                         <div
                           className="makeStyles-container-40"

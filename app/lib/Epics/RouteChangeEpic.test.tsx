@@ -14,6 +14,6 @@ describe('routeChangeEpic', () => {
         const resultingActions = await testEpic(routeChangeEpic, sourceAction)
 
         expect(resultingActions).toEqual(expectedActions)
-        expect(Router.push).toHaveBeenCalledWith('/test123')
+        expect(Router.push).toHaveBeenCalledWith('/test123', undefined)
     })
 })

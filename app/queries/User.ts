@@ -53,10 +53,6 @@ export const getOwnProfile = gql`
                 community {
                     id
                     name
-                    members {
-                        id
-                        role
-                    }
                 }
             }
             subscriptions

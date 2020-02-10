@@ -8,15 +8,6 @@ import { UserStatusInput, CommunityPermissionInput } from "./../../__generated__
 // GraphQL query operation: getMyProfile
 // ====================================================
 
-export interface getMyProfile_getMyProfile_communities_community_members {
-  __typename: "CommunityMemberDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  role: CommunityPermissionInput | null;
-}
-
 export interface getMyProfile_getMyProfile_communities_community {
   __typename: "CommunityDTO";
   /**
@@ -27,10 +18,6 @@ export interface getMyProfile_getMyProfile_communities_community {
    * Community Name
    */
   name: string;
-  /**
-   * Community members list (full profile)
-   */
-  members: (getMyProfile_getMyProfile_communities_community_members | null)[];
 }
 
 export interface getMyProfile_getMyProfile_communities {

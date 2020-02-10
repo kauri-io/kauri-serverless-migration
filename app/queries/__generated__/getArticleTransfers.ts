@@ -124,6 +124,18 @@ export interface getArticleTransfers_getArticleTransfers_content_article_contrib
   communities: (getArticleTransfers_getArticleTransfers_content_article_contributors_communities | null)[];
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_ownerId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -165,7 +177,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article_author 
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "DiscussionDTO" | "CommentDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO_resourceIdentifier {
@@ -259,6 +271,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    */
   author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author;
   /**
+   * Comment ID
+   */
+  id: string;
+  /**
    * Date the comment was published
    */
   posted: any;
@@ -266,6 +282,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    * Comment
    */
   body: string;
+  /**
+   * Reply to (Comment ID)
+   */
+  replyTo: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_comments {
@@ -286,6 +306,11 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    * Returns true if this is the last page.
    */
   isLast: boolean;
+}
+
+export interface getArticleTransfers_getArticleTransfers_content_article_tips {
+  __typename: "TipTotalsDTO";
+  totals: any | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article {
@@ -328,6 +353,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Author of the article (USER only)
    */
   authorId: string;
+  /**
+   * Owner of the article (can be a USER or COMMUNITY)
+   */
+  ownerId: getArticleTransfers_getArticleTransfers_content_article_ownerId | null;
   /**
    * Date created
    */
@@ -380,6 +409,8 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Check if the article is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  tips: getArticleTransfers_getArticleTransfers_content_article_tips | null;
+  hasTipped: boolean;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_transferrer {

@@ -47,7 +47,7 @@ describe('createCollectionEpic', () => {
         const mockWeb3GetNetwork = () => from(Promise.resolve(true))
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
-            KauriCore: {
+            KauriCheckpoint: {
                 createCollection: {
                     sendTransaction: () => Promise.resolve('transactionHash'),
                 },
@@ -77,7 +77,7 @@ describe('createCollectionEpic', () => {
         )
 
         const expectedAction = [
-            composeCollectionAction({ id, sections, tags }, () => {}),
+            composeCollectionAction({ id, name, sections, tags }, () => {}),
         ]
 
         const resultingActions = await testEpic(

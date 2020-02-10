@@ -1,6 +1,7 @@
 import { from, of } from 'rxjs'
 import { showNotificationAction } from './Epics/ShowNotificationEpic'
 import { catchError } from 'rxjs/operators'
+import config from '../config'
 
 const networkNames = {
     1: 'Main',
@@ -21,7 +22,7 @@ const getNetwork = () =>
                     reject(err)
                 } else {
                     // console.log(netId);
-                    if (networkNames[networkId] === 'Rinkeby') {
+                    if (networkNames[networkId] === config.ethereumNetwork) {
                         resolve(true)
                     } else {
                         reject(new Error('Wrong network'))
@@ -46,8 +47,7 @@ const web3GetNetwork = () =>
               showNotificationAction({
                   notificationType: 'error',
                   message: 'Wrong network',
-                  description:
-                      'Please switch to the Rinkeby network to checkpoint articles!',
+                  description: `Please switch to the ${config.ethereumNetwork} network to checkpoint articles!`,
               })
           )
 

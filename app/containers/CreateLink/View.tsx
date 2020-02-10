@@ -58,6 +58,9 @@ const CreateLink = ({
         (description || summary) &&
         authorName &&
         (tags && tags.length > 0)
+    const communitiesModerating = communities
+        .filter(({ role }) => role === 'ADMIN' || role === 'CURATOR')
+        .map(({ community }) => ({ ...community, type: 'COMMUNITY' }))
 
     const handleSubmit = ownerId => {
         console.log(JSON.stringify(ownerId))
@@ -79,19 +82,14 @@ const CreateLink = ({
             <Nav
                 disabled={!hasAllRequiredData}
                 submitExtenalLinkAction={() => {
-                    if (communities && communities.length > 0) {
+                    if (communitiesModerating.length > 0) {
                         return openModalAction({
                             children: (
                                 <PublishingSelector
                                     userId={userId}
                                     type="Articles"
                                     closeModalAction={closeModalAction}
-                                    communities={communities.map(
-                                        ({ community }) => ({
-                                            ...community,
-                                            type: 'COMMUNITY',
-                                        })
-                                    )}
+                                    communities={communitiesModerating}
                                     handleSubmit={destination =>
                                         handleSubmit({
                                             type: destination.type,
@@ -174,12 +172,14 @@ const CreateLink = ({
                             <Paper className={classes.editor}>
                                 <Editor
                                     minHeight={200}
-                                    withTabs={false}
+                                    withTabPreview={true}
                                     withToolbar={true}
                                     compact={true}
                                     text={summary || ''}
                                     placeholder="Enter a description for the link"
                                     onChange={e => setSummary(e)}
+                                    openModalAction={openModalAction}
+                                    closeModalAction={closeModalAction}
                                 />
                             </Paper>
                         </>

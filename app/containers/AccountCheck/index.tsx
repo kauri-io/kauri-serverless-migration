@@ -37,19 +37,15 @@ const AccountCheck = ({ router, page, userId }) => {
     return (
         <div className={classes.container}>
             <ErrorIcon />
-            <Typography variant="h6">Account mismatch.</Typography>
+            <Typography variant="h6">Metamask Account check</Typography>
             <Typography variant="body1">
-                In order to correctly publish or edit an article and publish or
-                editing a community your selected Web3 account and Kauri account
-                need to match.
+                In order to correctly publish an article or manage a community,
+                you need to unlock your Metamask account
             </Typography>
             <Typography variant="body1">
-                Please switch back your web3 account to
+                and select the Web3 account associated to your Kauri account:
             </Typography>
             <code className={classes.account}>0x{userId}</code>
-            <Typography variant="body1">
-                or log out and log in again.
-            </Typography>
         </div>
     )
 }

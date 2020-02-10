@@ -57,6 +57,9 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -572,6 +575,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
               href="/community/1234567890/cm"
               onClick={[Function]}
               onMouseEnter={[Function]}
+              title="Community"
             >
               <Hidden
                 implementation="css"
@@ -1152,7 +1156,6 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                           <span
                                             className="MuiTypography-root MuiTypography-caption"
                                           >
-                                            4
                                              member
                                             s
                                           </span>
@@ -1915,7 +1918,6 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                       <span
                                                         className="MuiTypography-root MuiTypography-caption"
                                                       >
-                                                        4
                                                          member
                                                         s
                                                       </span>

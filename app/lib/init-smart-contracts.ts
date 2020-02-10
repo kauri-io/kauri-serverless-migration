@@ -14,7 +14,7 @@ type Web3Props = {
 
 export const initSmartContracts = (web3: Web3Props, cb: any) => {
     if (typeof web3 !== 'undefined') {
-        const smartContractNames = ['KauriCore', 'Wallet', 'Community']
+        const smartContractNames = ['KauriCheckpoint', 'Wallet', 'Community']
         const smartContractFetchObservables = smartContractNames.map(
             smartContractName =>
                 from(
@@ -27,9 +27,15 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
         )
         const smartContracts = {}
 
+        const getNetworkName = () => {
+            return config.ethereumNetwork === 'Main'
+                ? 'homestead'
+                : config.ethereumNetwork.toLowerCase()
+        }
+
         const provider = new ethers.providers.Web3Provider(
             global.window.web3.currentProvider,
-            'rinkeby'
+            getNetworkName()
         )
         const signer = provider.getSigner()
 

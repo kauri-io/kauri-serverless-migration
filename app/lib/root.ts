@@ -27,7 +27,13 @@ import {
     resendEmailVerificationEpic,
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
-import { voteEpic } from '../containers/Article/Module'
+import {
+    voteEpic,
+    initiateArticleTransferEpic,
+    editCommentEpic,
+    deleteCommentEpic,
+    tipEpic,
+} from '../containers/Article/Module'
 import {
     createCommunityEpic,
     communityCreatedEpic,
@@ -39,12 +45,17 @@ import {
     sendCommunityInvitationEpic,
     acceptCommunityInvitationEpic,
     waitForInvitationReconciliationEpic,
-    removeMemberEpic,
+    removeGrantedMemberEpic,
     removeResourceEpic,
-    changeMemberRoleEpic,
+    changeGrantedMemberRoleEpic,
     revokeInvitationEpic,
     resendInvitationEpic,
     transferArticleToCommunityEpic,
+    leaveCommunityEpic,
+    joinCommunityEpic,
+    removeMemberEpic,
+    banMemberEpic,
+    unbanMemberEpic,
 } from '../containers/Community/Module'
 import {
     rejectArticleTransferEpic,
@@ -69,6 +80,13 @@ import {
     editExternalLinkEpic,
     changeOwnerExtenalLinkEpic,
 } from '../containers/CreateLink/Module'
+import {
+    createDiscussionEpic,
+    editDiscussionEpic,
+    closeDiscussionEpic,
+    reopenDiscussionEpic,
+    deleteDiscussionEpic,
+} from '../containers/Discussion/Module'
 
 export const rootReducer = {
     app,
@@ -101,11 +119,11 @@ const epics = [
     finaliseArticleTransferEpic,
     transferArticleToCommunityEpic,
     resendInvitationEpic,
-    changeMemberRoleEpic,
+    changeGrantedMemberRoleEpic,
     approveResourceEpic,
     removeResourceEpic,
     revokeInvitationEpic,
-    removeMemberEpic,
+    removeGrantedMemberEpic,
     acceptCommunityInvitationEpic,
     waitForInvitationReconciliationEpic,
     sendCommunityInvitationEpic,
@@ -125,6 +143,20 @@ const epics = [
     submitExternalLinkEpic,
     editExternalLinkEpic,
     changeOwnerExtenalLinkEpic,
+    joinCommunityEpic,
+    leaveCommunityEpic,
+    removeMemberEpic,
+    banMemberEpic,
+    unbanMemberEpic,
+    initiateArticleTransferEpic,
+    createDiscussionEpic,
+    editDiscussionEpic,
+    closeDiscussionEpic,
+    reopenDiscussionEpic,
+    deleteDiscussionEpic,
+    editCommentEpic,
+    deleteCommentEpic,
+    tipEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

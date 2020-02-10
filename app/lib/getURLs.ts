@@ -1,4 +1,5 @@
-import slugify from 'slugify'
+import { slugify } from './slugify'
+
 interface IArticleProps {
     title: string
     id: string
@@ -12,8 +13,8 @@ export const getArticleURL = (
     switch (type) {
         case 'update':
             return {
-                href: `/app/update-article?id=${id}&version=${version}`,
                 as: `/article/${id}/v${version}/update-article`,
+                href: `/update-article?id=${id}&version=${version}`,
             }
         case 'draft':
             return {
@@ -32,7 +33,7 @@ export const getArticleURL = (
             }
         default:
             return {
-                as: `/${slugify(title, { lower: true })}/${id}/a`,
+                as: `/${slugify(title)}/${id}/a`,
                 href: `/article?article_id=${id}`,
             }
     }
@@ -44,7 +45,7 @@ interface ICollectionProps {
     urlType?: string
 }
 export const getCollectionURL = ({ name, id }: ICollectionProps) => ({
-    as: `/${slugify(String(name), { lower: true })}/${String(id)}/c`,
+    as: `/${slugify(String(name))}/${String(id)}/c`,
     href: `/collection?collection_id=${String(id)}`,
 })
 
@@ -70,11 +71,12 @@ export const getProfileURL = ({ username }: IProfileLinkProps) => ({
 interface ICommunityProps {
     id: string
     name: string | null
+    tab?: number
 }
 
-export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
-    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
-    href: `/community?community_id=${String(id)}`,
+export const getCommunityURL = ({ name, id, tab }: ICommunityProps) => ({
+    as: `/${slugify(String(name))}/${String(id)}/cm${tab ? `?tab=${tab}` : ''}`,
+    href: `/community?community_id=${String(id)}${tab ? `&tab=${tab}` : ''}`,
 })
 
 export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
@@ -82,7 +84,12 @@ export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
     href: `/update-community?community_id=${String(id)}`,
 })
 
+export const getDiscussionURL = ({ title, id }) => ({
+    as: `/${slugify(String(title))}/${id}/d`,
+    href: `/discussion?discussion_id=${id}`,
+})
+
 export const getLinkUrl = ({ id, linkTitle }) => ({
-    as: `/${slugify(linkTitle.value, { lower: true })}/${id}/l`,
+    as: `/${slugify(linkTitle.value)}/${id}/l`,
     href: `/view-link?id=${id}`,
 })

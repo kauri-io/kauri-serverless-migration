@@ -57,6 +57,9 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -941,43 +944,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 },
                                                 "selectionSet": undefined,
                                               },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "members",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "role",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
                                             ],
                                           },
                                         },
@@ -1191,7 +1157,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 834,
+                      "end": 726,
                       "start": 0,
                     },
                   },
@@ -2810,43 +2776,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 },
                                                 "selectionSet": undefined,
                                               },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "members",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "role",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
                                             ],
                                           },
                                         },
@@ -3060,7 +2989,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 834,
+                      "end": 726,
                       "start": 0,
                     },
                   } => Object {
@@ -3243,50 +3172,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                   "value": "name",
                                                 },
                                                 "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "members",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "role",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "__typename",
-                                                      },
-                                                    },
-                                                  ],
-                                                },
                                               },
                                               Object {
                                                 "kind": "Field",
@@ -3543,7 +3428,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 834,
+                      "end": 726,
                       "start": 0,
                     },
                   },
@@ -3729,50 +3614,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 "selectionSet": undefined,
                                               },
                                               Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "members",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "role",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "__typename",
-                                                      },
-                                                    },
-                                                  ],
-                                                },
-                                              },
-                                              Object {
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
@@ -4027,7 +3868,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 834,
+                      "end": 726,
                       "start": 0,
                     },
                   } => Object {
@@ -4212,50 +4053,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 "selectionSet": undefined,
                                               },
                                               Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "members",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "role",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "__typename",
-                                                      },
-                                                    },
-                                                  ],
-                                                },
-                                              },
-                                              Object {
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
@@ -4510,7 +4307,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 834,
+                      "end": 726,
                       "start": 0,
                     },
                   },
@@ -4700,50 +4497,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     "value": "name",
                                                   },
                                                   "selectionSet": undefined,
-                                                },
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "__typename",
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
                                                 },
                                                 Object {
                                                   "kind": "Field",
@@ -5000,7 +4753,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     },
@@ -6999,43 +6752,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     },
                                                     "selectionSet": undefined,
                                                   },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                      ],
-                                                    },
-                                                  },
                                                 ],
                                               },
                                             },
@@ -7249,7 +6965,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       } => Object {
@@ -7432,50 +7148,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                       "value": "name",
                                                     },
                                                     "selectionSet": undefined,
-                                                  },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "__typename",
-                                                          },
-                                                        },
-                                                      ],
-                                                    },
                                                   },
                                                   Object {
                                                     "kind": "Field",
@@ -7732,7 +7404,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       },
@@ -7918,50 +7590,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     "selectionSet": undefined,
                                                   },
                                                   Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "__typename",
-                                                          },
-                                                        },
-                                                      ],
-                                                    },
-                                                  },
-                                                  Object {
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
@@ -8216,7 +7844,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       } => Object {
@@ -8401,50 +8029,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     "selectionSet": undefined,
                                                   },
                                                   Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "__typename",
-                                                          },
-                                                        },
-                                                      ],
-                                                    },
-                                                  },
-                                                  Object {
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
@@ -8699,7 +8283,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       },
@@ -8889,50 +8473,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                         "value": "name",
                                                       },
                                                       "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "members",
-                                                      },
-                                                      "selectionSet": Object {
-                                                        "kind": "SelectionSet",
-                                                        "selections": Array [
-                                                          Object {
-                                                            "alias": undefined,
-                                                            "arguments": Array [],
-                                                            "directives": Array [],
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "id",
-                                                            },
-                                                            "selectionSet": undefined,
-                                                          },
-                                                          Object {
-                                                            "alias": undefined,
-                                                            "arguments": Array [],
-                                                            "directives": Array [],
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "role",
-                                                            },
-                                                            "selectionSet": undefined,
-                                                          },
-                                                          Object {
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "__typename",
-                                                            },
-                                                          },
-                                                        ],
-                                                      },
                                                     },
                                                     Object {
                                                       "kind": "Field",
@@ -9189,7 +8729,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           ],
                           "kind": "Document",
                           "loc": Object {
-                            "end": 834,
+                            "end": 726,
                             "start": 0,
                           },
                         },
@@ -9766,50 +9306,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                   "selectionSet": undefined,
                                                 },
                                                 Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "__typename",
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                },
-                                                Object {
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
@@ -10064,7 +9560,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     },
@@ -10305,43 +9801,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                       },
                                                       "selectionSet": undefined,
                                                     },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "members",
-                                                      },
-                                                      "selectionSet": Object {
-                                                        "kind": "SelectionSet",
-                                                        "selections": Array [
-                                                          Object {
-                                                            "alias": undefined,
-                                                            "arguments": Array [],
-                                                            "directives": Array [],
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "id",
-                                                            },
-                                                            "selectionSet": undefined,
-                                                          },
-                                                          Object {
-                                                            "alias": undefined,
-                                                            "arguments": Array [],
-                                                            "directives": Array [],
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "role",
-                                                            },
-                                                            "selectionSet": undefined,
-                                                          },
-                                                        ],
-                                                      },
-                                                    },
                                                   ],
                                                 },
                                               },
@@ -10555,7 +10014,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           ],
                           "kind": "Document",
                           "loc": Object {
-                            "end": 834,
+                            "end": 726,
                             "start": 0,
                           },
                         },
@@ -11920,50 +11379,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     "selectionSet": undefined,
                                                   },
                                                   Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "__typename",
-                                                          },
-                                                        },
-                                                      ],
-                                                    },
-                                                  },
-                                                  Object {
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
@@ -12218,7 +11633,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       },
@@ -13861,43 +13276,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                   },
                                                   "selectionSet": undefined,
                                                 },
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                    ],
-                                                  },
-                                                },
                                               ],
                                             },
                                           },
@@ -14111,7 +13489,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     } => Object {
@@ -14294,50 +13672,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                     "value": "name",
                                                   },
                                                   "selectionSet": undefined,
-                                                },
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "__typename",
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
                                                 },
                                                 Object {
                                                   "kind": "Field",
@@ -14594,7 +13928,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     },
@@ -14780,50 +14114,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                   "selectionSet": undefined,
                                                 },
                                                 Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "__typename",
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                },
-                                                Object {
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
@@ -15078,7 +14368,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     } => Object {
@@ -15263,50 +14553,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                   "selectionSet": undefined,
                                                 },
                                                 Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "members",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "id",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "role",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "__typename",
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                },
-                                                Object {
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
@@ -15561,7 +14807,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 834,
+                        "end": 726,
                         "start": 0,
                       },
                     },
@@ -15751,50 +14997,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                       "value": "name",
                                                     },
                                                     "selectionSet": undefined,
-                                                  },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "__typename",
-                                                          },
-                                                        },
-                                                      ],
-                                                    },
                                                   },
                                                   Object {
                                                     "kind": "Field",
@@ -16051,7 +15253,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       },
@@ -16438,9 +15640,10 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
               acceptArticleTransferAction={[Function]}
               closeModalAction={[Function]}
               deleteDraftArticleAction={[Function]}
+              leaveCommunityAction={[Function]}
               openModalAction={[Function]}
               rejectArticleTransferAction={[Function]}
-              removeMemberAction={[Function]}
+              removeGrantedMemberAction={[Function]}
               resendEmailVerificationAction={[Function]}
               routeChangeAction={[Function]}
               saveUserDetailsAction={[Function]}
@@ -16810,9 +16013,10 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                   acceptArticleTransferAction={[Function]}
                   closeModalAction={[Function]}
                   deleteDraftArticleAction={[Function]}
+                  leaveCommunityAction={[Function]}
                   openModalAction={[Function]}
                   rejectArticleTransferAction={[Function]}
-                  removeMemberAction={[Function]}
+                  removeGrantedMemberAction={[Function]}
                   resendEmailVerificationAction={[Function]}
                   routeChangeAction={[Function]}
                   saveUserDetailsAction={[Function]}
@@ -17002,43 +16206,6 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                       "value": "name",
                                                     },
                                                     "selectionSet": undefined,
-                                                  },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "members",
-                                                    },
-                                                    "selectionSet": Object {
-                                                      "kind": "SelectionSet",
-                                                      "selections": Array [
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "id",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                        Object {
-                                                          "alias": undefined,
-                                                          "arguments": Array [],
-                                                          "directives": Array [],
-                                                          "kind": "Field",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "role",
-                                                          },
-                                                          "selectionSet": undefined,
-                                                        },
-                                                      ],
-                                                    },
                                                   },
                                                 ],
                                               },
@@ -17253,7 +16420,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 834,
+                          "end": 726,
                           "start": 0,
                         },
                       }
@@ -17303,9 +16470,10 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       acceptArticleTransferAction={[Function]}
                       closeModalAction={[Function]}
                       deleteDraftArticleAction={[Function]}
+                      leaveCommunityAction={[Function]}
                       openModalAction={[Function]}
                       rejectArticleTransferAction={[Function]}
-                      removeMemberAction={[Function]}
+                      removeGrantedMemberAction={[Function]}
                       resendEmailVerificationAction={[Function]}
                       routeChangeAction={[Function]}
                       saveUserDetailsAction={[Function]}
@@ -17348,9 +16516,10 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         acceptArticleTransferAction={[Function]}
                         closeModalAction={[Function]}
                         deleteDraftArticleAction={[Function]}
+                        leaveCommunityAction={[Function]}
                         openModalAction={[Function]}
                         rejectArticleTransferAction={[Function]}
-                        removeMemberAction={[Function]}
+                        removeGrantedMemberAction={[Function]}
                         resendEmailVerificationAction={[Function]}
                         routeChangeAction={[Function]}
                         saveUserDetailsAction={[Function]}
@@ -17393,9 +16562,10 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           acceptArticleTransferAction={[Function]}
                           closeModalAction={[Function]}
                           deleteDraftArticleAction={[Function]}
+                          leaveCommunityAction={[Function]}
                           openModalAction={[Function]}
                           rejectArticleTransferAction={[Function]}
-                          removeMemberAction={[Function]}
+                          removeGrantedMemberAction={[Function]}
                           resendEmailVerificationAction={[Function]}
                           routeChangeAction={[Function]}
                           saveUserDetailsAction={[Function]}

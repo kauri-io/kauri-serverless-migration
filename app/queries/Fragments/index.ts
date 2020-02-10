@@ -76,6 +76,10 @@ export const Article = gql`
         content
         description
         authorId
+        ownerId {
+            id
+            type
+        }
         dateCreated
         datePublished
         status
@@ -107,8 +111,10 @@ export const Article = gql`
                     username
                     avatar
                 }
+                id
                 posted
                 body
+                replyTo
             }
             totalPages
             totalElements
@@ -121,6 +127,10 @@ export const Article = gql`
         }
         updateComment
         isBookmarked
+        tips {
+            totals
+        }
+        hasTipped
     }
 
     ${UserOwner}
@@ -137,6 +147,10 @@ export const Link = gql`
         dateUpdated
         submitterId
         isBookmarked
+        ownerId {
+            id
+            type
+        }
         owner {
             ...UserOwner
             ...CommunityOwner
@@ -178,6 +192,8 @@ export const Link = gql`
                 }
                 posted
                 body
+                id
+                replyTo
             }
             totalPages
             totalElements
@@ -282,13 +298,18 @@ export const Community = gql`
                 }
             }
         }
-        members {
-            id
-            name
-            username
-            avatar
-            role
-            status
+        members(size: 10, sort: "role", dir: ASC) {
+            totalElements
+            totalElementsBreakdown
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    avatar
+                }
+            }
         }
         approvedId {
             id
@@ -298,8 +319,44 @@ export const Community = gql`
             id
             type
         }
+        discussions(filter: { statusIn: [OPENED, CLOSED] }) {
+            totalElements
+        }
     }
     ${Article}
     ${Collection}
     ${Link}
+`
+
+export const TipDetails = gql`
+    fragment TipDetails on TipDetailsDTO {
+        transactionHash
+        tipper {
+            id
+            username
+            name
+            avatar
+        }
+        recipient {
+            id
+            username
+            name
+            avatar
+        }
+        resource {
+            ... on ArticleDTO {
+                id
+                title
+            }
+        }
+        fromAddress
+        toAddress
+        tokenType
+        value
+        blockHash
+        contractAddress
+        dateStaged
+        dateMined
+        status
+    }
 `

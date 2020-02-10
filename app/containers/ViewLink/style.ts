@@ -44,7 +44,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             flexDirection: 'column',
             height: '100%',
             justifyContent: 'flex-start',
-            overflowY: 'scroll',
+            //overflowY: 'scroll',
             padding: theme.spacing(2, 2, 20, 2),
             position: 'fixed',
         },
@@ -66,16 +66,20 @@ export const useStyles = makeStyles((theme: Theme) => {
             },
         },
         toolbar: {
-            padding: theme.spacing(2, 0),
-            justifyContent: 'space-around',
+            justifyContent: 'space-between',
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
-            flexDirection: 'row',
-            position: 'fixed',
             background: theme.palette.common.white,
             zIndex: 1,
             width: '100%',
             maxWidth: 808,
+            padding: theme.spacing(2, 0),
+            position: 'fixed',
+        },
+        toolbarIcons: {
+            justifyContent: 'space-around',
+            display: 'flex',
+            width: '100%',
         },
         title: {
             margin: theme.spacing(1, 0),
@@ -136,6 +140,26 @@ export const useStyles = makeStyles((theme: Theme) => {
         social: {
             '& > *': {
                 marginLeft: theme.spacing(2),
+            },
+        },
+        commentTitle: {
+            textAlign: 'center',
+            margin: theme.spacing(2),
+        },
+        section: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: theme.spacing(2),
+            '& > *': {
+                fontWeight: 500,
+                marginBottom: theme.spacing(2),
+            },
+        },
+        headerImage: {
+            '& > *': {
+                width: '100%',
             },
         },
     }

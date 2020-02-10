@@ -75,7 +75,6 @@ const ArticleSubmittedUpdate = ({
     const commonClasses = ArticleStyles({})
     const classes = useStyles({})
     const originalAuthor = contributors && contributors[0]
-    const canonicalUrl = attributes.canonical
 
     const url = getArticleURL({ title, id, version }, 'submitted-update')
 
@@ -83,14 +82,14 @@ const ArticleSubmittedUpdate = ({
         <>
             <Schema
                 url={url}
-                canonicalURL={canonicalUrl}
+                canonicalURL={attributes.canonical}
                 id={id}
                 title={title}
-                description={description}
+                description={description || ''}
                 dateCreated={dateCreated}
                 datePublished={dateCreated}
                 tags={tags}
-                attributes={attributes}
+                background={attributes.background}
                 author={originalAuthor}
                 hostName={hostName}
             />

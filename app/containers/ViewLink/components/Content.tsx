@@ -17,6 +17,7 @@ import ShareIcon from '@material-ui/icons/Share'
 import { useState } from 'react'
 import ShareDialog from '../../../components/Card/ShareDialog'
 import SocialWebsiteIcon from '../../../components/Social/SocialWebsiteIcon'
+import Renderer from '../../../components/Markdown/Renderer'
 
 const LinkContent = ({
     // id,
@@ -147,11 +148,13 @@ const LinkContent = ({
             {url.value.indexOf('youtube.com') === -1 &&
                 linkAttributes.background_image &&
                 linkAttributes.background_image.value && (
-                    <Image
-                        height={360}
-                        width={808}
-                        image={linkAttributes.background_image.value}
-                    />
+                    <div className={classes.headerImage}>
+                        <Image
+                            height={360}
+                            width={808}
+                            image={linkAttributes.background_image.value}
+                        />
+                    </div>
                 )}
             {url.value.indexOf('youtube.com') !== -1 && (
                 <iframe
@@ -198,7 +201,7 @@ const LinkContent = ({
             </Grid>
 
             <Typography className={classes.summary} variant="body1">
-                {summary.value}
+                <Renderer markdown={summary.value} />
             </Typography>
         </>
     )

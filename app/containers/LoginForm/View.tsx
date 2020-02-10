@@ -4,6 +4,7 @@ import Image from '../../components/Image'
 import NoSsr from '@material-ui/core/NoSsr'
 import LoadingComponent from '../../components/Loading'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const useStyles = makeStyles((theme: Theme) => ({
     loginContainer: {
@@ -160,32 +161,37 @@ export default ({ web3, handleSubmit, hostName }) => {
     const classes = useStyles({})
 
     return (
-        <Grid
-            container={true}
-            direction="column"
-            alignItems="center"
-            justify="center"
-            className={classes.loginContainer}
-        >
-            {!process.browser && <LoadingComponent />}
-            {process.browser && (
-                <NoSsr>
-                    <Typography
-                        gutterBottom={true}
-                        variant="h4"
-                        color="secondary"
-                    >
-                        Web3 Sign In
-                    </Typography>
-                    {web3 && <Web3Available handleSubmit={handleSubmit} />}
-                    {!web3 && (
-                        <Web3Unavailable
-                            hostName={hostName}
-                            classes={classes}
-                        />
-                    )}
-                </NoSsr>
-            )}
-        </Grid>
+        <>
+            <Head>
+                <title>{`Kauri - Login`}</title>
+            </Head>
+            <Grid
+                container={true}
+                direction="column"
+                alignItems="center"
+                justify="center"
+                className={classes.loginContainer}
+            >
+                {!process.browser && <LoadingComponent />}
+                {process.browser && (
+                    <NoSsr>
+                        <Typography
+                            gutterBottom={true}
+                            variant="h4"
+                            color="secondary"
+                        >
+                            Web3 Sign In
+                        </Typography>
+                        {web3 && <Web3Available handleSubmit={handleSubmit} />}
+                        {!web3 && (
+                            <Web3Unavailable
+                                hostName={hostName}
+                                classes={classes}
+                            />
+                        )}
+                    </NoSsr>
+                )}
+            </Grid>
+        </>
     )
 }
