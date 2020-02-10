@@ -12,9 +12,18 @@ type Web3Props = {
     currentProvider: string
 }
 
+const networkNamesToIds = {
+    Main: 1,
+    Morden: 2,
+    Ropsten: 3,
+    Rinkeby: 4,
+    Kovan: 42,
+    'Kauri Dev': 224895,
+}
+
 export const initSmartContracts = (web3: Web3Props, cb: any) => {
     if (typeof web3 !== 'undefined') {
-        const smartContractNames = ['KauriCheckpoint', 'Wallet', 'Community']
+        const smartContractNames = ['KauriCheckpoint']
         const smartContractFetchObservables = smartContractNames.map(
             smartContractName =>
                 from(
@@ -48,7 +57,9 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
                                 abiJSON.contractName === smartContractName
                         )
                         const smartContractWithProvider = new ethers.Contract(
-                            fetchedSmartContract.networks[4].address,
+                            fetchedSmartContract.networks[
+                                networkNamesToIds[config.ethereumNetwork]
+                            ].address,
                             fetchedSmartContract.abi,
                             signer
                         )
