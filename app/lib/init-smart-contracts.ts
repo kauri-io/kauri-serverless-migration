@@ -56,9 +56,6 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
                             abiJSON =>
                                 abiJSON.contractName === smartContractName
                         )
-                        console.log(
-                            JSON.stringify(fetchedSmartContract.networks)
-                        )
                         const smartContractWithProvider = new ethers.Contract(
                             fetchedSmartContract.networks[
                                 networkNamesToIds[config.ethereumNetwork]
