@@ -1,46 +1,57 @@
 import React from 'react'
 import styled from 'styled-components'
-import DiscoverSearch from '../Articles/DiscoverSearch'
+import { Button, Hidden } from '@material-ui/core'
 
 const CommunitiesHeader = styled.div`
-    background-color: ${props => props.theme.colors.primaryTextColor};
-    width: 100%;
+    background: white url('static/images/discover-communities-banner.svg')
+        no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: ${props => props.theme.colors.white};
-    padding: ${props => props.theme.space[3]}px;
-    padding-bottom: ${props => props.theme.space[3]}px;
+    height: 200px;
+    width: 100%;
+    text-align: center;
 `
 
 const KauriTitle = styled.h1`
-    color: white;
+    color: #333333;
     font-weight: 300;
     font-size: ${props => props.theme.fontSizes[8]}px;
-    margin-top: 45px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
     @media (max-width: 500px) {
         width: 300px;
-        margin: auto;
     }
 `
 
 const KauriDescription = styled.div`
+    margin-bottom: 12px;
     @media (max-width: 500px) {
         width: 300px;
-        margin: auto;
     }
 `
 
-const Header: React.FunctionComponent<{ category: string }> = ({
-    category,
-}) => (
+const Header = ({ isLoggedIn, routeChangeAction }) => (
     <CommunitiesHeader>
-        <KauriTitle>Discover Communities</KauriTitle>
-        <KauriDescription>User Communities</KauriDescription>
-        <DiscoverSearch category={category} />
+        <KauriTitle>Communities</KauriTitle>
+        <KauriDescription>
+            Curate, manage and discuss content around topics important to you.
+        </KauriDescription>
+
+        <Hidden xsDown={true}>
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() => {
+                    return isLoggedIn
+                        ? routeChangeAction(`/create-community`)
+                        : routeChangeAction(`/login?r=/create-community`)
+                }}
+            >
+                Create a Community
+            </Button>
+        </Hidden>
     </CommunitiesHeader>
 )
 

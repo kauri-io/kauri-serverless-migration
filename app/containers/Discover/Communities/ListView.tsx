@@ -33,7 +33,7 @@ class Communities extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>{`Kauri - ${config.title} - Communities`}</title>
+                    <title>{`Kauri - ${config.title} - Discover Communities`}</title>
                     <meta
                         name="description"
                         content={`${config.description.line1} ${config.description.line2}`}

@@ -4876,6 +4876,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                             },
                             "render": [Function],
                           },
+                          "defaultProps": undefined,
                           "displayName": "WithStyles(ForwardRef(Backdrop))",
                           "options": Object {
                             "defaultTheme": Object {
@@ -14957,6 +14958,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                                 },
                                                                                                 "render": [Function],
                                                                                               },
+                                                                                              "defaultProps": undefined,
                                                                                               "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                               "options": Object {
                                                                                                 "defaultTheme": Object {
@@ -19658,6 +19660,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                                 },
                                                                                                 "render": [Function],
                                                                                               },
+                                                                                              "defaultProps": undefined,
                                                                                               "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                               "options": Object {
                                                                                                 "defaultTheme": Object {
@@ -23347,6 +23350,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                                 },
                                                                                                 "render": [Function],
                                                                                               },
+                                                                                              "defaultProps": undefined,
                                                                                               "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                               "options": Object {
                                                                                                 "defaultTheme": Object {
@@ -27713,6 +27717,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                                 },
                                                                                                 "render": [Function],
                                                                                               },
+                                                                                              "defaultProps": undefined,
                                                                                               "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                               "options": Object {
                                                                                                 "defaultTheme": Object {
@@ -32246,6 +32251,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                                                 },
                                                                                                 "render": [Function],
                                                                                               },
+                                                                                              "defaultProps": undefined,
                                                                                               "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                               "options": Object {
                                                                                                 "defaultTheme": Object {

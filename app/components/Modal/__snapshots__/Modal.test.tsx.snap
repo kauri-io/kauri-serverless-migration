@@ -2649,6 +2649,7 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
                   },
                   "render": [Function],
                 },
+                "defaultProps": undefined,
                 "displayName": "WithStyles(ForwardRef(Backdrop))",
                 "options": Object {
                   "defaultTheme": Object {
