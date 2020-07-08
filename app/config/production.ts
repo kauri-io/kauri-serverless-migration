@@ -12,7 +12,7 @@ export default {
     uppyConfig,
     analyticsTokens: {
         mixpanel: '7d83001be784f09b212b9b3274e41530',
-        ga: 'UA-112179323-1',
+        ga: 'UA-172017815-1',
     },
     testingAccounts: [
         'b282635ffc0ea4d6984f6b50e9dab90de1d03ce2',
