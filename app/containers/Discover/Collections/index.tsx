@@ -3,20 +3,24 @@ import List from './List'
 import Header from './Header'
 import { Tabs, Tab } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
-        background: theme.palette.common.black,
-        color: theme.palette.common.white,
+        background: theme.palette.common.white,
     },
 }))
 
-const CollectionDiscover = () => {
+const CollectionDiscover = ({ isLoggedIn, routeChangeAction }) => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
     return (
         <div>
-            <Header category={'COLLECTION'} />
+            <Header
+                isLoggedIn={isLoggedIn}
+                routeChangeAction={routeChangeAction}
+            />
             <Tabs
                 TabIndicatorProps={{ style: { height: 3 } }}
                 indicatorColor="primary"
@@ -36,4 +40,14 @@ const CollectionDiscover = () => {
     )
 }
 
-export default CollectionDiscover
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        routeChangeAction,
+    }
+)(CollectionDiscover)

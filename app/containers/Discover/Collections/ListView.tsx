@@ -51,7 +51,7 @@ class Collections extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>{`Kauri - ${config.title} - Collections`}</title>
+                    <title>{`Kauri - ${config.title} - Discover Collections`}</title>
                     <meta
                         name="description"
                         content={`${config.description.line1} ${config.description.line2}`}

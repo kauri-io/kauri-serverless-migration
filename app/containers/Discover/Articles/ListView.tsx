@@ -37,7 +37,7 @@ class Articles extends Component<IProps> {
         return (
             <Fragment>
                 <Head>
-                    <title>{`Kauri - ${config.title} - Articles`}</title>
+                    <title>{`Kauri - ${config.title} - Discover Articles`}</title>
                     <meta
                         name="description"
                         content={`${config.description.line1} ${config.description.line2}`}

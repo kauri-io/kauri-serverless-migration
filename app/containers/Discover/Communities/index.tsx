@@ -2,6 +2,8 @@ import React from 'react'
 import List from './List'
 import Header from './Header'
 import styled from 'styled-components'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
 const ContentContainer = styled.section`
     display: flex;
@@ -9,11 +11,21 @@ const ContentContainer = styled.section`
     flex-direction: column;
 `
 
-const CommunityDiscover = () => (
+const CommunityDiscover = ({ isLoggedIn, routeChangeAction }) => (
     <ContentContainer>
-        <Header category={'COMMUNITY'} />
+        <Header isLoggedIn={isLoggedIn} routeChangeAction={routeChangeAction} />
         <List />
     </ContentContainer>
 )
 
-export default CommunityDiscover
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        routeChangeAction,
+    }
+)(CommunityDiscover)
