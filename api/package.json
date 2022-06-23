@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",
-        "jsdom": "^15.2.1",
+        "jsdom": "^16.5.0",
         "markdown-to-jsx": "^6.10.3",
         "next": "^9.0.5",
         "react": "^16.9.0",
